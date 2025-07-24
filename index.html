@@ -1,45 +1,73 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Construtora Vieira | M V de Souza</title>
+
+  <!-- SEO Básico -->
+  <meta name="description" content="Construtora Vieira - M V de Souza Engenharia e Construções. Obras públicas e privadas com técnica, seriedade e responsabilidade." />
+  <meta name="keywords" content="construtora, engenharia, obras, construção civil, galpão, barracão, caixas d'água, estrutura metálica, Rondonópolis" />
+  <meta name="author" content="Carlos Eduardo de Ávila" />
+
+  <!-- Meta Tags Sociais -->
+  <meta property="og:title" content="Construtora Vieira | M V de Souza" />
+  <meta property="og:description" content="Engenharia e Construções com técnica e seriedade. Obras públicas e privadas em Rondonópolis e região." />
+  <meta property="og:image" content="https://www.construtoravieira.com.br/logo-mvdesouza.png" />
+  <meta property="og:url" content="https://www.construtoravieira.com.br" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Construtora Vieira | M V de Souza" />
+  <meta name="twitter:description" content="Obras públicas e privadas com técnica, planejamento e responsabilidade." />
+  <meta name="twitter:image" content="https://www.construtoravieira.com.br/logo-mvdesouza.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
   <style>
     :root {
       --preto: #000000;
       --cinza-claro: #f2f2f2;
       --cinza-escuro: #333333;
     }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #ffffff;
       color: var(--cinza-escuro);
       line-height: 1.6;
+      text-align: center;
     }
+
     .logo {
       max-width: 140px;
       margin-bottom: 20px;
     }
+
     header {
       background: linear-gradient(to right, var(--preto), var(--cinza-escuro));
       color: white;
       padding: 60px 20px;
-      text-align: center;
     }
+
     header h1 {
       font-size: 3rem;
       margin-bottom: 10px;
     }
+
     header p {
       font-size: 1.2rem;
       color: #dddddd;
     }
+
     nav {
       background-color: var(--cinza-claro);
       display: flex;
@@ -51,6 +79,7 @@
       top: 0;
       z-index: 100;
     }
+
     nav a {
       text-decoration: none;
       color: var(--cinza-escuro);
@@ -59,21 +88,25 @@
       transition: background 0.3s, color 0.3s;
       border-radius: 4px;
     }
+
     nav a:hover {
       background-color: var(--cinza-escuro);
       color: white;
     }
+
     section {
       padding: 60px 20px;
       max-width: 1200px;
       margin: auto;
     }
+
     h2 {
       font-size: 2.2rem;
       margin-bottom: 20px;
       color: var(--preto);
       position: relative;
     }
+
     h2::after {
       content: '';
       width: 60px;
@@ -81,23 +114,21 @@
       background-color: var(--preto);
       position: absolute;
       bottom: -10px;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%);
     }
+
     ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-    li::before {
-      content: "\2022";
-      color: var(--preto);
-      font-weight: bold;
+      list-style-type: disc;
+      padding-left: 20px;
+      text-align: left;
       display: inline-block;
-      width: 1em;
-      margin-left: -1em;
     }
+
     li {
       margin-bottom: 10px;
     }
+
     footer {
       background-color: var(--preto);
       color: white;
@@ -105,14 +136,47 @@
       padding: 40px 20px;
       font-size: 0.95rem;
     }
+
+    form#formContato {
+      max-width: 400px;
+      margin: 30px auto 0;
+      text-align: center;
+    }
+
+    form#formContato input,
+    form#formContato textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form#formContato button {
+      background-color: #25d366;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    form#formContato button:hover {
+      background-color: #1ebc5e;
+    }
+
     @media (max-width: 768px) {
       header h1 {
         font-size: 2.2rem;
       }
+
       nav {
         flex-direction: column;
         gap: 10px;
       }
+
       section {
         padding: 30px 15px;
       }
@@ -121,7 +185,7 @@
 </head>
 <body>
   <header>
-    <img src="logo-mvdesouza.png" alt="Logo MV de Souza" class="logo">
+    <img src="logo-mvdesouza.png" alt="Logo MV de Souza" class="logo" />
     <h1>Construtora Vieira</h1>
     <p>M V de Souza Engenharia e Construções</p>
   </header>
@@ -147,21 +211,33 @@
       <li>Desenvolvimento de projetos técnicos</li>
       <li>Orçamentos com base SINAPI ou valores de mercado</li>
       <li>Legalizações: AVCB, Habite-se, averbamentos e regularizações</li>
-      <li>Conteúdo técnico para YouTube e redes sociais</li>
       <li>Criação de contratos e termos padronizados</li>
     </ul>
   </section>
 
   <section id="contato">
-    <h2>Contato</h2>
-    <p><strong>Endereço:</strong> Rua Fátime Ali Dib, 211 - Rondonópolis/MT</p>
-    <p><strong>Telefone:</strong> (66) 9 9963-6313</p>
-    <p><strong>E-mail:</strong> vieira.construtora@outlook.com</p>
-    <p><strong>Responsável Técnico:</strong> Carlos Eduardo de Ávila - Engenheiro Civil</p>
+    <h2>Fale Conosco</h2>
+    <form id="formContato" onsubmit="enviarWhatsApp(); return false;">
+      <input type="text" id="nome" placeholder="Seu nome" required><br>
+      <input type="tel" id="telefone" placeholder="Seu telefone" required><br>
+      <textarea id="mensagem" placeholder="Escreva sua mensagem" required></textarea><br>
+      <button type="submit">Enviar via WhatsApp</button>
+    </form>
   </section>
 
   <footer>
     <p>&copy; 2025 Construtora Vieira | M V de Souza. Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    function enviarWhatsApp() {
+      const nome = document.getElementById("nome").value;
+      const telefone = document.getElementById("telefone").value;
+      const mensagem = document.getElementById("mensagem").value;
+      const texto = `Olá, meu nome é ${nome} (%2B${telefone}). Quero falar com vocês: ${mensagem}`;
+      const link = `https://wa.me/5566999636313?text=${encodeURIComponent(texto)}`;
+      window.open(link, "_blank");
+    }
+  </script>
 </body>
 </html>
