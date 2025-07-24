@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Construtora Vieira | M V de Souza</title>
+  <style>
+    :root {
+      --preto: #000000;
+      --cinza-claro: #f2f2f2;
+      --cinza-escuro: #333333;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: var(--cinza-escuro);
+      line-height: 1.6;
+    }
+    .logo {
+      max-width: 140px;
+      margin-bottom: 20px;
+    }
+    header {
+      background: linear-gradient(to right, var(--preto), var(--cinza-escuro));
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #dddddd;
+    }
+    nav {
+      background-color: var(--cinza-claro);
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--cinza-escuro);
+      font-weight: bold;
+      padding: 8px 15px;
+      transition: background 0.3s, color 0.3s;
+      border-radius: 4px;
+    }
+    nav a:hover {
+      background-color: var(--cinza-escuro);
+      color: white;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: var(--preto);
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background-color: var(--preto);
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li::before {
+      content: "\2022";
+      color: var(--preto);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    footer {
+      background-color: var(--preto);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.95rem;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+      section {
+        padding: 30px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo-mvdesouza.png" alt="Logo MV de Souza" class="logo">
+    <h1>Construtora Vieira</h1>
+    <p>M V de Souza Engenharia e Construções</p>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <section id="sobre">
+    <h2>Sobre a Empresa</h2>
+    <p>Somos uma construtora moderna e pragmática, especializada em obras públicas e privadas. Realizamos desde construções residenciais até grandes estruturas como galpões industriais e caixas d'água. A Construtora Vieira (M V de Souza) nasce de um recomeço ousado e determinado, com o propósito de construir com responsabilidade, visão técnica e compromisso absoluto com resultados.</p>
+    <p>Comandada pelo Eng. Civil Carlos Eduardo de Ávila, a empresa carrega valores de ética, excelência e praticidade em cada projeto executado.</p>
+  </section>
+
+  <section id="servicos">
+    <h2>Serviços</h2>
+    <ul>
+      <li>Construções e reformas de obras públicas e privadas</li>
+      <li>Galpões, barracões e estruturas metálicas diversas</li>
+      <li>Implantação de alojamentos e caixas d'água</li>
+      <li>Desenvolvimento de projetos técnicos</li>
+      <li>Orçamentos com base SINAPI ou valores de mercado</li>
+      <li>Legalizações: AVCB, Habite-se, averbamentos e regularizações</li>
+      <li>Conteúdo técnico para YouTube e redes sociais</li>
+      <li>Criação de contratos e termos padronizados</li>
+    </ul>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p><strong>Endereço:</strong> Rua Fátime Ali Dib, 211 - Rondonópolis/MT</p>
+    <p><strong>Telefone:</strong> (66) 9 9963-6313</p>
+    <p><strong>E-mail:</strong> vieira.construtora@outlook.com</p>
+    <p><strong>Responsável Técnico:</strong> Carlos Eduardo de Ávila - Engenheiro Civil</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Construtora Vieira | M V de Souza. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
