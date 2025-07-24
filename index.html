@@ -167,6 +167,16 @@
       background-color: #1ebc5e;
     }
 
+    .contato-extra {
+      margin-top: 40px;
+      font-size: 1rem;
+      color: var(--cinza-escuro);
+    }
+
+    .contato-extra p {
+      margin: 5px 0;
+    }
+
     @media (max-width: 768px) {
       header h1 {
         font-size: 2.2rem;
@@ -223,6 +233,12 @@
       <textarea id="mensagem" placeholder="Escreva sua mensagem" required></textarea><br>
       <button type="submit">Enviar via WhatsApp</button>
     </form>
+
+    <div class="contato-extra">
+      <p><strong>Telefone:</strong> (66) 9 9936-6313</p>
+      <p><strong>E-mail:</strong> vieira.construtora@outlook.com</p>
+      <p><strong>Endereço:</strong> Rua Fátime Ali Dib, 211 - Rondonópolis/MT</p>
+    </div>
   </section>
 
   <footer>
@@ -235,7 +251,7 @@
       const telefone = document.getElementById("telefone").value;
       const mensagem = document.getElementById("mensagem").value;
       const texto = `Olá, meu nome é ${nome} (%2B${telefone}). Quero falar com vocês: ${mensagem}`;
-      const link = `https://wa.me/5566999636313?text=${encodeURIComponent(texto)}`;
+      const link = `https://wa.me/5566999366313?text=${encodeURIComponent(texto)}`;
       window.open(link, "_blank");
     }
   </script>
