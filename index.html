@@ -213,6 +213,88 @@
       }
     }
   </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://www.construtoravieira.com.br/" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    nav {
+      background-color: rgba(242, 242, 242, 0.9);
+      backdrop-filter: blur(6px);
+    }
+
+    .card-servico {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card-servico:hover {
+      transform: translateY(-5px);
+    }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+
+    .whatsapp-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 18px;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .menu-icon {
+      margin-right: 8px;
+    }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ConstructionCompany",
+  "name": "Construtora Vieira",
+  "image": "https://www.construtoravieira.com.br/logocerta.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Fátime Ali Dib, 211",
+    "addressLocality": "Rondonópolis",
+    "addressRegion": "MT",
+    "addressCountry": "BR"
+  },
+  "telephone": "+5566999366313",
+  "email": "administrativo@construtoravieira.com.br",
+  "url": "https://www.construtoravieira.com.br",
+  "openingHours": [
+    "Mo-Fr 08:00-18:00"
+  ],
+  "taxID": "23.335.537/0001-08",
+  "sameAs": [
+    "https://www.instagram.com/construtoravieira1992/",
+    "https://www.facebook.com/profile.php?id=61578818874863",
+    "https://www.linkedin.com/company/construtoravieira"
+  ]
+}
+</script>
 </head>
 <body>
   <header>
@@ -233,17 +315,31 @@
     <p>Comandada pelo Eng. Civil Carlos Eduardo de Ávila, a empresa carrega valores de ética, excelência e praticidade em cada projeto executado.</p>
   </section>
 
-  <section id="servicos">
-    <h2>Serviços</h2>
-    <ul>
-      <li>Construções e reformas de obras públicas e privadas</li>
-      <li>Galpões, barracões e estruturas metálicas diversas</li>
-      <li>Implantação de alojamentos e caixas d'água</li>
-      <li>Desenvolvimento de projetos técnicos</li>
-      <li>Orçamentos com base SINAPI ou valores de mercado</li>
-      <li>Legalizações: AVCB, Habite-se, averbamentos e regularizações</li>
-      <li>Criação de contratos e termos padronizados</li>
-    </ul>
+  
+<section id="servicos">
+  <h2>Serviços</h2>
+  <div class="servicos-grid">
+    <div class="card-servico">
+      <h3>Construções</h3>
+      <p>Obras públicas e privadas</p>
+    </div>
+    <div class="card-servico">
+      <h3>Galpões e Estruturas</h3>
+      <p>Metálicas, barracões e caixas d'água</p>
+    </div>
+    <div class="card-servico">
+      <h3>Projetos Técnicos</h3>
+      <p>Com base SINAPI ou valor de mercado</p>
+    </div>
+    <div class="card-servico">
+      <h3>Legalizações</h3>
+      <p>AVCB, Habite-se, averbamentos</p>
+    </div>
+    <div class="card-servico">
+      <h3>Contratos e Termos</h3>
+      <p>Documentação padronizada</p>
+    </div>
+  </div>
   </section>
 
   <section id="contato">
@@ -257,7 +353,7 @@
 
     <div class="contato-extra">
       <p><strong>Telefone:</strong> (66) 9 9936-6313</p>
-      <p><strong>E-mail:</strong> vieira.construtora@outlook.com</p>
+      <p><strong>E-mail:</strong> administrativo@construtoravieira.com.br</p>
       <p><strong>Endereço:</strong> Rua Fátime Ali Dib, 211 - Rondonópolis/MT</p>
     </div>
   </section>
@@ -275,6 +371,16 @@
       const link = `https://wa.me/5566999366313?text=${encodeURIComponent(texto)}`;
       window.open(link, "_blank");
     }
+  </script>
+
+  <a href="https://wa.me/5566999366313" class="whatsapp-fixed" target="_blank">📱 WhatsApp</a>
+  <script>
+    ScrollReveal().reveal('section', { delay: 200, distance: '30px', origin: 'bottom' });
+
+    const form = document.getElementById('formContato');
+    form.addEventListener('submit', function () {
+      setTimeout(() => alert('Mensagem enviada via WhatsApp!'), 300);
+    });
   </script>
 </body>
 </html>
