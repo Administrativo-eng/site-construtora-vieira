@@ -161,3 +161,11 @@
         padding: 30px 15px;
       }
     }
+
+.footer-personalizado {
+  background: linear-gradient(to right, var(--preto), var(--cinza-escuro));
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
