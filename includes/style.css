@@ -169,3 +169,80 @@ form#formContato button:hover {
     padding: 30px 15px;
   }
 }
+/* Estilo da seção de contato */
+section.contato {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: sans-serif;
+}
+
+.contato h2, .contato h3 {
+  color: #452a1f; /* tom terroso escuro */
+  margin-bottom: 10px;
+}
+
+.botao-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  background-color: #25D366;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.botao-whatsapp:hover {
+  background-color: #1ebc57;
+}
+
+.botao-whatsapp .icone {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.bloco-contato ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.bloco-contato li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.bloco-contato .icone {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.redes-sociais a {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.redes-sociais .icone {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+}
+
+.redes-sociais .icone:hover {
+  transform: scale(1.1);
+}
+
+.locais-atendimento .cidades {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.mensagem-final {
+  margin-top: 30px;
+  font-style: italic;
+  color: #555;
+}
