@@ -55,5 +55,17 @@ async function loadPage(page, link = null) {
   }
 }
 
+// Inserção dinâmica do header e footer
+document.addEventListener("DOMContentLoaded", function () {
+  fetch('../includes/header.html')
+    .then(res => res.text())
+    .then(data => document.body.insertAdjacentHTML('afterbegin', data));
+
+  fetch('../includes/footer.html')
+    .then(res => res.text())
+    .then(data => document.body.insertAdjacentHTML('beforeend', data));
+});
+
+
 // Inicia o site com includes e página inicial
 includeHTML().then(() => loadPage("index"));
