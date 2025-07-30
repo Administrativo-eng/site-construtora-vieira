@@ -1,166 +1,111 @@
 :root {
-      --preto: #000000;
-      --cinza-claro: #f2f2f2;
-      --cinza-escuro: #333333;
-    }
+  --preto: #000000;
+  --cinza-claro: #f2f2f2;
+  --cinza-escuro: #333333;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #ffffff;
-      color: var(--cinza-escuro);
-      line-height: 1.6;
-      text-align: center;
-    }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: var(--cinza-escuro);
+  line-height: 1.6;
+  text-align: center;
+}
 
-    .logo {
-      max-width: 300px;
-    }
+.logo {
+  max-width: 300px;
+}
 
-    header {
-      background: linear-gradient(to right, var(--preto), var(--cinza-escuro));
-      color: white;
-      padding: 60px 20px;
-    }
+header {
+  background: linear-gradient(to right, var(--preto), var(--cinza-escuro));
+  color: white;
+  padding: 60px 20px;
+}
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
 
-    header p {
-      font-size: 1.2rem;
-      color: #dddddd;
-    }
+header p {
+  font-size: 1.2rem;
+  color: #dddddd;
+}
 
-    nav {
-      background-color: var(--cinza-claro);
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+nav {
+  background-color: var(--cinza-claro);
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-    nav a {
-      text-decoration: none;
-      color: var(--cinza-escuro);
-      font-weight: bold;
-      padding: 8px 15px;
-      transition: background 0.3s, color 0.3s;
-      border-radius: 4px;
-    }
+nav a {
+  text-decoration: none;
+  color: var(--cinza-escuro);
+  font-weight: bold;
+  padding: 8px 15px;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 4px;
+}
 
-    nav a:hover {
-      background-color: var(--cinza-escuro);
-      color: white;
-    }
+nav a:hover {
+  background-color: var(--cinza-escuro);
+  color: white;
+}
 
-    section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
 
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      color: var(--preto);
-      position: relative;
-    }
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: var(--preto);
+  position: relative;
+}
 
-    h2::after {
-      content: '';
-      width: 60px;
-      height: 3px;
-      background-color: var(--preto);
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+h2::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background-color: var(--preto);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-      text-align: left;
-      display: inline-block;
-    }
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+  display: inline-block;
+}
 
-    li {
-      margin-bottom: 10px;
-    }
+li {
+  margin-bottom: 10px;
+}
 
-    footer {
-      background-color: var(--preto);
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.95rem;
-    }
-
-    form#formContato {
-      max-width: 400px;
-      margin: 30px auto 0;
-      text-align: center;
-    }
-
-    form#formContato input,
-    form#formContato textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    form#formContato button {
-      background-color: #25d366;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    form#formContato button:hover {
-      background-color: #1ebc5e;
-    }
-
-    .contato-extra {
-      margin-top: 40px;
-      font-size: 1rem;
-      color: var(--cinza-escuro);
-    }
-
-    .contato-extra p {
-      margin: 5px 0;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      section {
-        padding: 30px 15px;
-      }
-    }
+footer {
+  background-color: var(--preto);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.95rem;
+}
 
 .footer-personalizado {
   background: linear-gradient(to right, var(--preto), var(--cinza-escuro));
@@ -168,4 +113,59 @@
   padding: 60px 20px;
   text-align: center;
   font-size: 0.95rem;
+}
+
+form#formContato {
+  max-width: 400px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+form#formContato input,
+form#formContato textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form#formContato button {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+form#formContato button:hover {
+  background-color: #1ebc5e;
+}
+
+.contato-extra {
+  margin-top: 40px;
+  font-size: 1rem;
+  color: var(--cinza-escuro);
+}
+
+.contato-extra p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  section {
+    padding: 30px 15px;
+  }
 }
