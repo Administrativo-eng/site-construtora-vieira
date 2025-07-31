@@ -263,47 +263,51 @@ section.contato {
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-/* CSS CARROSSEL */
-.home-section {
-  text-align: center;
+/*css logo clientes*/
+
+.clientes-section {
   padding: 40px 20px;
+  text-align: center;
 }
 
-.home-section h1 {
+.clientes-section h2 {
   font-size: 2em;
-  margin-bottom: 10px;
-}
-
-.home-section p {
-  font-size: 1.2em;
-  color: #555;
   margin-bottom: 30px;
 }
 
-.carousel-container {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
+.clientes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.carousel-track {
-  display: flex;
-  gap: 30px;
-  animation: scroll 10s linear infinite;
-  min-width: 200%; /* importante! */
-  align-items: center;
-}
-
-.carousel-track img {
-  max-height: 150px;
-  border:1px solid #000000 ;
+.clientes-grid img {
+  width: 150px;
+  height: 150px;
   object-fit: contain;
-  flex-shrink: 0;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, opacity 0.6s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
 }
 
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.clientes-grid img:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+.clientes-grid img:nth-child(even) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
