@@ -292,6 +292,7 @@ section.contato {
   display: flex;
   gap: 30px;
   animation: scroll 10s linear infinite;
+  min-width: 200%; /* importante! */
   align-items: center;
 }
 
