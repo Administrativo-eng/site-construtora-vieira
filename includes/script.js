@@ -38,7 +38,9 @@ async function includeHTML() {
 }
 
 // Carrega páginas SPA
-async function loadPage(page, link = null) {
+async function loadPage(page, link = null, event = null) {
+  if (event) event.preventDefault();
+
   try {
     const res = await fetch(`/paginas/${page}.html`);
     if (!res.ok) throw new Error("Página não encontrada.");
