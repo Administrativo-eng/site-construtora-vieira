@@ -33,18 +33,15 @@
   <link rel="stylesheet" href="/includes/style.css" />
 </head>
 <body>
-  <div include-html="/includes/header.html"></div>
 
   <nav>
-    <a href="#" onclick="loadPage('index', this)" class="active">Início</a>
-    <a href="#" onclick="loadPage('sobre', this)">Sobre</a>
-    <a href="#" onclick="loadPage('servicos', this)">Serviços</a>
-    <a href="#" onclick="loadPage('contato', this)">Contato</a>
+    <a href="#" onclick="loadPage('index', this, event)" class="active">Início</a>
+    <a href="#" onclick="loadPage('sobre', this, event)">Sobre</a>
+    <a href="#" onclick="loadPage('servicos', this, event)">Serviços</a>
+    <a href="#" onclick="loadPage('contato', this, event)">Contato</a>
   </nav>
 
   <main id="content"></main>
-
-  <div include-html="/includes/footer.html"></div>
 
   <script src="/includes/script.js"></script>
 </body>
