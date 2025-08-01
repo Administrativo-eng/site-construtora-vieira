@@ -23,11 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Efeito de fade-in ao carregar
-  document.body.classList.add("fade-in");
-
-  // Efeito de revelação ao rolar
-  const fadeElements = document.querySelectorAll(".fade");
+  // Observador para elementos com classe .fade
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -36,7 +32,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, { threshold: 0.1 });
 
-  fadeElements.forEach(el => observer.observe(el));
+  // Função para aplicar animações a elementos .fade
+  function aplicarFadeAnimacao(container) {
+    const fadeElements = container.querySelectorAll(".fade");
+    fadeElements.forEach(el => {
+      el.classList.remove("visible");
+      observer.observe(el);
+    });
+  }
+
+  // Aplica no carregamento inicial
+  aplicarFadeAnimacao(document);
+
 });
 
 function carregarPagina(caminho) {
@@ -47,14 +54,14 @@ function carregarPagina(caminho) {
     })
     .then(html => {
       const container = document.getElementById("conteudo");
-      container.classList.remove("fade-in");
-      container.classList.add("fade-out");
+      container.innerHTML = html;
 
-      setTimeout(() => {
-        container.innerHTML = html;
-        container.classList.remove("fade-out");
-        container.classList.add("fade-in");
-      }, 300);
+      // Aplica efeito .fade aos novos elementos
+      const fadeElements = container.querySelectorAll(".fade");
+      fadeElements.forEach(el => {
+        el.classList.remove("visible");
+        setTimeout(() => el.classList.add("visible"), 100);
+      });
     })
     .catch(erro => {
       document.getElementById("conteudo").innerHTML = "<p>Erro ao carregar conteúdo.</p>";
