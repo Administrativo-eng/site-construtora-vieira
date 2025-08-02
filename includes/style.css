@@ -85,13 +85,13 @@ body {
   margin-bottom: 2rem;
 }
 
+/* BOTÕES */
 .btn-green {
   background-color: #00c37e;
   color: #fff;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
   font-weight: 600;
-  border-radius: 5px;
   transition: background-color 0.3s ease;
 }
 
@@ -99,14 +99,36 @@ body {
   background-color: #00a46b;
 }
 
+.btn-black {
+  display: inline-block;
+  background-color: #111;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-black:hover {
+  background-color: #333;
+}
+
+#load-more {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 /* DESTAQUES E DIFERENCIAIS */
-.destaques, .diferenciais {
+.destaques,
+.diferenciais {
   padding: 4rem 2rem;
   background-color: #fff;
   color: #111;
 }
 
-.destaques h2, .diferenciais h2 {
+.destaques h2,
+.diferenciais h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
@@ -121,8 +143,7 @@ body {
 .card {
   background: #f8f8f8;
   padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   text-align: center;
   transition: transform 0.3s ease;
 }
@@ -134,7 +155,6 @@ body {
 .card img {
   width: 100%;
   height: auto;
-  border-radius: 6px;
   margin-bottom: 1rem;
 }
 
@@ -148,19 +168,48 @@ body {
   color: #333;
 }
 
-.btn-black {
-  display: inline-block;
-  background-color: #111;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+.card-uf {
+  font-weight: bold;
+  margin-left: 0.5rem;
+  color: #888;
+  font-size: 0.9rem;
 }
 
-.btn-black:hover {
-  background-color: #333;
+/* PÁGINA OBRAS (NOVA ESTRUTURA) */
+.obras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.obra {
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.obra img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.obra p {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  padding: 12px;
+  margin: 0;
+}
+
+.obra:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* SOBRE A EMPRESA */
@@ -179,7 +228,55 @@ body {
 
 .sobre-grid img {
   width: 100%;
-  border-radius: 8px;
+}
+
+/* SOBRE CONTEÚDO */
+.sobre-conteudo {
+  background-color: #111;
+  color: #fff;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.sobre-conteudo h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.sobre-conteudo p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin-bottom: 2rem;
+  color: #ddd;
+}
+
+.sobre-conteudo img {
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.sobre-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sobre-texto h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.sobre-texto p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ddd;
+  max-width: 800px;
 }
 
 /* RODAPÉ */
@@ -242,11 +339,7 @@ footer a:hover {
     margin-bottom: 1rem;
   }
 
-  .sobre-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
+  .sobre-grid,
   .sobre-conteudo {
     grid-template-columns: 1fr;
     text-align: center;
@@ -257,58 +350,3 @@ footer a:hover {
     margin-right: auto;
   }
 }
-
-/* SOBRE CONTEÚDO (usado na página sobrenos.html) */
-.sobre-conteudo {
-  background-color: #111;
-  color: #fff;
-  padding: 4rem 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: center;
-}
-
-.sobre-conteudo h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: bold;
-}
-
-.sobre-conteudo p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  max-width: 800px;
-  margin-bottom: 2rem;
-  color: #ddd;
-}
-
-.sobre-conteudo img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-}
-
-.sobre-texto {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.sobre-texto h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: bold;
-}
-
-.sobre-texto p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #ddd;
-  max-width: 800px;
-}
-
-
-
-
-

@@ -1,5 +1,3 @@
-// script.js
-
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.getElementById("menu-toggle");
   const navMenu = document.getElementById("nav-menu");
@@ -23,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Observador para elementos com classe .fade
+  // Observador de elementos com .fade
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -32,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, { threshold: 0.1 });
 
-  // Função para aplicar animações a elementos .fade
+  // Função de animação para elementos .fade
   function aplicarFadeAnimacao(container) {
     const fadeElements = container.querySelectorAll(".fade");
     fadeElements.forEach(el => {
@@ -41,30 +39,59 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Aplica no carregamento inicial
-  aplicarFadeAnimacao(document);
+  // Função para ativar a paginação (obras.html)
+  function aplicarPaginacaoObras() {
+    const cards = document.querySelectorAll("#cards-container .card");
+    const loadMoreBtn = document.getElementById("load-more");
+    const batchSize = 4;
+    let visibleCount = 0;
 
-});
+    if (!cards.length || !loadMoreBtn) return;
 
-function carregarPagina(caminho) {
-  fetch(caminho)
-    .then(resp => {
-      if (!resp.ok) throw new Error("Erro ao carregar a página");
-      return resp.text();
-    })
-    .then(html => {
-      const container = document.getElementById("conteudo");
-      container.innerHTML = html;
+    function showNextBatch() {
+      for (let i = visibleCount; i < visibleCount + batchSize && i < cards.length; i++) {
+        cards[i].style.display = "block";
+      }
 
-      // Aplica efeito .fade aos novos elementos
-      const fadeElements = container.querySelectorAll(".fade");
-      fadeElements.forEach(el => {
-        el.classList.remove("visible");
-        setTimeout(() => el.classList.add("visible"), 100);
+      visibleCount += batchSize;
+
+      if (visibleCount >= cards.length) {
+        loadMoreBtn.style.display = "none";
+      }
+    }
+
+    // Inicializa
+    cards.forEach(card => card.style.display = "none");
+    showNextBatch();
+
+    loadMoreBtn.addEventListener("click", showNextBatch);
+  }
+
+  // Carrega página via fetch
+  function carregarPagina(caminho) {
+    fetch(caminho)
+      .then(resp => {
+        if (!resp.ok) throw new Error("Erro ao carregar a página");
+        return resp.text();
+      })
+      .then(html => {
+        const container = document.getElementById("conteudo");
+        container.innerHTML = html;
+
+        // Aplica animações .fade
+        aplicarFadeAnimacao(container);
+
+        // Ativa lógica de paginação somente na página de obras
+        if (caminho.includes("obras.html")) {
+          aplicarPaginacaoObras();
+        }
+      })
+      .catch(erro => {
+        document.getElementById("conteudo").innerHTML = "<p>Erro ao carregar conteúdo.</p>";
+        console.error(erro);
       });
-    })
-    .catch(erro => {
-      document.getElementById("conteudo").innerHTML = "<p>Erro ao carregar conteúdo.</p>";
-      console.error(erro);
-    });
-}
+  }
+
+  // Aplica animações no documento inicial
+  aplicarFadeAnimacao(document);
+});
