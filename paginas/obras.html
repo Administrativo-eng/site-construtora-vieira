@@ -1,150 +1,144 @@
 <div style="width: 100%; background: #111;">
 
-<section class="obras fade container">
-  <h1>Obras / Clientes</h1>
+  <section class="obras fade container">
+    <h1>Obras / Clientes</h1>
 
-  <div class="obras-grid" id="cards-container">
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Oliveira Plaza" />
-      <p>Oliveira Plaza</p>
+    <div class="obras-grid" id="cards-container">
+      <!-- Cada item com classe 'obra-item' -->
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Oliveira Plaza" />
+        <p>Oliveira Plaza</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Abuathia Towers" />
+        <p>Abuathia Towers</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Águas Jardins" />
+        <p>Águas Jardins</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
+        <p>Portal Serra Verde</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Abuathia Towers" />
+        <p>Abuathia Towers</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Águas Jardins" />
+        <p>Águas Jardins</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
+        <p>Portal Serra Verde</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Abuathia Towers" />
+        <p>Abuathia Towers</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Águas Jardins" />
+        <p>Águas Jardins</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
+        <p>Portal Serra Verde</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Abuathia Towers" />
+        <p>Abuathia Towers</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Águas Jardins" />
+        <p>Águas Jardins</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
+        <p>Portal Serra Verde</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Abuathia Towers" />
+        <p>Abuathia Towers</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Águas Jardins" />
+        <p>Águas Jardins</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
+        <p>Portal Serra Verde</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Abuathia Towers" />
+        <p>Abuathia Towers</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Águas Jardins" />
+        <p>Águas Jardins</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
+        <p>Portal Serra Verde</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Abuathia Towers" />
+        <p>Abuathia Towers</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Águas Jardins" />
+        <p>Águas Jardins</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
+        <p>Portal Serra Verde</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Abuathia Towers" />
+        <p>Abuathia Towers</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Águas Jardins" />
+        <p>Águas Jardins</p>
+      </div>
+
+      <div class="obra-item obra">
+        <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
+        <p>Portal Serra Verde</p>
+      </div>
+
+      <!-- ... continue com todas as outras .obra -->
     </div>
 
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Abuathia Towers" />
-      <p>Abuathia Towers</p>
+    <!-- PAGINAÇÃO -->
+    <div id="pagination-controls" style="text-align: center; margin-top: 5rem;">
+      <button onclick="mudarPagina(-1)" class="btn-black">Anterior</button>
+      <span id="pagina-atual" style="margin: 0 10px;">1</span>
+      <button onclick="mudarPagina(1)" class="btn-black">Próximo</button>
     </div>
+  </section>
 
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Águas Jardins" />
-      <p>Águas Jardins</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
-      <p>Portal Serra Verde</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Costa Ville" />
-      <p>Costa Ville</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Residencial Bela União" />
-      <p>Residencial Bela União</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
-      <p>Portal Serra Verde</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Costa Ville" />
-      <p>Costa Ville</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Residencial Bela União" />
-      <p>Residencial Bela União</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
-      <p>Portal Serra Verde</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Costa Ville" />
-      <p>Costa Ville</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Residencial Bela União" />
-      <p>Residencial Bela União</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
-      <p>Portal Serra Verde</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Costa Ville" />
-      <p>Costa Ville</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Residencial Bela União" />
-      <p>Residencial Bela União</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
-      <p>Portal Serra Verde</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Costa Ville" />
-      <p>Costa Ville</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Residencial Bela União" />
-      <p>Residencial Bela União</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
-      <p>Portal Serra Verde</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Costa Ville" />
-      <p>Costa Ville</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Residencial Bela União" />
-      <p>Residencial Bela União</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
-      <p>Portal Serra Verde</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Costa Ville" />
-      <p>Costa Ville</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Residencial Bela União" />
-      <p>Residencial Bela União</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Portal Serra Verde" />
-      <p>Portal Serra Verde</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Costa Ville" />
-      <p>Costa Ville</p>
-    </div>
-
-    <div class="obra">
-      <img src="../clientes/uniaofamiliar.png" alt="Residencial Bela União" />
-      <p>Residencial Bela União</p>
-    </div>
-
-    <!-- Adicione mais conforme necessário -->
   </div>
-
-  <div style="text-align: center; margin-top: 2rem;">
-    <button id="load-more" class="btn-black">+ Ver mais</button>
-  </div>
-</section>
-
-</div>
