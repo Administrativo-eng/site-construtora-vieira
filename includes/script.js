@@ -2,26 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.getElementById("menu-toggle");
   const navMenu = document.getElementById("nav-menu");
 
-  // Toggle do menu mobile
   if (menuToggle && navMenu) {
     menuToggle.addEventListener("click", () => {
       navMenu.classList.toggle("open");
     });
   }
 
-  // Carrega conteúdo padrão (home)
-  carregarPagina("paginas/home.html");
-
-  // Substitui navegação por carregamento dinâmico
-  document.querySelectorAll("a[data-pagina]").forEach(link => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const pagina = this.getAttribute("data-pagina");
-      carregarPagina(pagina);
-    });
-  });
-
-  // Observador de elementos com .fade
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -30,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, { threshold: 0.1 });
 
-  // Função de animação para elementos .fade
   function aplicarFadeAnimacao(container) {
     const fadeElements = container.querySelectorAll(".fade");
     fadeElements.forEach(el => {
@@ -39,35 +24,69 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Função para ativar a paginação (obras.html)
   function aplicarPaginacaoObras() {
-    const cards = document.querySelectorAll("#cards-container .card");
-    const loadMoreBtn = document.getElementById("load-more");
-    const batchSize = 4;
-    let visibleCount = 0;
+    let paginaAtual = 1;
+    const porPagina = 4;
+    const obras = document.querySelectorAll(".obra-item");
+    const spanPagina = document.getElementById("pagina-atual");
+    const btnAnterior = document.querySelector("#pagination-controls button:first-child");
+    const btnProximo = document.querySelector("#pagination-controls button:last-child");
 
-    if (!cards.length || !loadMoreBtn) return;
+    if (!obras.length || !spanPagina || !btnAnterior || !btnProximo) return;
 
-    function showNextBatch() {
-      for (let i = visibleCount; i < visibleCount + batchSize && i < cards.length; i++) {
-        cards[i].style.display = "block";
-      }
+    function mostrarPagina(pagina) {
+      const totalPaginas = Math.ceil(obras.length / porPagina);
+      if (pagina < 1) pagina = 1;
+      if (pagina > totalPaginas) pagina = totalPaginas;
 
-      visibleCount += batchSize;
+      obras.forEach((obra, index) => {
+        obra.style.display = (index >= (pagina - 1) * porPagina && index < pagina * porPagina) ? "block" : "none";
+      });
 
-      if (visibleCount >= cards.length) {
-        loadMoreBtn.style.display = "none";
-      }
+      spanPagina.innerText = pagina;
+      paginaAtual = pagina;
     }
 
-    // Inicializa
-    cards.forEach(card => card.style.display = "none");
-    showNextBatch();
-
-    loadMoreBtn.addEventListener("click", showNextBatch);
+    btnAnterior.onclick = () => mostrarPagina(paginaAtual - 1);
+    btnProximo.onclick = () => mostrarPagina(paginaAtual + 1);
+    mostrarPagina(paginaAtual);
   }
 
-  // Carrega página via fetch
+  async function carregarFeedAgenciaBrasil() {
+    try {
+      const apiKey = "b32qtdupit07lqqfnhtuhlsjtfvm6wjmozxan23o";
+      const rssUrl = "https://agenciabrasil.ebc.com.br/rss.xml";
+      const url = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&api_key=${apiKey}&count=1`;
+
+      const resp = await fetch(url);
+      const data = await resp.json();
+
+      if (!data.items || data.items.length === 0) {
+        document.getElementById("rss-feed").innerHTML = "<p>Nenhuma notícia disponível no momento.</p>";
+        return;
+      }
+
+      const item = data.items[0];
+      const image = item.enclosure?.link || "";
+      const html = `
+        <div style="background: #111; border-radius: 10px; overflow: hidden; box-shadow: 0 0 10px #000;">
+          ${image ? `<img src="${image}" alt="${item.title}" style="width: 100%; height: auto;">` : ""}
+          <div style="padding: 1rem;">
+            <p style="color: #888; font-size: 0.9rem; margin: 0 0 0.5rem;">Fonte: Agência Brasil</p>
+            <h2 style="font-size: 1.25rem; margin: 0 0 0.5rem;">
+              <a href="${item.link}" target="_blank" style="color: white; text-decoration: none;">${item.title}</a>
+            </h2>
+            <p style="color: #ccc; font-size: 0.95rem;">${item.description.substring(0, 140)}…</p>
+          </div>
+        </div>`;
+
+      document.getElementById("rss-feed").innerHTML = html;
+    } catch (err) {
+      console.error("Erro ao carregar feed:", err);
+      document.getElementById("rss-feed").innerHTML = "<p>Erro ao carregar notícias.</p>";
+    }
+  }
+
   function carregarPagina(caminho) {
     fetch(caminho)
       .then(resp => {
@@ -78,12 +97,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const container = document.getElementById("conteudo");
         container.innerHTML = html;
 
-        // Aplica animações .fade
         aplicarFadeAnimacao(container);
 
-        // Ativa lógica de paginação somente na página de obras
         if (caminho.includes("obras.html")) {
           aplicarPaginacaoObras();
+        }
+
+        if (caminho.includes("noticias.html")) {
+          carregarFeedAgenciaBrasil();
         }
       })
       .catch(erro => {
@@ -92,6 +113,14 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
-  // Aplica animações no documento inicial
+  document.querySelectorAll("a[data-pagina]").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const pagina = this.getAttribute("data-pagina");
+      carregarPagina(pagina);
+    });
+  });
+
+  carregarPagina("paginas/home.html");
   aplicarFadeAnimacao(document);
 });
