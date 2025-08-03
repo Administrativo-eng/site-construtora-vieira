@@ -362,3 +362,63 @@ footer a:hover {
     margin-right: auto;
   }
 }
+
+/* Simulação de Financiamento */
+.simulacao {
+  padding: 2rem;
+}
+
+.simulacao h1 {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.simulacao p {
+  color: #ccc;
+  margin-bottom: 2rem;
+}
+
+.simulacao form label {
+  display: block;
+  color: #eee;
+  font-size: 1rem;
+}
+
+.simulacao input,
+.simulacao select {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-top: 0.3rem;
+  border: none;
+  background-color: #222;
+  color: white;
+  font-size: 1rem;
+}
+
+.simulacao input:focus,
+.simulacao select:focus {
+  outline: none;
+  box-shadow: 0 0 5px #555;
+}
+
+.simulacao .btn-black {
+  background-color: #000;
+  color: white;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.simulacao .btn-black:hover {
+  background-color: #222;
+}
+
+#resultado-simulacao {
+  padding: 1.5rem;
+  margin-top: 2rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}

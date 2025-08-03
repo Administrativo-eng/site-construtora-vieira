@@ -99,12 +99,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         aplicarFadeAnimacao(container);
 
-        if (caminho.includes("obras.html")) {
-          aplicarPaginacaoObras();
-        }
-
-        if (caminho.includes("noticias.html")) {
-          carregarFeedAgenciaBrasil();
+        if (caminho.includes("obras.html")) aplicarPaginacaoObras();
+        if (caminho.includes("noticias.html")) carregarFeedAgenciaBrasil();
+        if (caminho.includes("simulacao.html")) {
+          ativarSimuladorFinanciamento();
+          aplicarMascaras();
         }
       })
       .catch(erro => {
@@ -123,4 +122,148 @@ document.addEventListener("DOMContentLoaded", function () {
 
   carregarPagina("paginas/home.html");
   aplicarFadeAnimacao(document);
+
+  function ativarSimuladorFinanciamento() {
+    const form = document.getElementById("form-simulacao");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const vi = document.getElementById("valor-imovel");
+      const ve = document.getElementById("valor-entrada");
+      const j = document.getElementById("juros");
+
+      const valorImovel = parseFloat(vi.value.replace(/[^\d]+/g, "")) / 100;
+      const entrada = parseFloat(ve.value.replace(/[^\d]+/g, "")) / 100;
+      const prazo = parseInt(document.getElementById("prazo").value);
+      const jurosAno = parseFloat(j.value.replace(/[^\d,]+/g, "").replace(",", "."));
+      const sistema = document.getElementById("sistema").value;
+
+      const financiamento = valorImovel - entrada;
+      const jurosMes = jurosAno / 100 / 12;
+      const resultadoDiv = document.getElementById("resultado-simulacao");
+
+      if (financiamento <= 0 || prazo <= 0 || jurosMes <= 0) {
+        resultadoDiv.innerHTML = "<p style='color: red;'>Preencha os dados corretamente.</p>";
+        return;
+      }
+
+      let mensagem = `🏠 *Simulação de Financiamento*\n\n`;
+      mensagem += `• Valor do Imóvel: R$ ${valorImovel.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}\n`;
+      mensagem += `• Entrada: R$ ${entrada.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}\n`;
+      mensagem += `• Prazo: ${prazo} meses\n`;
+      mensagem += `• Juros: ${jurosAno.toFixed(2)}% ao ano\n`;
+      mensagem += `• Sistema: ${sistema.toUpperCase()}\n`;
+
+      if (sistema === "sac") {
+        let amortizacao = financiamento / prazo;
+        let saldo = financiamento;
+        let totalPago = 0;
+        let primeiraParcela = 0;
+        let ultimaParcela = 0;
+
+        for (let i = 1; i <= prazo; i++) {
+          const juros = saldo * jurosMes;
+          const parcela = amortizacao + juros;
+          saldo -= amortizacao;
+
+          if (i === 1) primeiraParcela = parcela;
+          if (i === prazo) ultimaParcela = parcela;
+
+          totalPago += parcela;
+        }
+
+        resultadoDiv.innerHTML = `
+          <h2>Resultado (SAC)</h2>
+          <p>Valor financiado: R$ ${financiamento.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+          <p>Parcela inicial: R$ ${primeiraParcela.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+          <p>Parcela final: R$ ${ultimaParcela.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+          <p>Total pago: R$ ${totalPago.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+        `;
+
+        mensagem += `• Parcela inicial: R$ ${primeiraParcela.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}\n`;
+        mensagem += `• Parcela final: R$ ${ultimaParcela.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}\n`;
+        mensagem += `• Total pago: R$ ${totalPago.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
+      } else if (sistema === "price") {
+        const parcela = financiamento * (jurosMes / (1 - Math.pow(1 + jurosMes, -prazo)));
+        const totalPago = parcela * prazo;
+
+        resultadoDiv.innerHTML = `
+          <h2>Resultado (PRICE)</h2>
+          <p>Valor financiado: R$ ${financiamento.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+          <p>Parcela fixa: R$ ${parcela.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+          <p>Total pago: R$ ${totalPago.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+        `;
+
+        mensagem += `• Parcela fixa: R$ ${parcela.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}\n`;
+        mensagem += `• Total pago: R$ ${totalPago.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
+      } else {
+        resultadoDiv.innerHTML = "<p style='color: red;'>Sistema de amortização inválido.</p>";
+        return;
+      }
+
+      const numero = "5566999999999"; // Altere para seu número com DDD
+      const link = `https://wa.me/${numero}?text=${encodeURIComponent("Olá! Fiz uma simulação no site e aqui estão os dados:\n\n" + mensagem)}`;
+
+      let botao = document.getElementById("btn-whatsapp");
+      if (!botao) {
+        botao = document.createElement("a");
+        botao.id = "btn-whatsapp";
+        botao.className = "btn-black";
+        botao.target = "_blank";
+        botao.style.display = "inline-block";
+        botao.style.marginTop = "2rem";
+        botao.innerText = "Continuar pelo WhatsApp";
+        resultadoDiv.after(botao);
+      }
+
+      botao.href = link;
+      botao.style.display = "inline-block";
+    });
+  }
+
+  function aplicarMascaras() {
+    const vi = document.getElementById("valor-imovel");
+    const ve = document.getElementById("valor-entrada");
+    const ju = document.getElementById("juros");
+
+    function formatarMoeda(input) {
+      input.addEventListener("input", (e) => {
+        let valor = e.target.value.replace(/\D/g, "");
+        valor = (valor / 100).toFixed(2);
+        valor = valor.replace(".", ",").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        e.target.value = "R$ " + valor;
+      });
+
+      input.addEventListener("focus", () => {
+        if (!input.value) input.value = "R$ 0,00";
+      });
+
+      input.addEventListener("blur", () => {
+        if (input.value === "R$ 0,00") input.value = "";
+      });
+    }
+
+    function formatarPorcentagem(input) {
+      input.addEventListener("input", (e) => {
+        let valor = e.target.value.replace(/\D/g, "");
+        valor = (valor / 100).toFixed(2);
+        valor = valor.replace(".", ",");
+        e.target.value = valor + " %";
+      });
+
+      input.addEventListener("focus", () => {
+        if (!input.value) input.value = "0,00 %";
+      });
+
+      input.addEventListener("blur", () => {
+        if (input.value === "0,00 %") input.value = "";
+      });
+    }
+
+    if (vi) formatarMoeda(vi);
+    if (ve) formatarMoeda(ve);
+    if (ju) formatarPorcentagem(ju);
+  }
 });
