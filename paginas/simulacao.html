@@ -47,36 +47,3 @@
 
 </div>
 
-<script>
-document.getElementById("form-simulacao").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const valorImovel = document.getElementById("valor-imovel").value.trim();
-  const valorEntrada = document.getElementById("valor-entrada").value.trim();
-  const prazo = document.getElementById("prazo").value.trim();
-  const juros = document.getElementById("juros").value.trim();
-  const sistema = document.getElementById("sistema").value.toUpperCase();
-
-  const resultadoTexto = `
-🏠 *Simulação de Financiamento*
-
-• Valor do Imóvel: ${valorImovel}
-• Valor de Entrada: ${valorEntrada}
-• Prazo: ${prazo} meses
-• Taxa de Juros: ${juros}% ao ano
-• Sistema de Amortização: ${sistema}
-  `;
-
-  // Exibe o resultado na página
-  document.getElementById("resultado-simulacao").innerHTML = resultadoTexto.replace(/\n/g, "<br>");
-
-  // Prepara a mensagem do WhatsApp
-  const numero = "5566999999999"; // Substitua pelo número correto com DDD
-  const mensagem = encodeURIComponent("Olá! Fiz uma simulação no site e aqui estão os dados:\n\n" + resultadoTexto);
-  const link = `https://wa.me/${numero}?text=${mensagem}`;
-
-  const botao = document.getElementById("btn-whatsapp");
-  botao.href = link;
-  botao.style.display = "inline-block";
-});
-</script>
