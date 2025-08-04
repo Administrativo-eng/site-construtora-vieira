@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      const numero = "5566999999999"; // Altere para seu número com DDD
+      const numero = "5566999366313"; // Altere para seu número com DDD
       const link = `https://wa.me/${numero}?text=${encodeURIComponent("Olá! Fiz uma simulação no site e aqui estão os dados:\n\n" + mensagem)}`;
 
       let botao = document.getElementById("btn-whatsapp");
