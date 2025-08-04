@@ -1,49 +1,48 @@
-<div style="width: 100%; background: #111;">
+<div style="background-color: #111;">
+  <section class="section bg-dark fade simulacao">
+    <div class="container" style="max-width: 800px;">
+      <h1 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Simulação de Financiamento</h1>
+      <p class="text-light" style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">
+        Faça uma simulação de financiamento baseada nos padrões atuais. Preencha os campos abaixo e veja o resultado.
+      </p>
 
-  <section class="simulacao fade container" style="max-width: 800px; margin: auto; padding: 2rem 1rem;">
-    <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Simulação de Financiamento</h1>
-    <p style="color: #ccc; font-size: 1.1rem; margin-bottom: 2rem;">
-      Faça uma simulação de financiamento baseada nos padrões atuais. Preencha os campos abaixo e veja o resultado.
-    </p>
+      <form id="form-simulacao" style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <div class="campo-form">
+          <label for="valor-imovel">Valor do Imóvel:</label>
+          <input type="text" id="valor-imovel" placeholder="R$ 300.000,00" required />
+        </div>
 
-    <form id="form-simulacao" style="display: grid; gap: 1rem;">
-      <label>
-        Valor do Imóvel:
-        <input type="text" id="valor-imovel" placeholder="R$ 300.000,00" required />
-      </label>
+        <div class="campo-form">
+          <label for="valor-entrada">Valor de Entrada:</label>
+          <input type="text" id="valor-entrada" placeholder="R$ 60.000,00" required />
+        </div>
 
-      <label>
-        Valor de Entrada:
-        <input type="text" id="valor-entrada" placeholder="R$ 60.000,00" required />
-      </label>
+        <div class="campo-form">
+          <label for="prazo">Prazo (em meses):</label>
+          <input type="number" id="prazo" placeholder="Ex: 240" required />
+        </div>
 
-      <label>
-        Prazo (em meses):
-        <input type="number" id="prazo" placeholder="Ex: 240" required />
-      </label>
+        <div class="campo-form">
+          <label for="juros">Taxa de Juros (% ao ano):</label>
+          <input type="text" id="juros" placeholder="Ex: 9,5 %" required />
+        </div>
 
-      <label>
-        Taxa de Juros (% ao ano):
-        <input type="text" id="juros" placeholder="Ex: 9,5 %" required />
-      </label>
+        <div class="campo-form">
+          <label for="sistema">Sistema de Amortização:</label>
+          <select id="sistema">
+            <option value="sac">SAC (Sistema de Amortização Constante)</option>
+            <option value="price">PRICE (Tabela Price)</option>
+          </select>
+        </div>
 
-      <label>
-        Sistema de Amortização:
-        <select id="sistema">
-          <option value="sac">SAC (Sistema de Amortização Constante)</option>
-          <option value="price">PRICE (Tabela Price)</option>
-        </select>
-      </label>
+        <button type="submit" class="btn btn-black">Simular</button>
+      </form>
 
-      <button type="submit" class="btn-black">Simular</button>
-    </form>
+      <div id="resultado-simulacao" style="margin-top: 3rem; color: #eee;"></div>
 
-    <div id="resultado-simulacao" style="margin-top: 3rem; color: #eee;"></div>
-
-    <a id="btn-whatsapp" href="#" target="_blank" class="btn-black" style="display: none; margin-top: 2rem;">
-      Continuar pelo WhatsApp
-    </a>
+      <a id="btn-whatsapp" href="#" target="_blank" class="btn btn-black" style="display: none; margin-top: 2rem;">
+        Continuar pelo WhatsApp
+      </a>
+    </div>
   </section>
-
 </div>
-
