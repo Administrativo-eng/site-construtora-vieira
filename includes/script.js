@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menu-toggle");
   const navMenu = document.getElementById("nav-menu");
 
@@ -8,17 +8,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  }, { threshold: 0.1 });
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
-  function aplicarFadeAnimacao(container) {
-    const fadeElements = container.querySelectorAll(".fade");
-    fadeElements.forEach(el => {
+  function aplicarFadeAnimacao(container = document) {
+    container.querySelectorAll(".fade").forEach(el => {
       el.classList.remove("visible");
       observer.observe(el);
     });
@@ -36,11 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function mostrarPagina(pagina) {
       const totalPaginas = Math.ceil(obras.length / porPagina);
-      if (pagina < 1) pagina = 1;
-      if (pagina > totalPaginas) pagina = totalPaginas;
+      pagina = Math.max(1, Math.min(pagina, totalPaginas));
 
-      obras.forEach((obra, index) => {
-        obra.style.display = (index >= (pagina - 1) * porPagina && index < pagina * porPagina) ? "block" : "none";
+      obras.forEach((obra, i) => {
+        obra.style.display = (i >= (pagina - 1) * porPagina && i < pagina * porPagina) ? "block" : "none";
       });
 
       spanPagina.innerText = pagina;
@@ -53,22 +54,25 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   async function carregarFeedAgenciaBrasil() {
+    const feedEl = document.getElementById("rss-feed");
+    if (!feedEl) return;
+
     try {
-      const apiKey = "b32qtdupit07lqqfnhtuhlsjtfvm6wjmozxan23o";
       const rssUrl = "https://agenciabrasil.ebc.com.br/rss.xml";
+      const apiKey = "b32qtdupit07lqqfnhtuhlsjtfvm6wjmozxan23o";
       const url = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&api_key=${apiKey}&count=1`;
 
       const resp = await fetch(url);
       const data = await resp.json();
+      const item = data.items?.[0];
 
-      if (!data.items || data.items.length === 0) {
-        document.getElementById("rss-feed").innerHTML = "<p>Nenhuma notícia disponível no momento.</p>";
+      if (!item) {
+        feedEl.innerHTML = "<p>Nenhuma notícia disponível no momento.</p>";
         return;
       }
 
-      const item = data.items[0];
       const image = item.enclosure?.link || "";
-      const html = `
+      feedEl.innerHTML = `
         <div style="background: #111; border-radius: 10px; overflow: hidden; box-shadow: 0 0 10px #000;">
           ${image ? `<img src="${image}" alt="${item.title}" style="width: 100%; height: auto;">` : ""}
           <div style="padding: 1rem;">
@@ -78,13 +82,131 @@ document.addEventListener("DOMContentLoaded", function () {
             </h2>
             <p style="color: #ccc; font-size: 0.95rem;">${item.description.substring(0, 140)}…</p>
           </div>
-        </div>`;
-
-      document.getElementById("rss-feed").innerHTML = html;
+        </div>
+      `;
     } catch (err) {
       console.error("Erro ao carregar feed:", err);
-      document.getElementById("rss-feed").innerHTML = "<p>Erro ao carregar notícias.</p>";
+      feedEl.innerHTML = "<p>Erro ao carregar notícias.</p>";
     }
+  }
+
+  function ativarSimuladorFinanciamento() {
+    const form = document.getElementById("form-simulacao");
+    if (!form) return;
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+
+      const vi = document.getElementById("valor-imovel");
+      const ve = document.getElementById("valor-entrada");
+      const j = document.getElementById("juros");
+      const prazo = parseInt(document.getElementById("prazo").value);
+      const sistema = document.getElementById("sistema").value;
+
+      const valorImovel = parseFloat(vi.value.replace(/[^\d]+/g, "")) / 100;
+      const entrada = parseFloat(ve.value.replace(/[^\d]+/g, "")) / 100;
+      const jurosAno = parseFloat(j.value.replace(/[^\d,]+/g, "").replace(",", "."));
+      const jurosMes = jurosAno / 100 / 12;
+      const financiamento = valorImovel - entrada;
+
+      const resultado = document.getElementById("resultado-simulacao");
+
+      if (financiamento <= 0 || prazo <= 0 || jurosMes <= 0) {
+        resultado.innerHTML = "<p style='color: red;'>Preencha os dados corretamente.</p>";
+        return;
+      }
+
+      let texto = `🏠 *Simulação de Financiamento*\n\n`;
+      texto += `• Valor do Imóvel: R$ ${valorImovel.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}\n`;
+      texto += `• Entrada: R$ ${entrada.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}\n`;
+      texto += `• Prazo: ${prazo} meses\n`;
+      texto += `• Juros: ${jurosAno.toFixed(2)}% ao ano\n`;
+      texto += `• Sistema: ${sistema.toUpperCase()}\n`;
+
+      if (sistema === "sac") {
+        const amortizacao = financiamento / prazo;
+        let saldo = financiamento;
+        let total = 0, primeira = 0, ultima = 0;
+
+        for (let i = 1; i <= prazo; i++) {
+          const juros = saldo * jurosMes;
+          const parcela = amortizacao + juros;
+          saldo -= amortizacao;
+
+          if (i === 1) primeira = parcela;
+          if (i === prazo) ultima = parcela;
+
+          total += parcela;
+        }
+
+        resultado.innerHTML = `
+          <h2>Resultado (SAC)</h2>
+          <p>Valor financiado: R$ ${financiamento.toLocaleString("pt-BR")}</p>
+          <p>Parcela inicial: R$ ${primeira.toLocaleString("pt-BR")}</p>
+          <p>Parcela final: R$ ${ultima.toLocaleString("pt-BR")}</p>
+          <p>Total pago: R$ ${total.toLocaleString("pt-BR")}</p>
+        `;
+
+        texto += `• Parcela inicial: R$ ${primeira.toLocaleString("pt-BR")}\n`;
+        texto += `• Parcela final: R$ ${ultima.toLocaleString("pt-BR")}\n`;
+        texto += `• Total pago: R$ ${total.toLocaleString("pt-BR")}`;
+      } else {
+        const parcela = financiamento * (jurosMes / (1 - Math.pow(1 + jurosMes, -prazo)));
+        const total = parcela * prazo;
+
+        resultado.innerHTML = `
+          <h2>Resultado (PRICE)</h2>
+          <p>Valor financiado: R$ ${financiamento.toLocaleString("pt-BR")}</p>
+          <p>Parcela fixa: R$ ${parcela.toLocaleString("pt-BR")}</p>
+          <p>Total pago: R$ ${total.toLocaleString("pt-BR")}</p>
+        `;
+
+        texto += `• Parcela fixa: R$ ${parcela.toLocaleString("pt-BR")}\n`;
+        texto += `• Total pago: R$ ${total.toLocaleString("pt-BR")}`;
+      }
+
+      let btn = document.getElementById("btn-whatsapp");
+      if (!btn) {
+        btn = document.createElement("a");
+        btn.id = "btn-whatsapp";
+        btn.className = "btn btn-black";
+        btn.target = "_blank";
+        btn.style.display = "inline-block";
+        btn.style.marginTop = "2rem";
+        btn.innerText = "Continuar pelo WhatsApp";
+        resultado.after(btn);
+      }
+
+      btn.href = `https://wa.me/5566999366313?text=${encodeURIComponent("Olá! Fiz uma simulação no site e aqui estão os dados:\n\n" + texto)}`;
+      btn.style.display = "inline-block";
+    });
+  }
+
+  function aplicarMascaras() {
+    const formatar = (input, tipo) => {
+      input.addEventListener("input", e => {
+        let val = e.target.value.replace(/\D/g, "");
+        val = (val / 100).toFixed(2);
+        val = val.replace(".", ",").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        e.target.value = tipo === "moeda" ? "R$ " + val : val + " %";
+      });
+
+      input.addEventListener("focus", () => {
+        if (!input.value) input.value = tipo === "moeda" ? "R$ 0,00" : "0,00 %";
+      });
+
+      input.addEventListener("blur", () => {
+        if (input.value === "R$ 0,00" || input.value === "0,00 %") input.value = "";
+      });
+    };
+
+    const vi = document.getElementById("valor-imovel");
+    const ve = document.getElementById("valor-entrada");
+    const j = document.getElementById("juros");
+
+    if (vi) formatar(vi, "moeda");
+    if (ve) formatar(ve, "moeda");
+    if (j) formatar(j, "porcentagem");
   }
 
   function carregarPagina(caminho) {
@@ -98,172 +220,75 @@ document.addEventListener("DOMContentLoaded", function () {
         container.innerHTML = html;
 
         aplicarFadeAnimacao(container);
-
-        if (caminho.includes("obras.html")) aplicarPaginacaoObras();
-        if (caminho.includes("noticias.html")) carregarFeedAgenciaBrasil();
-        if (caminho.includes("simulacao.html")) {
+        if (caminho.includes("obras")) aplicarPaginacaoObras();
+        if (caminho.includes("noticias")) carregarFeedAgenciaBrasil();
+        if (caminho.includes("simulacao")) {
           ativarSimuladorFinanciamento();
           aplicarMascaras();
         }
+        if (caminho.includes("trabalheconosco")) {
+          const form = container.querySelector("form.formulario-trabalho");
+          if (form) {
+            form.addEventListener("submit", e => {
+              e.preventDefault();
+              const nome = container.querySelector("#nome")?.value.trim();
+              const email = container.querySelector("#email")?.value.trim();
+              const telefone = container.querySelector("#telefone")?.value.trim();
+              const mensagem = container.querySelector("#mensagem")?.value.trim();
+              let texto = `*Trabalhe Conosco - Novo Cadastro*\n\n*Nome:* ${nome}\n*Email:* ${email}\n*Telefone:* ${telefone}\n`;
+              if (mensagem) texto += `*Mensagem:* ${mensagem}\n\n`;
+              texto += `Por favor, envie seu currículo em PDF como anexo nesta conversa.`;
+
+              alert("Você será redirecionado para o WhatsApp. Lembre-se de anexar seu currículo (PDF) na conversa.");
+              window.open(`https://wa.me/5566999366313?text=${encodeURIComponent(texto)}`, "_blank");
+            });
+          }
+        }
+
+
+
+        if (caminho.includes("contato")) {
+          const form = container.querySelector("form");
+          if (form) {
+            form.addEventListener("submit", e => {
+              e.preventDefault();
+
+              const nome = form.querySelector("#nome")?.value.trim();
+              const email = form.querySelector("#email")?.value.trim();
+              const telefone = form.querySelector("#telefone")?.value.trim();
+              const mensagem = form.querySelector("#mensagem")?.value.trim();
+
+              let texto = `📞 *Contato via site*\n\n`;
+              texto += `*Nome:* ${nome}\n`;
+              texto += `*Email:* ${email}\n`;
+              texto += `*Telefone:* ${telefone}\n`;
+              texto += `*Mensagem:* ${mensagem}`;
+
+              const numero = "5566999366313"; // WhatsApp de destino
+              const link = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+
+              window.open(link, "_blank");
+            });
+          }
+        }
+
+
+
+
       })
-      .catch(erro => {
+      .catch(() => {
         document.getElementById("conteudo").innerHTML = "<p>Erro ao carregar conteúdo.</p>";
-        console.error(erro);
       });
   }
 
   document.querySelectorAll("a[data-pagina]").forEach(link => {
-    link.addEventListener("click", function (e) {
+    link.addEventListener("click", e => {
       e.preventDefault();
-      const pagina = this.getAttribute("data-pagina");
+      const pagina = link.getAttribute("data-pagina");
       carregarPagina(pagina);
     });
   });
 
   carregarPagina("paginas/home.html");
-  aplicarFadeAnimacao(document);
-
-  function ativarSimuladorFinanciamento() {
-    const form = document.getElementById("form-simulacao");
-    if (!form) return;
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const vi = document.getElementById("valor-imovel");
-      const ve = document.getElementById("valor-entrada");
-      const j = document.getElementById("juros");
-
-      const valorImovel = parseFloat(vi.value.replace(/[^\d]+/g, "")) / 100;
-      const entrada = parseFloat(ve.value.replace(/[^\d]+/g, "")) / 100;
-      const prazo = parseInt(document.getElementById("prazo").value);
-      const jurosAno = parseFloat(j.value.replace(/[^\d,]+/g, "").replace(",", "."));
-      const sistema = document.getElementById("sistema").value;
-
-      const financiamento = valorImovel - entrada;
-      const jurosMes = jurosAno / 100 / 12;
-      const resultadoDiv = document.getElementById("resultado-simulacao");
-
-      if (financiamento <= 0 || prazo <= 0 || jurosMes <= 0) {
-        resultadoDiv.innerHTML = "<p style='color: red;'>Preencha os dados corretamente.</p>";
-        return;
-      }
-
-      let mensagem = `🏠 *Simulação de Financiamento*\n\n`;
-      mensagem += `• Valor do Imóvel: R$ ${valorImovel.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}\n`;
-      mensagem += `• Entrada: R$ ${entrada.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}\n`;
-      mensagem += `• Prazo: ${prazo} meses\n`;
-      mensagem += `• Juros: ${jurosAno.toFixed(2)}% ao ano\n`;
-      mensagem += `• Sistema: ${sistema.toUpperCase()}\n`;
-
-      if (sistema === "sac") {
-        let amortizacao = financiamento / prazo;
-        let saldo = financiamento;
-        let totalPago = 0;
-        let primeiraParcela = 0;
-        let ultimaParcela = 0;
-
-        for (let i = 1; i <= prazo; i++) {
-          const juros = saldo * jurosMes;
-          const parcela = amortizacao + juros;
-          saldo -= amortizacao;
-
-          if (i === 1) primeiraParcela = parcela;
-          if (i === prazo) ultimaParcela = parcela;
-
-          totalPago += parcela;
-        }
-
-        resultadoDiv.innerHTML = `
-          <h2>Resultado (SAC)</h2>
-          <p>Valor financiado: R$ ${financiamento.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
-          <p>Parcela inicial: R$ ${primeiraParcela.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
-          <p>Parcela final: R$ ${ultimaParcela.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
-          <p>Total pago: R$ ${totalPago.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
-        `;
-
-        mensagem += `• Parcela inicial: R$ ${primeiraParcela.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}\n`;
-        mensagem += `• Parcela final: R$ ${ultimaParcela.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}\n`;
-        mensagem += `• Total pago: R$ ${totalPago.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
-      } else if (sistema === "price") {
-        const parcela = financiamento * (jurosMes / (1 - Math.pow(1 + jurosMes, -prazo)));
-        const totalPago = parcela * prazo;
-
-        resultadoDiv.innerHTML = `
-          <h2>Resultado (PRICE)</h2>
-          <p>Valor financiado: R$ ${financiamento.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
-          <p>Parcela fixa: R$ ${parcela.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
-          <p>Total pago: R$ ${totalPago.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
-        `;
-
-        mensagem += `• Parcela fixa: R$ ${parcela.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}\n`;
-        mensagem += `• Total pago: R$ ${totalPago.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
-      } else {
-        resultadoDiv.innerHTML = "<p style='color: red;'>Sistema de amortização inválido.</p>";
-        return;
-      }
-
-      const numero = "5566999366313"; // Altere para seu número com DDD
-      const link = `https://wa.me/${numero}?text=${encodeURIComponent("Olá! Fiz uma simulação no site e aqui estão os dados:\n\n" + mensagem)}`;
-
-      let botao = document.getElementById("btn-whatsapp");
-      if (!botao) {
-        botao = document.createElement("a");
-        botao.id = "btn-whatsapp";
-        botao.className = "btn-black";
-        botao.target = "_blank";
-        botao.style.display = "inline-block";
-        botao.style.marginTop = "2rem";
-        botao.innerText = "Continuar pelo WhatsApp";
-        resultadoDiv.after(botao);
-      }
-
-      botao.href = link;
-      botao.style.display = "inline-block";
-    });
-  }
-
-  function aplicarMascaras() {
-    const vi = document.getElementById("valor-imovel");
-    const ve = document.getElementById("valor-entrada");
-    const ju = document.getElementById("juros");
-
-    function formatarMoeda(input) {
-      input.addEventListener("input", (e) => {
-        let valor = e.target.value.replace(/\D/g, "");
-        valor = (valor / 100).toFixed(2);
-        valor = valor.replace(".", ",").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-        e.target.value = "R$ " + valor;
-      });
-
-      input.addEventListener("focus", () => {
-        if (!input.value) input.value = "R$ 0,00";
-      });
-
-      input.addEventListener("blur", () => {
-        if (input.value === "R$ 0,00") input.value = "";
-      });
-    }
-
-    function formatarPorcentagem(input) {
-      input.addEventListener("input", (e) => {
-        let valor = e.target.value.replace(/\D/g, "");
-        valor = (valor / 100).toFixed(2);
-        valor = valor.replace(".", ",");
-        e.target.value = valor + " %";
-      });
-
-      input.addEventListener("focus", () => {
-        if (!input.value) input.value = "0,00 %";
-      });
-
-      input.addEventListener("blur", () => {
-        if (input.value === "0,00 %") input.value = "";
-      });
-    }
-
-    if (vi) formatarMoeda(vi);
-    if (ve) formatarMoeda(ve);
-    if (ju) formatarPorcentagem(ju);
-  }
+  aplicarFadeAnimacao();
 });
