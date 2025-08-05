@@ -173,6 +173,9 @@ ul {
 }
 
 /* PÁGINAS */
+.obra-item {
+  max-width: 260px;
+}
 .obras-grid, .sobre-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
