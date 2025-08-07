@@ -1,0 +1,378 @@
+<section class="hero-section fade">
+  <div class="container">
+    <h1>Empreendimentos em Destaque</h1>
+    <p>Descubra os melhores imóveis para venda e aluguel em Rondonópolis e região</p>
+  </div>
+</section>
+
+<section class="filtros-section fade">
+  <div class="container">
+    <div class="filtros-wrapper">
+      <div class="filtro-grupo">
+        <label for="filtro-tipo">Tipo:</label>
+        <select id="filtro-tipo">
+          <option value="todos">Todos</option>
+          <option value="venda">Venda</option>
+          <option value="aluguel">Aluguel</option>
+        </select>
+      </div>
+      
+      <div class="filtro-grupo">
+        <label for="filtro-valor">Valor máximo:</label>
+        <select id="filtro-valor">
+          <option value="todos">Todos</option>
+          <option value="300000">Até R$ 300.000</option>
+          <option value="500000">Até R$ 500.000</option>
+          <option value="800000">Até R$ 800.000</option>
+          <option value="1000000">Acima de R$ 800.000</option>
+        </select>
+      </div>
+      
+      <div class="filtro-grupo">
+        <label for="filtro-area">Área mínima:</label>
+        <select id="filtro-area">
+          <option value="todos">Todas</option>
+          <option value="50">Acima de 50m²</option>
+          <option value="80">Acima de 80m²</option>
+          <option value="120">Acima de 120m²</option>
+          <option value="200">Acima de 200m²</option>
+        </select>
+      </div>
+      
+      <button id="btn-filtrar" class="btn btn-primary">Filtrar</button>
+    </div>
+  </div>
+</section>
+
+<section class="empreendimentos-section fade">
+  <div class="container">
+    <div id="lista-empreendimentos" class="empreendimentos-grid">
+      <!-- Grid será preenchido via JavaScript -->
+    </div>
+    
+    <div class="load-more-wrapper">
+      <button id="btn-carregar-mais" class="btn btn-secondary">Carregar Mais</button>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section fade">
+  <div class="container">
+    <h2>Não encontrou o que procura?</h2>
+    <p>Entre em contato conosco e encontraremos o imóvel ideal para você</p>
+    <a href="/contato" class="btn btn-primary">Falar com Especialista</a>
+  </div>
+</section>
+
+<style>
+/* Estilos específicos para a página de empreendimentos */
+.filtros-section {
+  background: #f8f9fa;
+  padding: 2rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.filtros-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: end;
+  flex-wrap: wrap;
+}
+
+.filtro-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filtro-grupo label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.filtro-grupo select {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  background: white;
+  font-size: 0.9rem;
+  min-width: 150px;
+  transition: border-color 0.3s ease;
+}
+
+.filtro-grupo select:focus {
+  outline: none;
+  border-color: #00c37e;
+}
+
+.empreendimentos-section {
+  padding: 4rem 0;
+}
+
+.empreendimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.empreendimento-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.empreendimento-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.empreendimento-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.empreendimento-card:hover img {
+  transform: scale(1.05);
+}
+
+.empreendimento-info {
+  padding: 1.5rem;
+}
+
+.empreendimento-info h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.empreendimento-info p {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.empreendimento-detalhes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.valor {
+  background: linear-gradient(135deg, #00c37e, #00a86b);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.tipo {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tipo.venda {
+  background: linear-gradient(135deg, #FF6B6B, #FF5252);
+  color: white;
+}
+
+.tipo.aluguel {
+  background: linear-gradient(135deg, #4ECDC4, #26A69A);
+  color: white;
+}
+
+.medidas {
+  background: #f8f9fa;
+  color: #333;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.endereco {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.endereco::before {
+  content: "📍";
+  font-size: 0.8rem;
+}
+
+.load-more-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #1f1f1f, #333);
+  color: white;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Badge de destaque */
+.empreendimento-card::before {
+  content: "✨ Destaque";
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #333;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .filtros-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filtro-grupo {
+    width: 100%;
+  }
+  
+  .filtro-grupo select {
+    min-width: 100%;
+  }
+  
+  .empreendimentos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .empreendimento-info {
+    padding: 1rem;
+  }
+  
+  .empreendimento-detalhes {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .valor, .tipo, .medidas {
+    text-align: center;
+  }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.empreendimento-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.empreendimento-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.empreendimento-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.empreendimento-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.empreendimento-card:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.empreendimento-card:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+/* Loading state */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #00c37e;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hover effects */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.empreendimento-card:hover .valor {
+  transform: scale(1.05);
+}
+
+.empreendimento-card:hover .tipo {
+  transform: scale(1.05);
+}
+</style>
+

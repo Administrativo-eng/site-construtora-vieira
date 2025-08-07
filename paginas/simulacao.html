@@ -1,48 +1,599 @@
-<div style="background-color: #111;">
-  <section class="section bg-dark fade simulacao">
-    <div class="container" style="max-width: 800px;">
-      <h1 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Simulação de Financiamento</h1>
-      <p class="text-light" style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">
-        Faça uma simulação de financiamento baseada nos padrões atuais. Preencha os campos abaixo e veja o resultado.
-      </p>
+<section class="hero-simulacao fade">
+  <div class="container">
+    <h1>Simulador de Financiamento Imobiliário</h1>
+    <p>Simule seu financiamento habitacional e descubra as melhores condições para realizar o sonho da casa própria.</p>
+  </div>
+</section>
 
-      <form id="form-simulacao" style="display: flex; flex-direction: column; gap: 1.5rem;">
-        <div class="campo-form">
-          <label for="valor-imovel">Valor do Imóvel:</label>
-          <input type="text" id="valor-imovel" placeholder="R$ 300.000,00" required />
+<section class="section fade">
+  <div class="container">
+    <div class="simulador-container">
+      
+      <!-- Etapas do Simulador -->
+      <div class="etapas-simulador">
+        <div class="etapa ativa" data-etapa="1">
+          <span class="numero">1</span>
+          <span class="titulo">Dados Iniciais</span>
+        </div>
+        <div class="etapa" data-etapa="2">
+          <span class="numero">2</span>
+          <span class="titulo">Seus Dados</span>
+        </div>
+        <div class="etapa" data-etapa="3">
+          <span class="numero">3</span>
+          <span class="titulo">Resultado</span>
+        </div>
+      </div>
+
+      <!-- Formulário de Simulação -->
+      <form id="form-simulacao" class="formulario-simulacao">
+        
+        <!-- Etapa 1: Dados Iniciais -->
+        <div class="etapa-conteudo ativa" id="etapa-1">
+          <h2>Dados Iniciais</h2>
+          <p class="subtitulo">Informe os dados básicos do financiamento desejado</p>
+          
+          <div class="campo-grupo">
+            <label for="tipo-financiamento">Tipo de Financiamento</label>
+            <select id="tipo-financiamento" required>
+              <option value="">Selecione uma opção</option>
+              <option value="aquisicao">Aquisição de Imóvel</option>
+              <option value="construcao">Construção</option>
+              <option value="reforma">Reforma/Ampliação</option>
+            </select>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="valor-imovel">Valor do Imóvel (R$)</label>
+            <input type="text" id="valor-imovel" placeholder="R$ 0,00" required>
+            <small>Valor total do imóvel que deseja financiar</small>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="valor-entrada">Valor da Entrada (R$)</label>
+            <input type="text" id="valor-entrada" placeholder="R$ 0,00" required>
+            <small>Valor que você possui para dar de entrada</small>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="prazo">Prazo do Financiamento</label>
+            <select id="prazo" required>
+              <option value="">Selecione o prazo</option>
+              <option value="120">10 anos (120 meses)</option>
+              <option value="180">15 anos (180 meses)</option>
+              <option value="240">20 anos (240 meses)</option>
+              <option value="300">25 anos (300 meses)</option>
+              <option value="360">30 anos (360 meses)</option>
+              <option value="420">35 anos (420 meses)</option>
+            </select>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="sistema">Sistema de Amortização</label>
+            <select id="sistema" required>
+              <option value="">Selecione o sistema</option>
+              <option value="sac">SAC - Sistema de Amortização Constante</option>
+              <option value="price">PRICE - Tabela Price</option>
+            </select>
+            <small>SAC: parcelas decrescentes | PRICE: parcelas fixas</small>
+          </div>
+
+          <button type="button" class="btn btn-green" onclick="proximaEtapa(2)">Próxima Etapa</button>
         </div>
 
-        <div class="campo-form">
-          <label for="valor-entrada">Valor de Entrada:</label>
-          <input type="text" id="valor-entrada" placeholder="R$ 60.000,00" required />
+        <!-- Etapa 2: Seus Dados -->
+        <div class="etapa-conteudo" id="etapa-2">
+          <h2>Seus Dados</h2>
+          <p class="subtitulo">Informe seus dados pessoais para personalizar a simulação</p>
+          
+          <div class="campo-grupo">
+            <label for="renda-bruta">Renda Bruta Mensal (R$)</label>
+            <input type="text" id="renda-bruta" placeholder="R$ 0,00" required>
+            <small>Sua renda mensal antes dos descontos</small>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="idade">Idade</label>
+            <input type="number" id="idade" min="18" max="80" placeholder="Ex: 35" required>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="juros">Taxa de Juros Anual (%)</label>
+            <input type="text" id="juros" placeholder="0,00 %" required>
+            <small>Taxa de juros estimada (consulte condições atuais)</small>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="cidade">Cidade do Imóvel</label>
+            <input type="text" id="cidade" placeholder="Ex: Rondonópolis - MT" required>
+          </div>
+
+          <div class="botoes-navegacao">
+            <button type="button" class="btn btn-outline" onclick="etapaAnterior(1)">Voltar</button>
+            <button type="button" class="btn btn-green" onclick="calcularSimulacao()">Calcular</button>
+          </div>
         </div>
 
-        <div class="campo-form">
-          <label for="prazo">Prazo (em meses):</label>
-          <input type="number" id="prazo" placeholder="Ex: 240" required />
+        <!-- Etapa 3: Resultado -->
+        <div class="etapa-conteudo" id="etapa-3">
+          <h2>Resultado da Simulação</h2>
+          <div id="resultado-simulacao" class="resultado-container">
+            <!-- Resultado será inserido aqui via JavaScript -->
+          </div>
+          
+          <div class="botoes-navegacao">
+            <button type="button" class="btn btn-outline" onclick="etapaAnterior(2)">Voltar</button>
+            <button type="button" class="btn btn-green" onclick="novaSimulacao()">Nova Simulação</button>
+          </div>
         </div>
 
-        <div class="campo-form">
-          <label for="juros">Taxa de Juros (% ao ano):</label>
-          <input type="text" id="juros" placeholder="Ex: 9,5 %" required />
-        </div>
-
-        <div class="campo-form">
-          <label for="sistema">Sistema de Amortização:</label>
-          <select id="sistema">
-            <option value="sac">SAC (Sistema de Amortização Constante)</option>
-            <option value="price">PRICE (Tabela Price)</option>
-          </select>
-        </div>
-
-        <button type="submit" class="btn btn-black">Simular</button>
       </form>
+    </div>
+  </div>
+</section>
 
-      <div id="resultado-simulacao" style="margin-top: 3rem; color: #eee;"></div>
+<!-- Seção de Informações Adicionais -->
+<section class="section bg-light fade">
+  <div class="container">
+    <h2>Informações Importantes</h2>
+    <div class="info-cards">
+      <div class="info-card">
+        <h3>📊 Sistema SAC</h3>
+        <p>No Sistema de Amortização Constante, as parcelas começam maiores e diminuem ao longo do tempo. Você paga menos juros no total.</p>
+      </div>
+      <div class="info-card">
+        <h3>📈 Tabela PRICE</h3>
+        <p>Na Tabela Price, as parcelas são fixas durante todo o financiamento. Facilita o planejamento financeiro mensal.</p>
+      </div>
+      <div class="info-card">
+        <h3>🏠 FGTS</h3>
+        <p>Você pode usar seu FGTS para dar entrada, amortizar o saldo devedor ou abater parcelas do financiamento.</p>
+      </div>
+      <div class="info-card">
+        <h3>📋 Documentação</h3>
+        <p>Tenha em mãos: RG, CPF, comprovante de renda, certidões negativas e documentos do imóvel.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <a id="btn-whatsapp" href="#" target="_blank" class="btn btn-black" style="display: none; margin-top: 2rem;">
-        Continuar pelo WhatsApp
+<style>
+/* Estilos específicos para o simulador */
+.hero-simulacao {
+  background: linear-gradient(135deg, #2c5aa0 0%, #1e3a5f 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero-simulacao h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-simulacao p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.simulador-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.etapas-simulador {
+  display: flex;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.etapa {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-right: 1px solid #e9ecef;
+}
+
+.etapa:last-child {
+  border-right: none;
+}
+
+.etapa.ativa {
+  background: #2c5aa0;
+  color: white;
+}
+
+.etapa .numero {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #dee2e6;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.etapa.ativa .numero {
+  background: white;
+  color: #2c5aa0;
+}
+
+.etapa .titulo {
+  font-weight: 500;
+}
+
+.formulario-simulacao {
+  padding: 2rem;
+}
+
+.etapa-conteudo {
+  display: none;
+}
+
+.etapa-conteudo.ativa {
+  display: block;
+}
+
+.etapa-conteudo h2 {
+  color: #2c5aa0;
+  margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.campo-grupo {
+  margin-bottom: 1.5rem;
+}
+
+.campo-grupo label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #495057;
+}
+
+.campo-grupo input,
+.campo-grupo select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.campo-grupo input:focus,
+.campo-grupo select:focus {
+  outline: none;
+  border-color: #2c5aa0;
+  box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+}
+
+.campo-grupo small {
+  display: block;
+  color: #6c757d;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.botoes-navegacao {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #2c5aa0;
+  color: #2c5aa0;
+}
+
+.btn-outline:hover {
+  background: #2c5aa0;
+  color: white;
+}
+
+.resultado-container {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 1rem 0;
+}
+
+.resultado-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.resultado-item:last-child {
+  border-bottom: none;
+}
+
+.resultado-label {
+  font-weight: 600;
+  color: #495057;
+}
+
+.resultado-valor {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2c5aa0;
+}
+
+.bg-light {
+  background: #f8f9fa;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.info-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card h3 {
+  color: #2c5aa0;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .etapas-simulador {
+    flex-direction: column;
+  }
+  
+  .etapa {
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .etapa:last-child {
+    border-bottom: none;
+  }
+  
+  .botoes-navegacao {
+    flex-direction: column;
+  }
+  
+  .hero-simulacao h1 {
+    font-size: 2rem;
+  }
+}
+</style>
+
+<script>
+// Funções específicas do simulador
+function proximaEtapa(etapa) {
+  // Validar campos da etapa atual
+  const etapaAtual = document.querySelector('.etapa-conteudo.ativa');
+  const campos = etapaAtual.querySelectorAll('input[required], select[required]');
+  let valido = true;
+  
+  campos.forEach(campo => {
+    if (!campo.value.trim()) {
+      campo.style.borderColor = '#dc3545';
+      valido = false;
+    } else {
+      campo.style.borderColor = '#e9ecef';
+    }
+  });
+  
+  if (!valido) {
+    alert('Por favor, preencha todos os campos obrigatórios.');
+    return;
+  }
+  
+  // Avançar para próxima etapa
+  document.querySelectorAll('.etapa-conteudo').forEach(el => el.classList.remove('ativa'));
+  document.querySelectorAll('.etapa').forEach(el => el.classList.remove('ativa'));
+  
+  document.getElementById(`etapa-${etapa}`).classList.add('ativa');
+  document.querySelector(`[data-etapa="${etapa}"]`).classList.add('ativa');
+}
+
+function etapaAnterior(etapa) {
+  document.querySelectorAll('.etapa-conteudo').forEach(el => el.classList.remove('ativa'));
+  document.querySelectorAll('.etapa').forEach(el => el.classList.remove('ativa'));
+  
+  document.getElementById(`etapa-${etapa}`).classList.add('ativa');
+  document.querySelector(`[data-etapa="${etapa}"]`).classList.add('ativa');
+}
+
+function calcularSimulacao() {
+  // Validar campos da etapa 2
+  const campos = document.querySelectorAll('#etapa-2 input[required], #etapa-2 select[required]');
+  let valido = true;
+  
+  campos.forEach(campo => {
+    if (!campo.value.trim()) {
+      campo.style.borderColor = '#dc3545';
+      valido = false;
+    } else {
+      campo.style.borderColor = '#e9ecef';
+    }
+  });
+  
+  if (!valido) {
+    alert('Por favor, preencha todos os campos obrigatórios.');
+    return;
+  }
+  
+  // Obter valores
+  const valorImovel = parseFloat(document.getElementById('valor-imovel').value.replace(/[^\d]/g, '')) / 100;
+  const valorEntrada = parseFloat(document.getElementById('valor-entrada').value.replace(/[^\d]/g, '')) / 100;
+  const prazo = parseInt(document.getElementById('prazo').value);
+  const sistema = document.getElementById('sistema').value;
+  const jurosAno = parseFloat(document.getElementById('juros').value.replace(/[^\d,]/g, '').replace(',', '.'));
+  const rendaBruta = parseFloat(document.getElementById('renda-bruta').value.replace(/[^\d]/g, '')) / 100;
+  
+  const jurosMes = jurosAno / 100 / 12;
+  const valorFinanciado = valorImovel - valorEntrada;
+  
+  // Verificar se o valor financiado é válido
+  if (valorFinanciado <= 0) {
+    alert('O valor da entrada não pode ser maior ou igual ao valor do imóvel.');
+    return;
+  }
+  
+  // Calcular parcelas
+  let resultadoHTML = '';
+  
+  if (sistema === 'sac') {
+    const amortizacao = valorFinanciado / prazo;
+    let saldoDevedor = valorFinanciado;
+    let totalPago = 0;
+    let primeiraParcela = 0;
+    let ultimaParcela = 0;
+    
+    for (let i = 1; i <= prazo; i++) {
+      const juros = saldoDevedor * jurosMes;
+      const parcela = amortizacao + juros;
+      saldoDevedor -= amortizacao;
+      totalPago += parcela;
+      
+      if (i === 1) primeiraParcela = parcela;
+      if (i === prazo) ultimaParcela = parcela;
+    }
+    
+    const comprometimentoRenda = (primeiraParcela / rendaBruta) * 100;
+    
+    resultadoHTML = `
+      <div class="resultado-item">
+        <span class="resultado-label">Sistema de Amortização:</span>
+        <span class="resultado-valor">SAC</span>
+      </div>
+      <div class="resultado-item">
+        <span class="resultado-label">Valor Financiado:</span>
+        <span class="resultado-valor">R$ ${valorFinanciado.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span>
+      </div>
+      <div class="resultado-item">
+        <span class="resultado-label">Primeira Parcela:</span>
+        <span class="resultado-valor">R$ ${primeiraParcela.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span>
+      </div>
+      <div class="resultado-item">
+        <span class="resultado-label">Última Parcela:</span>
+        <span class="resultado-valor">R$ ${ultimaParcela.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span>
+      </div>
+      <div class="resultado-item">
+        <span class="resultado-label">Total a Pagar:</span>
+        <span class="resultado-valor">R$ ${totalPago.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span>
+      </div>
+      <div class="resultado-item">
+        <span class="resultado-label">Comprometimento da Renda:</span>
+        <span class="resultado-valor">${comprometimentoRenda.toFixed(1)}%</span>
+      </div>
+    `;
+  } else {
+    const parcela = valorFinanciado * (jurosMes / (1 - Math.pow(1 + jurosMes, -prazo)));
+    const totalPago = parcela * prazo;
+    const comprometimentoRenda = (parcela / rendaBruta) * 100;
+    
+    resultadoHTML = `
+      <div class="resultado-item">
+        <span class="resultado-label">Sistema de Amortização:</span>
+        <span class="resultado-valor">PRICE</span>
+      </div>
+      <div class="resultado-item">
+        <span class="resultado-label">Valor Financiado:</span>
+        <span class="resultado-valor">R$ ${valorFinanciado.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span>
+      </div>
+      <div class="resultado-item">
+        <span class="resultado-label">Parcela Fixa:</span>
+        <span class="resultado-valor">R$ ${parcela.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span>
+      </div>
+      <div class="resultado-item">
+        <span class="resultado-label">Total a Pagar:</span>
+        <span class="resultado-valor">R$ ${totalPago.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</span>
+      </div>
+      <div class="resultado-item">
+        <span class="resultado-label">Comprometimento da Renda:</span>
+        <span class="resultado-valor">${comprometimentoRenda.toFixed(1)}%</span>
+      </div>
+    `;
+  }
+  
+  // Adicionar botão WhatsApp
+  resultadoHTML += `
+    <div style="margin-top: 2rem; text-align: center;">
+      <a href="https://wa.me/5566999366313?text=${encodeURIComponent('Olá! Fiz uma simulação de financiamento no site e gostaria de mais informações sobre as condições.')}" 
+         target="_blank" 
+         class="btn btn-green">
+        💬 Falar com Especialista
       </a>
     </div>
-  </section>
-</div>
+  `;
+  
+  document.getElementById('resultado-simulacao').innerHTML = resultadoHTML;
+  proximaEtapa(3);
+}
+
+function novaSimulacao() {
+  // Limpar formulário
+  document.getElementById('form-simulacao').reset();
+  
+  // Voltar para primeira etapa
+  document.querySelectorAll('.etapa-conteudo').forEach(el => el.classList.remove('ativa'));
+  document.querySelectorAll('.etapa').forEach(el => el.classList.remove('ativa'));
+  
+  document.getElementById('etapa-1').classList.add('ativa');
+  document.querySelector('[data-etapa="1"]').classList.add('ativa');
+}
+
+// Aplicar máscaras nos campos de valor
+document.addEventListener('DOMContentLoaded', function() {
+  const camposValor = ['valor-imovel', 'valor-entrada', 'renda-bruta'];
+  const campoJuros = document.getElementById('juros');
+  
+  camposValor.forEach(id => {
+    const campo = document.getElementById(id);
+    if (campo) {
+      campo.addEventListener('input', function(e) {
+        let valor = e.target.value.replace(/\D/g, '');
+        valor = (valor / 100).toFixed(2);
+        valor = valor.replace('.', ',');
+        valor = valor.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        e.target.value = 'R$ ' + valor;
+      });
+    }
+  });
+  
+  if (campoJuros) {
+    campoJuros.addEventListener('input', function(e) {
+      let valor = e.target.value.replace(/\D/g, '');
+      valor = (valor / 100).toFixed(2);
+      valor = valor.replace('.', ',');
+      e.target.value = valor + ' %';
+    });
+  }
+});
+</script>
+
