@@ -1,0 +1,35 @@
+/* TEAM */
+Construtora: Construtora Vieira - M V de Souza
+Site: https://www.construtoravieira.com.br
+Localização: Rondonópolis, Mato Grosso, Brasil
+Contato: (66) 99936-6313
+
+/* THANKS */
+Clientes que confiam em nosso trabalho
+Parceiros e fornecedores
+Equipe técnica especializada
+Comunidade de Rondonópolis
+
+/* SITE */
+Última atualização: 2025/01/08
+Linguagem: Português Brasileiro
+Doctype: HTML5
+IDE: Otimizado para SEO e performance
+Tecnologias: HTML5, CSS3, JavaScript ES6
+Frameworks: Vanilla JavaScript
+Hospedagem: Servidor otimizado para velocidade
+
+/* EMPRESA */
+Fundada: 1992
+Especialidade: Construção Civil
+Serviços: Obras públicas e privadas, estruturas metálicas, reformas, habite-se, AVCB
+Área de atuação: Rondonópolis e região
+Experiência: 30+ anos no mercado
+
+/* SEO */
+Palavras-chave: construtora Rondonópolis, construção civil MT, obras públicas, estruturas metálicas
+Meta tags: Otimizadas para buscadores
+Schema.org: LocalBusiness implementado
+Sitemap: Atualizado regularmente
+Performance: Otimizada para Core Web Vitals
+

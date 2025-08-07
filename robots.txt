@@ -1,4 +1,24 @@
 User-agent: *
-Disallow:
+Allow: /
 
+# Permitir acesso a arquivos CSS e JS
+Allow: /includes/
+Allow: /img_site/
+Allow: /clientes/
+
+# Bloquear arquivos desnecessários
+Disallow: /includes/*.tmp
+Disallow: /*~RFb*
+Disallow: /*.TMP
+
+# Crawl-delay para não sobrecarregar o servidor
+Crawl-delay: 1
+
+# Sitemap
 Sitemap: https://www.construtoravieira.com.br/sitemap.xml
+
+# Informações adicionais para buscadores
+# Construtora Vieira - M V de Souza
+# Construção Civil em Rondonópolis-MT
+# Obras Públicas, Privadas, Estruturas Metálicas
+

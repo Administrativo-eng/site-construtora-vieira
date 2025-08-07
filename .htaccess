@@ -1,0 +1,152 @@
+# Construtora Vieira - M V de Souza
+# Configurações de SEO e Performance
+
+# Habilitar compressão GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# Configurar cache para arquivos estáticos
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>
+
+# Headers de segurança e SEO
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(self), microphone=(), camera=()"
+</IfModule>
+
+# Redirecionamentos para URLs amigáveis
+RewriteEngine On
+
+# Redirecionar www para não-www (ou vice-versa)
+RewriteCond %{HTTP_HOST} ^www\.construtoravieira\.com\.br [NC]
+RewriteRule ^(.*)$ https://construtoravieira.com.br/$1 [R=301,L]
+
+# Forçar HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Bloquear acesso direto a arquivos .html
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1? [R=301,L]
+
+# Redirecionar URLs antigas do sistema SPA
+RewriteRule ^paginas/home\.html$ / [R=301,L]
+RewriteRule ^paginas/sobrenos\.html$ /sobrenos [R=301,L]
+RewriteRule ^paginas/obras\.html$ /obras [R=301,L]
+RewriteRule ^paginas/servicos\.html$ /servicos [R=301,L]
+RewriteRule ^paginas/sustentabilidade\.html$ /sustentabilidade [R=301,L]
+RewriteRule ^paginas/noticias\.html$ /noticias [R=301,L]
+RewriteRule ^paginas/simulacao\.html$ /simulacao [R=301,L]
+RewriteRule ^paginas/trabalheconosco\.html$ /trabalheconosco [R=301,L]
+RewriteRule ^paginas/contato\.html$ /contato [R=301,L]
+
+# Rotas principais do site
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^$ index.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^home/?$ index.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^sobrenos/?$ index.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^servicos/?$ index.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^obras/?$ index.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^empreendimentos/?$ index.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^sustentabilidade/?$ index.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^noticias/?$ index.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^simulacao/?$ index.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^trabalheconosco/?$ index.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^contato/?$ index.html [L]
+
+# Rotas para páginas de detalhes (futuras implementações)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^obra/([0-9]+)/?$ index.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^cliente/([0-9]+)/?$ index.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^empreendimento/([0-9]+)/?$ index.html [L]
+
+# Página padrão
+DirectoryIndex index.html
+
+# Bloquear acesso a arquivos sensíveis
+<Files ".htaccess">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "*.tmp">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "*~RFb*">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Configurar tipos MIME
+AddType text/css .css
+AddType application/javascript .js
+AddType image/x-icon .ico
+
+# Configurações de erro personalizadas
+ErrorDocument 404 /index.html
+ErrorDocument 500 /index.html
+
