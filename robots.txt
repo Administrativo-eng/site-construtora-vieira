@@ -1,24 +1,65 @@
+# robots.txt — Construtora Vieira (Rondonópolis-MT)
+# Política: indexação total, canônico sem www, sem duplicidade por parâmetros.
+
+# ======================
+# Regra geral
+# ======================
 User-agent: *
 Allow: /
 
-# Permitir acesso a arquivos CSS e JS
+# Deixa explícito (CSS/JS/Imagens)
 Allow: /includes/
+Allow: /includes/*.css
+Allow: /includes/*.js
 Allow: /img_site/
 Allow: /clientes/
+Allow: /icones/
 
-# Bloquear arquivos desnecessários
-Disallow: /includes/*.tmp
+# ======================
+# Bloqueios (somente ruído)
+# ======================
+# Artefatos temporários/backup
+Disallow: /*.tmp$
+Disallow: /*.TMP$
+Disallow: /*.bak$
+Disallow: /*.BAK$
+Disallow: /*.zip$
+Disallow: /*.ZIP$
+Disallow: /*.map$
+Disallow: /*.MAP$
 Disallow: /*~RFb*
-Disallow: /*.TMP
 
-# Crawl-delay para não sobrecarregar o servidor
+# URLs com parâmetros de campanha/ads (conteúdo é o mesmo da versão limpa)
+Disallow: /*?*utm_source=*
+Disallow: /*?*utm_medium=*
+Disallow: /*?*utm_campaign=*
+Disallow: /*?*utm_term=*
+Disallow: /*?*utm_content=*
+Disallow: /*?*gclid=*
+Disallow: /*?*fbclid=*
+
+# ======================
+# SITEMAP (canônico)
+# ======================
+Sitemap: https://construtoravieira.com.br/sitemap.xml
+
+# ======================
+# Ajustes por bot
+# ======================
+
+# Garantir rastreamento amplo de imagens (Google Imagens)
+User-agent: Googlebot-Image
+Allow: /img_site/
+Allow: /clientes/
+Allow: /icones/
+
+# Bing costuma respeitar crawl-delay (Google ignora)
+User-agent: bingbot
 Crawl-delay: 1
 
-# Sitemap
-Sitemap: https://www.construtoravieira.com.br/sitemap.xml
-
-# Informações adicionais para buscadores
-# Construtora Vieira - M V de Souza
-# Construção Civil em Rondonópolis-MT
-# Obras Públicas, Privadas, Estruturas Metálicas
-
+# Yandex aceita Host/Clean-param
+User-agent: Yandex
+Host: construtoravieira.com.br
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content /
+Clean-param: gclid /
+Clean-param: fbclid /

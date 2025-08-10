@@ -1,8 +1,11 @@
 /* TEAM */
 Construtora: Construtora Vieira - M V de Souza
-Site: https://www.construtoravieira.com.br
+Site: https://construtoravieira.com.br
 Localização: Rondonópolis, Mato Grosso, Brasil
-Contato: (66) 99936-6313
+Endereço: R. Fatime Ali Dib, 211 — 78731-212 — Rondonópolis/MT
+Telefone: +55 (66) 99936-6313
+E-mail: administrativo@construtoravieira.com.br
+Contato rápido: https://wa.me/5566999366313
 
 /* THANKS */
 Clientes que confiam em nosso trabalho
@@ -11,13 +14,15 @@ Equipe técnica especializada
 Comunidade de Rondonópolis
 
 /* SITE */
-Última atualização: 2025/01/08
+Última atualização: 2025/08/10
 Linguagem: Português Brasileiro
 Doctype: HTML5
-IDE: Otimizado para SEO e performance
-Tecnologias: HTML5, CSS3, JavaScript ES6
-Frameworks: Vanilla JavaScript
-Hospedagem: Servidor otimizado para velocidade
+Arquitetura: Site estático, URLs limpas
+Hospedagem/CDN: Netlify
+Performance: Otimizada para Core Web Vitals (cache longo p/ assets, compressão, imagens otimizadas)
+Segurança: HTTPS, HSTS, CSP, XFO, X-Content-Type-Options, Referrer-Policy
+Tecnologias: HTML5, CSS3, JavaScript ES6+ (Vanilla)
+Build: Git + CI/CD
 
 /* EMPRESA */
 Fundada: 1992
@@ -27,9 +32,8 @@ Serviços: Obras públicas e privadas, estruturas metálicas, reformas, habite-s
 Experiência: 30+ anos no mercado
 
 /* SEO */
-Palavras-chave: construtora Rondonópolis, construção civil MT, obras públicas, estruturas metálicas
-Meta tags: Otimizadas para buscadores
-Schema.org: LocalBusiness implementado
-Sitemap: Atualizado regularmente
-Performance: Otimizada para Core Web Vitals
-
+Palavras-chave: construtora Rondonópolis, construção civil MT, obras públicas, estruturas metálicas, reformas Rondonópolis, legalização imóveis MT
+Meta tags: Otimizadas para buscadores e compartilhamento social (OG/Twitter)
+Schema.org: LocalBusiness / ConstructionCompany implementado
+Sitemap: https://construtoravieira.com.br/sitemap.xml
+Robots: indexação permitida (Allow:/), bloqueio apenas de artefatos temporários

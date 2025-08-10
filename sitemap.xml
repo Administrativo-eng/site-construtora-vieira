@@ -1,178 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="https://www.google.com/schemas/sitemap-image/1.1">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Página Principal -->
+  <!-- Raiz -->
   <url>
-    <loc>https://www.construtoravieira.com.br/</loc>
-    <lastmod>2025-01-08</lastmod>
+    <loc>https://construtoravieira.com.br/</loc>
+    <lastmod>2025-08-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://www.construtoravieira.com.br/img_site/previsual.png</image:loc>
+      <image:loc>https://construtoravieira.com.br/img_site/previsual.png</image:loc>
       <image:title>Construtora Vieira - M V de Souza</image:title>
       <image:caption>Construção Civil em Rondonópolis-MT</image:caption>
     </image:image>
   </url>
 
-  <!-- Home -->
+  <!-- Institucionais (URLs limpas) -->
   <url>
-    <loc>https://www.construtoravieira.com.br/home</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://construtoravieira.com.br/servicos</loc>
+    <lastmod>2025-08-10</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://construtoravieira.com.br/clientes/uniaofamiliar.png</image:loc>
+      <image:title>Portfólio de serviços</image:title>
+    </image:image>
   </url>
 
-  <!-- Sobre Nós -->
   <url>
-    <loc>https://www.construtoravieira.com.br/sobrenos</loc>
-    <lastmod>2025-01-08</lastmod>
+    <loc>https://construtoravieira.com.br/obras</loc>
+    <lastmod>2025-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://construtoravieira.com.br/clientes/uniaofamiliar.png</image:loc>
+      <image:title>Obras e clientes</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://construtoravieira.com.br/empreendimentos</loc>
+    <lastmod>2025-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://construtoravieira.com.br/clientes/uniaofamiliar.png</image:loc>
+      <image:title>Empreendimentos em destaque</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://construtoravieira.com.br/contato</loc>
+    <lastmod>2025-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://construtoravieira.com.br/img_site/previsual.png</image:loc>
+      <image:title>Fale com a Construtora Vieira</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://construtoravieira.com.br/sobrenos</loc>
+    <lastmod>2025-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://construtoravieira.com.br/clientes/uniaofamiliar.png</image:loc>
+      <image:title>Equipe e estrutura</image:title>
+    </image:image>
   </url>
 
-  <!-- Serviços -->
   <url>
-    <loc>https://www.construtoravieira.com.br/servicos</loc>
-    <lastmod>2025-01-08</lastmod>
+    <loc>https://construtoravieira.com.br/sustentabilidade</loc>
+    <lastmod>2025-08-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://construtoravieira.com.br/img_site/previsual.png</image:loc>
+      <image:title>Sustentabilidade na construção</image:title>
+    </image:image>
   </url>
 
-  <!-- Obras e Clientes -->
   <url>
-    <loc>https://www.construtoravieira.com.br/obras</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Empreendimentos -->
-  <url>
-    <loc>https://www.construtoravieira.com.br/empreendimentos</loc>
-    <lastmod>2025-01-08</lastmod>
+    <loc>https://construtoravieira.com.br/noticias</loc>
+    <lastmod>2025-08-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://construtoravieira.com.br/img_site/previsual.png</image:loc>
+      <image:title>Notícias e dicas</image:title>
+    </image:image>
   </url>
 
-  <!-- Sustentabilidade -->
   <url>
-    <loc>https://www.construtoravieira.com.br/sustentabilidade</loc>
-    <lastmod>2025-01-08</lastmod>
+    <loc>https://construtoravieira.com.br/simulacao</loc>
+    <lastmod>2025-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://construtoravieira.com.br/img_site/previsual.png</image:loc>
+      <image:title>Simulador de financiamento</image:title>
+    </image:image>
   </url>
 
-  <!-- Notícias e Dicas -->
   <url>
-    <loc>https://www.construtoravieira.com.br/noticias</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Simulação -->
-  <url>
-    <loc>https://www.construtoravieira.com.br/simulacao</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Trabalhe Conosco -->
-  <url>
-    <loc>https://www.construtoravieira.com.br/trabalheconosco</loc>
-    <lastmod>2025-01-08</lastmod>
+    <loc>https://construtoravieira.com.br/trabalheconosco</loc>
+    <lastmod>2025-08-10</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- Contato -->
-  <url>
-    <loc>https://www.construtoravieira.com.br/contato</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Empreendimentos Específicos -->
-  <url>
-    <loc>https://www.construtoravieira.com.br/empreendimento/1</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.construtoravieira.com.br/empreendimento/2</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.construtoravieira.com.br/empreendimento/3</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Obras Específicas -->
-  <url>
-    <loc>https://www.construtoravieira.com.br/obra/1</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.construtoravieira.com.br/obra/2</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.construtoravieira.com.br/obra/3</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.construtoravieira.com.br/obra/4</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Clientes Específicos -->
-  <url>
-    <loc>https://www.construtoravieira.com.br/cliente/1</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://www.construtoravieira.com.br/cliente/2</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://www.construtoravieira.com.br/cliente/3</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://www.construtoravieira.com.br/cliente/4</loc>
-    <lastmod>2025-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://construtoravieira.com.br/img_site/previsual.png</image:loc>
+      <image:title>Trabalhe Conosco</image:title>
+    </image:image>
   </url>
 
 </urlset>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+  <!-- ESSENCIAIS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="author" content="Construtora Vieira - M V de Souza" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- SEO (404 não deve indexar) -->
+  <title>Página não encontrada (404) | Construtora Vieira</title>
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+
+  <!-- FAVICON / CSS -->
+  <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/includes/style.css" />
+  <meta name="theme-color" content="#1f1f1f" />
+</head>
+<body>
+  <header class="header fade">
+    <div class="container">
+      <a href="/" aria-label="Página inicial - Construtora Vieira">
+        <img src="/img_site/logocerta.png" height="80" alt="Logotipo da Construtora Vieira - M V de Souza" decoding="async" fetchpriority="high" />
+      </a>
+      <nav class="nav" id="nav-menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/sobrenos">Sobre Nós</a></li>
+          <li><a href="/servicos">Serviços</a></li>
+          <li><a href="/obras">Obras & Clientes</a></li>
+          <li><a href="/empreendimentos">Empreendimentos</a></li>
+          <li><a href="/sustentabilidade">Sustentabilidade</a></li>
+          <li><a href="/noticias">Notícias e Dicas</a></li>
+          <li><a href="/simulacao">Simulação</a></li>
+          <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
+          <li><a href="/contato">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="section bg-dark fade">
+      <div class="container">
+        <div class="erro404">
+          <h1>404 — Página não encontrada</h1>
+          <p class="text-light">O link que você seguiu pode ter sido movido, renomeado ou não existe mais.</p>
+
+          <div class="erro404-acoes">
+            <a href="/" class="btn btn-green">Ir para a Home</a>
+            <a href="/servicos" class="btn btn-black">Nossos Serviços</a>
+            <a href="/contato" class="btn btn-black">Fale Conosco</a>
+          </div>
+
+          <div class="erro404-links">
+            <p class="text-light" aria-hidden="true">Ou acesse rapidamente:</p>
+            <ul>
+              <li><a href="/obras">Obras & Clientes</a></li>
+              <li><a href="/empreendimentos">Empreendimentos</a></li>
+              <li><a href="/sustentabilidade">Sustentabilidade</a></li>
+              <li><a href="/noticias">Notícias e Dicas</a></li>
+              <li><a href="/simulacao">Simulação</a></li>
+              <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer fade">
+    <div class="container">
+      <p>&copy; 2025 Construtora Vieira. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JS externo -->
+  <script src="/includes/script.js" defer></script>
+</body>
+</html>

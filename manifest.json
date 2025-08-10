@@ -1,84 +1,35 @@
 {
   "name": "Construtora Vieira - M V de Souza",
   "short_name": "Construtora Vieira",
-  "description": "Construção Civil em Rondonópolis-MT. Obras públicas, privadas, estruturas metálicas, reformas e legalizações.",
+  "description": "Construtora em Rondonópolis-MT especializada em obras públicas e privadas, estruturas metálicas, reformas e legalizações. Qualidade e experiência de mais de 30 anos na construção civil.",
+  "id": "https://construtoravieira.com.br/",
+  "scope": "/",
   "start_url": "/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "launch_handler": { "client_mode": "navigate-existing" },
+  "capture_links": "existing-client-navigate",
   "background_color": "#1f1f1f",
   "theme_color": "#00c37e",
   "orientation": "portrait-primary",
-  "categories": ["business", "construction", "local"],
+  "categories": ["business", "construction", "real estate", "local"],
   "lang": "pt-BR",
   "dir": "ltr",
   "icons": [
-    {
-      "src": "img_site/favicon.ico",
-      "sizes": "16x16 32x32",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "img_site/logocerta.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "img_site/logomvdesouza1600.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
+    { "src": "img_site/favicon.ico", "sizes": "16x16 32x32", "type": "image/x-icon" },
+    { "src": "img_site/logocerta.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "img_site/logomvdesouza1600.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
   ],
   "screenshots": [
-    {
-      "src": "img_site/previsual.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Construtora Vieira - Página Inicial"
-    }
+    { "src": "img_site/previsual.png", "sizes": "1280x720", "type": "image/png", "form_factor": "wide", "label": "Página Inicial - Construtora Vieira" },
+    { "src": "img_site/logomvdesouza1600.png", "sizes": "512x512", "type": "image/png", "label": "Logotipo Oficial" }
+  ],
+  "shortcuts": [
+    { "name": "Contato", "short_name": "Contato", "description": "Entre em contato conosco", "url": "/contato", "icons": [{ "src": "img_site/logocerta.png", "sizes": "96x96", "type": "image/png" }] },
+    { "name": "Serviços", "short_name": "Serviços", "description": "Conheça nossos serviços", "url": "/servicos", "icons": [{ "src": "img_site/logocerta.png", "sizes": "96x96", "type": "image/png" }] },
+    { "name": "Obras", "short_name": "Obras", "description": "Portfólio de obras e clientes", "url": "/obras", "icons": [{ "src": "img_site/logocerta.png", "sizes": "96x96", "type": "image/png" }] }
   ],
   "related_applications": [],
   "prefer_related_applications": false,
-  "scope": "/",
-  "id": "construtoravieira",
-  "shortcuts": [
-    {
-      "name": "Contato",
-      "short_name": "Contato",
-      "description": "Entre em contato conosco",
-      "url": "/contato.html",
-      "icons": [
-        {
-          "src": "img_site/logocerta.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Serviços",
-      "short_name": "Serviços",
-      "description": "Nossos serviços de construção",
-      "url": "/servicos.html",
-      "icons": [
-        {
-          "src": "img_site/logocerta.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Obras",
-      "short_name": "Obras",
-      "description": "Conheça nossas obras",
-      "url": "/obras.html",
-      "icons": [
-        {
-          "src": "img_site/logocerta.png",
-          "sizes": "96x96"
-        }
-      ]
-    }
-  ]
+  "iarc_rating_id": "pending"
 }
-

@@ -1,0 +1,248 @@
+[build]
+  publish = "."
+
+# =========================
+# Canonical de domínio
+# =========================
+# www → sem www (HTTPS)
+[[redirects]]
+  from = "https://www.construtoravieira.com.br/*"
+  to   = "https://construtoravieira.com.br/:splat"
+  status = 301
+  force  = true
+
+# http://www → https sem www
+[[redirects]]
+  from = "http://www.construtoravieira.com.br/*"
+  to   = "https://construtoravieira.com.br/:splat"
+  status = 301
+  force  = true
+
+# http → https (sem www)
+[[redirects]]
+  from = "http://construtoravieira.com.br/*"
+  to   = "https://construtoravieira.com.br/:splat"
+  status = 301
+  force  = true
+
+# =========================
+# Canonical da Home
+# =========================
+# /home → /
+[[redirects]]
+  from = "/home"
+  to   = "/"
+  status = 301
+  force  = true
+
+# /index.html → /
+[[redirects]]
+  from = "/index.html"
+  to   = "/"
+  status = 301
+  force  = true
+
+# =========================
+# Normalização de barra final
+# (ex.: /sobrenos/ → /sobrenos)
+# =========================
+[[redirects]]
+  from = "/:path/"
+  to   = "/:path"
+  status = 301
+
+# =========================
+# URLs limpas → arquivos HTML (200)
+# (adicione novas páginas aqui quando criar)
+# =========================
+[[redirects]] # páginas institucionais
+  from = "/sobrenos"
+  to   = "/paginas/sobrenos.html"
+  status = 200
+[[redirects]]
+  from = "/servicos"
+  to   = "/paginas/servicos.html"
+  status = 200
+[[redirects]]
+  from = "/obras"
+  to   = "/paginas/obras.html"
+  status = 200
+[[redirects]]
+  from = "/empreendimentos"
+  to   = "/paginas/empreendimentos.html"
+  status = 200
+[[redirects]]
+  from = "/sustentabilidade"
+  to   = "/paginas/sustentabilidade.html"
+  status = 200
+[[redirects]]
+  from = "/noticias"
+  to   = "/paginas/noticias.html"
+  status = 200
+[[redirects]]
+  from = "/simulacao"
+  to   = "/paginas/simulacao.html"
+  status = 200
+[[redirects]]
+  from = "/trabalheconosco"
+  to   = "/paginas/trabalheconosco.html"
+  status = 200
+[[redirects]]
+  from = "/contato"
+  to   = "/paginas/contato.html"
+  status = 200
+
+# =========================
+# .html → URL limpa (301 canônico)
+# =========================
+[[redirects]]
+  from = "/paginas/:slug.html"
+  to   = "/:slug"
+  status = 301
+  force  = true
+
+# =========================
+# Headers globais de segurança
+# =========================
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(self), microphone=(), camera=()"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Resource-Policy = "same-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # CSP enxuta e compatível com o que usamos (feed RSS + WhatsApp):
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self';
+      connect-src 'self' https://api.rss2json.com;
+      img-src 'self' data: https:;
+      style-src 'self' 'unsafe-inline';
+      font-src 'self' data:;
+      frame-ancestors 'none';
+      form-action 'self' https://wa.me;
+      base-uri 'self';
+      object-src 'none';
+      worker-src 'self';
+      manifest-src 'self';
+      upgrade-insecure-requests
+    """
+
+# =========================
+# Cache fino
+# =========================
+# Home (raiz e arquivo físico): sem cache agressivo
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# 404: sem cache + não indexar por header também
+[[headers]]
+  for = "/404.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+
+# URLs limpas (servidas via rewrite para .html): cache leve
+[[headers]]
+  for = "/sobrenos"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+[[headers]]
+  for = "/servicos"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+[[headers]]
+  for = "/obras"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+[[headers]]
+  for = "/empreendimentos"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+[[headers]]
+  for = "/sustentabilidade"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+[[headers]]
+  for = "/noticias"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+[[headers]]
+  for = "/simulacao"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+[[headers]]
+  for = "/trabalheconosco"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+[[headers]]
+  for = "/contato"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+
+# HTML físicos (se alguém acessar diretamente /paginas/*.html): leve
+[[headers]]
+  for = "/paginas/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+
+# Assets estáticos de longo prazo
+[[headers]]
+  for = "/includes/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/includes/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/img_site/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/clientes/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/icones/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Arquivos de controle: cache moderado
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# =========================
+# Contextos com noindex (pré-visualizações)
+# =========================
+[context.deploy-preview]
+  [[headers]]
+    for = "/*"
+    [headers.values]
+      X-Robots-Tag = "noindex, nofollow"
+
+[context.branch-deploy]
+  [[headers]]
+    for = "/*"
+    [headers.values]
+      X-Robots-Tag = "noindex, nofollow"
