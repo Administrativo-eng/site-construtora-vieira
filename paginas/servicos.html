@@ -1,9 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+  <!-- ESSENCIAIS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="author" content="Construtora Vieira - M V de Souza" />
 
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- SEO -->
+  <title>Serviços de Construção Civil | Construtora Vieira – Rondonópolis-MT</title>
+  <meta name="description" content="Construção residencial, comercial e industrial, estruturas metálicas, reformas, obras públicas e legalizações em Rondonópolis-MT. Solicite um orçamento." />
+  <link rel="canonical" href="https://construtoravieira.com.br/servicos" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- GEO -->
+  <meta name="geo.region" content="BR-MT" />
+  <meta name="geo.placename" content="Rondonópolis, Mato Grosso" />
+  <meta name="geo.position" content="-16.4673;-54.6370" />
+  <meta name="ICBM" content="-16.4673, -54.6370" />
+
+  <!-- FAVICON / CSS -->
+  <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/includes/style.css" />
+  <meta name="theme-color" content="#1f1f1f" />
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Serviços de Construção Civil | Construtora Vieira" />
+  <meta property="og:description" content="Soluções completas: obras residenciais, comerciais, estruturas metálicas, reformas, obras públicas e legalizações." />
+  <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:url" content="https://construtoravieira.com.br/servicos" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Construtora Vieira - M V de Souza" />
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Serviços de Construção Civil | Construtora Vieira" />
+  <meta name="twitter:description" content="Obras residenciais, comerciais, estruturas metálicas, reformas e legalizações em Rondonópolis-MT." />
+  <meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+
+  <!-- SCHEMA.ORG -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"Serviços",
+    "url":"https://construtoravieira.com.br/servicos",
+    "about":{"@type":"Organization","name":"Construtora Vieira - M V de Souza"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "serviceType":"Serviços de construção civil",
+    "provider":{"@type":"LocalBusiness","name":"Construtora Vieira - M V de Souza","address":{"@type":"PostalAddress","addressLocality":"Rondonópolis","addressRegion":"MT","addressCountry":"BR"}},
+    "areaServed":{"@type":"City","name":"Rondonópolis"},
+    "hasOfferCatalog":{
+      "@type":"OfferCatalog",
+      "name":"Portfólio de serviços",
+      "itemListElement":[
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Construção residencial"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Construção comercial e industrial"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Estruturas metálicas"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Reformas e ampliações"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Obras públicas"}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Legalizações e documentação"}}
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="header fade">
+    <div class="container">
+      <a href="/" aria-label="Página inicial - Construtora Vieira">
+        <img src="/img_site/logocerta.png" height="80" alt="Logotipo da Construtora Vieira - M V de Souza" decoding="async" fetchpriority="high" />
+      </a>
+      <nav class="nav" id="nav-menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/sobrenos">Sobre Nós</a></li>
+          <li><a href="/servicos" aria-current="page">Serviços</a></li>
+          <li><a href="/obras">Obras & Clientes</a></li>
+          <li><a href="/empreendimentos">Empreendimentos</a></li>
+          <li><a href="/sustentabilidade">Sustentabilidade</a></li>
+          <li><a href="/noticias">Notícias e Dicas</a></li>
+          <li><a href="/simulacao">Simulação</a></li>
+          <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
+          <li><a href="/contato">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main id="conteudo">
     <section class="hero fade">
       <div class="container">
         <h1>Nossos Serviços de Construção Civil</h1>
         <p>Soluções completas em construção civil para Rondonópolis e região. Da fundação ao acabamento, cuidamos de cada detalhe do seu projeto.</p>
-        <a href="contato.html" class="btn btn-green">Solicite um Orçamento</a>
+        <a href="/contato" class="btn btn-green">Solicite um Orçamento</a>
       </div>
     </section>
 
@@ -28,7 +129,7 @@
             </ul>
           </div>
           <div>
-            <img src="clientes/uniaofamiliar.png" alt="Casa residencial construída pela Construtora Vieira em Rondonópolis" />
+            <img src="/clientes/uniaofamiliar.png" alt="Casa residencial construída pela Construtora Vieira em Rondonópolis" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -39,7 +140,7 @@
         <h2>Construção Comercial e Industrial</h2>
         <div class="sobre-grid">
           <div>
-            <img src="clientes/uniaofamiliar.png" alt="Galpão comercial construído em Rondonópolis" />
+            <img src="/clientes/uniaofamiliar.png" alt="Galpão comercial construído em Rondonópolis" loading="lazy" decoding="async" />
           </div>
           <div class="sobre-texto">
             <h3>Galpões, Lojas e Escritórios</h3>
@@ -82,7 +183,7 @@
             </ul>
           </div>
           <div>
-            <img src="clientes/uniaofamiliar.png" alt="Estrutura metálica construída pela Construtora Vieira" />
+            <img src="/clientes/uniaofamiliar.png" alt="Estrutura metálica construída pela Construtora Vieira" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -93,7 +194,7 @@
         <h2>Reformas e Ampliações</h2>
         <div class="sobre-grid">
           <div>
-            <img src="clientes/uniaofamiliar.png" alt="Reforma residencial em Rondonópolis" />
+            <img src="/clientes/uniaofamiliar.png" alt="Reforma residencial em Rondonópolis" loading="lazy" decoding="async" />
           </div>
           <div class="sobre-texto">
             <h3>Modernize e Amplie seus Espaços</h3>
@@ -136,7 +237,7 @@
             </ul>
           </div>
           <div>
-            <img src="clientes/uniaofamiliar.png" alt="Obra pública construída pela Construtora Vieira em Rondonópolis" />
+            <img src="/clientes/uniaofamiliar.png" alt="Obra pública construída pela Construtora Vieira em Rondonópolis" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -205,3 +306,15 @@
         </div>
       </div>
     </section>
+  </main>
+
+  <footer class="footer fade">
+    <div class="container">
+      <p>&copy; 2025 Construtora Vieira. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JS externo -->
+  <script src="/includes/script.js" defer></script>
+</body>
+</html>

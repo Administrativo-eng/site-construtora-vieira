@@ -1,14 +1,95 @@
-<section class="section bg-dark fade">
-  <div class="container noticia-grid" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;">
-    <div style="flex: 1; min-width: 280px;">
-      <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Notícias e Dicas</h1>
-      <p class="text-light" style="font-size: 1.1rem;">
-        Leia as últimas notícias e obtenha dicas sobre construção civil, financiamento, engenharia, sustentabilidade e muito mais.
-      </p>
-    </div>
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="author" content="Construtora Vieira - M V de Souza" />
 
-    <div id="rss-feed" style="flex: 1; min-width: 280px;">
-      <!-- A última notícia da Agência Brasil será carregada aqui via script.js -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <title>Notícias e Dicas | Construtora Vieira – Construção Civil</title>
+  <meta name="description" content="Últimas notícias e dicas sobre construção civil, financiamento, engenharia e sustentabilidade em Rondonópolis-MT e região." />
+  <link rel="canonical" href="https://construtoravieira.com.br/noticias" />
+  <meta name="robots" content="index, follow" />
+
+  <meta name="geo.region" content="BR-MT" />
+  <meta name="geo.placename" content="Rondonópolis, Mato Grosso" />
+  <meta name="geo.position" content="-16.4673;-54.6370" />
+  <meta name="ICBM" content="-16.4673, -54.6370" />
+
+  <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/includes/style.css" />
+  <meta name="theme-color" content="#1f1f1f" />
+
+  <meta property="og:title" content="Notícias e Dicas | Construtora Vieira" />
+  <meta property="og:description" content="Acompanhe conteúdos de construção civil, financiamento e sustentabilidade." />
+  <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:url" content="https://construtoravieira.com.br/noticias" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Construtora Vieira - M V de Souza" />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"Notícias e Dicas",
+    "url":"https://construtoravieira.com.br/noticias",
+    "about":{"@type":"Organization","name":"Construtora Vieira - M V de Souza"}
+  }
+  </script>
+</head>
+<body>
+  <header class="header fade">
+    <div class="container">
+      <a href="/" aria-label="Página inicial - Construtora Vieira">
+        <img src="/img_site/logocerta.png" height="80" alt="Logotipo da Construtora Vieira - M V de Souza" decoding="async" fetchpriority="high" />
+      </a>
+      <nav class="nav" id="nav-menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/sobrenos">Sobre Nós</a></li>
+          <li><a href="/servicos">Serviços</a></li>
+          <li><a href="/obras">Obras & Clientes</a></li>
+          <li><a href="/empreendimentos">Empreendimentos</a></li>
+          <li><a href="/sustentabilidade">Sustentabilidade</a></li>
+          <li><a href="/noticias" aria-current="page">Notícias e Dicas</a></li>
+          <li><a href="/simulacao">Simulação</a></li>
+          <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
+          <li><a href="/contato">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
     </div>
-  </div>
-</section>
+  </header>
+
+  <main id="conteudo">
+    <section class="section bg-dark fade">
+      <div class="container noticia-grid">
+        <div class="noticia-texto">
+          <h1>Notícias e Dicas</h1>
+          <p class="text-light">
+            Leia conteúdos sobre construção civil, financiamento, engenharia, sustentabilidade e mais.
+          </p>
+        </div>
+
+        <!-- Feed carregado por /includes/script.js → carregarFeedAgenciaBrasil() -->
+        <div id="rss-feed" class="rss-placeholder">
+          <p class="muted">Carregando a última notícia da Agência Brasil…</p>
+          <noscript><p class="muted">Ative o JavaScript para ver o conteúdo.</p></noscript>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer fade">
+    <div class="container">
+      <p>&copy; 2025 Construtora Vieira. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="/includes/script.js" defer></script>
+</body>
+</html>

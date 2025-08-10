@@ -1,378 +1,202 @@
-<section class="hero-section fade">
-  <div class="container">
-    <h1>Empreendimentos em Destaque</h1>
-    <p>Descubra os melhores imóveis para venda e aluguel em Rondonópolis e região</p>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+  <!-- ESSENCIAIS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="author" content="Construtora Vieira - M V de Souza" />
 
-<section class="filtros-section fade">
-  <div class="container">
-    <div class="filtros-wrapper">
-      <div class="filtro-grupo">
-        <label for="filtro-tipo">Tipo:</label>
-        <select id="filtro-tipo">
-          <option value="todos">Todos</option>
-          <option value="venda">Venda</option>
-          <option value="aluguel">Aluguel</option>
-        </select>
-      </div>
-      
-      <div class="filtro-grupo">
-        <label for="filtro-valor">Valor máximo:</label>
-        <select id="filtro-valor">
-          <option value="todos">Todos</option>
-          <option value="300000">Até R$ 300.000</option>
-          <option value="500000">Até R$ 500.000</option>
-          <option value="800000">Até R$ 800.000</option>
-          <option value="1000000">Acima de R$ 800.000</option>
-        </select>
-      </div>
-      
-      <div class="filtro-grupo">
-        <label for="filtro-area">Área mínima:</label>
-        <select id="filtro-area">
-          <option value="todos">Todas</option>
-          <option value="50">Acima de 50m²</option>
-          <option value="80">Acima de 80m²</option>
-          <option value="120">Acima de 120m²</option>
-          <option value="200">Acima de 200m²</option>
-        </select>
-      </div>
-      
-      <button id="btn-filtrar" class="btn btn-primary">Filtrar</button>
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- SEO -->
+  <title>Empreendimentos em Destaque | Construtora Vieira – Rondonópolis-MT</title>
+  <meta name="description" content="Imóveis para venda e aluguel em Rondonópolis e região. Empreendimentos com qualidade Construtora Vieira." />
+  <link rel="canonical" href="https://construtoravieira.com.br/empreendimentos" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- GEO -->
+  <meta name="geo.region" content="BR-MT" />
+  <meta name="geo.placename" content="Rondonópolis, Mato Grosso" />
+  <meta name="geo.position" content="-16.4673;-54.6370" />
+  <meta name="ICBM" content="-16.4673, -54.6370" />
+
+  <!-- FAVICON / CSS -->
+  <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/includes/style.css" />
+  <meta name="theme-color" content="#1f1f1f" />
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Empreendimentos em Destaque | Construtora Vieira" />
+  <meta property="og:description" content="Descubra opções de venda e aluguel em Rondonópolis e região." />
+  <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:url" content="https://construtoravieira.com.br/empreendimentos" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Construtora Vieira - M V de Souza" />
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Empreendimentos em Destaque | Construtora Vieira" />
+  <meta name="twitter:description" content="Imóveis com padrão de qualidade Construtora Vieira." />
+  <meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+
+  <!-- SCHEMA.ORG -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"Empreendimentos",
+    "url":"https://construtoravieira.com.br/empreendimentos",
+    "about":{"@type":"Organization","name":"Construtora Vieira - M V de Souza"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement": [
+      {
+        "@type":"RealEstateListing",
+        "name":"Edifício Meridian",
+        "url":"https://construtoravieira.com.br/empreendimentos#meridian",
+        "image":"https://construtoravieira.com.br/clientes/uniaofamiliar.png",
+        "offers":{"@type":"Offer","price":"650000","priceCurrency":"BRL","availability":"https://schema.org/InStock"}
+      },
+      {
+        "@type":"RealEstateListing",
+        "name":"Vista Parque",
+        "url":"https://construtoravieira.com.br/empreendimentos#vistaparque",
+        "image":"https://construtoravieira.com.br/clientes/uniaofamiliar.png",
+        "offers":{"@type":"Offer","price":"420000","priceCurrency":"BRL","availability":"https://schema.org/InStock"}
+      },
+      {
+        "@type":"RealEstateListing",
+        "name":"Plaza Central",
+        "url":"https://construtoravieira.com.br/empreendimentos#plazacentral",
+        "image":"https://construtoravieira.com.br/clientes/uniaofamiliar.png",
+        "offers":{"@type":"Offer","price":"Aluguel","priceCurrency":"BRL","availability":"https://schema.org/InStock"}
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="header fade">
+    <div class="container">
+      <a href="/" aria-label="Página inicial - Construtora Vieira">
+        <img src="/img_site/logocerta.png" height="80" alt="Logotipo da Construtora Vieira - M V de Souza" decoding="async" fetchpriority="high" />
+      </a>
+      <nav class="nav" id="nav-menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/sobrenos">Sobre Nós</a></li>
+          <li><a href="/servicos">Serviços</a></li>
+          <li><a href="/obras">Obras & Clientes</a></li>
+          <li><a href="/empreendimentos" aria-current="page">Empreendimentos</a></li>
+          <li><a href="/sustentabilidade">Sustentabilidade</a></li>
+          <li><a href="/noticias">Notícias e Dicas</a></li>
+          <li><a href="/simulacao">Simulação</a></li>
+          <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
+          <li><a href="/contato">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
     </div>
-  </div>
-</section>
+  </header>
 
-<section class="empreendimentos-section fade">
-  <div class="container">
-    <div id="lista-empreendimentos" class="empreendimentos-grid">
-      <!-- Grid será preenchido via JavaScript -->
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero fade">
+      <div class="container">
+        <h1>Empreendimentos em Destaque</h1>
+        <p>Descubra os melhores imóveis para venda e aluguel em Rondonópolis e região.</p>
+      </div>
+    </section>
+
+    <!-- LISTA DE EMPREENDIMENTOS -->
+    <section class="section fade">
+      <div class="container">
+        <div class="titulo-area">
+          <h2>Explore as opções</h2>
+          <p class="text-light">Seleção curada de empreendimentos com qualidade Construtora Vieira.</p>
+        </div>
+
+        <div class="empreendimentos-grid">
+          <!-- Card 1 -->
+          <article id="meridian" class="empreendimento-card">
+            <img src="/clientes/uniaofamiliar.png" alt="Edifício Meridian - fachada moderna" loading="lazy" decoding="async" />
+            <div class="empreendimento-info">
+              <h3>Edifício Meridian</h3>
+              <p>Residencial com design contemporâneo, área de lazer completa e excelente localização.</p>
+              <div class="empreendimento-detalhes">
+                <span class="badge tipo venda">Venda</span>
+                <span class="badge medidas">85–120 m²</span>
+                <span class="badge valor">a partir de R$ 650.000</span>
+              </div>
+              <p class="endereco">Centro – Rondonópolis/MT</p>
+              <a href="https://wa.me/5566999366313?text=Tenho%20interesse%20no%20Edif%C3%ADcio%20Meridian" target="_blank" rel="noopener" class="btn btn-black">Falar no WhatsApp</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article id="vistaparque" class="empreendimento-card">
+            <img src="/clientes/uniaofamiliar.png" alt="Vista Parque - torres residenciais próximas a área verde" loading="lazy" decoding="async" />
+            <div class="empreendimento-info">
+              <h3>Vista Parque</h3>
+              <p>Conforto e natureza: plantas funcionais, segurança 24h e proximidade de parques.</p>
+              <div class="empreendimento-detalhes">
+                <span class="badge tipo venda">Venda</span>
+                <span class="badge medidas">70–95 m²</span>
+                <span class="badge valor">a partir de R$ 420.000</span>
+              </div>
+              <p class="endereco">Vila Goulart – Rondonópolis/MT</p>
+              <a href="https://wa.me/5566999366313?text=Tenho%20interesse%20no%20Vista%20Parque" target="_blank" rel="noopener" class="btn btn-black">Falar no WhatsApp</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article id="plazacentral" class="empreendimento-card">
+            <img src="/clientes/uniaofamiliar.png" alt="Plaza Central - centro comercial com salas moduláveis" loading="lazy" decoding="async" />
+            <div class="empreendimento-info">
+              <h3>Plaza Central</h3>
+              <p>Empreendimento comercial com infraestrutura completa e salas moduláveis.</p>
+              <div class="empreendimento-detalhes">
+                <span class="badge tipo aluguel">Aluguel</span>
+                <span class="badge medidas">40–300 m²</span>
+                <span class="badge valor">valores sob consulta</span>
+              </div>
+              <p class="endereco">Distrito Comercial – Rondonópolis/MT</p>
+              <a href="https://wa.me/5566999366313?text=Tenho%20interesse%20no%20Plaza%20Central" target="_blank" rel="noopener" class="btn btn-black">Falar no WhatsApp</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="load-more-wrapper" style="text-align:center">
+          <a href="https://wa.me/5566999366313?text=Quero%20receber%20mais%20op%C3%A7%C3%B5es%20de%20empreendimentos" target="_blank" rel="noopener" class="btn btn-green">Ver mais opções com o especialista</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section bg-dark fade">
+      <div class="container" style="text-align:center">
+        <h2>Não encontrou o que procura?</h2>
+        <p>Fale com a nossa equipe — indicamos o imóvel ideal para você.</p>
+        <a href="/contato" class="btn btn-green">Falar com Especialista</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer fade">
+    <div class="container">
+      <p>&copy; 2025 Construtora Vieira. Todos os direitos reservados.</p>
     </div>
-    
-    <div class="load-more-wrapper">
-      <button id="btn-carregar-mais" class="btn btn-secondary">Carregar Mais</button>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<section class="cta-section fade">
-  <div class="container">
-    <h2>Não encontrou o que procura?</h2>
-    <p>Entre em contato conosco e encontraremos o imóvel ideal para você</p>
-    <a href="/contato" class="btn btn-primary">Falar com Especialista</a>
-  </div>
-</section>
-
-<style>
-/* Estilos específicos para a página de empreendimentos */
-.filtros-section {
-  background: #f8f9fa;
-  padding: 2rem 0;
-  border-bottom: 1px solid #e9ecef;
-}
-
-.filtros-wrapper {
-  display: flex;
-  gap: 2rem;
-  align-items: end;
-  flex-wrap: wrap;
-}
-
-.filtro-grupo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.filtro-grupo label {
-  font-weight: 600;
-  color: #333;
-  font-size: 0.9rem;
-}
-
-.filtro-grupo select {
-  padding: 0.75rem 1rem;
-  border: 2px solid #e9ecef;
-  border-radius: 8px;
-  background: white;
-  font-size: 0.9rem;
-  min-width: 150px;
-  transition: border-color 0.3s ease;
-}
-
-.filtro-grupo select:focus {
-  outline: none;
-  border-color: #00c37e;
-}
-
-.empreendimentos-section {
-  padding: 4rem 0;
-}
-
-.empreendimentos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.empreendimento-card {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: relative;
-}
-
-.empreendimento-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-}
-
-.empreendimento-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.empreendimento-card:hover img {
-  transform: scale(1.05);
-}
-
-.empreendimento-info {
-  padding: 1.5rem;
-}
-
-.empreendimento-info h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
-}
-
-.empreendimento-info p {
-  color: #666;
-  margin-bottom: 1rem;
-  line-height: 1.5;
-}
-
-.empreendimento-detalhes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.valor {
-  background: linear-gradient(135deg, #00c37e, #00a86b);
-  color: white;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.tipo {
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-weight: 500;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.tipo.venda {
-  background: linear-gradient(135deg, #FF6B6B, #FF5252);
-  color: white;
-}
-
-.tipo.aluguel {
-  background: linear-gradient(135deg, #4ECDC4, #26A69A);
-  color: white;
-}
-
-.medidas {
-  background: #f8f9fa;
-  color: #333;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-weight: 500;
-  font-size: 0.8rem;
-}
-
-.endereco {
-  color: #888;
-  font-size: 0.9rem;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.endereco::before {
-  content: "📍";
-  font-size: 0.8rem;
-}
-
-.load-more-wrapper {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.cta-section {
-  background: linear-gradient(135deg, #1f1f1f, #333);
-  color: white;
-  text-align: center;
-  padding: 4rem 0;
-}
-
-.cta-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.cta-section p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-}
-
-/* Badge de destaque */
-.empreendimento-card::before {
-  content: "✨ Destaque";
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: linear-gradient(135deg, #FFD700, #FFA500);
-  color: #333;
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  z-index: 2;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .filtros-wrapper {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  .filtro-grupo {
-    width: 100%;
-  }
-  
-  .filtro-grupo select {
-    min-width: 100%;
-  }
-  
-  .empreendimentos-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .cta-section h2 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .empreendimento-info {
-    padding: 1rem;
-  }
-  
-  .empreendimento-detalhes {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .valor, .tipo, .medidas {
-    text-align: center;
-  }
-}
-
-/* Animações */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.empreendimento-card {
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.empreendimento-card:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.empreendimento-card:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-.empreendimento-card:nth-child(4) {
-  animation-delay: 0.3s;
-}
-
-.empreendimento-card:nth-child(5) {
-  animation-delay: 0.4s;
-}
-
-.empreendimento-card:nth-child(6) {
-  animation-delay: 0.5s;
-}
-
-/* Loading state */
-.loading {
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-.loading::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 30px;
-  height: 30px;
-  margin: -15px 0 0 -15px;
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #00c37e;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Hover effects */
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.empreendimento-card:hover .valor {
-  transform: scale(1.05);
-}
-
-.empreendimento-card:hover .tipo {
-  transform: scale(1.05);
-}
-</style>
-
+  <!-- JS externo -->
+  <script src="/includes/script.js" defer></script>
+</body>
+</html>

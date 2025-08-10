@@ -1,231 +1,232 @@
-<section class="hero-section fade">
-  <div class="container">
-    <h1>Obras & Clientes</h1>
-    <p>Conheça nossos projetos realizados e os clientes que confiam em nosso trabalho</p>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+  <!-- ESSENCIAIS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="author" content="Construtora Vieira - M V de Souza" />
 
-<section class="obras-section fade">
-  <div class="container">
-    <h2>Nossas Obras</h2>
-    <p>Projetos executados com excelência e qualidade em Rondonópolis e região</p>
-    
-    <div id="carrossel-obras" class="carrossel-wrapper">
-      <!-- Carrossel será preenchido via JavaScript -->
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- SEO -->
+  <title>Obras & Clientes | Construtora Vieira – Rondonópolis-MT</title>
+  <meta name="description" content="Conheça obras públicas e privadas entregues pela Construtora Vieira em Rondonópolis e região, e veja quem confia no nosso trabalho." />
+  <link rel="canonical" href="https://construtoravieira.com.br/obras" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- GEO -->
+  <meta name="geo.region" content="BR-MT" />
+  <meta name="geo.placename" content="Rondonópolis, Mato Grosso" />
+  <meta name="geo.position" content="-16.4673;-54.6370" />
+  <meta name="ICBM" content="-16.4673, -54.6370" />
+
+  <!-- FAVICON / CSS -->
+  <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/includes/style.css" />
+  <meta name="theme-color" content="#1f1f1f" />
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Obras & Clientes | Construtora Vieira" />
+  <meta property="og:description" content="Projetos executados com excelência em Rondonópolis e região." />
+  <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:url" content="https://construtoravieira.com.br/obras" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Construtora Vieira - M V de Souza" />
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Obras & Clientes | Construtora Vieira" />
+  <meta name="twitter:description" content="Veja nossos projetos e clientes atendidos." />
+  <meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+
+  <!-- SCHEMA.ORG -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"Obras e Clientes",
+    "url":"https://construtoravieira.com.br/obras",
+    "about":{"@type":"Organization","name":"Construtora Vieira - M V de Souza"}
+  }
+  </script>
+</head>
+<body>
+  <header class="header fade">
+    <div class="container">
+      <a href="/" aria-label="Página inicial - Construtora Vieira">
+        <img src="/img_site/logocerta.png" height="80" alt="Logotipo da Construtora Vieira - M V de Souza" decoding="async" fetchpriority="high" />
+      </a>
+      <nav class="nav" id="nav-menu">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/sobrenos">Sobre Nós</a></li>
+          <li><a href="/servicos">Serviços</a></li>
+          <li><a href="/obras" aria-current="page">Obras & Clientes</a></li>
+          <li><a href="/empreendimentos">Empreendimentos</a></li>
+          <li><a href="/sustentabilidade">Sustentabilidade</a></li>
+          <li><a href="/noticias">Notícias e Dicas</a></li>
+          <li><a href="/simulacao">Simulação</a></li>
+          <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
+          <li><a href="/contato">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
     </div>
-  </div>
-</section>
+  </header>
 
-<section class="clientes-section fade">
-  <div class="container">
-    <h2>Nossos Clientes</h2>
-    <p>Empresas e instituições que confiam em nossos serviços</p>
-    
-    <div id="carrossel-clientes" class="carrossel-wrapper">
-      <!-- Carrossel será preenchido via JavaScript -->
+  <main id="conteudo">
+    <!-- HERO -->
+    <section class="hero fade">
+      <div class="container">
+        <h1>Obras & Clientes</h1>
+        <p>Conheça nossos projetos realizados e os clientes que confiam em nosso trabalho.</p>
+      </div>
+    </section>
+
+    <!-- OBRAS -->
+    <section class="section fade">
+      <div class="container">
+        <div class="titulo-area">
+          <h2>Nossas Obras</h2>
+          <p>Projetos executados com excelência e qualidade em Rondonópolis e região.</p>
+        </div>
+
+        <div class="carrossel-wrapper">
+          <button class="carrossel-btn prev" aria-label="Anterior" data-carousel-btn data-target="obras" data-dir="-1">‹</button>
+          <div class="carrossel-container">
+            <div class="carrossel-track" id="track-obras">
+              <!-- Item 1 -->
+              <article class="carrossel-item">
+                <img src="/clientes/uniaofamiliar.png" alt="Escola Municipal Jardim das Flores – fachada concluída" loading="lazy" decoding="async" />
+                <div class="carrossel-info">
+                  <h3>Escola Municipal Jardim das Flores</h3>
+                  <span class="tipo-obra publica">Obra Pública</span>
+                </div>
+              </article>
+              <!-- Item 2 -->
+              <article class="carrossel-item">
+                <img src="/clientes/uniaofamiliar.png" alt="Galpão Logístico Vista Sul – estrutura metálica montada" loading="lazy" decoding="async" />
+                <div class="carrossel-info">
+                  <h3>Galpão Logístico Vista Sul</h3>
+                  <span class="tipo-obra privada">Obra Privada</span>
+                </div>
+              </article>
+              <!-- Item 3 -->
+              <article class="carrossel-item">
+                <img src="/clientes/uniaofamiliar.png" alt="Unidade Básica de Saúde – áreas de atendimento internas" loading="lazy" decoding="async" />
+                <div class="carrossel-info">
+                  <h3>Unidade Básica de Saúde</h3>
+                  <span class="tipo-obra publica">Obra Pública</span>
+                </div>
+              </article>
+              <!-- Item 4 -->
+              <article class="carrossel-item">
+                <img src="/clientes/uniaofamiliar.png" alt="Residencial Alameda – conjunto de casas finalizadas" loading="lazy" decoding="async" />
+                <div class="carrossel-info">
+                  <h3>Residencial Alameda</h3>
+                  <span class="tipo-obra privada">Obra Privada</span>
+                </div>
+              </article>
+              <!-- Item 5 -->
+              <article class="carrossel-item">
+                <img src="/clientes/uniaofamiliar.png" alt="Centro Administrativo Municipal – hall de entrada" loading="lazy" decoding="async" />
+                <div class="carrossel-info">
+                  <h3>Centro Administrativo Municipal</h3>
+                  <span class="tipo-obra publica">Obra Pública</span>
+                </div>
+              </article>
+              <!-- Item 6 -->
+              <article class="carrossel-item">
+                <img src="/clientes/uniaofamiliar.png" alt="Parque Tecnológico – edifício corporativo" loading="lazy" decoding="async" />
+                <div class="carrossel-info">
+                  <h3>Parque Tecnológico</h3>
+                  <span class="tipo-obra privada">Obra Privada</span>
+                </div>
+              </article>
+            </div>
+          </div>
+          <button class="carrossel-btn next" aria-label="Próximo" data-carousel-btn data-target="obras" data-dir="1">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTES -->
+    <section class="section bg-dark fade">
+      <div class="container">
+        <div class="titulo-area">
+          <h2>Nossos Clientes</h2>
+          <p>Empresas e instituições que confiam em nossos serviços.</p>
+        </div>
+
+        <div class="carrossel-wrapper">
+          <button class="carrossel-btn prev" aria-label="Anterior" data-carousel-btn data-target="clientes" data-dir="-1">‹</button>
+          <div class="carrossel-container">
+            <div class="carrossel-track" id="track-clientes">
+              <!-- 6 logos/clientes como exemplo -->
+              <article class="carrossel-item">
+                <img src="/clientes/uniaofamiliar.png" alt="Cliente União Familiar" loading="lazy" decoding="async" />
+                <div class="carrossel-info">
+                  <h3>União Familiar</h3>
+                </div>
+              </article>
+              <article class="carrossel-item">
+                <img src="/clientes/uniaofamiliar.png" alt="Cliente Horizonte Incorporadora" loading="lazy" decoding="async" />
+                <div class="carrossel-info">
+                  <h3>Horizonte Incorporadora</h3>
+                </div>
+              </article>
+              <article class="carrossel-item">
+                <img src="/clientes/uniaofamiliar.png" alt="Cliente Prefeitura Municipal" loading="lazy" decoding="async" />
+                <div class="carrossel-info">
+                  <h3>Prefeitura Municipal</h3>
+                </div>
+              </article>
+              <article class="carrossel-item">
+                <img src="/clientes/uniaofamiliar.png" alt="Cliente Saúde & Vida" loading="lazy" decoding="async" />
+                <div class="carrossel-info">
+                  <h3>Saúde & Vida</h3>
+                </div>
+              </article>
+              <article class="carrossel-item">
+                <img src="/clientes/uniaofamiliar.png" alt="Cliente AgroSul" loading="lazy" decoding="async" />
+                <div class="carrossel-info">
+                  <h3>AgroSul</h3>
+                </div>
+              </article>
+              <article class="carrossel-item">
+                <img src="/clientes/uniaofamiliar.png" alt="Cliente Parque Tecnológico" loading="lazy" decoding="async" />
+                <div class="carrossel-info">
+                  <h3>Parque Tecnológico</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+          <button class="carrossel-btn next" aria-label="Próximo" data-carousel-btn data-target="clientes" data-dir="1">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section fade">
+      <div class="container" style="text-align:center">
+        <h2>Quer fazer parte dos nossos clientes?</h2>
+        <p>Entre em contato e solicite um orçamento personalizado.</p>
+        <a href="/contato" class="btn btn-green">Solicitar Orçamento</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer fade">
+    <div class="container">
+      <p>&copy; 2025 Construtora Vieira. Todos os direitos reservados.</p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section class="cta-section fade">
-  <div class="container">
-    <h2>Quer fazer parte dos nossos clientes?</h2>
-    <p>Entre em contato conosco e solicite um orçamento personalizado</p>
-    <a href="/contato" class="btn btn-primary">Solicitar Orçamento</a>
-  </div>
-</section>
-
-<style>
-/* Estilos específicos para a página de obras */
-.obras-section, .clientes-section {
-  padding: 4rem 0;
-  background: #f8f9fa;
-}
-
-.obras-section:nth-child(even) {
-  background: #fff;
-}
-
-.carrossel-wrapper {
-  margin-top: 3rem;
-  position: relative;
-}
-
-.carrossel-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.carrossel-track {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.3s ease;
-  padding: 20px;
-}
-
-.carrossel-item {
-  flex: 0 0 calc(33.333% - 14px);
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.carrossel-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-.carrossel-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.carrossel-item:hover img {
-  transform: scale(1.05);
-}
-
-.carrossel-info {
-  padding: 1.5rem;
-  position: relative;
-}
-
-.carrossel-info h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
-}
-
-.tipo-obra {
-  display: inline-block;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.tipo-obra.publica {
-  background: linear-gradient(135deg, #4CAF50, #45a049);
-  color: white;
-}
-
-.tipo-obra.privada {
-  background: linear-gradient(135deg, #2196F3, #1976D2);
-  color: white;
-}
-
-.carrossel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.9);
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  color: #333;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 10;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.carrossel-btn:hover {
-  background: #fff;
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-.carrossel-btn.prev {
-  left: 15px;
-}
-
-.carrossel-btn.next {
-  right: 15px;
-}
-
-.cta-section {
-  background: linear-gradient(135deg, #1f1f1f, #333);
-  color: white;
-  text-align: center;
-  padding: 4rem 0;
-}
-
-.cta-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.cta-section p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .carrossel-item {
-    flex: 0 0 calc(50% - 10px);
-  }
-  
-  .carrossel-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .carrossel-item {
-    flex: 0 0 calc(100% - 20px);
-  }
-  
-  .carrossel-track {
-    padding: 15px;
-  }
-  
-  .cta-section h2 {
-    font-size: 2rem;
-  }
-}
-
-/* Animações */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.carrossel-item {
-  animation: slideIn 0.6s ease forwards;
-}
-
-.carrossel-item:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.carrossel-item:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-.carrossel-item:nth-child(4) {
-  animation-delay: 0.3s;
-}
-</style>
+  <!-- JS externo -->
+  <script src="/includes/script.js" defer></script>
+</body>
+</html>
