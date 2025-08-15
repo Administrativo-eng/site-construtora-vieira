@@ -7,16 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="author" content="Construtora Vieira - M V de Souza" />
 
-  <!-- PRELOAD DE IMAGENS CRÍTICAS -->
+  <!-- PRELOAD DE IMAGENS CRÍTICAS (mantidos) -->
   <link rel="preload" as="image" href="/img_site/logocerta.png" type="image/png" />
   <link rel="preload" as="image" href="/img_site/previsual.png" type="image/png" />
 
   <!-- PWA -->
   <link rel="manifest" href="/manifest.json" />
 
-  <!-- SEO GERAL -->
-  <title>Construtora Vieira - Obras, Reformas e Estruturas Metálicas em Rondonópolis-MT</title>
-  <meta name="description" content="Construtora em Rondonópolis-MT especializada em obras públicas e privadas, reformas, estruturas metálicas, habite-se, AVCB e legalizações. Mais de 10 anos de experiência na construção civil." />
+  <!-- SEO GERAL (enxuto) -->
+  <title>Construtora Vieira — Obras, Reformas e Engenharia</title>
+  <meta name="description" content="Construção e reformas públicas e privadas em Rondonópolis-MT. Estruturas metálicas, galpões, casas, alojamentos e serviços de engenharia." />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://construtoravieira.com.br/" />
 
@@ -28,10 +28,10 @@
 
   <!-- FAVICON / TEMA -->
   <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" />
-  <meta name="theme-color" content="#1f1f1f" />
+  <meta name="theme-color" content="#111" />
 
   <!-- OPEN GRAPH -->
-  <meta property="og:title" content="Construtora Vieira - M V de Souza" />
+  <meta property="og:title" content="Construtora Vieira — Obras, Reformas e Engenharia" />
   <meta property="og:description" content="Obras, reformas, estruturas metálicas e legalizações em Rondonópolis e região." />
   <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
   <meta property="og:image:type" content="image/png" />
@@ -42,7 +42,7 @@
 
   <!-- TWITTER -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Construtora Vieira - M V de Souza" />
+  <meta name="twitter:title" content="Construtora Vieira — Obras, Reformas e Engenharia" />
   <meta name="twitter:description" content="Obras, reformas e estruturas metálicas em Rondonópolis-MT." />
   <meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
 
@@ -70,17 +70,9 @@
       "postalCode": "78731-212",
       "addressCountry": "BR"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -16.4673,
-      "longitude": -54.6370
-    },
+    "geo": { "@type": "GeoCoordinates", "latitude": -16.4673, "longitude": -54.6370 },
     "areaServed": "Rondonópolis e região",
-    "sameAs": [
-      "https://www.instagram.com/",
-      "https://www.facebook.com/",
-      "https://www.linkedin.com/"
-    ]
+    "sameAs": ["https://www.instagram.com/","https://www.facebook.com/","https://www.linkedin.com/"]
   }
   </script>
 </head>
@@ -91,99 +83,115 @@
       <a href="/" aria-label="Página inicial - Construtora Vieira">
         <img src="/img_site/logocerta.png" height="100" alt="Logotipo da Construtora Vieira - M V de Souza" fetchpriority="high" decoding="async" />
       </a>
-      <nav class="nav" id="nav-menu">
+      <nav class="nav" id="nav-menu" aria-label="Navegação principal">
         <ul>
           <li><a href="/" aria-current="page">Home</a></li>
-          <li><a href="/sobrenos">Sobre Nós</a></li>
+          <!-- <li><a href="/sobrenos">Sobre Nós</a></li> -->
           <li><a href="/servicos">Serviços</a></li>
-          <li><a href="/obras">Obras & Clientes</a></li>
-          <li><a href="/empreendimentos">Empreendimentos</a></li>
+          <!-- <li><a href="/obras">Obras & Clientes</a></li> -->
+          <!-- <li><a href="/empreendimentos">Empreendimentos</a></li> -->
           <li><a href="/sustentabilidade">Sustentabilidade</a></li>
-          <li><a href="/noticias">Notícias e Dicas</a></li>
-          <li><a href="/simulacao">Simulação</a></li>
+          <!-- <li><a href="/noticias">Notícias e Dicas</a></li> -->
+          <!-- <li><a href="/simulacao">Simulação</a></li> -->
           <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
           <li><a href="/contato">Contato</a></li>
         </ul>
       </nav>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
   <main id="conteudo">
-    <!-- HOME (conteúdo fixo) -->
+    <!-- HERO -->
     <section class="hero fade">
       <div class="container">
         <h1>Construindo o futuro hoje</h1>
+        <p class="muted">Obras públicas e privadas, estruturas metálicas e serviços de engenharia.</p>
         <a href="https://wa.me/5566999366313?text=Ol%C3%A1!%20Encontrei%20voc%C3%AAs%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
            target="_blank" rel="noopener noreferrer" class="btn btn-green">Contato</a>
       </div>
     </section>
 
+    <!-- EMPREENDIMENTOS -->
     <section class="section fade">
       <div class="container">
         <h2>Empreendimentos em Destaque</h2>
         <div class="cards">
-          <div class="card">
-            <img src="/clientes/uniaofamiliar.png" alt="Edifício Meridian" loading="lazy" decoding="async" />
-            <h3>Edifício Meridian</h3>
-            <p>Residencial corporativo com design moderno e excelente localização.</p>
+          <article class="card">
+            <img src="/img_site/casa1.png" alt="Casa Vila Mineira" loading="lazy" decoding="async" />
+            <h3>Vila Mineira</h3>
+            <p>Imagem ilustrativa, casa com 55m² (350 mil).</p>
+            <a href="/" class="btn btn-black">Ver mais</a>
+          </article>
+
+          <article class="card">
+            <img src="/img_site/casa2.png" alt="Casa Parque dos lirios" loading="lazy" decoding="async" />
+            <h3>Parque dos Lirios</h3>
+            <p>Imagem ilustrativa, casa com 55m² (250 mil).</p>
+            <a href="/" class="btn btn-black">Ver mais</a>
+          </article>
+
+          <article class="card">
+            <img src="/img_site/casa3.png" alt="Casa Cidade Alta" loading="lazy" decoding="async" />
+            <h3>Cidade Alta</h3>
+            <p>Imagem ilustrativa, casa com 55m² (280 mil).</p>
             <a href="/empreendimentos" class="btn btn-black">Ver mais</a>
-          </div>
-          <div class="card">
-            <img src="/clientes/uniaofamiliar.png" alt="Vista Parque" loading="lazy" decoding="async" />
-            <h3>Vista Parque</h3>
-            <p>Conforto, segurança e natureza ao redor para toda a família.</p>
-            <a href="/empreendimentos" class="btn btn-black">Ver mais</a>
-          </div>
-          <div class="card">
-            <img src="/clientes/uniaofamiliar.png" alt="Plaza Central" loading="lazy" decoding="async" />
-            <h3>Plaza Central</h3>
-            <p>Empreendimento comercial com infraestrutura completa.</p>
-            <a href="/empreendimentos" class="btn btn-black">Ver mais</a>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
+    <!-- SOBRE -->
     <section class="section bg-dark fade">
       <div class="container sobre-grid">
         <div class="sobre-texto">
           <h2>Sobre a Empresa</h2>
           <p>
-            Com mais de uma década de experiência, a Construtora Vieira se destaca na área da construção civil.
-            Nosso compromisso com a excelência é refletido em projetos entregues com qualidade, responsabilidade e inovação.
+            Com mais de uma década de experiência, a Construtora Vieira se destaca na 
+            construção civil em Rondonópolis, Sinop e região (MT). Nosso compromisso 
+            com a excelência aparece em cada entrega: qualidade, responsabilidade e 
+            inovação. Já concluímos 40+ obras entre projetos públicos e privados. 
+            Atuamos com estruturas metálicas, reformas e manutenções, atendemos 
+            áreas rurais e executamos barracões e galpões, sempre com equipe 
+            qualificada, prazos rigorosos e conformidade às normas. Da 
+            concepção ao habite-se e AVCB, entregamos soluções seguras, 
+            sustentáveis e alinhadas às necessidades do Mato Grosso.
           </p>
         </div>
         <div>
-          <img src="/clientes/uniaofamiliar.png" alt="Equipe da empresa" loading="lazy" decoding="async" />
+          <img src="/img_site/sobre.png" alt="Equipe da empresa" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>
 
+    <!-- DIFERENCIAIS -->
     <section class="section fade">
       <div class="container">
         <h2>Nossos Diferenciais</h2>
         <div class="cards">
-          <div class="card">
-            <img src="/clientes/uniaofamiliar.png" alt="Ícone Qualidade" loading="lazy" decoding="async" />
+          <article class="card">
+            <img src="/img_site/altaqualidade.png" alt="Ícone Qualidade" loading="lazy" decoding="async" />
             <h3>Alta Qualidade</h3>
             <p>Materiais de ponta e mão de obra qualificada em todas as obras.</p>
-          </div>
-          <div class="card">
-            <img src="/clientes/uniaofamiliar.png" alt="Ícone Prazo" loading="lazy" decoding="async" />
+          </article>
+
+          <article class="card">
+            <img src="/img_site/prazo.png" alt="Ícone Prazo" loading="lazy" decoding="async" />
             <h3>Entrega no Prazo</h3>
             <p>Cronograma bem planejado com execução eficiente.</p>
-          </div>
-          <div class="card">
-            <img src="/clientes/uniaofamiliar.png" alt="Ícone Sustentabilidade" loading="lazy" decoding="async" />
+          </article>
+
+          <article class="card">
+            <img src="/img_site/sustentabilidade.png" alt="Ícone Sustentabilidade" loading="lazy" decoding="async" />
             <h3>Sustentabilidade</h3>
             <p>Construções que respeitam o meio ambiente e reduzem impactos.</p>
-          </div>
-          <div class="card">
-            <img src="/clientes/uniaofamiliar.png" alt="Ícone Tecnologia" loading="lazy" decoding="async" />
+          </article>
+
+          <article class="card">
+            <img src="/img_site/tecnologia.png" alt="Ícone Tecnologia" loading="lazy" decoding="async" />
             <h3>Tecnologia Avançada</h3>
             <p>Uso de soluções modernas para garantir inovação nos projetos.</p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -195,7 +203,7 @@
     </div>
   </footer>
 
-  <!-- JS externo, sem interferir no SEO -->
+  <!-- JS externo -->
   <script src="/includes/script.js" defer></script>
 </body>
 </html>
