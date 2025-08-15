@@ -25,7 +25,7 @@
   <!-- FAVICON / CSS -->
   <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="/includes/style.css" />
-  <meta name="theme-color" content="#1f1f1f" />
+  <meta name="theme-color" content="#111" />
 
   <!-- OPEN GRAPH -->
   <meta property="og:title" content="Serviços de Construção Civil | Construtora Vieira" />
@@ -76,26 +76,27 @@
   </script>
 </head>
 <body>
+  <!-- TOPO igual ao da home -->
   <header class="header fade">
     <div class="container">
       <a href="/" aria-label="Página inicial - Construtora Vieira">
-        <img src="/img_site/logocerta.png" height="80" alt="Logotipo da Construtora Vieira - M V de Souza" decoding="async" fetchpriority="high" />
+        <img src="/img_site/logocerta.png" height="100" alt="Logotipo da Construtora Vieira - M V de Souza" fetchpriority="high" decoding="async" />
       </a>
-      <nav class="nav" id="nav-menu">
+      <nav class="nav" id="nav-menu" aria-label="Navegação principal">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/sobrenos">Sobre Nós</a></li>
+          <!-- <li><a href="/sobrenos">Sobre Nós</a></li> -->
           <li><a href="/servicos" aria-current="page">Serviços</a></li>
-          <li><a href="/obras">Obras & Clientes</a></li>
-          <li><a href="/empreendimentos">Empreendimentos</a></li>
+          <!-- <li><a href="/obras">Obras & Clientes</a></li> -->
+          <!-- <li><a href="/empreendimentos">Empreendimentos</a></li> -->
           <li><a href="/sustentabilidade">Sustentabilidade</a></li>
-          <li><a href="/noticias">Notícias e Dicas</a></li>
-          <li><a href="/simulacao">Simulação</a></li>
+          <!-- <li><a href="/noticias">Notícias e Dicas</a></li> -->
+          <!-- <li><a href="/simulacao">Simulação</a></li> -->
           <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
           <li><a href="/contato">Contato</a></li>
         </ul>
       </nav>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
@@ -114,12 +115,8 @@
         <div class="sobre-grid">
           <div class="sobre-texto">
             <h3>Casas e Sobrados Personalizados</h3>
-            <p>
-              Construímos a casa dos seus sonhos em Rondonópolis com projeto personalizado, materiais de primeira qualidade e acabamento impecável. Nossa equipe especializada acompanha cada etapa da construção, desde a fundação até a entrega das chaves.
-            </p>
-            <p>
-              Oferecemos projetos arquitetônicos modernos, plantas funcionais e soluções inteligentes para otimizar espaços. Trabalhamos com diferentes padrões construtivos, sempre respeitando seu orçamento e prazo.
-            </p>
+            <p>Construímos a casa dos seus sonhos em Rondonópolis com projeto personalizado, materiais de primeira qualidade e acabamento impecável. Nossa equipe especializada acompanha cada etapa da construção, desde a fundação até a entrega das chaves.</p>
+            <p>Oferecemos projetos arquitetônicos modernos, plantas funcionais e soluções inteligentes para otimizar espaços. Trabalhamos com diferentes padrões construtivos, sempre respeitando seu orçamento e prazo.</p>
             <ul>
               <li>✅ Projeto arquitetônico personalizado</li>
               <li>✅ Acompanhamento técnico especializado</li>
@@ -129,7 +126,7 @@
             </ul>
           </div>
           <div>
-            <img src="/clientes/uniaofamiliar.png" alt="Casa residencial construída pela Construtora Vieira em Rondonópolis" loading="lazy" decoding="async" />
+            <img src="/img_site/casasesobrados.png" alt="Casa residencial construída pela Construtora Vieira em Rondonópolis" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -140,16 +137,12 @@
         <h2>Construção Comercial e Industrial</h2>
         <div class="sobre-grid">
           <div>
-            <img src="/clientes/uniaofamiliar.png" alt="Galpão comercial construído em Rondonópolis" loading="lazy" decoding="async" />
+            <img src="/img_site/galpoes.png" alt="Galpão comercial construído em Rondonópolis" loading="lazy" decoding="async" />
           </div>
           <div class="sobre-texto">
             <h3>Galpões, Lojas e Escritórios</h3>
-            <p>
-              Especializados em construção comercial e industrial em Rondonópolis, oferecemos soluções completas para seu negócio. Galpões industriais, centros comerciais, lojas, escritórios e complexos empresariais.
-            </p>
-            <p>
-              Nossos projetos comerciais são desenvolvidos pensando na funcionalidade, produtividade e retorno do investimento. Utilizamos técnicas construtivas modernas para garantir rapidez na execução e durabilidade da estrutura.
-            </p>
+            <p>Especializados em construção comercial e industrial em Rondonópolis, oferecemos soluções completas para seu negócio. Galpões industriais, centros comerciais, lojas, escritórios e complexos empresariais.</p>
+            <p>Nossos projetos comerciais são desenvolvidos pensando na funcionalidade, produtividade e retorno do investimento. Utilizamos técnicas construtivas modernas para garantir rapidez na execução e durabilidade da estrutura.</p>
             <ul>
               <li>✅ Galpões industriais de grande porte</li>
               <li>✅ Centros comerciais e shopping centers</li>
@@ -168,12 +161,8 @@
         <div class="sobre-grid">
           <div class="sobre-texto">
             <h3>Projetos em Aço de Alta Qualidade</h3>
-            <p>
-              A Construtora Vieira é especialista em estruturas metálicas em Rondonópolis. Oferecemos projeto, fabricação e montagem de estruturas em aço para diversos fins: galpões industriais, coberturas, mezaninos, passarelas e estruturas especiais.
-            </p>
-            <p>
-              Trabalhamos com aço certificado e soldadores qualificados, garantindo estruturas seguras e duradouras. Nossos projetos seguem todas as normas técnicas brasileiras (NBR) e internacionais.
-            </p>
+            <p>A Construtora Vieira é especialista em estruturas metálicas em Rondonópolis. Oferecemos projeto, fabricação e montagem de estruturas em aço para diversos fins: galpões industriais, coberturas, mezaninos, passarelas e estruturas especiais.</p>
+            <p>Trabalhamos com aço certificado e soldadores qualificados, garantindo estruturas seguras e duradouras. Nossos projetos seguem todas as normas técnicas brasileiras (NBR) e internacionais.</p>
             <ul>
               <li>✅ Galpões industriais em estrutura metálica</li>
               <li>✅ Coberturas e telhados metálicos</li>
@@ -183,7 +172,7 @@
             </ul>
           </div>
           <div>
-            <img src="/clientes/uniaofamiliar.png" alt="Estrutura metálica construída pela Construtora Vieira" loading="lazy" decoding="async" />
+            <img src="/img_site/estruturametalica.png" alt="Estrutura metálica construída pela Construtora Vieira" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -194,16 +183,12 @@
         <h2>Reformas e Ampliações</h2>
         <div class="sobre-grid">
           <div>
-            <img src="/clientes/uniaofamiliar.png" alt="Reforma residencial em Rondonópolis" loading="lazy" decoding="async" />
+            <img src="/img_site/modernizacao.png" alt="Reforma residencial em Rondonópolis" loading="lazy" decoding="async" />
           </div>
           <div class="sobre-texto">
             <h3>Modernize e Amplie seus Espaços</h3>
-            <p>
-              Reformas completas e ampliações em Rondonópolis com qualidade e agilidade. Modernizamos residências, escritórios, lojas e indústrias, sempre respeitando as características originais e agregando valor ao imóvel.
-            </p>
-            <p>
-              Nossa equipe especializada em reformas trabalha com mínimo de transtorno para os moradores ou usuários do espaço. Oferecemos soluções criativas para otimizar ambientes e criar novos espaços funcionais.
-            </p>
+            <p>Reformas completas e ampliações em Rondonópolis com qualidade e agilidade. Modernizamos residências, escritórios, lojas e indústrias, sempre respeitando as características originais e agregando valor ao imóvel.</p>
+            <p>Nossa equipe especializada em reformas trabalha com mínimo de transtorno para os moradores ou usuários do espaço. Oferecemos soluções criativas para otimizar ambientes e criar novos espaços funcionais.</p>
             <ul>
               <li>✅ Reformas residenciais completas</li>
               <li>✅ Ampliações e novos cômodos</li>
@@ -222,12 +207,8 @@
         <div class="sobre-grid">
           <div class="sobre-texto">
             <h3>Compromisso com o Desenvolvimento da Cidade</h3>
-            <p>
-              A Construtora Vieira tem orgulho de contribuir para o desenvolvimento de Rondonópolis através de obras públicas de qualidade. Construímos escolas, postos de saúde, prédios administrativos e infraestrutura urbana.
-            </p>
-            <p>
-              Nosso compromisso com as obras públicas vai além da execução técnica. Trabalhamos com responsabilidade social, cumprindo rigorosamente prazos e orçamentos, sempre pensando no benefício da comunidade.
-            </p>
+            <p>A Construtora Vieira tem orgulho de contribuir para o desenvolvimento de Rondonópolis através de obras públicas de qualidade. Construímos escolas, postos de saúde, prédios administrativos e infraestrutura urbana.</p>
+            <p>Nosso compromisso com as obras públicas vai além da execução técnica. Trabalhamos com responsabilidade social, cumprindo rigorosamente prazos e orçamentos, sempre pensando no benefício da comunidade.</p>
             <ul>
               <li>✅ Escolas e creches municipais</li>
               <li>✅ Postos de saúde e UBSs</li>
@@ -237,7 +218,7 @@
             </ul>
           </div>
           <div>
-            <img src="/clientes/uniaofamiliar.png" alt="Obra pública construída pela Construtora Vieira em Rondonópolis" loading="lazy" decoding="async" />
+            <img src="/img_site/obrapublica.png" alt="Obra pública construída pela Construtora Vieira em Rondonópolis" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -308,6 +289,7 @@
     </section>
   </main>
 
+  <!-- RODAPÉ igual ao da home -->
   <footer class="footer fade">
     <div class="container">
       <p>&copy; 2025 Construtora Vieira. Todos os direitos reservados.</p>

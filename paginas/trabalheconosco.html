@@ -25,7 +25,7 @@
   <!-- FAVICON / CSS -->
   <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="/includes/style.css" />
-  <meta name="theme-color" content="#1f1f1f" />
+  <meta name="theme-color" content="#111" />
 
   <!-- OPEN GRAPH -->
   <meta property="og:title" content="Trabalhe Conosco | Construtora Vieira" />
@@ -54,76 +54,72 @@
   }
   </script>
 </head>
-<body>
+<body class="pagina-interna">
   <header class="header fade">
     <div class="container">
       <a href="/" aria-label="Página inicial - Construtora Vieira">
-        <img src="/img_site/logocerta.png" height="80" alt="Logotipo da Construtora Vieira - M V de Souza" decoding="async" fetchpriority="high" />
+        <img src="/img_site/logocerta.png" height="100" alt="Logotipo da Construtora Vieira - M V de Souza" decoding="async" fetchpriority="high" />
       </a>
-      <nav class="nav" id="nav-menu">
+      <nav class="nav" id="nav-menu" aria-label="Navegação principal">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/sobrenos">Sobre Nós</a></li>
+          <!-- <li><a href="/sobrenos">Sobre Nós</a></li> -->
           <li><a href="/servicos">Serviços</a></li>
-          <li><a href="/obras">Obras & Clientes</a></li>
-          <li><a href="/empreendimentos">Empreendimentos</a></li>
+          <!-- <li><a href="/obras">Obras & Clientes</a></li> -->
+          <!-- <li><a href="/empreendimentos">Empreendimentos</a></li> -->
           <li><a href="/sustentabilidade">Sustentabilidade</a></li>
-          <li><a href="/noticias">Notícias e Dicas</a></li>
-          <li><a href="/simulacao">Simulação</a></li>
+          <!-- <li><a href="/noticias">Notícias e Dicas</a></li> -->
+          <!-- <li><a href="/simulacao">Simulação</a></li> -->
           <li><a href="/trabalheconosco" aria-current="page">Trabalhe Conosco</a></li>
           <li><a href="/contato">Contato</a></li>
         </ul>
       </nav>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
   <main id="conteudo">
-    <div style="background-color: #111;">
-      <section class="section bg-dark fade trabalhe-conosco">
-        <div class="container" style="max-width: 800px;">
+    <section class="section bg-dark fade">
+      <div class="container">
+        <div class="trabalhe-conosco">
           <h1 class="titulo-pagina">Trabalhe Conosco</h1>
 
           <div class="bloco-descricao">
-            <p>
-              Venha fazer parte da nossa equipe! Estamos sempre em busca de profissionais comprometidos, dedicados e que buscam crescimento junto com a M V de Souza – Construtora Vieira.
-            </p>
-            <p>
-              Se você se identifica com os nossos valores e quer contribuir com o desenvolvimento de obras de qualidade, envie seus dados preenchendo o formulário abaixo.
-            </p>
+            <p>Venha fazer parte da nossa equipe! Estamos sempre em busca de profissionais comprometidos, dedicados e que buscam crescimento junto com a M V de Souza – Construtora Vieira.</p>
+            <p>Se você se identifica com os nossos valores e quer contribuir com o desenvolvimento de obras de qualidade, envie seus dados preenchendo o formulário abaixo.</p>
           </div>
 
-          <div class="aviso-curriculo text-light" style="color: #ccc; margin-bottom: 2rem;">
+          <div class="aviso-curriculo text-light" style="margin-bottom: 2rem;">
             📎 Após preencher os dados, você será redirecionado para o WhatsApp.
             <strong>Não se esqueça de anexar o seu currículo (PDF) na conversa.</strong>
           </div>
 
-          <form class="formulario-trabalho">
+          <form class="formulario-trabalho" action="https://wa.me/5566999366313" method="get">
             <div class="campo-form">
               <label for="nome">Nome completo</label>
-              <input type="text" id="nome" name="nome" required />
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name" required />
             </div>
 
             <div class="campo-form">
               <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" required />
+              <input type="email" id="email" name="email" placeholder="Seu e-mail" autocomplete="email" required />
             </div>
 
             <div class="campo-form">
               <label for="telefone">Telefone</label>
-              <input type="tel" id="telefone" name="telefone" required />
+              <input type="tel" id="telefone" name="telefone" placeholder="(66) 99999-9999" autocomplete="tel" required />
             </div>
 
             <div class="campo-form">
               <label for="mensagem">Mensagem (opcional)</label>
-              <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+              <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite sua mensagem"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-black">Enviar</button>
+            <button type="submit" class="btn btn-black">Enviar via WhatsApp</button>
           </form>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer fade">
