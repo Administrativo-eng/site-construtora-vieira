@@ -23,15 +23,22 @@ body{
 a{color:inherit;text-decoration:none}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
 img{max-width:100%;height:auto;display:block}
+figure{margin:0} /* para usar .thumb sem espaçamento extra */
 
 /* Utilitários */
 .img-16x9{aspect-ratio:16/9;object-fit:cover}
 .img-4x3{aspect-ratio:4/3;object-fit:cover}
 .img-1x1{aspect-ratio:1/1;object-fit:cover}
+
+/* Wrapper para thumbs (evita “destorcer” e reflow) */
+.thumb{aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:#f2f2f2}
+.thumb img{width:100%;height:100%;object-fit:cover}
+
 .container{width:92%;max-width:var(--container);margin:0 auto}
 .section{padding:var(--space-8) var(--space-2)}
 .section-sm{padding:var(--space-4) var(--space-2)}
-.bg-dark{background:var(--dark); --text:#666666; color:var(--text)}
+/* Melhor contraste no dark */
+.bg-dark{background:var(--dark); --text:#f2f2f2; --muted:#b5b5b5; color:var(--text)}
 .bg-light{background:#f8f9fa;color:var(--text)}
 .grid-2{display:grid;gap:var(--space-4);grid-template-columns:repeat(2,minmax(0,1fr))}
 .grid-3{display:grid;gap:var(--space-4);grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -76,11 +83,22 @@ ul{padding-left:1rem}
 }
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
 .card h3{margin:.5rem 0}
-.card .media{height:200px;overflow:hidden;border-radius:calc(var(--radius) - 4px);margin-bottom:var(--space-2)}
+
+/* Variante com container .media (agora por aspect-ratio) */
+.card .media{aspect-ratio:4/3;overflow:hidden;border-radius:calc(var(--radius) - 4px);margin-bottom:var(--space-2)}
 .card .media img{width:100%;height:100%;object-fit:cover}
-/* Cards com <img> direto (sem .media) */
-.card>img{width:100%;height:200px;object-fit:cover;border-radius:calc(var(--radius) - 4px);display:block}
-@media (max-width:520px){.card>img{height:180px}}
+
+/* Cards com <img> direto (sem .media): evita esticar e reserva espaço */
+.card>img{
+  width:100%;
+  height:auto;
+  aspect-ratio:4/3;           /* reserva espaço e evita “destorcer” */
+  object-fit:cover;           /* recorte elegante quando necessário */
+  border-radius:calc(var(--radius) - 4px);
+  display:block
+}
+@media (max-width:520px){.card>img{aspect-ratio:4/3}} /* mantém proporção no mobile */
+
 /* Tema escuro nas internas */
 .pagina-interna .card{background:#1a1a1a;color:var(--text)}
 .pagina-interna .card p{color:var(--muted)}
