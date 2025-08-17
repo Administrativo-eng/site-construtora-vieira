@@ -3,9 +3,11 @@ Construtora: Construtora Vieira - M V de Souza
 Site: https://construtoravieira.com.br
 Localização: Rondonópolis, Mato Grosso, Brasil
 Endereço: R. Fatime Ali Dib, 211 — 78731-212 — Rondonópolis/MT
-Telefone: +55 (66) 99936-6313
-E-mail: administrativo@construtoravieira.com.br
-Contato rápido: https://wa.me/5566999366313
+Telefone: +55 66 99936-6313 (E.164: +5566999366313)
+E-mail (geral): contato@construtoravieira.com.br
+E-mail (administrativo): administrativo@construtoravieira.com.br
+Contato rápido (WhatsApp): https://wa.me/5566999366313
+Redes sociais: Facebook (/profile.php?id=61578818874863), Instagram (@construtoravieira1992)
 
 /* THANKS */
 Clientes que confiam em nosso trabalho
@@ -14,26 +16,33 @@ Equipe técnica especializada
 Comunidade de Rondonópolis
 
 /* SITE */
-Última atualização: 2025/08/10
-Linguagem: Português Brasileiro
+Última atualização: 2025/08/17
+Linguagem: Português Brasileiro (pt-BR)
 Doctype: HTML5
-Arquitetura: Site estático, URLs limpas
-Hospedagem/CDN: Netlify
-Performance: Otimizada para Core Web Vitals (cache longo p/ assets, compressão, imagens otimizadas)
-Segurança: HTTPS, HSTS, CSP, XFO, X-Content-Type-Options, Referrer-Policy
+Arquitetura: MPA (multi-página), URLs limpas com rewrites 200
+Rotas canônicas (serviços): /construcao-residencial, /construcao-comercial, /estruturas-metalicas, /obras-publicas, /reformas
+Hospedagem/CDN: Netlify (HSTS, HTTPS forçado, canonical sem www)
+Dev local: Node (server.js sem dependências)
+Acessibilidade: Diretrizes WCAG 2.1 (foco, contraste, semântica)
+Performance: Core Web Vitals, cache longo p/ assets, compressão, imagens otimizadas (formatos modernos + width/height), 1 LCP com fetchpriority
+Segurança: CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, COOP/CORP
 Tecnologias: HTML5, CSS3, JavaScript ES6+ (Vanilla)
-Build: Git + CI/CD
+PWA: Manifest presente; sem Service Worker (sem offline)
+Build/Deploy: Git + CI/CD (Netlify)
 
 /* EMPRESA */
 Fundada: 1992
 Especialidade: Construção Civil
-Serviços: Obras públicas e privadas, estruturas metálicas, reformas, habite-se, AVCB
+Serviços: Obras públicas e privadas, estruturas metálicas, reformas, legalizações (Habite-se, AVCB)
 Área de atuação: Rondonópolis e região
 Experiência: 30+ anos no mercado
 
 /* SEO */
+Foco regional: Mato Grosso (Rondonópolis/MT)
 Palavras-chave: construtora Rondonópolis, construção civil MT, obras públicas, estruturas metálicas, reformas Rondonópolis, legalização imóveis MT
-Meta tags: Otimizadas para buscadores e compartilhamento social (OG/Twitter)
-Schema.org: LocalBusiness / ConstructionCompany implementado
+Meta tags: únicas por página (Title/Description, Open Graph, Twitter Cards)
+Canonical: definido por página (slugs canônicos acima)
+Schema.org: Organization, LocalBusiness, WebPage, Service (por página), ContactPoint (quando aplicável)
+Hreflang: pt-BR
 Sitemap: https://construtoravieira.com.br/sitemap.xml
-Robots: indexação permitida (Allow:/), bloqueio apenas de artefatos temporários
+Robots: indexação permitida (Allow:/); 404 com noindex; parâmetros de campanha desconsiderados

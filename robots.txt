@@ -7,7 +7,7 @@
 User-agent: *
 Allow: /
 
-# Deixa explícito (CSS/JS/Imagens)
+# Tornar explícito (CSS/JS/Imagens)
 Allow: /includes/
 Allow: /includes/*.css
 Allow: /includes/*.js
@@ -29,7 +29,7 @@ Disallow: /*.map$
 Disallow: /*.MAP$
 Disallow: /*~RFb*
 
-# URLs com parâmetros de campanha/ads (conteúdo é o mesmo da versão limpa)
+# Parâmetros de campanha/ads (o conteúdo é o mesmo da URL limpa)
 Disallow: /*?*utm_source=*
 Disallow: /*?*utm_medium=*
 Disallow: /*?*utm_campaign=*
@@ -37,6 +37,9 @@ Disallow: /*?*utm_term=*
 Disallow: /*?*utm_content=*
 Disallow: /*?*gclid=*
 Disallow: /*?*fbclid=*
+
+# Evitar gastar orçamento no 404 (também tem X-Robots-Tag no header)
+Disallow: /404.html
 
 # ======================
 # SITEMAP (canônico)
@@ -47,17 +50,17 @@ Sitemap: https://construtoravieira.com.br/sitemap.xml
 # Ajustes por bot
 # ======================
 
-# Garantir rastreamento amplo de imagens (Google Imagens)
+# Google Images: garantir rastreamento de imagens
 User-agent: Googlebot-Image
 Allow: /img_site/
 Allow: /clientes/
 Allow: /icones/
 
-# Bing costuma respeitar crawl-delay (Google ignora)
+# Bing respeita crawl-delay (Google ignora)
 User-agent: bingbot
 Crawl-delay: 1
 
-# Yandex aceita Host/Clean-param
+# Yandex: host canônico e limpeza de parâmetros
 User-agent: Yandex
 Host: construtoravieira.com.br
 Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content /

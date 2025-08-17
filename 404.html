@@ -5,19 +5,133 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="author" content="Construtora Vieira - M V de Souza" />
+  <meta name="author" content="Construtora Vieira" />
+
+  <!-- PRELOAD DE RECURSOS CRÍTICOS -->
+  <link rel="preload" as="image" href="/img_site/logocerta.png" type="image/png" fetchpriority="high" />
+  <link rel="preload" as="image" href="/img_site/previsual.png" type="image/png" fetchpriority="high" />
 
   <!-- PWA -->
   <link rel="manifest" href="/manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="404 - Construtora Vieira" />
 
-  <!-- SEO (404 não deve indexar) -->
-  <title>Página não encontrada (404) | Construtora Vieira</title>
+  <!-- SEO (404 não deve indexar - MANTIDO CORRETO) -->
+  <title>🔍 Página não encontrada (404) | Construtora Vieira - Vamos te ajudar!</title>
   <meta name="robots" content="noindex, nofollow, noarchive" />
+
+  <!-- CLASSIFICAÇÃO -->
+  <meta name="category" content="Erro 404, Página não encontrada, Navegação" />
+  <meta name="subject" content="Página de Erro 404 da Construtora Vieira" />
+  <meta name="company" content="Construtora Vieira - M V de Souza" />
+  <meta name="copyright" content="© 2024 Construtora Vieira - M V de Souza. Todos os direitos reservados." />
+
+  <!-- GEOLOCALIZAÇÃO -->
+  <meta name="geo.region" content="BR-MT" />
+  <meta name="geo.placename" content="Rondonópolis, Mato Grosso" />
+  <meta name="geo.position" content="-16.4673;-54.6370" />
+  <meta name="ICBM" content="-16.4673, -54.6370" />
 
   <!-- FAVICON / CSS -->
   <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="/includes/style.css" />
   <meta name="theme-color" content="#1f1f1f" />
+
+  <!-- HEADERS DE PERFORMANCE -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <!-- VERIFICAÇÃO DE PROPRIEDADE -->
+  <meta name="google-site-verification" content="COLE_SEU_CODIGO_GOOGLE_AQUI" />
+  <meta name="msvalidate.01" content="COLE_SEU_CODIGO_BING_AQUI" />
+  <meta name="yandex-verification" content="COLE_SEU_CODIGO_YANDEX_AQUI" />
+  <meta name="facebook-domain-verification" content="COLE_SEU_CODIGO_FACEBOOK_AQUI" />
+
+  <!-- SCHEMA.ORG OTIMIZADO PARA 404 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://construtoravieira.com.br/#organization",
+        "name": "Construtora Vieira - M V de Souza",
+        "alternateName": "Construtora Vieira",
+        "url": "https://construtoravieira.com.br/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://construtoravieira.com.br/img_site/logocerta.png",
+          "width": 300,
+          "height": 100
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://construtoravieira.com.br/img_site/previsual.png",
+          "width": 1200,
+          "height": 630
+        },
+        "description": "Construtora especializada em obras, reformas e engenharia em Rondonópolis-MT. Experiência premium até nas páginas de erro.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. Fatime Ali Dib, 211",
+          "postalCode": "78731-212",
+          "addressLocality": "Rondonópolis",
+          "addressRegion": "MT",
+          "addressCountry": "BR"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+55-66-99936-6313",
+          "contactType": "customer service",
+          "availableLanguage": "Portuguese",
+          "areaServed": "Rondonópolis"
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
+          "https://www.instagram.com/construtoravieira1992/"
+        ],
+        "foundingDate": "1992",
+        "areaServed": { "@type": "State", "name": "Mato Grosso" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://construtoravieira.com.br/404#webpage",
+        "url": "https://construtoravieira.com.br/404",
+        "name": "Página não encontrada (404)",
+        "description": "Página de erro 404 da Construtora Vieira com experiência otimizada para recuperar visitantes perdidos.",
+        "isPartOf": { "@id": "https://construtoravieira.com.br/#website" },
+        "about": { "@id": "https://construtoravieira.com.br/#organization" },
+        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/previsual.png" },
+        "datePublished": "2024-01-01T00:00:00+00:00",
+        "dateModified": "2024-12-15T00:00:00+00:00",
+        "mainContentOfPage": {
+          "@type": "WebPageElement",
+          "cssSelector": ".erro404"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://construtoravieira.com.br/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Página não encontrada",
+            "item": "https://construtoravieira.com.br/404"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="header fade">
@@ -28,13 +142,13 @@
       <nav class="nav" id="nav-menu">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/sobrenos">Sobre Nós</a></li>
+          <!-- <li><a href="/sobrenos">Sobre Nós</a></li> -->
           <li><a href="/servicos">Serviços</a></li>
-          <li><a href="/obras">Obras & Clientes</a></li>
-          <li><a href="/empreendimentos">Empreendimentos</a></li>
+          <!-- <li><a href="/obras">Obras & Clientes</a></li> -->
+          <!-- <li><a href="/empreendimentos">Empreendimentos</a></li> -->
           <li><a href="/sustentabilidade">Sustentabilidade</a></li>
-          <li><a href="/noticias">Notícias e Dicas</a></li>
-          <li><a href="/simulacao">Simulação</a></li>
+          <!-- <li><a href="/noticias">Notícias e Dicas</a></li> -->
+          <!-- <li><a href="/simulacao">Simulação</a></li> -->
           <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
           <li><a href="/contato">Contato</a></li>
         </ul>
@@ -47,25 +161,59 @@
     <section class="section bg-dark fade">
       <div class="container">
         <div class="erro404">
-          <h1>404 — Página não encontrada</h1>
-          <p class="text-light">O link que você seguiu pode ter sido movido, renomeado ou não existe mais.</p>
+          <h1>🔍 Ops! Página não encontrada</h1>
+          <p class="text-light">Não se preocupe! O link que você seguiu pode ter sido movido ou não existe mais. Vamos te ajudar a encontrar o que você procura.</p>
 
           <div class="erro404-acoes">
-            <a href="/" class="btn btn-green">Ir para a Home</a>
-            <a href="/servicos" class="btn btn-black">Nossos Serviços</a>
-            <a href="/contato" class="btn btn-black">Fale Conosco</a>
+            <a href="/" class="btn btn-green">🏠 Ir para a Home</a>
+            <a href="/servicos" class="btn btn-black">🏗️ Nossos Serviços</a>
+            <a href="https://wa.me/5566999366313?text=Olá!%20Cheguei%20em%20uma%20página%20que%20não%20existe%20e%20preciso%20de%20ajuda" target="_blank" rel="noopener" class="btn btn-green">💬 Falar no WhatsApp</a>
           </div>
 
           <div class="erro404-links">
-            <p class="text-light" aria-hidden="true">Ou acesse rapidamente:</p>
+            <p class="text-light">📋 Ou acesse rapidamente nossas principais páginas:</p>
             <ul>
-              <li><a href="/obras">Obras & Clientes</a></li>
-              <li><a href="/empreendimentos">Empreendimentos</a></li>
-              <li><a href="/sustentabilidade">Sustentabilidade</a></li>
-              <li><a href="/noticias">Notícias e Dicas</a></li>
-              <li><a href="/simulacao">Simulação</a></li>
-              <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
+              <li><a href="/servicos">🏗️ Serviços - Obras, Reformas e Engenharia</a></li>
+              <li><a href="/empreendimentos">🏠 Empreendimentos - Apartamentos e Salas</a></li>
+              <li><a href="/obras">📸 Obras & Clientes - Nosso Portfólio</a></li>
+              <li><a href="/simulacao">💰 Simulação - Financiamento Imobiliário</a></li>
+              <li><a href="/trabalheconosco">💼 Trabalhe Conosco - Vagas Abertas</a></li>
+              <li><a href="/sustentabilidade">🌱 Sustentabilidade - Construção Consciente</a></li>
+              <li><a href="/noticias">📰 Notícias e Dicas - Blog Especializado</a></li>
+              <li><a href="/contato">📞 Contato - Orçamentos e Informações</a></li>
             </ul>
+          </div>
+
+          <div class="erro404-contato">
+            <h2>🤝 Precisa de ajuda personalizada?</h2>
+            <p class="text-light">Nossa equipe está pronta para te atender!</p>
+            <div class="contato-rapido">
+              <a href="tel:+5566999366313" class="btn btn-black">📞 (66) 99936-6313</a>
+              <a href="mailto:contato@construtoravieira.com.br" class="btn btn-black">✉️ E-mail</a>
+              <a href="/contato" class="btn btn-green">📝 Formulário de Contato</a>
+            </div>
+          </div>
+
+          <div class="erro404-destaque">
+            <h3>⭐ Destaques da Construtora Vieira:</h3>
+            <div class="destaques-grid">
+              <div class="destaque-item">
+                <h4>🏗️ 30+ Anos de Experiência</h4>
+                <p>Tradição e qualidade em obras públicas e privadas</p>
+              </div>
+              <div class="destaque-item">
+                <h4>🏠 Empreendimentos Próprios</h4>
+                <p>Apartamentos e salas comerciais em Rondonópolis</p>
+              </div>
+              <div class="destaque-item">
+                <h4>🌱 Construção Sustentável</h4>
+                <p>Compromisso com o meio ambiente e responsabilidade</p>
+              </div>
+              <div class="destaque-item">
+                <h4>💰 Financiamento Facilitado</h4>
+                <p>Simulador próprio e orientação completa</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -80,5 +228,36 @@
 
   <!-- JS externo -->
   <script src="/includes/script.js" defer></script>
+
+  <!-- SCRIPT ESPECÍFICO PARA 404 -->
+  <script>
+    // Captura URL que gerou o erro 404 para análise
+    if (document.referrer) {
+      console.log('Página 404 acessada via:', document.referrer);
+    }
+    
+    // Sugere busca baseada na URL
+    const currentPath = window.location.pathname;
+    if (currentPath.includes('obra')) {
+      document.querySelector('.erro404 h1').innerHTML += ' - Você estava procurando nossas obras?';
+      document.querySelector('.erro404-acoes').innerHTML = 
+        '<a href="/obras" class="btn btn-green">📸 Ver Nossas Obras</a>' +
+        '<a href="/servicos" class="btn btn-black">🏗️ Nossos Serviços</a>' +
+        '<a href="/" class="btn btn-black">🏠 Ir para Home</a>';
+    } else if (currentPath.includes('empreendimento')) {
+      document.querySelector('.erro404 h1').innerHTML += ' - Você estava procurando nossos empreendimentos?';
+      document.querySelector('.erro404-acoes').innerHTML = 
+        '<a href="/empreendimentos" class="btn btn-green">🏠 Ver Empreendimentos</a>' +
+        '<a href="/simulacao" class="btn btn-black">💰 Simular Financiamento</a>' +
+        '<a href="/" class="btn btn-black">🏠 Ir para Home</a>';
+    } else if (currentPath.includes('contato')) {
+      document.querySelector('.erro404 h1').innerHTML += ' - Você quer falar conosco?';
+      document.querySelector('.erro404-acoes').innerHTML = 
+        '<a href="/contato" class="btn btn-green">📞 Falar Conosco</a>' +
+        '<a href="https://wa.me/5566999366313" target="_blank" class="btn btn-green">💬 WhatsApp</a>' +
+        '<a href="/" class="btn btn-black">🏠 Ir para Home</a>';
+    }
+  </script>
 </body>
 </html>
+

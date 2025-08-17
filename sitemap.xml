@@ -116,4 +116,60 @@
     </image:image>
   </url>
 
+  <!-- Serviços (canônicos com hífen) -->
+  <url>
+    <loc>https://construtoravieira.com.br/construcao-residencial</loc>
+    <lastmod>2025-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://construtoravieira.com.br/img_site/previsual.png</image:loc>
+      <image:title>Construção Residencial</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://construtoravieira.com.br/construcao-comercial</loc>
+    <lastmod>2025-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://construtoravieira.com.br/img_site/previsual.png</image:loc>
+      <image:title>Construção Comercial e Industrial</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://construtoravieira.com.br/estruturas-metalicas</loc>
+    <lastmod>2025-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://construtoravieira.com.br/img_site/previsual.png</image:loc>
+      <image:title>Estruturas Metálicas</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://construtoravieira.com.br/obras-publicas</loc>
+    <lastmod>2025-08-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://construtoravieira.com.br/img_site/previsual.png</image:loc>
+      <image:title>Obras Públicas</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://construtoravieira.com.br/reformas</loc>
+    <lastmod>2025-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://construtoravieira.com.br/img_site/previsual.png</image:loc>
+      <image:title>Reformas</image:title>
+    </image:image>
+  </url>
+
 </urlset>

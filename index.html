@@ -1,87 +1,187 @@
 <!DOCTYPE html>
-<html lang="pt-BR" dir="ltr">
+<html lang="pt-BR">
 <head>
-  <!-- ESSENCIAIS -->
+  <!-- =================== ESSENCIAIS =================== -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="author" content="Construtora Vieira - M V de Souza" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <!-- iOS: evitar auto-link de telefone/endereço/data/email -->
+  <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
 
-  <!-- PRELOAD DE IMAGENS CRÍTICAS (mantidos) -->
-  <link rel="preload" as="image" href="/img_site/logocerta.png" type="image/png" />
-  <link rel="preload" as="image" href="/img_site/previsual.png" type="image/png" />
+  <!-- ================= PRELOAD / RESOURCE HINTS ================= -->
+  <!-- Removidos preloads duplicados em alta prioridade; o logo já recebe fetchpriority no <img> -->
 
-  <!-- PWA -->
+  <!-- (Removidos preconnect de Google Fonts por não haver uso explícito de fontes do Google) -->
+
+  <!-- analytics / gtm -->
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+
+  <!-- prefetch: reduzir para 1 rota prioritária -->
+  <link rel="prefetch" href="/servicos" />
+
+  <!-- ===================== PWA / MANIFEST ====================== -->
   <link rel="manifest" href="/manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Construtora Vieira" />
+  <meta name="application-name" content="Construtora Vieira" />
 
-  <!-- SEO GERAL (enxuto) -->
-  <title>Construtora Vieira — Obras, Reformas e Engenharia</title>
-  <meta name="description" content="Construção e reformas públicas e privadas em Rondonópolis-MT. Estruturas metálicas, galpões, casas, alojamentos e serviços de engenharia." />
+  <!-- ======================= SEO PRINCIPAL ===================== -->
+  <title>Construtora Vieira — Obras, Reformas e Engenharia em Rondonópolis-MT</title>
+  <meta name="description" content="Construtora Vieira em Rondonópolis-MT. Obras públicas e privadas, reformas, estruturas metálicas, galpões e engenharia civil com orçamento gratuito." />
+  <meta name="keywords" content="construtora em Rondonópolis, obras públicas MT, reformas residenciais, estruturas metálicas, galpões industriais, engenharia civil, construção de casas, alojamentos, habite-se, legalizações" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://construtoravieira.com.br/" />
 
-  <!-- GEO / LOCAL -->
-  <meta name="geo.region" content="BR-MT" />
-  <meta name="geo.placename" content="Rondonópolis, Mato Grosso" />
-  <meta name="geo.position" content="-16.4673;-54.6370" />
-  <meta name="ICBM" content="-16.4673, -54.6370" />
+  <!-- ============== FAVICON / ÍCONES ESSENCIAIS =============== -->
+  <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" sizes="any" />
+  <link rel="icon" href="/img_site/favicon-32x32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/img_site/apple-touch-icon.png" sizes="180x180" />
 
-  <!-- FAVICON / TEMA -->
-  <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" />
-  <meta name="theme-color" content="#111" />
+  <!-- ==================== TEMA / CORES ======================== -->
+  <meta name="theme-color" content="#111111" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#111111" />
 
-  <!-- OPEN GRAPH -->
-  <meta property="og:title" content="Construtora Vieira — Obras, Reformas e Engenharia" />
-  <meta property="og:description" content="Obras, reformas, estruturas metálicas e legalizações em Rondonópolis e região." />
-  <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:url" content="https://construtoravieira.com.br/" />
+  <!-- ===================== OPEN GRAPH ========================= -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Construtora Vieira" />
+  <meta property="og:title" content="Construtora Vieira — Obras, Reformas e Engenharia Civil em Rondonópolis-MT" />
+  <meta property="og:description" content="Especialista em obras públicas e privadas, reformas, estruturas metálicas e serviços de engenharia civil em Rondonópolis-MT." />
+  <meta property="og:url" content="https://construtoravieira.com.br/" />
+  <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Construtora Vieira - Obras e Reformas em Rondonópolis-MT" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:site_name" content="Construtora Vieira - M V de Souza" />
 
-  <!-- TWITTER -->
+  <!-- ==================== TWITTER CARDS ======================= -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Construtora Vieira — Obras, Reformas e Engenharia" />
-  <meta name="twitter:description" content="Obras, reformas e estruturas metálicas em Rondonópolis-MT." />
+  <meta name="twitter:title" content="Construtora Vieira — Obras, Reformas e Engenharia Civil em Rondonópolis-MT" />
+  <meta name="twitter:description" content="Obras públicas e privadas, reformas, estruturas metálicas e engenharia civil." />
   <meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+  <!-- habilite se o @ existir:
+  <meta name="twitter:site" content="@construtoravieira" />
+  <meta name="twitter:creator" content="@construtoravieira" />
+  -->
 
-  <!-- PINTEREST -->
-  <meta name="pinterest-rich-pin" content="true" />
+  <!-- ================ ACESSIBILIDADE ========================== -->
+  <meta name="color-scheme" content="light dark" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/includes/style.css" />
+  <!-- ================ VERIFICAÇÕES (substituir quando tiver) == -->
+  <meta name="google-site-verification" content="COLE_SEU_CODIGO_GOOGLE_AQUI" />
+  <meta name="msvalidate.01" content="COLE_SEU_CODIGO_BING_AQUI" />
+  <meta name="yandex-verification" content="COLE_SEU_CODIGO_YANDEX_AQUI" />
+  <meta name="facebook-domain-verification" content="COLE_SEU_CODIGO_FACEBOOK_AQUI" />
 
-  <!-- SCHEMA.ORG (fixo) -->
+  <!-- =================== HREFLANG (pt único) ================== -->
+  <link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/" />
+  <link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/" />
+
+  <!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Construtora Vieira - M V de Souza",
-    "url": "https://construtoravieira.com.br/",
-    "logo": "https://construtoravieira.com.br/img_site/logocerta.png",
-    "image": "https://construtoravieira.com.br/img_site/previsual.png",
-    "telephone": "+55-66-99936-6313",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "R. Fatime Ali Dib, 211",
-      "addressLocality": "Rondonópolis",
-      "addressRegion": "MT",
-      "postalCode": "78731-212",
-      "addressCountry": "BR"
-    },
-    "geo": { "@type": "GeoCoordinates", "latitude": -16.4673, "longitude": -54.6370 },
-    "areaServed": "Rondonópolis e região",
-    "sameAs": ["https://www.instagram.com/","https://www.facebook.com/","https://www.linkedin.com/"]
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://construtoravieira.com.br/#organization",
+        "name": "Construtora Vieira",
+        "alternateName": "Construtora Vieira",
+        "url": "https://construtoravieira.com.br/",
+        "logo": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/logocerta.png", "width": 300, "height": 100 },
+        "image": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/previsual.png", "width": 1200, "height": 630 },
+        "description": "Construtora especializada em obras públicas e privadas, reformas, estruturas metálicas e serviços de engenharia civil em Rondonópolis-MT.",
+        "email": "contato@construtoravieira.com.br",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. Fatime Ali Dib, 211",
+          "postalCode": "78731-212",
+          "addressLocality": "Rondonópolis",
+          "addressRegion": "MT",
+          "addressCountry": "BR"
+        },
+        "contactPoint": { "@type": "ContactPoint", "telephone": "+55-66-99936-6313", "contactType": "customer service", "availableLanguage": "Portuguese" },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
+          "https://www.instagram.com/construtoravieira1992/"
+        ],
+        "foundingDate": "1992",
+        "foundingLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Rondonópolis", "addressRegion": "MT", "addressCountry": "BR" } },
+        "areaServed": { "@type": "State", "name": "Mato Grosso" },
+        "serviceArea": { "@type": "GeoCircle", "geoMidpoint": { "@type": "GeoCoordinates", "latitude": -16.4673, "longitude": -54.6370 }, "geoRadius": "100000" }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://construtoravieira.com.br/#localbusiness",
+        "name": "Construtora Vieira",
+        "image": "https://construtoravieira.com.br/img_site/previsual.png",
+        "telephone": "+55-66-99936-6313",
+        "address": { "@type": "PostalAddress", "streetAddress": "R. Fatime Ali Dib, 211", "addressLocality": "Rondonópolis", "addressRegion": "MT", "postalCode": "78731-212", "addressCountry": "BR" },
+        "geo": { "@type": "GeoCoordinates", "latitude": -16.4673, "longitude": -54.6370 },
+        "url": "https://construtoravieira.com.br/",
+        "openingHours": "Mo-Fr 08:00-18:00",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+        "currenciesAccepted": "BRL"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://construtoravieira.com.br/#website",
+        "url": "https://construtoravieira.com.br/",
+        "name": "Construtora Vieira",
+        "description": "Site oficial da Construtora Vieira - Obras, reformas e engenharia civil em Rondonópolis-MT",
+        "publisher": { "@id": "https://construtoravieira.com.br/#organization" },
+        "inLanguage": "pt-BR"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://construtoravieira.com.br/#webpage",
+        "url": "https://construtoravieira.com.br/",
+        "name": "Construtora Vieira | Obras, Reformas e Engenharia Civil em Rondonópolis-MT",
+        "description": "Construtora especializada em obras públicas e privadas, reformas, estruturas metálicas e serviços de engenharia civil em Rondonópolis-MT.",
+        "isPartOf": { "@id": "https://construtoravieira.com.br/#website" },
+        "about": { "@id": "https://construtoravieira.com.br/#organization" },
+        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/previsual.png" },
+        "datePublished": "2024-01-01T00:00:00+00:00",
+        "dateModified": "2024-12-15T00:00:00+00:00",
+        "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://construtoravieira.com.br/" }] }
+      },
+      {
+        "@type": "Service",
+        "serviceType": "Construção Civil",
+        "provider": { "@id": "https://construtoravieira.com.br/#organization" },
+        "areaServed": { "@type": "State", "name": "Mato Grosso" },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços de Construção",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Obras Públicas e Privadas" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reformas Residenciais e Comerciais" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estruturas Metálicas" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Galpões Industriais" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Serviços de Engenharia Civil" } }
+          ]
+        }
+      }
+    ]
   }
   </script>
+
+  <!-- ===================== CSS =============================== -->
+  <link rel="stylesheet" href="/includes/style.css" />
 </head>
 
 <body>
-  <header class="header fade">
+  <header class="header fade" role="banner">
     <div class="container">
       <a href="/" aria-label="Página inicial - Construtora Vieira">
-        <img src="/img_site/logocerta.png" height="100" alt="Logotipo da Construtora Vieira - M V de Souza" fetchpriority="high" decoding="async" />
+        <img
+          src="/img_site/logocerta.png"
+          width="300" height="100"
+          alt="Logotipo da Construtora Vieira - M V de Souza"
+          fetchpriority="high" decoding="async" />
       </a>
       <nav class="nav" id="nav-menu" aria-label="Navegação principal">
         <ul>
@@ -97,11 +197,11 @@
           <li><a href="/contato">Contato</a></li>
         </ul>
       </nav>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
-  <main id="conteudo">
+  <main id="conteudo" role="main">
     <!-- HERO -->
     <section class="hero fade">
       <div class="container">
@@ -159,7 +259,7 @@
           </p>
         </div>
         <div>
-          <img src="/img_site/sobre.png" alt="Equipe da empresa" loading="lazy" decoding="async" />
+          <a href="/sobrenos"><img src="/img_site/sobre.png" alt="Equipe da empresa" loading="lazy" decoding="async" /></a>
         </div>
       </div>
     </section>
@@ -197,7 +297,7 @@
     </section>
   </main>
 
-  <footer class="footer fade">
+  <footer class="footer fade" role="contentinfo">
     <div class="container">
       <p>&copy; 2025 Construtora Vieira. Todos os direitos reservados.</p>
     </div>

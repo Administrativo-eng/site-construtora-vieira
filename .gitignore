@@ -1,0 +1,80 @@
+# =====================
+# Netlify
+# =====================
+.netlify/
+
+# =====================
+# Node / JS (mesmo sem deps, útil se adicionar no futuro)
+# =====================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+coverage/
+.nyc_output/
+
+# =====================
+# Builds / Caches
+# =====================
+dist/
+build/
+.cache/
+.parcel-cache/
+.tmp/
+.temp/
+tmp/
+out/
+.next/
+.vercel/
+
+# =====================
+# SO / Explorer / Finder
+# =====================
+.DS_Store
+Icon?
+.Spotlight-V100
+.Trashes
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# =====================
+# Editores / IDEs
+# =====================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# =====================
+# Env / Segredos
+# =====================
+.env
+.env.* 
+!.env.example
+
+# =====================
+# Arquivos temporários / backups
+# =====================
+*.tmp
+*.temp
+*.bak
+*~
+~$*
+
+# =====================
+# Mapas (gerados por build)
+# =====================
+*.map
+
+# =====================
+# Arquivos de arquivo/backup grandes
+# =====================
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
