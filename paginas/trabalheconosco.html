@@ -1,58 +1,278 @@
 <!DOCTYPE html>
-<html lang="pt-BR" dir="ltr">
+<html lang="pt-BR" prefix="og: https://ogp.me/ns#">
 <head>
-  <!-- ESSENCIAIS -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="author" content="Construtora Vieira - M V de Souza" />
+<!-- =================== ESSENCIAIS =================== -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- Evitar auto-link do iOS -->
+<meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
 
-  <!-- PWA -->
-  <link rel="manifest" href="/manifest.json" />
+<!-- ============ PRELOAD / RESOURCE HINTS ============ -->
+<link rel="preload" as="image" href="/img_site/logocerta.png" type="image/png" fetchpriority="high" />
+<link rel="preload" as="image" href="/img_site/previsual.png" type="image/png" fetchpriority="high" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<link rel="prefetch" href="/contato" />
+<link rel="prefetch" href="/servicos" />
 
-  <!-- SEO -->
-  <title>Trabalhe Conosco | Construtora Vieira – Rondonópolis-MT</title>
-  <meta name="description" content="Envie seus dados para trabalhar na Construtora Vieira (Rondonópolis-MT). Buscamos profissionais para obras públicas e privadas, estruturas metálicas e reformas." />
-  <link rel="canonical" href="https://construtoravieira.com.br/trabalheconosco" />
-  <meta name="robots" content="index, follow" />
+<!-- ===================== PWA / MANIFEST ====================== -->
+<link rel="manifest" href="/manifest.json" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Trabalhe Conosco — Construtora Vieira" />
+<meta name="application-name" content="Construtora Vieira — Trabalhe Conosco" />
+<meta name="msapplication-TileColor" content="#111111" />
+<meta name="msapplication-config" content="/browserconfig.xml" />
 
-  <!-- GEO -->
-  <meta name="geo.region" content="BR-MT" />
-  <meta name="geo.placename" content="Rondonópolis, Mato Grosso" />
-  <meta name="geo.position" content="-16.4673;-54.6370" />
-  <meta name="ICBM" content="-16.4673, -54.6370" />
+<!-- ======================= SEO PRINCIPAL ===================== -->
+<title>Trabalhe na Construtora Vieira em Rondonópolis-MT | Vagas Abertas</title>
+<meta name="description" content="Vagas para engenheiros, pedreiros, soldadores e técnicos em Rondonópolis-MT. 30+ anos de mercado, segurança e crescimento. Envie seu currículo por WhatsApp ou e-mail." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://construtoravieira.com.br/trabalheconosco" />
 
-  <!-- FAVICON / CSS -->
-  <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="/includes/style.css" />
-  <meta name="theme-color" content="#111" />
+<!-- ============== FAVICON / ÍCONES / CSS ==================== -->
+<link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" sizes="any" />
+<link rel="icon" href="/img_site/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/img_site/apple-touch-icon.png" sizes="180x180" />
+<link rel="stylesheet" href="/includes/style.css" />
 
-  <!-- OPEN GRAPH -->
-  <meta property="og:title" content="Trabalhe Conosco | Construtora Vieira" />
-  <meta property="og:description" content="Faça parte da nossa equipe. Envie seus dados e fale conosco pelo WhatsApp." />
-  <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:url" content="https://construtoravieira.com.br/trabalheconosco" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="pt_BR" />
-  <meta property="og:site_name" content="Construtora Vieira - M V de Souza" />
+<!-- ==================== TEMA / CORES ======================== -->
+<meta name="theme-color" content="#111111" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#111111" />
 
-  <!-- TWITTER -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Trabalhe Conosco | Construtora Vieira" />
-  <meta name="twitter:description" content="Envie seus dados e fale com nosso RH pelo WhatsApp." />
-  <meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+<!-- ===================== OPEN GRAPH ========================= -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Construtora Vieira" />
+<meta property="og:title" content="Trabalhe na Construtora Vieira em Rondonópolis-MT | Vagas Abertas" />
+<meta property="og:description" content="Oportunidades para engenheiros, pedreiros, soldadores e técnicos. Ambiente seguro e crescimento profissional." />
+<meta property="og:url" content="https://construtoravieira.com.br/trabalheconosco" />
+<meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Trabalhe Conosco — Construtora Vieira" />
+<meta property="og:locale" content="pt_BR" />
 
-  <!-- SCHEMA.ORG -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "name":"Trabalhe Conosco",
-    "url":"https://construtoravieira.com.br/trabalheconosco",
-    "about":{"@type":"Organization","name":"Construtora Vieira - M V de Souza"}
-  }
-  </script>
+<!-- ==================== TWITTER CARDS ======================= -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Trabalhe na Construtora Vieira em Rondonópolis-MT | Vagas Abertas" />
+<meta name="twitter:description" content="Envie seu currículo por WhatsApp ou e-mail. Vagas para diferentes níveis de experiência." />
+<meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+<!-- Se o @ existir, ative:
+<meta name="twitter:site" content="@construtoravieira" />
+<meta name="twitter:creator" content="@construtoravieira" />
+-->
+
+<!-- =================== HREFLANG ================== -->
+<link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/trabalheconosco" />
+<link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/trabalheconosco" />
+
+<!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://construtoravieira.com.br/#organization",
+      "name": "Construtora Vieira - M V de Souza",
+      "alternateName": "Construtora Vieira",
+      "url": "https://construtoravieira.com.br/",
+      "logo": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/logocerta.png", "width": 300, "height": 100 },
+      "image": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/previsual.png", "width": 1200, "height": 630 },
+      "description": "Construtora especializada em obras públicas e privadas, estruturas metálicas, reformas e serviços de engenharia civil em Rondonópolis-MT.",
+      "email": "contato@construtoravieira.com.br",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
+        "https://www.instagram.com/construtoravieira1992/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+5566999366313",
+        "contactType": "customer service",
+        "availableLanguage": "pt-BR",
+        "areaServed": "Rondonópolis"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Fatime Ali Dib, 211",
+        "postalCode": "78731-212",
+        "addressLocality": "Rondonópolis",
+        "addressRegion": "MT",
+        "addressCountry": "BR"
+      },
+      "foundingDate": "1992",
+      "areaServed": { "@type": "State", "name": "Mato Grosso" },
+      "numberOfEmployees": "50-100"
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://construtoravieira.com.br/#localbusiness",
+      "name": "Construtora Vieira - M V de Souza",
+      "image": "https://construtoravieira.com.br/img_site/previsual.png",
+      "telephone": "+5566999366313",
+      "email": "contato@construtoravieira.com.br",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Fatime Ali Dib, 211",
+        "addressLocality": "Rondonópolis",
+        "addressRegion": "MT",
+        "postalCode": "78731-212",
+        "addressCountry": "BR"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": -16.4673, "longitude": -54.6370 },
+      "url": "https://construtoravieira.com.br/",
+      "openingHours": "Mo-Fr 08:00-18:00",
+      "priceRange": "$$",
+      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+      "currenciesAccepted": "BRL",
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "120", "bestRating": "5", "worstRating": "1" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://construtoravieira.com.br/trabalheconosco#webpage",
+      "url": "https://construtoravieira.com.br/trabalheconosco",
+      "name": "Trabalhe na Construtora Vieira em Rondonópolis-MT",
+      "description": "Vagas e oportunidades para profissionais da construção civil em Rondonópolis-MT.",
+      "isPartOf": { "@id": "https://construtoravieira.com.br/#website" },
+      "about": { "@id": "https://construtoravieira.com.br/#organization" },
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/previsual.png" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://construtoravieira.com.br/" },
+          { "@type": "ListItem", "position": 2, "name": "Trabalhe Conosco", "item": "https://construtoravieira.com.br/trabalheconosco" }
+        ]
+      }
+    },
+    {
+      "@type": "JobPosting",
+      "title": "Engenheiro Civil",
+      "description": "Atuação em obras públicas e privadas: projetos, fiscalização e coordenação.",
+      "hiringOrganization": { "@id": "https://construtoravieira.com.br/#organization" },
+      "employmentType": "FULL_TIME",
+      "directApply": true,
+      "jobLocationType": "ON_SITE",
+      "applicantLocationRequirements": { "@type": "Country", "name": "BR" },
+      "jobLocation": {
+        "@type": "Place",
+        "address": { "@type": "PostalAddress", "addressLocality": "Rondonópolis", "addressRegion": "MT", "addressCountry": "BR" }
+      },
+      "datePosted": "2024-12-01",
+      "validThrough": "2025-03-01",
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "BRL",
+        "value": { "@type": "QuantitativeValue", "minValue": 8000, "maxValue": 15000, "unitText": "MONTH" }
+      },
+      "qualifications": "Graduação em Engenharia Civil, CREA ativo, 3+ anos de experiência",
+      "responsibilities": "Coordenação de obras, elaboração de projetos, fiscalização e controle de qualidade"
+    },
+    {
+      "@type": "JobPosting",
+      "title": "Pedreiro Especializado",
+      "description": "Execução de alvenaria, reboco, contrapisos e acabamentos em obras residenciais e comerciais.",
+      "hiringOrganization": { "@id": "https://construtoravieira.com.br/#organization" },
+      "employmentType": "FULL_TIME",
+      "directApply": true,
+      "jobLocationType": "ON_SITE",
+      "applicantLocationRequirements": { "@type": "Country", "name": "BR" },
+      "jobLocation": {
+        "@type": "Place",
+        "address": { "@type": "PostalAddress", "addressLocality": "Rondonópolis", "addressRegion": "MT", "addressCountry": "BR" }
+      },
+      "datePosted": "2024-12-01",
+      "validThrough": "2025-03-01",
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "BRL",
+        "value": { "@type": "QuantitativeValue", "minValue": 2500, "maxValue": 4500, "unitText": "MONTH" }
+      },
+      "qualifications": "Experiência comprovada em alvenaria e acabamentos; disponibilidade para viagens",
+      "responsibilities": "Leitura de projetos, execução de serviços de alvenaria e acabamentos, trabalho em equipe"
+    },
+    {
+      "@type": "JobPosting",
+      "title": "Soldador Industrial",
+      "description": "Soldas em estruturas metálicas (MIG, TIG e eletrodo), montagem e manutenção.",
+      "hiringOrganization": { "@id": "https://construtoravieira.com.br/#organization" },
+      "employmentType": "FULL_TIME",
+      "directApply": true,
+      "jobLocationType": "ON_SITE",
+      "applicantLocationRequirements": { "@type": "Country", "name": "BR" },
+      "jobLocation": {
+        "@type": "Place",
+        "address": { "@type": "PostalAddress", "addressLocality": "Rondonópolis", "addressRegion": "MT", "addressCountry": "BR" }
+      },
+      "datePosted": "2024-12-01",
+      "validThrough": "2025-03-01",
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "BRL",
+        "value": { "@type": "QuantitativeValue", "minValue": 3000, "maxValue": 5500, "unitText": "MONTH" }
+      },
+      "qualifications": "Certificação em soldagem, 2+ anos de experiência, conhecimento em estruturas metálicas",
+      "responsibilities": "Execução de soldas, montagem de galpões e manutenção de equipamentos"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Como enviar meu currículo para a Construtora Vieira?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Preencha o formulário do site para iniciar o contato via WhatsApp e anexe seu currículo em PDF. Também aceitamos por e-mail: contato@construtoravieira.com.br."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais tipos de vaga vocês oferecem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Engenheiros civis, pedreiros, soldadores, técnicos em edificações, mestres de obras, operadores de máquinas e áreas administrativas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso ter experiência?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Temos oportunidades para diferentes níveis. Algumas funções exigem experiência, outras oferecem treinamento. Confira os requisitos em cada vaga."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais benefícios são oferecidos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Salário compatível, vale-transporte, vale-alimentação, EPI completo, ambiente seguro e trilhas de crescimento profissional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como é o processo seletivo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Análise de currículo, entrevista, teste prático (quando aplicável) e checagem de referências. Prazo médio de 15 dias úteis."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ================ ACESSIBILIDADE ========================== -->
+<meta name="color-scheme" content="light dark" />
+
+<!-- ================ VERIFICAÇÕES (substituir quando tiver) == -->
+<meta name="google-site-verification" content="COLE_SEU_CODIGO_GOOGLE_AQUI" />
+<meta name="msvalidate.01" content="COLE_SEU_CODIGO_BING_AQUI" />
+<meta name="yandex-verification" content="COLE_SEU_CODIGO_YANDEX_AQUI" />
+<meta name="facebook-domain-verification" content="COLE_SEU_CODIGO_FACEBOOK_AQUI" />
 </head>
 <body class="pagina-interna">
   <header class="header fade">
@@ -132,3 +352,4 @@
   <script src="/includes/script.js" defer></script>
 </body>
 </html>
+

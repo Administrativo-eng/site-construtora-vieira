@@ -1,87 +1,152 @@
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 <head>
-  <!-- ESSENCIAIS -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="author" content="Construtora Vieira - M V de Souza" />
+<!-- =================== ESSENCIAIS =================== -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<!-- iOS: evitar auto-link automático -->
+<meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
 
-  <!-- PWA -->
-  <link rel="manifest" href="/manifest.json" />
+<!-- ================= PRELOAD / RESOURCE HINTS ================= -->
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<!-- próxima ação mais provável -->
+<link rel="prefetch" href="/contato" />
 
-  <!-- SEO -->
-  <title>Empreendimentos em Destaque | Construtora Vieira – Rondonópolis-MT</title>
-  <meta name="description" content="Imóveis para venda e aluguel em Rondonópolis e região. Empreendimentos com qualidade Construtora Vieira." />
-  <link rel="canonical" href="https://construtoravieira.com.br/empreendimentos" />
-  <meta name="robots" content="index, follow" />
+<!-- ===================== PWA / MANIFEST ====================== -->
+<link rel="manifest" href="/manifest.json" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Empreendimentos — Construtora Vieira" />
+<meta name="application-name" content="Construtora Vieira — Empreendimentos" />
 
-  <!-- GEO -->
-  <meta name="geo.region" content="BR-MT" />
-  <meta name="geo.placename" content="Rondonópolis, Mato Grosso" />
-  <meta name="geo.position" content="-16.4673;-54.6370" />
-  <meta name="ICBM" content="-16.4673, -54.6370" />
+<!-- ======================= SEO PRINCIPAL ===================== -->
+<title>Empreendimentos em Destaque | Construtora Vieira em Rondonópolis-MT</title>
+<meta name="description" content="Imóveis para venda e aluguel em Rondonópolis e região. Empreendimentos com padrão de qualidade Construtora Vieira." />
+<meta name="keywords" content="empreendimentos em rondonópolis, imóveis à venda, imóveis para aluguel, construtora vieira" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://construtoravieira.com.br/empreendimentos" />
 
-  <!-- FAVICON / CSS -->
-  <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="/includes/style.css" />
-  <meta name="theme-color" content="#1f1f1f" />
+<!-- ============== FAVICON / CSS ============================= -->
+<link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" sizes="any" />
+<link rel="icon" href="/img_site/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/img_site/apple-touch-icon.png" sizes="180x180" />
+<link rel="stylesheet" href="/includes/style.css" />
 
-  <!-- OPEN GRAPH -->
-  <meta property="og:title" content="Empreendimentos em Destaque | Construtora Vieira" />
-  <meta property="og:description" content="Descubra opções de venda e aluguel em Rondonópolis e região." />
-  <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:url" content="https://construtoravieira.com.br/empreendimentos" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="pt_BR" />
-  <meta property="og:site_name" content="Construtora Vieira - M V de Souza" />
+<!-- ==================== TEMA / CORES ======================== -->
+<meta name="theme-color" content="#111111" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#111111" />
 
-  <!-- TWITTER -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Empreendimentos em Destaque | Construtora Vieira" />
-  <meta name="twitter:description" content="Imóveis com padrão de qualidade Construtora Vieira." />
-  <meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+<!-- ===================== OPEN GRAPH ========================= -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Construtora Vieira" />
+<meta property="og:title" content="Empreendimentos em Destaque | Construtora Vieira" />
+<meta property="og:description" content="Descubra opções de venda e aluguel em Rondonópolis e região." />
+<meta property="og:url" content="https://construtoravieira.com.br/empreendimentos" />
+<meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Empreendimentos — Construtora Vieira em Rondonópolis-MT" />
+<meta property="og:locale" content="pt_BR" />
 
-  <!-- SCHEMA.ORG -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"CollectionPage",
-    "name":"Empreendimentos",
-    "url":"https://construtoravieira.com.br/empreendimentos",
-    "about":{"@type":"Organization","name":"Construtora Vieira - M V de Souza"}
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "itemListElement": [
-      {
-        "@type":"RealEstateListing",
-        "name":"Edifício Meridian",
-        "url":"https://construtoravieira.com.br/empreendimentos#meridian",
-        "image":"https://construtoravieira.com.br/clientes/uniaofamiliar.png",
-        "offers":{"@type":"Offer","price":"650000","priceCurrency":"BRL","availability":"https://schema.org/InStock"}
-      },
-      {
-        "@type":"RealEstateListing",
-        "name":"Vista Parque",
-        "url":"https://construtoravieira.com.br/empreendimentos#vistaparque",
-        "image":"https://construtoravieira.com.br/clientes/uniaofamiliar.png",
-        "offers":{"@type":"Offer","price":"420000","priceCurrency":"BRL","availability":"https://schema.org/InStock"}
-      },
-      {
-        "@type":"RealEstateListing",
-        "name":"Plaza Central",
-        "url":"https://construtoravieira.com.br/empreendimentos#plazacentral",
-        "image":"https://construtoravieira.com.br/clientes/uniaofamiliar.png",
-        "offers":{"@type":"Offer","price":"Aluguel","priceCurrency":"BRL","availability":"https://schema.org/InStock"}
-      }
-    ]
-  }
-  </script>
+<!-- ==================== TWITTER CARDS ======================= -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Empreendimentos em Destaque | Construtora Vieira" />
+<meta name="twitter:description" content="Imóveis com padrão de qualidade Construtora Vieira." />
+<meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+<!-- Se o @ existir, ative:
+<meta name="twitter:site" content="@construtoravieira" />
+<meta name="twitter:creator" content="@construtoravieira" />
+-->
+
+<!-- =================== HREFLANG (pt único) ================== -->
+<link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/empreendimentos" />
+<link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/empreendimentos" />
+
+<!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://construtoravieira.com.br/#organization",
+      "name":"Construtora Vieira",
+      "url":"https://construtoravieira.com.br/",
+      "logo":{"@type":"ImageObject","url":"https://construtoravieira.com.br/img_site/logocerta.png","width":300,"height":100},
+      "image":{"@type":"ImageObject","url":"https://construtoravieira.com.br/img_site/previsual.png","width":1200,"height":630},
+      "sameAs":[
+        "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
+        "https://www.instagram.com/construtoravieira1992/"
+      ],
+      "contactPoint":{"@type":"ContactPoint","telephone":"+55-66-99936-6313","contactType":"customer service","availableLanguage":"Portuguese"}
+    },
+    {
+      "@type":"LocalBusiness",
+      "@id":"https://construtoravieira.com.br/#localbusiness",
+      "name":"Construtora Vieira",
+      "image":"https://construtoravieira.com.br/img_site/previsual.png",
+      "telephone":"+55-66-99936-6313",
+      "address":{"@type":"PostalAddress","streetAddress":"R. Fatime Ali Dib, 211","addressLocality":"Rondonópolis","addressRegion":"MT","postalCode":"78731-212","addressCountry":"BR"},
+      "geo":{"@type":"GeoCoordinates","latitude":-16.4673,"longitude":-54.6370},
+      "url":"https://construtoravieira.com.br/",
+      "openingHours":"Mo-Fr 08:00-18:00",
+      "priceRange":"$$",
+      "paymentAccepted":"Cash, Credit Card, Bank Transfer",
+      "currenciesAccepted":"BRL"
+    },
+    {
+      "@type":"CollectionPage",
+      "@id":"https://construtoravieira.com.br/empreendimentos#webpage",
+      "url":"https://construtoravieira.com.br/empreendimentos",
+      "name":"Empreendimentos em Destaque | Construtora Vieira",
+      "description":"Imóveis para venda e aluguel em Rondonópolis e região.",
+      "isPartOf":{"@id":"https://construtoravieira.com.br/#website"},
+      "about":{"@id":"https://construtoravieira.com.br/#organization"},
+      "primaryImageOfPage":{"@type":"ImageObject","url":"https://construtoravieira.com.br/img_site/previsual.png"}
+    },
+    {
+      "@type":"ItemList",
+      "itemListOrder":"https://schema.org/ItemListOrderAscending",
+      "numberOfItems":3,
+      "itemListElement":[
+        {
+          "@type":"ListItem","position":1,
+          "item":{
+            "@type":"RealEstateListing",
+            "name":"Edifício Meridian",
+            "url":"https://construtoravieira.com.br/empreendimentos#meridian",
+            "image":"https://construtoravieira.com.br/clientes/uniaofamiliar.png",
+            "offers":{"@type":"Offer","price":650000,"priceCurrency":"BRL","availability":"https://schema.org/InStock","businessFunction":"http://purl.org/goodrelations/v1#Sell"}
+          }
+        },
+        {
+          "@type":"ListItem","position":2,
+          "item":{
+            "@type":"RealEstateListing",
+            "name":"Vista Parque",
+            "url":"https://construtoravieira.com.br/empreendimentos#vistaparque",
+            "image":"https://construtoravieira.com.br/clientes/uniaofamiliar.png",
+            "offers":{"@type":"Offer","price":420000,"priceCurrency":"BRL","availability":"https://schema.org/InStock","businessFunction":"http://purl.org/goodrelations/v1#Sell"}
+          }
+        },
+        {
+          "@type":"ListItem","position":3,
+          "item":{
+            "@type":"RealEstateListing",
+            "name":"Plaza Central",
+            "url":"https://construtoravieira.com.br/empreendimentos#plazacentral",
+            "image":"https://construtoravieira.com.br/clientes/uniaofamiliar.png",
+            "offers":{"@type":"Offer","availability":"https://schema.org/InStock","businessFunction":"http://purl.org/goodrelations/v1#LeaseOut"}
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <header class="header fade">

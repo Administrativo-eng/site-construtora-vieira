@@ -1,58 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 <head>
-  <!-- ESSENCIAIS -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="author" content="Construtora Vieira - M V de Souza" />
+<!-- =================== ESSENCIAIS =================== -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<!-- iOS: evitar auto-link automático -->
+<meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
+<meta name="author" content="Construtora Vieira - M V de Souza" />
 
-  <!-- PWA -->
-  <link rel="manifest" href="/manifest.json" />
+<!-- ================= PRELOAD / RESOURCE HINTS ================= -->
+<!-- mantenha apenas se forem realmente LCP -->
+<link rel="preload" as="image" href="/img_site/logocerta.png" type="image/png" fetchpriority="high" />
+<link rel="preload" as="image" href="/clientes/uniaofamiliar.png" type="image/png" fetchpriority="high" />
+<link rel="dns-prefetch" href="//www.google-analytics.com" />
+<link rel="dns-prefetch" href="//www.googletagmanager.com" />
+<!-- próximas rotas prováveis -->
+<link rel="prefetch" href="/servicos" />
+<link rel="prefetch" href="/contato" />
 
-  <!-- SEO -->
-  <title>Obras & Clientes | Construtora Vieira – Rondonópolis-MT</title>
-  <meta name="description" content="Conheça obras públicas e privadas entregues pela Construtora Vieira em Rondonópolis e região, e veja quem confia no nosso trabalho." />
-  <link rel="canonical" href="https://construtoravieira.com.br/obras" />
-  <meta name="robots" content="index, follow" />
+<!-- ===================== PWA ====================== -->
+<link rel="manifest" href="/manifest.json" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Obras & Clientes — Construtora Vieira" />
 
-  <!-- GEO -->
-  <meta name="geo.region" content="BR-MT" />
-  <meta name="geo.placename" content="Rondonópolis, Mato Grosso" />
-  <meta name="geo.position" content="-16.4673;-54.6370" />
-  <meta name="ICBM" content="-16.4673, -54.6370" />
+<!-- ======================= SEO PRINCIPAL ===================== -->
+<title>Obras & Clientes em Rondonópolis-MT | Construtora Vieira</title>
+<meta name="description" content="Portfólio de obras públicas e privadas em Rondonópolis-MT: escolas, galpões, residenciais e mais. Qualidade comprovada e referências sólidas." />
+<meta name="keywords" content="obras Rondonópolis, portfólio construção, clientes, projetos executados, obras públicas, obras privadas, MT" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://construtoravieira.com.br/obras" />
 
-  <!-- FAVICON / CSS -->
-  <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="/includes/style.css" />
-  <meta name="theme-color" content="#1f1f1f" />
+<!-- ============== FAVICON / CSS ============================= -->
+<link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" sizes="any" />
+<link rel="stylesheet" href="/includes/style.css" />
 
-  <!-- OPEN GRAPH -->
-  <meta property="og:title" content="Obras & Clientes | Construtora Vieira" />
-  <meta property="og:description" content="Projetos executados com excelência em Rondonópolis e região." />
-  <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:url" content="https://construtoravieira.com.br/obras" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="pt_BR" />
-  <meta property="og:site_name" content="Construtora Vieira - M V de Souza" />
+<!-- ==================== TEMA / CORES ======================== -->
+<meta name="theme-color" content="#1f1f1f" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1f1f1f" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#1f1f1f" />
 
-  <!-- TWITTER -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Obras & Clientes | Construtora Vieira" />
-  <meta name="twitter:description" content="Veja nossos projetos e clientes atendidos." />
-  <meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+<!-- ===================== OPEN GRAPH ========================= -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Construtora Vieira" />
+<meta property="og:title" content="Obras & Clientes em Rondonópolis-MT | Construtora Vieira" />
+<meta property="og:description" content="Conheça nosso portfólio: obras públicas e privadas, escolas, galpões e residenciais." />
+<meta property="og:url" content="https://construtoravieira.com.br/obras" />
+<meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Portfólio de Obras — Construtora Vieira" />
+<meta property="og:locale" content="pt_BR" />
 
-  <!-- SCHEMA.ORG -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"CollectionPage",
-    "name":"Obras e Clientes",
-    "url":"https://construtoravieira.com.br/obras",
-    "about":{"@type":"Organization","name":"Construtora Vieira - M V de Souza"}
-  }
-  </script>
+<!-- ==================== TWITTER CARDS ======================= -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Obras & Clientes em Rondonópolis-MT | Construtora Vieira" />
+<meta name="twitter:description" content="Portfólio com  obras públicas e privadas executadas em Rondonópolis-MT." />
+<meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+<!-- Se o @ existir, ative:
+<meta name="twitter:site" content="@construtoravieira" />
+<meta name="twitter:creator" content="@construtoravieira" />
+-->
+
+<!-- =================== HREFLANG ================== -->
+<link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/obras" />
+<link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/obras" />
+
+<!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://construtoravieira.com.br/#organization",
+      "name": "Construtora Vieira",
+      "url": "https://construtoravieira.com.br/",
+      "logo": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/logocerta.png", "width": 300, "height": 100 },
+      "image": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/previsual.png", "width": 1200, "height": 630 },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
+        "https://www.instagram.com/construtoravieira1992/"
+      ],
+      "contactPoint": { "@type": "ContactPoint", "telephone": "+5566999366313", "contactType": "customer service", "availableLanguage": "pt-BR" }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://construtoravieira.com.br/#localbusiness",
+      "name": "Construtora Vieira",
+      "image": "https://construtoravieira.com.br/img_site/previsual.png",
+      "telephone": "+5566999366313",
+      "address": { "@type": "PostalAddress", "streetAddress": "R. Fatime Ali Dib, 211", "addressLocality": "Rondonópolis", "addressRegion": "MT", "postalCode": "78731-212", "addressCountry": "BR" },
+      "geo": { "@type": "GeoCoordinates", "latitude": -16.4673, "longitude": -54.6370 },
+      "url": "https://construtoravieira.com.br/",
+      "openingHours": "Mo-Fr 08:00-18:00",
+      "priceRange": "$$"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://construtoravieira.com.br/obras#collectionpage",
+      "url": "https://construtoravieira.com.br/obras",
+      "name": "Obras & Clientes",
+      "description": "Portfólio de obras públicas e privadas executadas pela Construtora Vieira em Rondonópolis-MT.",
+      "isPartOf": { "@id": "https://construtoravieira.com.br/#website" },
+      "about": { "@id": "https://construtoravieira.com.br/#organization" },
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/previsual.png" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Que tipos de obras vocês executam?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Obras públicas (escolas, unidades de saúde, centros administrativos) e privadas (galpões, residenciais, comerciais)." }
+        },
+        {
+          "@type": "Question",
+          "name": "Atendem apenas Rondonópolis?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Atendemos Rondonópolis e região no estado de Mato Grosso." }
+        },
+        {
+          "@type": "Question",
+          "name": "Como solicitar referências e visitas técnicas?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Entre em contato pelo WhatsApp +55 66 99936-6313 ou pelo formulário do site para lista de referências e agendamento de visita." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ================ ACESSIBILIDADE ========================== -->
+<meta name="color-scheme" content="light dark" />
+
+<!-- ================ VERIFICAÇÕES (substituir quando tiver) == -->
+<meta name="google-site-verification" content="COLE_SEU_CODIGO_GOOGLE_AQUI" />
+<meta name="msvalidate.01" content="COLE_SEU_CODIGO_BING_AQUI" />
+<meta name="yandex-verification" content="COLE_SEU_CODIGO_YANDEX_AQUI" />
+<meta name="facebook-domain-verification" content="COLE_SEU_CODIGO_FACEBOOK_AQUI" />
 </head>
 <body>
   <header class="header fade">
@@ -63,13 +149,13 @@
       <nav class="nav" id="nav-menu">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/sobrenos">Sobre Nós</a></li>
+          <!-- <li><a href="/sobrenos">Sobre Nós</a></li> -->
           <li><a href="/servicos">Serviços</a></li>
-          <li><a href="/obras" aria-current="page">Obras & Clientes</a></li>
-          <li><a href="/empreendimentos">Empreendimentos</a></li>
+          <!-- <li><a href="/obras" aria-current="page">Obras & Clientes</a></li> -->
+          <!-- <li><a href="/empreendimentos">Empreendimentos</a></li> -->
           <li><a href="/sustentabilidade">Sustentabilidade</a></li>
-          <li><a href="/noticias">Notícias e Dicas</a></li>
-          <li><a href="/simulacao">Simulação</a></li>
+          <!-- <li><a href="/noticias">Notícias e Dicas</a></li> -->
+          <!-- <li><a href="/simulacao">Simulação</a></li> -->
           <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
           <li><a href="/contato">Contato</a></li>
         </ul>
@@ -230,3 +316,4 @@
   <script src="/includes/script.js" defer></script>
 </body>
 </html>
+

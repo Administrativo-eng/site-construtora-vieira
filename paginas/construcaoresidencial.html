@@ -8,26 +8,30 @@
 <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
 
 <!-- ================= PRELOAD / RESOURCE HINTS ================= -->
-<!-- (sem preloads agressivos; priorize fetchpriority no <img> LCP) -->
+<!-- (sem preloads em alta prioridade para evitar disputa; priorize fetchpriority no <img> LCP da página) -->
+<!-- (sem preconnect de Google Fonts se não houver uso real) -->
+
+<!-- analytics / gtm -->
 <link rel="dns-prefetch" href="//www.google-analytics.com" />
 <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-<!-- próxima ação mais provável -->
-<link rel="prefetch" href="/servicos" />
+
+<!-- prefetch: próxima ação mais provável -->
+<link rel="prefetch" href="/contato" />
 
 <!-- ===================== PWA / MANIFEST ====================== -->
 <link rel="manifest" href="/manifest.json" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="Contato — Construtora Vieira" />
-<meta name="application-name" content="Construtora Vieira — Contato" />
+<meta name="apple-mobile-web-app-title" content="Construção Residencial - Construtora Vieira" />
+<meta name="application-name" content="Construtora Vieira - Construção Residencial" />
 
 <!-- ======================= SEO PRINCIPAL ===================== -->
-<title>Contato | Construtora Vieira em Rondonópolis-MT</title>
-<meta name="description" content="Fale com a Construtora Vieira em Rondonópolis-MT. Orçamento gratuito para obras, reformas e estruturas metálicas. WhatsApp: (66) 99936-6313." />
-<meta name="keywords" content="contato construtora, orçamento construção, WhatsApp, telefone, endereço, Rondonópolis, Mato Grosso" />
+<title>Construção Residencial em Rondonópolis-MT | Construtora Vieira</title>
+<meta name="description" content="Especialista em construção residencial em Rondonópolis-MT. Casas sob medida, projetos personalizados, materiais de qualidade e garantia estrutural." />
+<meta name="keywords" content="construção residencial rondonópolis, casas sob medida, projeto arquitetônico, construção de casas MT, sobrados, construção personalizada" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
-<link rel="canonical" href="https://construtoravieira.com.br/contato" />
+<link rel="canonical" href="https://construtoravieira.com.br/construcao-residencial" />
 
 <!-- ============== FAVICON / ÍCONES ESSENCIAIS =============== -->
 <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" sizes="any" />
@@ -42,20 +46,20 @@
 <!-- ===================== OPEN GRAPH ========================= -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Construtora Vieira" />
-<meta property="og:title" content="Contato | Construtora Vieira em Rondonópolis-MT" />
-<meta property="og:description" content="Orçamento gratuito e atendimento rápido. WhatsApp: (66) 99936-6313." />
-<meta property="og:url" content="https://construtoravieira.com.br/contato" />
-<meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+<meta property="og:title" content="Construção Residencial em Rondonópolis-MT | Construtora Vieira" />
+<meta property="og:description" content="Casas sob medida, projetos personalizados e execução com qualidade em Rondonópolis-MT." />
+<meta property="og:url" content="https://construtoravieira.com.br/construcao-residencial" />
+<meta property="og:image" content="https://construtoravieira.com.br/img_site/casasesobrados.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Contato — Construtora Vieira em Rondonópolis-MT" />
+<meta property="og:image:alt" content="Construção residencial — Construtora Vieira em Rondonópolis-MT" />
 <meta property="og:locale" content="pt_BR" />
 
 <!-- ==================== TWITTER CARDS ======================= -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Contato | Construtora Vieira em Rondonópolis-MT" />
-<meta name="twitter:description" content="Orçamento gratuito para obras e reformas. WhatsApp: (66) 99936-6313." />
-<meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+<meta name="twitter:title" content="Construção Residencial em Rondonópolis-MT | Construtora Vieira" />
+<meta name="twitter:description" content="Casas sob medida, projetos personalizados e qualidade comprovada." />
+<meta name="twitter:image" content="https://construtoravieira.com.br/img_site/casasesobrados.png" />
 <!-- Se o @ existir, ative:
 <meta name="twitter:site" content="@construtoravieira" />
 <meta name="twitter:creator" content="@construtoravieira" />
@@ -71,8 +75,8 @@
 <meta name="facebook-domain-verification" content="COLE_SEU_CODIGO_FACEBOOK_AQUI" />
 
 <!-- =================== HREFLANG (pt único) ================== -->
-<link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/contato" />
-<link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/contato" />
+<link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/construcao-residencial" />
+<link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/construcao-residencial" />
 
 <!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
 <script type="application/ld+json">
@@ -85,8 +89,8 @@
       "name": "Construtora Vieira",
       "url": "https://construtoravieira.com.br/",
       "logo": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/logocerta.png", "width": 300, "height": 100 },
-      "image": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/previsual.png", "width": 1200, "height": 630 },
-      "description": "Construtora especializada em obras públicas e privadas, reformas, estruturas metálicas e engenharia civil em Rondonópolis-MT.",
+      "image": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/casasesobrados.png", "width": 1200, "height": 630 },
+      "description": "Construtora especializada em construção residencial, casas sob medida e projetos personalizados em Rondonópolis-MT.",
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
         "https://www.instagram.com/construtoravieira1992/"
@@ -97,9 +101,8 @@
       "@type": "LocalBusiness",
       "@id": "https://construtoravieira.com.br/#localbusiness",
       "name": "Construtora Vieira",
-      "image": "https://construtoravieira.com.br/img_site/previsual.png",
+      "image": "https://construtoravieira.com.br/img_site/casasesobrados.png",
       "telephone": "+55-66-99936-6313",
-      "email": "contato@construtoravieira.com.br",
       "address": { "@type": "PostalAddress", "streetAddress": "R. Fatime Ali Dib, 211", "addressLocality": "Rondonópolis", "addressRegion": "MT", "postalCode": "78731-212", "addressCountry": "BR" },
       "geo": { "@type": "GeoCoordinates", "latitude": -16.4673, "longitude": -54.6370 },
       "url": "https://construtoravieira.com.br/",
@@ -109,19 +112,38 @@
       "currenciesAccepted": "BRL"
     },
     {
-      "@type": "ContactPage",
-      "@id": "https://construtoravieira.com.br/contato#contactpage",
-      "url": "https://construtoravieira.com.br/contato",
-      "name": "Contato — Construtora Vieira em Rondonópolis-MT",
-      "description": "Orçamento gratuito e atendimento especializado em construção civil.",
+      "@type": "WebPage",
+      "@id": "https://construtoravieira.com.br/construcao-residencial#webpage",
+      "url": "https://construtoravieira.com.br/construcao-residencial",
+      "name": "Construção Residencial em Rondonópolis-MT | Construtora Vieira",
+      "description": "Casas sob medida, projetos personalizados, materiais de qualidade e garantia estrutural.",
       "isPartOf": { "@id": "https://construtoravieira.com.br/#website" },
       "about": { "@id": "https://construtoravieira.com.br/#organization" },
-      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/previsual.png" },
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/casasesobrados.png" },
+      "datePublished": "2024-01-01T00:00:00+00:00",
+      "dateModified": "2024-12-15T00:00:00+00:00",
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://construtoravieira.com.br/" },
-          { "@type": "ListItem", "position": 2, "name": "Contato", "item": "https://construtoravieira.com.br/contato" }
+          { "@type": "ListItem", "position": 2, "name": "Construção Residencial", "item": "https://construtoravieira.com.br/construcao-residencial" }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Construção Residencial",
+      "provider": { "@id": "https://construtoravieira.com.br/#organization" },
+      "areaServed": { "@type": "City", "name": "Rondonópolis" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços Residenciais",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Projeto Arquitetônico Personalizado" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Acompanhamento Técnico de Obra" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Execução com Materiais de Qualidade" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cumprimento de Prazos" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Garantia Estrutural" } }
         ]
       }
     }
@@ -136,7 +158,7 @@
   <header class="header fade">
     <div class="container">
       <a href="/" aria-label="Página inicial - Construtora Vieira">
-        <img src="/img_site/logocerta.png" height="100" alt="Logotipo da Construtora Vieira - M V de Souza" decoding="async" fetchpriority="high" />
+        <img src="/img_site/logocerta.png" height="100" alt="Logotipo da Construtora Vieira" decoding="async" fetchpriority="high" />
       </a>
       <nav class="nav" id="nav-menu" aria-label="Navegação principal">
         <ul>
@@ -149,7 +171,7 @@
           <!-- <li><a href="/noticias">Notícias e Dicas</a></li> -->
           <!-- <li><a href="/simulacao">Simulação</a></li> -->
           <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
-          <li><a href="/contato" aria-current="page">Contato</a></li>
+          <li><a href="/contato">Contato</a></li>
         </ul>
       </nav>
       <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
@@ -158,51 +180,26 @@
 
   <main id="conteudo">
     <section class="section bg-dark fade">
-      <div class="container">
-        <div class="titulo-pagina">
-          <h1>Fale Conosco</h1>
-          <p class="text-light">Entre em contato para orçamentos, dúvidas ou sugestões.</p>
-        </div>
-
-        <div class="sobre-grid">
-          <!-- Bloco de contatos -->
-          <div class="sobre-texto">
-            <ul class="contato-lista">
-              <li><strong>Telefone:</strong> <a href="tel:+5566999366313">(66) 99936-6313</a></li>
-              <li><strong>E-mail:</strong> <a href="mailto:administrativo@construtoravieira.com.br">administrativo@construtoravieira.com.br</a></li>
-              <li><strong>Endereço:</strong> R. Fatime Ali Dib, 211, 78731-212 – Rondonópolis/MT</li>
+      <div class="container sobre-grid">
+        <div class="sobre-texto">
+          <h1>Construção Residencial em Rondonópolis</h1>
+            <p>Construímos a casa dos seus sonhos em Rondonópolis com projeto personalizado, 
+              materiais de primeira qualidade e acabamento impecável. Nossa equipe especializada 
+              acompanha cada etapa da construção, desde a fundação até a entrega das chaves.</p>
+            <p>Oferecemos projetos arquitetônicos modernos, plantas funcionais e soluções 
+              inteligentes para otimizar espaços. Trabalhamos com diferentes padrões 
+              construtivos, sempre respeitando seu orçamento e prazo.</p>
+            <ul>
+              <li>✅ Projeto arquitetônico personalizado</li>
+              <li>✅ Acompanhamento técnico especializado</li>
+              <li>✅ Materiais de primeira qualidade</li>
+              <li>✅ Cumprimento rigoroso de prazos</li>
+              <li>✅ Garantia de 5 anos na estrutura</li>
             </ul>
-            <p><a class="btn btn-green" href="https://wa.me/5566999366313?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Atendimento via WhatsApp</a></p>
-          </div>
-
-          <!-- Formulário -->
-          <div>
-            <form id="form-contato" class="formulario-contato" novalidate>
-              <div class="campo-form">
-                <label for="nome">Seu nome</label>
-                <input type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name" required />
-              </div>
-
-              <div class="campo-form">
-                <label for="email">Seu e-mail</label>
-                <input type="email" id="email" name="email" placeholder="Seu e-mail" autocomplete="email" required />
-              </div>
-
-              <div class="campo-form">
-                <label for="telefone">Telefone / WhatsApp</label>
-                <input type="tel" id="telefone" name="telefone" placeholder="(66) 99999-9999" inputmode="tel" autocomplete="tel" required />
-              </div>
-
-              <div class="campo-form">
-                <label for="mensagem">Mensagem</label>
-                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem" required></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-black">Enviar via WhatsApp</button>
-            </form>
-          </div>
         </div>
-
+        <div class="sobre-img">
+          <img src="/img_site/casasesobrados.png" alt="Casa residencial construída pela Construtora Vieira em Rondonópolis" loading="lazy" decoding="async" />
+        </div>
       </div>
     </section>
   </main>
@@ -217,3 +214,4 @@
   <script src="/includes/script.js" defer></script>
 </body>
 </html>
+

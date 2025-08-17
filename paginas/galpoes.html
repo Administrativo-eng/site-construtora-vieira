@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" dir="ltr">
+<html lang="pt-BR" prefix="og: https://ogp.me/ns#">
 <head>
 <!-- =================== ESSENCIAIS =================== -->
 <meta charset="UTF-8" />
@@ -8,11 +8,10 @@
 <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
 
 <!-- ================= PRELOAD / RESOURCE HINTS ================= -->
-<!-- (sem preconnect de Google Fonts se não estiver usando) -->
+<!-- (sem preloads agressivos; priorize fetchpriority no <img> LCP) -->
 <link rel="dns-prefetch" href="//www.google-analytics.com" />
 <link rel="dns-prefetch" href="//www.googletagmanager.com" />
 <!-- próxima ação provável -->
-<link rel="prefetch" href="/servicos" />
 <link rel="prefetch" href="/contato" />
 
 <!-- ===================== PWA / MANIFEST ====================== -->
@@ -20,15 +19,15 @@
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="Reformas — Construtora Vieira" />
-<meta name="application-name" content="Construtora Vieira — Reformas" />
+<meta name="apple-mobile-web-app-title" content="Construção Comercial — Construtora Vieira" />
+<meta name="application-name" content="Construtora Vieira — Construção Comercial" />
 
 <!-- ======================= SEO PRINCIPAL ===================== -->
-<title>Reformas e Ampliações em Rondonópolis-MT | Construtora Vieira</title>
-<meta name="description" content="Reformas completas, ampliações e modernização de fachadas em Rondonópolis-MT. Também executamos reformas comerciais e adaptações de acessibilidade. Orçamento gratuito." />
-<meta name="keywords" content="reformas Rondonópolis, ampliações residenciais, modernização fachadas, reforma comercial, acessibilidade, reforma completa, MT" />
+<title>Construção Comercial e Industrial em Rondonópolis-MT | Construtora Vieira</title>
+<meta name="description" content="Construção comercial e industrial em Rondonópolis-MT: galpões, centros comerciais, escritórios e lojas. 30+ anos de experiência. Orçamento gratuito." />
+<meta name="keywords" content="construção comercial, galpões industriais, centros comerciais, escritórios corporativos, Rondonópolis MT, construção industrial" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
-<link rel="canonical" href="https://construtoravieira.com.br/modernize" />
+<link rel="canonical" href="https://construtoravieira.com.br/construcao-comercial" />
 
 <!-- ============== FAVICON / CSS ============================= -->
 <link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" sizes="any" />
@@ -44,28 +43,28 @@
 <!-- ===================== OPEN GRAPH ========================= -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Construtora Vieira" />
-<meta property="og:title" content="Reformas e Ampliações em Rondonópolis-MT | Construtora Vieira" />
-<meta property="og:description" content="Reformas completas, ampliações e modernização de fachadas. Também reformas comerciais e acessibilidade." />
-<meta property="og:url" content="https://construtoravieira.com.br/modernize" />
-<meta property="og:image" content="https://construtoravieira.com.br/img_site/modernizacao.png" />
+<meta property="og:title" content="Construção Comercial e Industrial em Rondonópolis-MT | Construtora Vieira" />
+<meta property="og:description" content="Galpões, centros comerciais, escritórios e lojas com execução ágil e conformidade técnica." />
+<meta property="og:url" content="https://construtoravieira.com.br/construcao-comercial" />
+<meta property="og:image" content="https://construtoravieira.com.br/img_site/galpoes.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Reformas e Ampliações — Construtora Vieira em Rondonópolis-MT" />
+<meta property="og:image:alt" content="Construção Comercial e Industrial — Construtora Vieira em Rondonópolis-MT" />
 <meta property="og:locale" content="pt_BR" />
 
 <!-- ==================== TWITTER CARDS ======================= -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Reformas e Ampliações em Rondonópolis-MT | Construtora Vieira" />
-<meta name="twitter:description" content="Reformas residenciais e comerciais, ampliações e acessibilidade. Orçamento gratuito." />
-<meta name="twitter:image" content="https://construtoravieira.com.br/img_site/modernizacao.png" />
+<meta name="twitter:title" content="Construção Comercial e Industrial em Rondonópolis-MT | Construtora Vieira" />
+<meta name="twitter:description" content="Galpões, centros comerciais, escritórios e lojas com execução ágil e conformidade técnica." />
+<meta name="twitter:image" content="https://construtoravieira.com.br/img_site/galpoes.png" />
 <!-- Se o @ existir, ative:
 <meta name="twitter:site" content="@construtoravieira" />
 <meta name="twitter:creator" content="@construtoravieira" />
 -->
 
 <!-- =================== HREFLANG (pt único) ================== -->
-<link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/modernize" />
-<link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/modernize" />
+<link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/construcao-comercial" />
+<link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/construcao-comercial" />
 
 <!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
 <script type="application/ld+json">
@@ -78,7 +77,7 @@
       "name": "Construtora Vieira",
       "url": "https://construtoravieira.com.br/",
       "logo": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/logocerta.png", "width": 300, "height": 100 },
-      "image": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/modernizacao.png", "width": 1200, "height": 630 },
+      "image": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/galpoes.png", "width": 1200, "height": 630 },
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
         "https://www.instagram.com/construtoravieira1992/"
@@ -89,7 +88,7 @@
       "@type": "LocalBusiness",
       "@id": "https://construtoravieira.com.br/#localbusiness",
       "name": "Construtora Vieira",
-      "image": "https://construtoravieira.com.br/img_site/modernizacao.png",
+      "image": "https://construtoravieira.com.br/img_site/galpoes.png",
       "telephone": "+55-66-99936-6313",
       "address": { "@type": "PostalAddress", "streetAddress": "R. Fatime Ali Dib, 211", "addressLocality": "Rondonópolis", "addressRegion": "MT", "postalCode": "78731-212", "addressCountry": "BR" },
       "geo": { "@type": "GeoCoordinates", "latitude": -16.4673, "longitude": -54.6370 },
@@ -101,76 +100,64 @@
     },
     {
       "@type": "WebPage",
-      "@id": "https://construtoravieira.com.br/modernize#webpage",
-      "url": "https://construtoravieira.com.br/modernize",
-      "name": "Reformas e Ampliações em Rondonópolis-MT | Construtora Vieira",
-      "description": "Reformas residenciais e comerciais, ampliações, modernização de fachadas e adaptações de acessibilidade.",
+      "@id": "https://construtoravieira.com.br/construcao-comercial#webpage",
+      "url": "https://construtoravieira.com.br/construcao-comercial",
+      "name": "Construção Comercial e Industrial em Rondonópolis-MT",
+      "description": "Galpões, centros comerciais, escritórios e lojas com execução ágil e conformidade técnica.",
       "isPartOf": { "@id": "https://construtoravieira.com.br/#website" },
       "about": { "@id": "https://construtoravieira.com.br/#organization" },
-      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/modernizacao.png" },
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/galpoes.png" },
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://construtoravieira.com.br/" },
-          { "@type": "ListItem", "position": 2, "name": "Reformas e Ampliações", "item": "https://construtoravieira.com.br/modernize" }
+          { "@type": "ListItem", "position": 2, "name": "Construção Comercial", "item": "https://construtoravieira.com.br/construcao-comercial" }
         ]
       }
     },
     {
       "@type": "Service",
-      "name": "Reformas Residenciais Completas",
-      "serviceType": "Reforma Residencial",
+      "name": "Galpões Industriais de Grande Porte",
+      "serviceType": "Construção Industrial",
       "provider": { "@id": "https://construtoravieira.com.br/#organization" },
-      "areaServed": { "@type": "City", "name": "Rondonópolis" }
+      "areaServed": { "@type": "City", "name": "Rondonópolis" },
+      "description": "Galpões industriais para logística, armazenagem e produção, com estruturas metálicas robustas."
     },
     {
       "@type": "Service",
-      "name": "Ampliações e Novos Cômodos",
-      "serviceType": "Ampliação Residencial",
+      "name": "Centros Comerciais",
+      "serviceType": "Construção Comercial",
       "provider": { "@id": "https://construtoravieira.com.br/#organization" },
-      "areaServed": { "@type": "City", "name": "Rondonópolis" }
+      "areaServed": { "@type": "City", "name": "Rondonópolis" },
+      "description": "Centros comerciais e galerias com infraestrutura completa e design voltado a conversão."
     },
     {
       "@type": "Service",
-      "name": "Modernização de Fachadas",
-      "serviceType": "Modernização Arquitetônica",
+      "name": "Escritórios e Edifícios Corporativos",
+      "serviceType": "Construção Corporativa",
       "provider": { "@id": "https://construtoravieira.com.br/#organization" },
-      "areaServed": { "@type": "City", "name": "Rondonópolis" }
+      "areaServed": { "@type": "City", "name": "Rondonópolis" },
+      "description": "Sedes e prédios administrativos com foco em produtividade e eficiência."
     },
     {
       "@type": "Service",
-      "name": "Reformas Comerciais",
-      "serviceType": "Reforma Comercial",
+      "name": "Lojas e Estabelecimentos Comerciais",
+      "serviceType": "Construção Comercial",
       "provider": { "@id": "https://construtoravieira.com.br/#organization" },
-      "areaServed": { "@type": "City", "name": "Rondonópolis" }
-    },
-    {
-      "@type": "Service",
-      "name": "Adaptações para Acessibilidade",
-      "serviceType": "Acessibilidade",
-      "provider": { "@id": "https://construtoravieira.com.br/#organization" },
-      "areaServed": { "@type": "City", "name": "Rondonópolis" }
+      "areaServed": { "@type": "City", "name": "Rondonópolis" },
+      "description": "Lojas, restaurantes e PDVs com layout funcional e acabamentos de alto padrão."
     }
   ]
 }
 </script>
-
-<!-- ================ ACESSIBILIDADE ========================== -->
-<meta name="color-scheme" content="light dark" />
-
-<!-- ================ VERIFICAÇÕES (substituir quando tiver) == -->
-<meta name="google-site-verification" content="COLE_SEU_CODIGO_GOOGLE_AQUI" />
-<meta name="msvalidate.01" content="COLE_SEU_CODIGO_BING_AQUI" />
-<meta name="yandex-verification" content="COLE_SEU_CODIGO_YANDEX_AQUI" />
-<meta name="facebook-domain-verification" content="COLE_SEU_CODIGO_FACEBOOK_AQUI" />
 </head>
-<body>
+<body class="pagina-interna">
   <header class="header fade">
     <div class="container">
       <a href="/" aria-label="Página inicial - Construtora Vieira">
-        <img src="/img_site/logocerta.png" height="80" alt="Logotipo da Construtora Vieira - M V de Souza" decoding="async" fetchpriority="high" />
+        <img src="/img_site/logocerta.png" height="100" alt="Logotipo da Construtora Vieira - M V de Souza" decoding="async" fetchpriority="high" />
       </a>
-      <nav class="nav" id="nav-menu">
+      <nav class="nav" id="nav-menu" aria-label="Navegação principal">
         <ul>
           <li><a href="/">Home</a></li>
           <!-- <li><a href="/sobrenos">Sobre Nós</a></li> -->
@@ -178,30 +165,37 @@
           <!-- <li><a href="/obras">Obras & Clientes</a></li> -->
           <!-- <li><a href="/empreendimentos">Empreendimentos</a></li> -->
           <li><a href="/sustentabilidade">Sustentabilidade</a></li>
-          <!-- <li><a href="/noticias" aria-current="page">Notícias e Dicas</a></li> -->
+          <!-- <li><a href="/noticias">Notícias e Dicas</a></li> -->
           <!-- <li><a href="/simulacao">Simulação</a></li> -->
           <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
           <li><a href="/contato">Contato</a></li>
         </ul>
       </nav>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
   <main id="conteudo">
     <section class="section bg-dark fade">
-      <div class="container noticia-grid">
-        <div class="noticia-texto">
-          <h1>Notícias e Dicas</h1>
-          <p class="text-light">
-            Leia conteúdos sobre construção civil, financiamento, engenharia, sustentabilidade e mais.
-          </p>
+      <div class="container sobre-grid">
+        <div class="sobre-texto">
+          <h1>Construção Comercial e Industrial</h1>
+            <p>Especializados em construção comercial e industrial em Rondonópolis, oferecemos 
+              soluções completas para seu negócio. Galpões industriais, centros comerciais, lojas, 
+              escritórios e complexos empresariais.</p>
+            <p>Nossos projetos comerciais são desenvolvidos pensando na funcionalidade, produtividade 
+              e retorno do investimento. Utilizamos técnicas construtivas modernas para garantir rapidez 
+              na execução e durabilidade da estrutura.</p>
+            <ul>
+              <li>✅ Galpões industriais de grande porte</li>
+              <li>✅ Centros comerciais e shopping centers</li>
+              <li>✅ Escritórios e edifícios corporativos</li>
+              <li>✅ Lojas e estabelecimentos comerciais</li>
+              <li>✅ Projetos com foco em produtividade</li>
+            </ul>
         </div>
-
-        <!-- Feed carregado por /includes/script.js → carregarFeedAgenciaBrasil() -->
-        <div id="rss-feed" class="rss-placeholder">
-          <p class="muted">Carregando a última notícia da Agência Brasil…</p>
-          <noscript><p class="muted">Ative o JavaScript para ver o conteúdo.</p></noscript>
+        <div class="sobre-img">
+          <img src="/img_site/galpoes.png" alt="Galpão comercial construído em Rondonópolis" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>
@@ -213,6 +207,7 @@
     </div>
   </footer>
 
+  <!-- JS externo -->
   <script src="/includes/script.js" defer></script>
 </body>
 </html>
