@@ -1,9 +1,10 @@
 [build]
   publish = "."
 
-# =========================
-# Canonical de domínio (produção)
-# =========================
+#######################################
+# 1) Canonical de domínio (produção)
+#######################################
+# www → raiz (HTTPS) e HTTP → HTTPS
 [[redirects]]
   from = "https://www.construtoravieira.com.br/*"
   to   = "https://construtoravieira.com.br/:splat"
@@ -20,9 +21,9 @@
   status = 301
   force  = true
 
-# =========================
-# Canonical da Home
-# =========================
+#######################################
+# 2) Canonical da Home
+#######################################
 [[redirects]]
   from = "/home"
   to   = "/"
@@ -39,18 +40,20 @@
   status = 301
   force  = true
 
-# =========================
-# Normalização de barra final (/x/ → /x)
-# =========================
+#######################################
+# 3) Normalização de barra final
+#    /x/  → /x
+#######################################
 [[redirects]]
   from = "/:path/"
   to   = "/:path"
   status = 301
+  force  = true
 
-# =========================
-# URLs limpas → arquivos HTML (200)
-# =========================
-# Páginas institucionais
+#######################################
+# 4) URLs limpas (200) → arquivos reais
+#######################################
+# Institucionais
 [[redirects]]
   from = "/sobrenos"
   to   = "/paginas/sobrenos.html"
@@ -88,7 +91,7 @@
   to   = "/paginas/contato.html"
   status = 200
 
-# Serviços — slugs canônicos com hífen (únicos em produção)
+# Serviços — slugs canônicos com hífen
 [[redirects]]
   from = "/construcao-residencial"
   to   = "/paginas/construcaoresidencial.html"
@@ -110,10 +113,10 @@
   to   = "/paginas/reformas.html"
   status = 200
 
-# =========================
-# .html → URL limpa (301 canônico – produção)
-# (específicos com hífen primeiro)
-# =========================
+#######################################
+# 5) .html → URL limpa (301 canônico)
+#    (regras específicas primeiro)
+#######################################
 [[redirects]]
   from = "/paginas/construcaoresidencial.html"
   to   = "/construcao-residencial"
@@ -140,48 +143,122 @@
   status = 301
   force  = true
 
-# Genérica (serve para institucionais em que o slug coincide)
+# Genérica (institucionais cujo slug coincide)
 [[redirects]]
   from = "/paginas/:slug.html"
   to   = "/:slug"
   status = 301
   force  = true
 
-# =========================
-# 404 custom (status 404 real)
-# =========================
+#######################################
+# 6) 404 custom (status 404 real)
+#    — manter por último
+#######################################
 [[redirects]]
   from = "/*"
   to   = "/404.html"
   status = 404
 
-# =========================
-# Headers globais de segurança
-# =========================
+#######################################
+# 7) Headers — Segurança (globais)
+#######################################
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "DENY"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "geolocation=(), microphone=(), camera=(), browsing-topics=()"
+    X-Content-Type-Options    = "nosniff"
+    X-Frame-Options           = "DENY"
+    Referrer-Policy           = "strict-origin-when-cross-origin"
+    Permissions-Policy        = "geolocation=(), microphone=(), camera=(), browsing-topics=()"
     Cross-Origin-Opener-Policy = "same-origin"
     Cross-Origin-Resource-Policy = "same-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https:; connect-src 'self' https://api.rss2json.com https://www.google-analytics.com https://region1.google-analytics.com https://*.googletagmanager.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' data: https:; frame-ancestors 'none'; form-action 'self' https://wa.me; base-uri 'self'; object-src 'none'; worker-src 'self'; manifest-src 'self'; upgrade-insecure-requests"
+    X-DNS-Prefetch-Control    = "off"
+    X-Permitted-Cross-Domain-Policies = "none"
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https:;
+      connect-src 'self' https://api.rss2json.com https://www.google-analytics.com https://region1.google-analytics.com https://*.googletagmanager.com https://stats.g.doubleclick.net https://*.google-analytics.com;
+      img-src 'self' data: https:;
+      style-src 'self' 'unsafe-inline' https:;
+      font-src 'self' data: https:;
+      frame-ancestors 'none';
+      form-action 'self' https://wa.me;
+      base-uri 'self';
+      object-src 'none';
+      worker-src 'self';
+      manifest-src 'self';
+      upgrade-insecure-requests
+    """
 
-# =========================
-# Cache
-# =========================
-# HTML sem cache
+#######################################
+# 8) Cache
+#######################################
+# HTML sem cache (páginas limpas + variantes .html)
 [[headers]]
   for = "/"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
-[[headers]]
-  for = "/index.html"
+
+# URLs limpas mapeadas (sem extensão) — sem cache
+[[headers]]  # institucionais
+  for = "/sobrenos"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
+[[headers]]
+  for = "/servicos"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+[[headers]]
+  for = "/obras"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+[[headers]]
+  for = "/empreendimentos"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+[[headers]]
+  for = "/sustentabilidade"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+[[headers]]
+  for = "/noticias"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+[[headers]]
+  for = "/simulacao"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+[[headers]]
+  for = "/trabalheconosco"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+[[headers]]
+  for = "/contato"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]  # serviços (slugs com hífen)
+  for = "/construcao-residencial"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+[[headers]]
+  for = "/construcao-comercial"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+[[headers]]
+  for = "/estruturas-metalicas"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+[[headers]]
+  for = "/obras-publicas"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+[[headers]]
+  for = "/reformas"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# Variantes .html — sem cache
 [[headers]]
   for = "/*.html"
   [headers.values]
@@ -194,7 +271,7 @@
     Cache-Control = "no-cache, no-store, must-revalidate"
     X-Robots-Tag = "noindex, nofollow, noarchive"
 
-# Páginas físicas em /paginas/ (TTL curto)
+# Páginas físicas /paginas — TTL curto (fallback quando acessadas diretamente)
 [[headers]]
   for = "/paginas/*"
   [headers.values]
@@ -240,9 +317,9 @@
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
-# =========================
-# Contextos com noindex (pré-visualizações)
-# =========================
+#######################################
+# 9) Contextos — noindex em previews
+#######################################
 [context.deploy-preview]
   [[headers]]
     for = "/*"
