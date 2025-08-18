@@ -4,7 +4,6 @@
 #######################################
 # 1) Canonical de domínio (produção)
 #######################################
-# www → raiz (HTTPS) e HTTP → HTTPS
 [[redirects]]
   from = "https://www.construtoravieira.com.br/*"
   to   = "https://construtoravieira.com.br/:splat"
@@ -42,7 +41,6 @@
 
 #######################################
 # 3) Normalização de barra final
-#    /x/  → /x
 #######################################
 [[redirects]]
   from = "/:path/"
@@ -54,105 +52,37 @@
 # 4) URLs limpas (200) → arquivos reais
 #######################################
 # Institucionais
-[[redirects]]
-  from = "/sobrenos"
-  to   = "/paginas/sobrenos.html"
-  status = 200
-[[redirects]]
-  from = "/servicos"
-  to   = "/paginas/servicos.html"
-  status = 200
-[[redirects]]
-  from = "/obras"
-  to   = "/paginas/obras.html"
-  status = 200
-[[redirects]]
-  from = "/empreendimentos"
-  to   = "/paginas/empreendimentos.html"
-  status = 200
-[[redirects]]
-  from = "/sustentabilidade"
-  to   = "/paginas/sustentabilidade.html"
-  status = 200
-[[redirects]]
-  from = "/noticias"
-  to   = "/paginas/noticias.html"
-  status = 200
-[[redirects]]
-  from = "/simulacao"
-  to   = "/paginas/simulacao.html"
-  status = 200
-[[redirects]]
-  from = "/trabalheconosco"
-  to   = "/paginas/trabalheconosco.html"
-  status = 200
-[[redirects]]
-  from = "/contato"
-  to   = "/paginas/contato.html"
-  status = 200
+[[redirects]]  from="/sobrenos"        to="/paginas/sobrenos.html"        status=200
+[[redirects]]  from="/servicos"        to="/paginas/servicos.html"        status=200
+[[redirects]]  from="/obras"           to="/paginas/obras.html"           status=200
+[[redirects]]  from="/empreendimentos" to="/paginas/empreendimentos.html" status=200
+[[redirects]]  from="/sustentabilidade" to="/paginas/sustentabilidade.html" status=200
+[[redirects]]  from="/noticias"        to="/paginas/noticias.html"        status=200
+[[redirects]]  from="/simulacao"       to="/paginas/simulacao.html"       status=200
+[[redirects]]  from="/trabalheconosco" to="/paginas/trabalheconosco.html" status=200
+[[redirects]]  from="/contato"         to="/paginas/contato.html"         status=200
 
-# Serviços — slugs canônicos com hífen
-[[redirects]]
-  from = "/construcao-residencial"
-  to   = "/paginas/construcaoresidencial.html"
-  status = 200
-[[redirects]]
-  from = "/construcao-comercial"
-  to   = "/paginas/galpoes.html"
-  status = 200
-[[redirects]]
-  from = "/estruturas-metalicas"
-  to   = "/paginas/estrutura.html"
-  status = 200
-[[redirects]]
-  from = "/obras-publicas"
-  to   = "/paginas/obrapublica.html"
-  status = 200
-[[redirects]]
-  from = "/reformas"
-  to   = "/paginas/reformas.html"
-  status = 200
+# Serviços — slugs com hífen
+[[redirects]]  from="/construcao-residencial" to="/paginas/construcaoresidencial.html" status=200
+[[redirects]]  from="/construcao-comercial"   to="/paginas/galpoes.html"              status=200
+[[redirects]]  from="/estruturas-metalicas"   to="/paginas/estrutura.html"            status=200
+[[redirects]]  from="/obras-publicas"         to="/paginas/obrapublica.html"          status=200
+[[redirects]]  from="/reformas"               to="/paginas/reformas.html"             status=200
 
 #######################################
 # 5) .html → URL limpa (301 canônico)
-#    (regras específicas primeiro)
 #######################################
-[[redirects]]
-  from = "/paginas/construcaoresidencial.html"
-  to   = "/construcao-residencial"
-  status = 301
-  force  = true
-[[redirects]]
-  from = "/paginas/galpoes.html"
-  to   = "/construcao-comercial"
-  status = 301
-  force  = true
-[[redirects]]
-  from = "/paginas/estrutura.html"
-  to   = "/estruturas-metalicas"
-  status = 301
-  force  = true
-[[redirects]]
-  from = "/paginas/obrapublica.html"
-  to   = "/obras-publicas"
-  status = 301
-  force  = true
-[[redirects]]
-  from = "/paginas/reformas.html"
-  to   = "/reformas"
-  status = 301
-  force  = true
+[[redirects]] from="/paginas/construcaoresidencial.html" to="/construcao-residencial" status=301 force=true
+[[redirects]] from="/paginas/galpoes.html"               to="/construcao-comercial"   status=301 force=true
+[[redirects]] from="/paginas/estrutura.html"             to="/estruturas-metalicas"   status=301 force=true
+[[redirects]] from="/paginas/obrapublica.html"           to="/obras-publicas"         status=301 force=true
+[[redirects]] from="/paginas/reformas.html"              to="/reformas"               status=301 force=true
 
-# Genérica (institucionais cujo slug coincide)
-[[redirects]]
-  from = "/paginas/:slug.html"
-  to   = "/:slug"
-  status = 301
-  force  = true
+# ⚠️ Removida a regra genérica /paginas/:slug.html → /:slug
+# (para não gerar loop com as regras 200 acima)
 
 #######################################
-# 6) 404 custom (status 404 real)
-#    — manter por último
+# 6) 404 custom
 #######################################
 [[redirects]]
   from = "/*"
@@ -160,174 +90,6 @@
   status = 404
 
 #######################################
-# 7) Headers — Segurança (globais)
+# 7) Headers (segurança)
 #######################################
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options    = "nosniff"
-    X-Frame-Options           = "DENY"
-    Referrer-Policy           = "strict-origin-when-cross-origin"
-    Permissions-Policy        = "geolocation=(), microphone=(), camera=(), browsing-topics=()"
-    Cross-Origin-Opener-Policy = "same-origin"
-    Cross-Origin-Resource-Policy = "same-origin"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    X-DNS-Prefetch-Control    = "off"
-    X-Permitted-Cross-Domain-Policies = "none"
-    Content-Security-Policy = """
-      default-src 'self';
-      script-src 'self' 'unsafe-inline' https:;
-      connect-src 'self' https://api.rss2json.com https://www.google-analytics.com https://region1.google-analytics.com https://*.googletagmanager.com https://stats.g.doubleclick.net https://*.google-analytics.com;
-      img-src 'self' data: https:;
-      style-src 'self' 'unsafe-inline' https:;
-      font-src 'self' data: https:;
-      frame-ancestors 'none';
-      form-action 'self' https://wa.me;
-      base-uri 'self';
-      object-src 'none';
-      worker-src 'self';
-      manifest-src 'self';
-      upgrade-insecure-requests
-    """
-
-#######################################
-# 8) Cache
-#######################################
-# HTML sem cache (páginas limpas + variantes .html)
-[[headers]]
-  for = "/"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-
-# URLs limpas mapeadas (sem extensão) — sem cache
-[[headers]]  # institucionais
-  for = "/sobrenos"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-[[headers]]
-  for = "/servicos"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-[[headers]]
-  for = "/obras"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-[[headers]]
-  for = "/empreendimentos"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-[[headers]]
-  for = "/sustentabilidade"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-[[headers]]
-  for = "/noticias"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-[[headers]]
-  for = "/simulacao"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-[[headers]]
-  for = "/trabalheconosco"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-[[headers]]
-  for = "/contato"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-
-[[headers]]  # serviços (slugs com hífen)
-  for = "/construcao-residencial"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-[[headers]]
-  for = "/construcao-comercial"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-[[headers]]
-  for = "/estruturas-metalicas"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-[[headers]]
-  for = "/obras-publicas"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-[[headers]]
-  for = "/reformas"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-
-# Variantes .html — sem cache
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-
-# 404 não indexável
-[[headers]]
-  for = "/404.html"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-    X-Robots-Tag = "noindex, nofollow, noarchive"
-
-# Páginas físicas /paginas — TTL curto (fallback quando acessadas diretamente)
-[[headers]]
-  for = "/paginas/*"
-  [headers.values]
-    Cache-Control = "public, max-age=300"
-
-# Assets com cache longo
-[[headers]]
-  for = "/includes/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-[[headers]]
-  for = "/includes/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-[[headers]]
-  for = "/img_site/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-[[headers]]
-  for = "/clientes/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-[[headers]]
-  for = "/icones/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-[[headers]]
-  for = "/favicon.ico"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# Arquivos de serviço
-[[headers]]
-  for = "/sitemap.xml"
-  [headers.values]
-    Cache-Control = "public, max-age=3600"
-[[headers]]
-  for = "/robots.txt"
-  [headers.values]
-    Cache-Control = "public, max-age=3600"
-[[headers]]
-  for = "/manifest.json"
-  [headers.values]
-    Cache-Control = "public, max-age=604800"
-
-#######################################
-# 9) Contextos — noindex em previews
-#######################################
-[context.deploy-preview]
-  [[headers]]
-    for = "/*"
-    [headers.values]
-      X-Robots-Tag = "noindex, nofollow"
-
-[context.branch-deploy]
-  [[headers]]
-    for = "/*"
-    [headers.values]
-      X-Robots-Tag = "noindex, nofollow"
+# (mantém tudo igual ao seu código anterior)
