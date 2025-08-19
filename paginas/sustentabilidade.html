@@ -1,209 +1,169 @@
 <!DOCTYPE html>
-<html lang="pt-BR" dir="ltr">
+<html lang="pt-BR" dir="ltr" prefix="og: https://ogp.me/ns#">
 <head>
-<!-- =================== ESSENCIAIS =================== -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="author" content="Construtora Vieira - M V de Souza" />
-<!-- iOS: evitar auto-link automático -->
-<meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
+  <!-- =================== ESSENCIAIS =================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <!-- iOS: evitar auto-link automático -->
+  <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
 
-<!-- ============ PRELOAD / RESOURCE HINTS ============ -->
-<!-- mantenha apenas se as imagens forem LCP/hero -->
-<link rel="preload" as="image" href="/img_site/logocerta.png" type="image/png" fetchpriority="high" />
-<link rel="preload" as="image" href="/img_site/sustentabilidade.png" type="image/png" fetchpriority="high" />
-<!-- próximas rotas prováveis -->
-<link rel="prefetch" href="/servicos" />
-<link rel="prefetch" href="/contato" />
+  <!-- ============ RESOURCE HINTS (leves) ============ -->
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  <link rel="prefetch" href="/servicos" />
+  <link rel="prefetch" href="/contato" />
 
-<!-- ===================== PWA / MANIFEST ====================== -->
-<link rel="manifest" href="/manifest.json" />
-<meta name="mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="Sustentabilidade — Construtora Vieira" />
+  <!-- ===================== PWA / MANIFEST ====================== -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Sustentabilidade — Construtora Vieira" />
 
-<!-- ======================= SEO PRINCIPAL ===================== -->
-<title>Sustentabilidade na Construção Civil | Construtora Vieira Rondonópolis-MT</title>
-<meta name="description" content="Materiais responsáveis, processos limpos e redução de impactos ambientais. Conheça as práticas de sustentabilidade da Construtora Vieira em Rondonópolis-MT." />
-<meta name="robots" content="index, follow, max-image-preview:large" />
-<link rel="canonical" href="https://construtoravieira.com.br/sustentabilidade" />
+  <!-- ======================= SEO PRINCIPAL ===================== -->
+  <title>Sustentabilidade na Construção Civil | Construtora Vieira Rondonópolis-MT</title>
+  <meta name="description" content="Materiais responsáveis, processos limpos e redução de impactos ambientais. Conheça as práticas de sustentabilidade da Construtora Vieira em Rondonópolis-MT." />
+  <meta name="keywords" content="construção sustentável, sustentabilidade construção, Rondonópolis MT" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://construtoravieira.com.br/sustentabilidade" />
 
-<!-- ============== FAVICON / ÍCONES / CSS ==================== -->
-<link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" sizes="any" />
-<link rel="icon" href="/img_site/favicon-32x32.png" type="image/png" sizes="32x32" />
-<link rel="apple-touch-icon" href="/img_site/apple-touch-icon.png" sizes="180x180" />
-<link rel="stylesheet" href="/includes/style.css" />
+  <!-- ============== FAVICON / ÍCONES / CSS ==================== -->
+  <link rel="icon" href="/img_site/favicon.ico" sizes="any" />
+  <link rel="icon" href="/img_site/favicon-32x32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="/img_site/apple-touch-icon.png" sizes="180x180" />
+  <link rel="stylesheet" href="/includes/style.css" />
 
-<!-- ==================== TEMA / CORES ======================== -->
-<meta name="theme-color" content="#111111" />
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#111111" />
+  <!-- ==================== TEMA / CORES ======================== -->
+  <meta name="theme-color" content="#111111" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#111111" />
 
-<!-- ===================== OPEN GRAPH ========================= -->
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Construtora Vieira" />
-<meta property="og:title" content="Sustentabilidade na Construção Civil | Construtora Vieira Rondonópolis-MT" />
-<meta property="og:description" content="Materiais responsáveis, processos limpos e compromisso ambiental em cada obra." />
-<meta property="og:url" content="https://construtoravieira.com.br/sustentabilidade" />
-<meta property="og:image" content="https://construtoravieira.com.br/img_site/sustentabilidade.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Sustentabilidade na construção — Construtora Vieira" />
-<meta property="og:locale" content="pt_BR" />
+  <!-- ===================== OPEN GRAPH ========================= -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Construtora Vieira" />
+  <meta property="og:title" content="Sustentabilidade na Construção Civil | Construtora Vieira Rondonópolis-MT" />
+  <meta property="og:description" content="Materiais responsáveis, processos limpos e compromisso ambiental em cada obra." />
+  <meta property="og:url" content="https://construtoravieira.com.br/sustentabilidade" />
+  <!-- Pré-visualização padrão -->
+  <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Pré-visualização — Construtora Vieira" />
+  <meta property="og:locale" content="pt_BR" />
 
-<!-- ==================== TWITTER CARDS ======================= -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Sustentabilidade na Construção Civil | Construtora Vieira Rondonópolis-MT" />
-<meta name="twitter:description" content="Conheça nossas práticas de construção sustentável: materiais responsáveis e processos limpos." />
-<meta name="twitter:image" content="https://construtoravieira.com.br/img_site/sustentabilidade.png" />
-<!-- Se o @ existir, ative:
-<meta name="twitter:site" content="@construtoravieira" />
-<meta name="twitter:creator" content="@construtoravieira" />
--->
+  <!-- ==================== TWITTER CARDS ======================= -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sustentabilidade na Construção Civil | Construtora Vieira Rondonópolis-MT" />
+  <meta name="twitter:description" content="Conheça nossas práticas de construção sustentável: materiais responsáveis e processos limpos." />
+  <meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
 
-<!-- =================== HREFLANG ================== -->
-<link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/sustentabilidade" />
-<link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/sustentabilidade" />
+  <!-- =================== HREFLANG ================== -->
+  <link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/sustentabilidade" />
+  <link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/sustentabilidade" />
 
-<!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://construtoravieira.com.br/#organization",
-      "name": "Construtora Vieira",
-      "url": "https://construtoravieira.com.br/",
-      "logo": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/logocerta.png", "width": 300, "height": 100 },
-      "image": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/sustentabilidade.png", "width": 1200, "height": 630 },
-      "description": "Construtora com práticas de sustentabilidade: materiais responsáveis, processos limpos e gestão de resíduos em Rondonópolis-MT.",
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
-        "https://www.instagram.com/construtoravieira1992/"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+5566999366313",
-        "contactType": "customer service",
-        "availableLanguage": "pt-BR",
-        "areaServed": "Rondonópolis"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "R. Fatime Ali Dib, 211",
-        "postalCode": "78731-212",
-        "addressLocality": "Rondonópolis",
-        "addressRegion": "MT",
-        "addressCountry": "BR"
-      },
-      "foundingDate": "1992"
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://construtoravieira.com.br/#localbusiness",
-      "name": "Construtora Vieira - M V de Souza",
-      "image": "https://construtoravieira.com.br/img_site/sustentabilidade.png",
-      "telephone": "+5566999366313",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "R. Fatime Ali Dib, 211",
-        "addressLocality": "Rondonópolis",
-        "addressRegion": "MT",
-        "postalCode": "78731-212",
-        "addressCountry": "BR"
-      },
-      "geo": { "@type": "GeoCoordinates", "latitude": -16.4673, "longitude": -54.6370 },
-      "url": "https://construtoravieira.com.br/",
-      "openingHours": "Mo-Fr 08:00-18:00",
-      "priceRange": "$$$"
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://construtoravieira.com.br/sustentabilidade#webpage",
-      "url": "https://construtoravieira.com.br/sustentabilidade",
-      "name": "Sustentabilidade na Construção Civil | Construtora Vieira",
-      "description": "Materiais responsáveis, processos limpos e redução de impactos ambientais.",
-      "isPartOf": { "@id": "https://construtoravieira.com.br/#website" },
-      "about": { "@id": "https://construtoravieira.com.br/#organization" },
-      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/sustentabilidade.png" }
-    },
-    {
-      "@type": "Service",
-      "name": "Materiais Responsáveis e Sustentáveis",
-      "serviceType": "Construção Sustentável",
-      "provider": { "@id": "https://construtoravieira.com.br/#organization" },
-      "areaServed": { "@type": "City", "name": "Rondonópolis" },
-      "description": "Seleção de insumos de baixo impacto e fornecedores certificados."
-    },
-    {
-      "@type": "Service",
-      "name": "Processos Construtivos Limpos",
-      "serviceType": "Gestão e Execução",
-      "provider": { "@id": "https://construtoravieira.com.br/#organization" },
-      "areaServed": { "@type": "City", "name": "Rondonópolis" },
-      "description": "Minimização de desperdícios, gestão de resíduos e eficiência de recursos."
-    },
-    {
-      "@type": "Service",
-      "name": "Redução de Impactos Ambientais",
-      "serviceType": "Responsabilidade Ambiental",
-      "provider": { "@id": "https://construtoravieira.com.br/#organization" },
-      "areaServed": { "@type": "City", "name": "Rondonópolis" },
-      "description": "Práticas para reduzir emissões, ruído e impacto no entorno."
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Como a Construtora Vieira pratica sustentabilidade?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Através de especificação de materiais responsáveis, processos limpos, gestão de resíduos, reaproveitamento de insumos e eficiência hídrica e energética."
-          }
+  <!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://construtoravieira.com.br/#organization",
+        "name": "Construtora Vieira",
+        "url": "https://construtoravieira.com.br/",
+        "logo": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/logocerta.png", "width": 300, "height": 100 },
+        "image": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/previsual.png", "width": 1200, "height": 630 },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
+          "https://www.instagram.com/construtoravieira1992/"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+55-66-99936-6313",
+          "contactType": "Atendimento",
+          "availableLanguage": "pt-BR",
+          "areaServed": "Rondonópolis-MT"
         },
-        {
-          "@type": "Question",
-          "name": "Quais materiais sustentáveis são utilizados?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tintas ecológicas, itens com conteúdo reciclado, madeira de origem legal e sistemas que promovem eficiência energética e economia de água."
-          }
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. Fatime Ali Dib, 211",
+          "postalCode": "78731-212",
+          "addressLocality": "Rondonópolis",
+          "addressRegion": "MT",
+          "addressCountry": "BR"
+        },
+        "foundingDate": "1992"
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://construtoravieira.com.br/#localbusiness",
+        "name": "Construtora Vieira",
+        "image": "https://construtoravieira.com.br/img_site/previsual.png",
+        "telephone": "+55-66-99936-6313",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. Fatime Ali Dib, 211",
+          "addressLocality": "Rondonópolis",
+          "addressRegion": "MT",
+          "postalCode": "78731-212",
+          "addressCountry": "BR"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": -16.4673, "longitude": -54.6370 },
+        "url": "https://construtoravieira.com.br/",
+        "openingHours": "Mo-Fr 08:00-18:00",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+        "currenciesAccepted": "BRL"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://construtoravieira.com.br/#website",
+        "url": "https://construtoravieira.com.br/",
+        "name": "Construtora Vieira",
+        "publisher": { "@id": "https://construtoravieira.com.br/#organization" },
+        "inLanguage": "pt-BR"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://construtoravieira.com.br/sustentabilidade#webpage",
+        "url": "https://construtoravieira.com.br/sustentabilidade",
+        "name": "Sustentabilidade na Construção Civil | Construtora Vieira",
+        "description": "Materiais responsáveis, processos limpos e redução de impactos ambientais.",
+        "isPartOf": { "@id": "https://construtoravieira.com.br/#website" },
+        "about": { "@id": "https://construtoravieira.com.br/#organization" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://construtoravieira.com.br/img_site/sustentabilidade.png",
+          "width": 1280,
+          "height": 720
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://construtoravieira.com.br/" },
+            { "@type": "ListItem", "position": 2, "name": "Sustentabilidade", "item": "https://construtoravieira.com.br/sustentabilidade" }
+          ]
         }
-      ]
-    }
-  ]
-}
-</script>
+      }
+    ]
+  }
+  </script>
 
-<!-- ================ ACESSIBILIDADE ========================== -->
-<meta name="color-scheme" content="light dark" />
-
-<!-- ================ VERIFICAÇÕES (substituir quando tiver) == -->
-<meta name="google-site-verification" content="COLE_SEU_CODIGO_GOOGLE_AQUI" />
-<meta name="msvalidate.01" content="COLE_SEU_CODIGO_BING_AQUI" />
-<meta name="yandex-verification" content="COLE_SEU_CODIGO_YANDEX_AQUI" />
-<meta name="facebook-domain-verification" content="COLE_SEU_CODIGO_FACEBOOK_AQUI" />
+  <!-- ================ ACESSIBILIDADE ========================== -->
+  <meta name="color-scheme" content="light dark" />
 </head>
+
 <body class="pagina-interna">
   <header class="header fade">
     <div class="container">
       <a href="/" aria-label="Página inicial - Construtora Vieira">
-        <img src="/img_site/logocerta.png" height="100" alt="Logotipo da Construtora Vieira - M V de Souza" decoding="async" fetchpriority="high" />
+        <img src="/img_site/logocerta.png" width="300" height="100" alt="Logotipo da Construtora Vieira" decoding="async" />
       </a>
       <nav class="nav" id="nav-menu" aria-label="Navegação principal">
         <ul>
           <li><a href="/">Home</a></li>
-          <!-- <li><a href="/sobrenos">Sobre Nós</a></li> -->
           <li><a href="/servicos">Serviços</a></li>
-          <!-- <li><a href="/obras">Obras & Clientes</a></li> -->
-          <!-- <li><a href="/empreendimentos">Empreendimentos</a></li> -->
           <li><a href="/sustentabilidade" aria-current="page">Sustentabilidade</a></li>
-          <!-- <li><a href="/noticias">Notícias e Dicas</a></li> -->
-          <!-- <li><a href="/simulacao">Simulação</a></li> -->
           <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
           <li><a href="/contato">Contato</a></li>
         </ul>
@@ -212,29 +172,43 @@
     </div>
   </header>
 
+  <!-- HERO COM CTA + LCP NO FUNDO -->
+  <section class="hero fade">
+    <picture class="hero-media" aria-hidden="true">
+      <source type="image/avif" srcset="/img_site/avif/sustentabilidade.avif" width="1280" height="720" />
+      <source type="image/webp" srcset="/img_site/webp/sustentabilidade.webp" width="1280" height="720" />
+      <img src="/img_site/sustentabilidade.png" alt="" width="1280" height="720"
+           fetchpriority="high" loading="eager" decoding="async" style="aspect-ratio:1280/720" />
+    </picture>
+    <div class="container">
+      <h1>Construir com Consciência, Viver com Propósito</h1>
+      <p class="muted">Materiais responsáveis, processos limpos e redução de impactos ambientais.</p>
+      <a href="https://wa.me/5566999366313?text=Olá!%20Quero%20um%20orçamento%20com%20boas%20práticas%20de%20sustentabilidade."
+         target="_blank" rel="noopener noreferrer" class="btn btn-green">Solicite um Orçamento</a>
+    </div>
+  </section>
+
   <main id="conteudo">
     <section class="section bg-dark fade">
       <div class="container sobre-grid">
         <div class="sobre-texto">
-          <h1>Construir com Consciência, Viver com Propósito</h1>
-          <p>
-            Na Construtora Vieira, acreditamos que a construção civil pode — e deve — ser uma aliada do planeta. Para nós, sustentabilidade não é apenas uma diretriz, mas um valor enraizado em cada obra, cada escolha de material, cada gesto no canteiro. O futuro não começa amanhã. Ele nasce todos os dias, nas decisões que tomamos agora.
-          </p>
-          <p>
-            Nosso compromisso com o meio ambiente começa no planejamento e segue até a entrega. Priorizamos soluções que reduzem impactos ambientais, economizam recursos naturais e valorizam o espaço urbano com inteligência e respeito. Reutilizamos materiais, evitamos desperdícios e investimos em processos construtivos limpos, eficientes e duradouros.
-          </p>
-          <p>
-            Também sabemos que uma construção sustentável vai além da técnica: ela promove dignidade, melhora a qualidade de vida das pessoas e contribui com o bem-estar coletivo. Por isso, nossos projetos são pensados para criar ambientes mais humanos, mais saudáveis e mais harmoniosos com o mundo ao redor.
-          </p>
-          <p>
-            Somos gratos por cada obra que realizamos — e mais ainda por cada árvore que não derrubamos, cada litro de água que economizamos, cada comunidade que ajudamos a florescer. Porque mais do que levantar estruturas, queremos deixar um legado. Um legado de responsabilidade, de respeito e de esperança.
-          </p>
-          <p>
-            Construtora Vieira. Sustentável por princípio. Humana por escolha.
-          </p>
+          <h2>Sustentável por princípio. Humana por escolha.</h2>
+          <p>Na Construtora Vieira, sustentabilidade é um valor enraizado em cada obra, material e decisão de canteiro. O futuro nasce diariamente nas escolhas que fazemos agora.</p>
+          <p>Priorizamos soluções que reduzem impactos, economizam recursos e valorizam o espaço urbano. Reaproveitamos insumos, evitamos desperdícios e adotamos processos limpos, eficientes e duradouros.</p>
+          <p>Construir de forma sustentável também promove dignidade e qualidade de vida. Projetamos ambientes mais humanos, saudáveis e harmônicos com o entorno.</p>
+          <ul>
+            <li>✅ Materiais responsáveis e fornecedores certificados</li>
+            <li>✅ Gestão de resíduos e minimização de desperdícios</li>
+            <li>✅ Eficiência hídrica e energética</li>
+            <li>✅ Redução de emissões, ruído e impactos no entorno</li>
+            <li>✅ Conformidade com normas e boas práticas</li>
+          </ul>
         </div>
         <div class="sobre-img">
-          <img src="/img_site/sustentabilidade.png" alt="Equipe trabalhando com responsabilidade ambiental" loading="lazy" decoding="async" />
+          <img src="/img_site/sustentabilidade.png"
+               alt="Equipe aplicando práticas de construção sustentável"
+               width="1280" height="720"
+               loading="lazy" decoding="async" style="aspect-ratio:16/9" />
         </div>
       </div>
     </section>
@@ -246,8 +220,6 @@
     </div>
   </footer>
 
-  <!-- JS externo -->
   <script src="/includes/script.js" defer></script>
 </body>
 </html>
-

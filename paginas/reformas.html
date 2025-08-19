@@ -1,185 +1,173 @@
 <!DOCTYPE html>
-<html lang="pt-BR" prefix="og: https://ogp.me/ns#">
+<html lang="pt-BR" dir="ltr" prefix="og: https://ogp.me/ns#">
 <head>
-<!-- =================== ESSENCIAIS =================== -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<!-- iOS: evitar auto-link automático -->
-<meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
+  <!-- =================== ESSENCIAIS =================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
 
-<!-- ================= PRELOAD / RESOURCE HINTS ================= -->
-<!-- (sem preconnect de Google Fonts se não estiver usando) -->
-<link rel="dns-prefetch" href="//www.google-analytics.com" />
-<link rel="dns-prefetch" href="//www.googletagmanager.com" />
-<!-- próxima ação provável -->
-<link rel="prefetch" href="/servicos" />
-<link rel="prefetch" href="/contato" />
+  <!-- ================= PRELOAD / RESOURCE HINTS ================= -->
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  <link rel="prefetch" href="/servicos" />
+  <link rel="prefetch" href="/contato" />
 
-<!-- ===================== PWA / MANIFEST ====================== -->
-<link rel="manifest" href="/manifest.json" />
-<meta name="mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="Reformas — Construtora Vieira" />
-<meta name="application-name" content="Construtora Vieira — Reformas" />
+  <!-- ===================== PWA / MANIFEST ====================== -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Reformas — Construtora Vieira" />
+  <meta name="application-name" content="Construtora Vieira — Reformas" />
 
-<!-- ======================= SEO PRINCIPAL ===================== -->
-<title>Reformas e Ampliações em Rondonópolis-MT | Construtora Vieira</title>
-<meta name="description" content="Reformas completas, ampliações e modernização de fachadas em Rondonópolis-MT. Também executamos reformas comerciais e adaptações de acessibilidade. Orçamento gratuito." />
-<meta name="keywords" content="reformas Rondonópolis, ampliações residenciais, modernização fachadas, reforma comercial, acessibilidade, reforma completa, MT" />
-<meta name="robots" content="index, follow, max-image-preview:large" />
-<link rel="canonical" href="https://construtoravieira.com.br/modernize" />
+  <!-- ======================= SEO PRINCIPAL ===================== -->
+  <title>Reformas em Rondonópolis-MT — Construtora Vieira</title>
+  <meta name="description" content="Reformas residenciais e comerciais, ampliações e modernização em Rondonópolis-MT. Orçamento rápido." />
+  <meta name="keywords" content="reformas Rondonópolis-MT, reformas residenciais, reformas comerciais, ampliações, modernização de fachadas, construtora em Rondonópolis" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://construtoravieira.com.br/reformas" />
 
-<!-- ============== FAVICON / CSS ============================= -->
-<link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" sizes="any" />
-<link rel="icon" href="/img_site/favicon-32x32.png" type="image/png" sizes="32x32" />
-<link rel="apple-touch-icon" href="/img_site/apple-touch-icon.png" sizes="180x180" />
-<link rel="stylesheet" href="/includes/style.css" />
+  <!-- ============== FAVICON / CSS ============================= -->
+  <link rel="icon" href="/icones/favicon.ico" sizes="any" />
+  <link rel="stylesheet" href="/includes/style.css" />
 
-<!-- ==================== TEMA / CORES ======================== -->
-<meta name="theme-color" content="#111111" />
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#111111" />
+  <!-- ==================== TEMA / CORES ======================== -->
+  <meta name="theme-color" content="#111111" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#111111" />
 
-<!-- ===================== OPEN GRAPH ========================= -->
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Construtora Vieira" />
-<meta property="og:title" content="Reformas e Ampliações em Rondonópolis-MT | Construtora Vieira" />
-<meta property="og:description" content="Reformas completas, ampliações e modernização de fachadas. Também reformas comerciais e acessibilidade." />
-<meta property="og:url" content="https://construtoravieira.com.br/modernize" />
-<meta property="og:image" content="https://construtoravieira.com.br/img_site/modernizacao.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Reformas e Ampliações — Construtora Vieira em Rondonópolis-MT" />
-<meta property="og:locale" content="pt_BR" />
+  <!-- ===================== OPEN GRAPH ========================= -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Construtora Vieira" />
+  <meta property="og:title" content="Reformas em Rondonópolis-MT — Construtora Vieira" />
+  <meta property="og:description" content="Reformas residenciais e comerciais, ampliações e modernização em Rondonópolis-MT. Orçamento rápido." />
+  <meta property="og:url" content="https://construtoravieira.com.br/reformas" />
+  <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Reformas em Rondonópolis-MT — Construtora Vieira" />
+  <meta property="og:locale" content="pt_BR" />
 
-<!-- ==================== TWITTER CARDS ======================= -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Reformas e Ampliações em Rondonópolis-MT | Construtora Vieira" />
-<meta name="twitter:description" content="Reformas residenciais e comerciais, ampliações e acessibilidade. Orçamento gratuito." />
-<meta name="twitter:image" content="https://construtoravieira.com.br/img_site/modernizacao.png" />
-<!-- Se o @ existir, ative:
-<meta name="twitter:site" content="@construtoravieira" />
-<meta name="twitter:creator" content="@construtoravieira" />
--->
+  <!-- ==================== TWITTER CARDS ======================= -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Reformas em Rondonópolis-MT — Construtora Vieira" />
+  <meta name="twitter:description" content="Reformas residenciais e comerciais, ampliações e modernização em Rondonópolis-MT. Orçamento rápido." />
+  <meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
 
-<!-- =================== HREFLANG (pt único) ================== -->
-<link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/modernize" />
-<link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/modernize" />
+  <!-- =================== HREFLANG (pt único) ================== -->
+  <link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/reformas" />
+  <link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/reformas" />
 
-<!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://construtoravieira.com.br/#organization",
-      "name": "Construtora Vieira",
-      "url": "https://construtoravieira.com.br/",
-      "logo": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/logocerta.png", "width": 300, "height": 100 },
-      "image": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/modernizacao.png", "width": 1200, "height": 630 },
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
-        "https://www.instagram.com/construtoravieira1992/"
-      ],
-      "contactPoint": { "@type": "ContactPoint", "telephone": "+55-66-99936-6313", "contactType": "customer service", "availableLanguage": "Portuguese" }
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://construtoravieira.com.br/#localbusiness",
-      "name": "Construtora Vieira",
-      "image": "https://construtoravieira.com.br/img_site/modernizacao.png",
-      "telephone": "+55-66-99936-6313",
-      "address": { "@type": "PostalAddress", "streetAddress": "R. Fatime Ali Dib, 211", "addressLocality": "Rondonópolis", "addressRegion": "MT", "postalCode": "78731-212", "addressCountry": "BR" },
-      "geo": { "@type": "GeoCoordinates", "latitude": -16.4673, "longitude": -54.6370 },
-      "url": "https://construtoravieira.com.br/",
-      "openingHours": "Mo-Fr 08:00-18:00",
-      "priceRange": "$$",
-      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-      "currenciesAccepted": "BRL"
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://construtoravieira.com.br/modernize#webpage",
-      "url": "https://construtoravieira.com.br/modernize",
-      "name": "Reformas e Ampliações em Rondonópolis-MT | Construtora Vieira",
-      "description": "Reformas residenciais e comerciais, ampliações, modernização de fachadas e adaptações de acessibilidade.",
-      "isPartOf": { "@id": "https://construtoravieira.com.br/#website" },
-      "about": { "@id": "https://construtoravieira.com.br/#organization" },
-      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/modernizacao.png" },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://construtoravieira.com.br/" },
-          { "@type": "ListItem", "position": 2, "name": "Reformas e Ampliações", "item": "https://construtoravieira.com.br/modernize" }
-        ]
+  <!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://construtoravieira.com.br/#org",
+        "name": "Construtora Vieira",
+        "url": "https://construtoravieira.com.br/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://construtoravieira.com.br/icones/icon-512.webp",
+          "width": 512,
+          "height": 512
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
+          "https://www.instagram.com/construtoravieira1992/"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Atendimento",
+          "telephone": "+55-66-99936-6313",
+          "areaServed": "Rondonópolis-MT",
+          "availableLanguage": "pt-BR"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://construtoravieira.com.br/#local",
+        "name": "Construtora Vieira",
+        "url": "https://construtoravieira.com.br/",
+        "image": "https://construtoravieira.com.br/img_site/modernizacao.png",
+        "telephone": "+55-66-99936-6313",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. Fatime Ali Dib, 211",
+          "addressLocality": "Rondonópolis",
+          "addressRegion": "MT",
+          "postalCode": "78731-212",
+          "addressCountry": "BR"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": -16.4673, "longitude": -54.6370 },
+        "openingHours": "Mo-Fr 08:00-18:00",
+        "priceRange": "$$",
+        "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+        "currenciesAccepted": "BRL"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://construtoravieira.com.br/#website",
+        "url": "https://construtoravieira.com.br/",
+        "name": "Construtora Vieira",
+        "publisher": { "@id": "https://construtoravieira.com.br/#org" }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://construtoravieira.com.br/reformas#service",
+        "name": "Reformas",
+        "serviceType": "Reformas e ampliações",
+        "areaServed": "Rondonópolis-MT",
+        "provider": { "@id": "https://construtoravieira.com.br/#org" },
+        "url": "https://construtoravieira.com.br/reformas"
+      },
+      { "@type": "Service", "name": "Reformas Residenciais Completas", "serviceType": "Reforma Residencial", "provider": { "@id": "https://construtoravieira.com.br/#org" }, "areaServed": "Rondonópolis-MT" },
+      { "@type": "Service", "name": "Ampliações e Novos Cômodos", "serviceType": "Ampliação Residencial", "provider": { "@id": "https://construtoravieira.com.br/#org" }, "areaServed": "Rondonópolis-MT" },
+      { "@type": "Service", "name": "Modernização de Fachadas", "serviceType": "Modernização Arquitetônica", "provider": { "@id": "https://construtoravieira.com.br/#org" }, "areaServed": "Rondonópolis-MT" },
+      { "@type": "Service", "name": "Reformas Comerciais", "serviceType": "Reforma Comercial", "provider": { "@id": "https://construtoravieira.com.br/#org" }, "areaServed": "Rondonópolis-MT" },
+      { "@type": "Service", "name": "Adaptações para Acessibilidade", "serviceType": "Acessibilidade", "provider": { "@id": "https://construtoravieira.com.br/#org" }, "areaServed": "Rondonópolis-MT" },
+      {
+        "@type": "WebPage",
+        "@id": "https://construtoravieira.com.br/reformas#webpage",
+        "url": "https://construtoravieira.com.br/reformas",
+        "name": "Reformas em Rondonópolis-MT — Construtora Vieira",
+        "description": "Reformas residenciais e comerciais, ampliações, modernização de fachadas e adaptações de acessibilidade.",
+        "isPartOf": { "@id": "https://construtoravieira.com.br/#website" },
+        "about": { "@id": "https://construtoravieira.com.br/reformas#service" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://construtoravieira.com.br/img_site/modernizacao.png",
+          "width": 1280,
+          "height": 720
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://construtoravieira.com.br/" },
+            { "@type": "ListItem", "position": 2, "name": "Reformas", "item": "https://construtoravieira.com.br/reformas" }
+          ]
+        }
       }
-    },
-    {
-      "@type": "Service",
-      "name": "Reformas Residenciais Completas",
-      "serviceType": "Reforma Residencial",
-      "provider": { "@id": "https://construtoravieira.com.br/#organization" },
-      "areaServed": { "@type": "City", "name": "Rondonópolis" }
-    },
-    {
-      "@type": "Service",
-      "name": "Ampliações e Novos Cômodos",
-      "serviceType": "Ampliação Residencial",
-      "provider": { "@id": "https://construtoravieira.com.br/#organization" },
-      "areaServed": { "@type": "City", "name": "Rondonópolis" }
-    },
-    {
-      "@type": "Service",
-      "name": "Modernização de Fachadas",
-      "serviceType": "Modernização Arquitetônica",
-      "provider": { "@id": "https://construtoravieira.com.br/#organization" },
-      "areaServed": { "@type": "City", "name": "Rondonópolis" }
-    },
-    {
-      "@type": "Service",
-      "name": "Reformas Comerciais",
-      "serviceType": "Reforma Comercial",
-      "provider": { "@id": "https://construtoravieira.com.br/#organization" },
-      "areaServed": { "@type": "City", "name": "Rondonópolis" }
-    },
-    {
-      "@type": "Service",
-      "name": "Adaptações para Acessibilidade",
-      "serviceType": "Acessibilidade",
-      "provider": { "@id": "https://construtoravieira.com.br/#organization" },
-      "areaServed": { "@type": "City", "name": "Rondonópolis" }
-    }
-  ]
-}
-</script>
+    ]
+  }
+  </script>
 
-<!-- ================ ACESSIBILIDADE ========================== -->
-<meta name="color-scheme" content="light dark" />
-
-<!-- ================ VERIFICAÇÕES (substituir quando tiver) == -->
-<meta name="google-site-verification" content="COLE_SEU_CODIGO_GOOGLE_AQUI" />
-<meta name="msvalidate.01" content="COLE_SEU_CODIGO_BING_AQUI" />
-<meta name="yandex-verification" content="COLE_SEU_CODIGO_YANDEX_AQUI" />
-<meta name="facebook-domain-verification" content="COLE_SEU_CODIGO_FACEBOOK_AQUI" />
+  <!-- ================ ACESSIBILIDADE ========================== -->
+  <meta name="color-scheme" content="light dark" />
 </head>
 <body class="pagina-interna">
   <header class="header fade">
     <div class="container">
       <a href="/" aria-label="Página inicial - Construtora Vieira">
-        <img src="/img_site/logocerta.png" height="100" alt="Logotipo da Construtora Vieira - M V de Souza" decoding="async" fetchpriority="high" />
+        <img src="/img_site/logocerta.png" width="300" height="100" alt="Logotipo da Construtora Vieira" decoding="async" />
       </a>
       <nav class="nav" id="nav-menu" aria-label="Navegação principal">
         <ul>
           <li><a href="/">Home</a></li>
-          <!-- <li><a href="/sobrenos">Sobre Nós</a></li> -->
           <li><a href="/servicos">Serviços</a></li>
-          <!-- <li><a href="/obras">Obras & Clientes</a></li> -->
-          <!-- <li><a href="/empreendimentos">Empreendimentos</a></li> -->
-          <li><a href="/sustentabilidade" aria-current="page">Sustentabilidade</a></li>
-          <!-- <li><a href="/noticias">Notícias e Dicas</a></li> -->
-          <!-- <li><a href="/simulacao">Simulação</a></li> -->
+          <li><a href="/sustentabilidade">Sustentabilidade</a></li>
           <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
           <li><a href="/contato">Contato</a></li>
         </ul>
@@ -188,27 +176,44 @@
     </div>
   </header>
 
+  <!-- HERO COM CTA (imagem LCP ao fundo) -->
+  <section class="hero fade">
+    <picture class="hero-media" aria-hidden="true">
+      <source type="image/avif" srcset="/img_site/avif/modernizacao.avif" width="1280" height="720" />
+      <source type="image/webp" srcset="/img_site/webp/modernizacao.webp" width="1280" height="720" />
+      <img src="/img_site/modernizacao.png" alt="" width="1280" height="720"
+           fetchpriority="high" loading="eager" decoding="async" style="aspect-ratio:1280/720" />
+    </picture>
+    <div class="container">
+      <h1>Construindo o futuro hoje</h1>
+      <p class="muted">Obras públicas e privadas, estruturas metálicas e serviços de engenharia.</p>
+      <a href="https://wa.me/5566999366313?text=Estou%20precisando%20de%20um%20orçamento,%20pode%20me%20ajudar?"
+         target="_blank" rel="noopener noreferrer" class="btn btn-green">Solicite um Orçamento</a>
+    </div>
+  </section>
+
   <main id="conteudo">
     <section class="section bg-dark fade">
       <div class="container sobre-grid">
         <div class="sobre-texto">
-          <h1>Modernize e Amplie seus Espaços</h1>
-            <p>Reformas completas e ampliações em Rondonópolis com qualidade e agilidade. 
-              Modernizamos residências, escritórios, lojas e indústrias, sempre respeitando 
-              as características originais e agregando valor ao imóvel.</p>
-            <p>Nossa equipe especializada em reformas trabalha com mínimo de transtorno 
-              para os moradores ou usuários do espaço. Oferecemos soluções criativas para 
-              otimizar ambientes e criar novos espaços funcionais.</p>
-            <ul>
-              <li>✅ Reformas residenciais completas</li>
-              <li>✅ Ampliações e novos cômodos</li>
-              <li>✅ Modernização de fachadas</li>
-              <li>✅ Reformas comerciais e corporativas</li>
-              <li>✅ Adaptações para acessibilidade</li>
-            </ul>
+          <h2>Modernize e Amplie seus Espaços</h2>
+          <p>Reformas completas e ampliações em Rondonópolis com qualidade e agilidade.
+             Modernizamos residências, escritórios, lojas e indústrias, sempre respeitando
+             as características originais e agregando valor ao imóvel.</p>
+          <p>Nossa equipe especializada em reformas trabalha com mínimo de transtorno
+             para os moradores ou usuários do espaço. Oferecemos soluções criativas para
+             otimizar ambientes e criar novos espaços funcionais.</p>
+          <ul>
+            <li>✅ Reformas residenciais completas</li>
+            <li>✅ Ampliações e novos cômodos</li>
+            <li>✅ Modernização de fachadas</li>
+            <li>✅ Reformas comerciais e corporativas</li>
+            <li>✅ Adaptações para acessibilidade</li>
+          </ul>
         </div>
         <div class="sobre-img">
-          <img src="/img_site/modernizacao.png" alt="Reforma residencial em Rondonópolis" loading="lazy" decoding="async" />
+          <img src="/img_site/modernizacao.png" alt="Reforma residencial em Rondonópolis"
+               width="1280" height="720" loading="lazy" decoding="async" style="aspect-ratio:1280/720" />
         </div>
       </div>
     </section>
@@ -220,7 +225,6 @@
     </div>
   </footer>
 
-  <!-- JS externo -->
   <script src="/includes/script.js" defer></script>
 </body>
 </html>

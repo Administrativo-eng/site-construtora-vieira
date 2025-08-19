@@ -1,189 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-BR" prefix="og: https://ogp.me/ns#">
 <head>
-<!-- =================== ESSENCIAIS =================== -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<!-- iOS: evitar auto-link automático -->
-<meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
-<meta name="author" content="Construtora Vieira - M V de Souza" />
+  <!-- =================== ESSENCIAIS =================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
+  <meta name="author" content="Construtora Vieira" />
 
-<!-- ================= PRELOAD / RESOURCE HINTS ================= -->
-<!-- mantenha apenas se as imagens forem LCP/hero -->
-<link rel="preload" as="image" href="/img_site/logocerta.png" type="image/png" fetchpriority="high" />
-<link rel="preload" as="image" href="/img_site/previsual.png" type="image/png" fetchpriority="high" />
-<link rel="dns-prefetch" href="//www.google-analytics.com" />
-<link rel="dns-prefetch" href="//www.googletagmanager.com" />
-<!-- próximas rotas prováveis -->
-<link rel="prefetch" href="/contato" />
-<link rel="prefetch" href="/trabalheconosco" />
-<link rel="prefetch" href="/" />
+  <!-- ================= PRELOAD / RESOURCE HINTS ================= -->
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  <link rel="prefetch" href="/contato" />
+  <link rel="prefetch" href="/trabalheconosco" />
+  <link rel="prefetch" href="/" />
 
-<!-- ===================== PWA / MANIFEST ====================== -->
-<link rel="manifest" href="/manifest.json" />
-<meta name="mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="Serviços — Construtora Vieira" />
-<meta name="application-name" content="Construtora Vieira — Serviços" />
+  <!-- ===================== PWA / MANIFEST ====================== -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Serviços — Construtora Vieira" />
+  <meta name="application-name" content="Construtora Vieira — Serviços" />
 
-<!-- ======================= SEO PRINCIPAL ===================== -->
-<title>Serviços de Construção Civil em Rondonópolis-MT | Construtora Vieira</title>
-<meta name="description" content="Serviços completos de construção: residencial, comercial, industrial, estruturas metálicas, reformas e obras públicas em Rondonópolis-MT. Orçamento gratuito e qualidade garantida." />
-<meta name="keywords" content="construtora Rondonópolis, construção civil, obras residenciais, estruturas metálicas, reformas comerciais, galpões industriais, obras públicas, construção comercial, engenharia civil MT" />
-<meta name="robots" content="index, follow, max-image-preview:large" />
-<link rel="canonical" href="https://construtoravieira.com.br/servicos" />
+  <!-- ======================= SEO PRINCIPAL ===================== -->
+  <title>Serviços de Construção em Rondonópolis | Construtora Vieira</title>
+  <meta name="description" content="Construção residencial e comercial, estruturas metálicas, reformas e obras públicas em Rondonópolis-MT. Orçamento pelo WhatsApp." />
+  <meta name="keywords" content="construção Rondonópolis, reformas, estruturas metálicas, obras públicas, galpões" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://construtoravieira.com.br/servicos" />
 
-<!-- ============== FAVICON / ÍCONES / CSS ==================== -->
-<link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" sizes="any" />
-<link rel="icon" href="/img_site/favicon-32x32.png" type="image/png" sizes="32x32" />
-<link rel="apple-touch-icon" href="/img_site/apple-touch-icon.png" sizes="180x180" />
-<link rel="stylesheet" href="/includes/style.css" />
+  <!-- ============== FAVICON / ÍCONES / CSS ==================== -->
+  <link rel="icon" href="/icones/favicon.ico" sizes="any" />
+  <link rel="stylesheet" href="/includes/style.css" />
 
-<!-- ==================== TEMA / CORES ======================== -->
-<meta name="theme-color" content="#111111" />
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#111111" />
+  <!-- ==================== TEMA / CORES ======================== -->
+  <meta name="theme-color" content="#111111" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#111111" />
 
-<!-- ===================== OPEN GRAPH ========================= -->
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Construtora Vieira" />
-<meta property="og:title" content="Serviços de Construção Civil em Rondonópolis-MT | Construtora Vieira" />
-<meta property="og:description" content="Construção residencial, comercial e industrial, estruturas metálicas, reformas e obras públicas. Orçamento gratuito." />
-<meta property="og:url" content="https://construtoravieira.com.br/servicos" />
-<meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Construtora Vieira — Serviços de Construção Civil" />
-<meta property="og:locale" content="pt_BR" />
+  <!-- ===================== OPEN GRAPH ========================= -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Construtora Vieira" />
+  <meta property="og:title" content="Serviços de Construção em Rondonópolis | Construtora Vieira" />
+  <meta property="og:description" content="Construção residencial, comercial e industrial, estruturas metálicas, reformas e obras públicas." />
+  <meta property="og:url" content="https://construtoravieira.com.br/servicos" />
+  <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Construtora Vieira — Serviços de Construção Civil" />
+  <meta property="og:locale" content="pt_BR" />
 
-<!-- ==================== TWITTER CARDS ======================= -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Serviços de Construção Civil em Rondonópolis-MT | Construtora Vieira" />
-<meta name="twitter:description" content="Construção residencial, comercial e industrial, estruturas metálicas, reformas e obras públicas. Orçamento gratuito." />
-<meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
-<!-- Se o @ existir, ative:
-<meta name="twitter:site" content="@construtoravieira" />
-<meta name="twitter:creator" content="@construtoravieira" />
--->
+  <!-- ==================== TWITTER CARDS ======================= -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Serviços de Construção em Rondonópolis | Construtora Vieira" />
+  <meta name="twitter:description" content="Construção residencial, comercial, estruturas metálicas, reformas e obras públicas." />
+  <meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
 
-<!-- =================== HREFLANG ================== -->
-<link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/servicos" />
-<link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/servicos" />
+  <!-- =================== HREFLANG ================== -->
+  <link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/servicos" />
+  <link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/servicos" />
 
-<!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://construtoravieira.com.br/#organization",
-      "name": "Construtora Vieira",
-      "url": "https://construtoravieira.com.br/",
-      "logo": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/logocerta.png", "width": 300, "height": 100 },
-      "image": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/previsual.png", "width": 1200, "height": 630 },
-      "description": "Construtora especializada em obras públicas e privadas, reformas, estruturas metálicas e serviços de engenharia civil em Rondonópolis-MT.",
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
-        "https://www.instagram.com/construtoravieira1992/"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+5566999366313",
-        "contactType": "customer service",
-        "availableLanguage": "pt-BR"
+  <!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "@id":"https://construtoravieira.com.br/#org",
+        "name":"Construtora Vieira",
+        "url":"https://construtoravieira.com.br/",
+        "logo":{"@type":"ImageObject","url":"https://construtoravieira.com.br/img_site/logocerta.png","width":300,"height":100},
+        "image":{"@type":"ImageObject","url":"https://construtoravieira.com.br/img_site/previsual.png","width":1200,"height":630},
+        "sameAs":[
+          "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
+          "https://www.instagram.com/construtoravieira1992/"
+        ],
+        "contactPoint":{"@type":"ContactPoint","telephone":"+55-66-99936-6313","contactType":"Atendimento","availableLanguage":"pt-BR"},
+        "address":{"@type":"PostalAddress","streetAddress":"R. Fatime Ali Dib, 211","postalCode":"78731-212","addressLocality":"Rondonópolis","addressRegion":"MT","addressCountry":"BR"}
       },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "R. Fatime Ali Dib, 211",
-        "postalCode": "78731-212",
-        "addressLocality": "Rondonópolis",
-        "addressRegion": "MT",
-        "addressCountry": "BR"
-      }
-    },
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://construtoravieira.com.br/#localbusiness",
-      "name": "Construtora Vieira",
-      "image": "https://construtoravieira.com.br/img_site/previsual.png",
-      "telephone": "+5566999366313",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "R. Fatime Ali Dib, 211",
-        "addressLocality": "Rondonópolis",
-        "addressRegion": "MT",
-        "postalCode": "78731-212",
-        "addressCountry": "BR"
+      {
+        "@type":"LocalBusiness",
+        "@id":"https://construtoravieira.com.br/#local",
+        "name":"Construtora Vieira",
+        "url":"https://construtoravieira.com.br/",
+        "image":"https://construtoravieira.com.br/img_site/previsual.png",
+        "telephone":"+55-66-99936-6313",
+        "address":{"@type":"PostalAddress","streetAddress":"R. Fatime Ali Dib, 211","addressLocality":"Rondonópolis","addressRegion":"MT","postalCode":"78731-212","addressCountry":"BR"},
+        "geo":{"@type":"GeoCoordinates","latitude":-16.4673,"longitude":-54.6370},
+        "openingHours":"Mo-Fr 08:00-18:00","priceRange":"$$","paymentAccepted":"Cash, Credit Card, Bank Transfer","currenciesAccepted":"BRL"
       },
-      "geo": { "@type": "GeoCoordinates", "latitude": -16.4673, "longitude": -54.6370 },
-      "url": "https://construtoravieira.com.br/",
-      "openingHours": "Mo-Fr 08:00-18:00",
-      "priceRange": "$$",
-      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-      "currenciesAccepted": "BRL"
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://construtoravieira.com.br/servicos#webpage",
-      "url": "https://construtoravieira.com.br/servicos",
-      "name": "Serviços de Construção Civil em Rondonópolis-MT | Construtora Vieira",
-      "description": "Construção residencial, comercial e industrial, estruturas metálicas, reformas e obras públicas em Rondonópolis-MT.",
-      "isPartOf": { "@id": "https://construtoravieira.com.br/#website" },
-      "about": { "@id": "https://construtoravieira.com.br/#organization" },
-      "primaryImageOfPage": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/previsual.png" },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://construtoravieira.com.br/" },
-          { "@type": "ListItem", "position": 2, "name": "Serviços", "item": "https://construtoravieira.com.br/servicos" }
-        ]
+      {
+        "@type":"WebSite",
+        "@id":"https://construtoravieira.com.br/#website",
+        "url":"https://construtoravieira.com.br/","name":"Construtora Vieira","publisher":{"@id":"https://construtoravieira.com.br/#org"}
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://construtoravieira.com.br/servicos#webpage",
+        "url":"https://construtoravieira.com.br/servicos",
+        "name":"Serviços de Construção em Rondonópolis | Construtora Vieira",
+        "description":"Construção residencial, comercial e industrial, estruturas metálicas, reformas e obras públicas em Rondonópolis-MT.",
+        "isPartOf":{"@id":"https://construtoravieira.com.br/#website"},
+        "about":{"@id":"https://construtoravieira.com.br/#org"},
+        "primaryImageOfPage":{"@type":"ImageObject","url":"https://construtoravieira.com.br/img_site/previsual.png","width":1200,"height":630},
+        "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Home","item":"https://construtoravieira.com.br/"},
+          {"@type":"ListItem","position":2,"name":"Serviços","item":"https://construtoravieira.com.br/servicos"}
+        ]}
+      },
+      {
+        "@type":"OfferCatalog",
+        "@id":"https://construtoravieira.com.br/servicos#catalogo",
+        "name":"Serviços de Construção",
+        "itemListElement":[
+          {"@type":"Offer","itemOffered":{"@type":"Service","@id":"https://construtoravieira.com.br/construcao-residencial#service","name":"Construção Residencial","areaServed":"Rondonópolis-MT","url":"https://construtoravieira.com.br/construcao-residencial"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","@id":"https://construtoravieira.com.br/construcao-comercial#service","name":"Construção Comercial","areaServed":"Rondonópolis-MT","url":"https://construtoravieira.com.br/construcao-comercial"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","@id":"https://construtoravieira.com.br/estruturas-metalicas#service","name":"Estruturas Metálicas","areaServed":"Rondonópolis-MT","url":"https://construtoravieira.com.br/estruturas-metalicas"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","@id":"https://construtoravieira.com.br/reformas#service","name":"Reformas e Ampliações","areaServed":"Rondonópolis-MT","url":"https://construtoravieira.com.br/reformas"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","@id":"https://construtoravieira.com.br/obras-publicas#service","name":"Obras Públicas","areaServed":"Rondonópolis-MT","url":"https://construtoravieira.com.br/obras-publicas"}}
+        ],
+        "provider":{"@id":"https://construtoravieira.com.br/#org"}
       }
-    },
-    {
-      "@type": "OfferCatalog",
-      "name": "Serviços de Construção",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Construção Residencial" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Construção Comercial e Industrial" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estruturas Metálicas" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reformas e Ampliações" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Obras Públicas" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Legalizações e Documentação" } }
-      ],
-      "provider": { "@id": "https://construtoravieira.com.br/#organization" }
-    }
-  ]
-}
-</script>
+    ]
+  }
+  </script>
 
-<!-- ================ ACESSIBILIDADE ========================== -->
-<meta name="color-scheme" content="light dark" />
-
-<!-- ================ VERIFICAÇÕES (substituir quando tiver) == -->
-<meta name="google-site-verification" content="COLE_SEU_CODIGO_GOOGLE_AQUI" />
-<meta name="msvalidate.01" content="COLE_SEU_CODIGO_BING_AQUI" />
-<meta name="yandex-verification" content="COLE_SEU_CODIGO_YANDEX_AQUI" />
-<meta name="facebook-domain-verification" content="COLE_SEU_CODIGO_FACEBOOK_AQUI" />
+  <!-- ================ ACESSIBILIDADE ========================== -->
+  <meta name="color-scheme" content="light dark" />
 </head>
-<body>
-  <!-- TOPO igual ao da home -->
+<body class="pagina-interna">
+  <!-- TOPO -->
   <header class="header fade">
     <div class="container">
       <a href="/" aria-label="Página inicial - Construtora Vieira">
-        <img src="/img_site/logocerta.png" height="100" alt="Logotipo da Construtora Vieira - M V de Souza" fetchpriority="high" decoding="async" />
+        <img src="/img_site/logocerta.png" width="300" height="100" alt="Logotipo da Construtora Vieira" decoding="async" />
       </a>
       <nav class="nav" id="nav-menu" aria-label="Navegação principal">
         <ul>
           <li><a href="/">Home</a></li>
-          <!-- <li><a href="/sobrenos">Sobre Nós</a></li> -->
           <li><a href="/servicos" aria-current="page">Serviços</a></li>
-          <!-- <li><a href="/obras">Obras & Clientes</a></li> -->
-          <!-- <li><a href="/empreendimentos">Empreendimentos</a></li> -->
           <li><a href="/sustentabilidade">Sustentabilidade</a></li>
-          <!-- <li><a href="/noticias">Notícias e Dicas</a></li> -->
-          <!-- <li><a href="/simulacao">Simulação</a></li> -->
           <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
           <li><a href="/contato">Contato</a></li>
         </ul>
@@ -193,215 +150,144 @@
   </header>
 
   <main id="conteudo">
+    <!-- HERO (LCP ao fundo, imagem específica da página) -->
     <section class="hero fade">
+      <picture class="hero-media" aria-hidden="true">
+        <source type="image/avif" srcset="/img_site/avif/servicos.avif" width="1280" height="720" />
+        <source type="image/webp" srcset="/img_site/webp/servicos.webp" width="1280" height="720" />
+        <img src="/img_site/servicos.png" alt="" width="1280" height="720"
+             fetchpriority="high" loading="eager" decoding="async" style="aspect-ratio:1280/720" />
+      </picture>
       <div class="container">
         <h1>Nossos Serviços de Construção Civil</h1>
-        <p>Soluções completas em construção civil para Rondonópolis e região. 
-          Da fundação ao acabamento, cuidamos de cada detalhe do seu projeto.</p>
-        <a href="/contato" class="btn btn-green">Solicite um Orçamento</a>
+        <p class="muted">Soluções completas para Rondonópolis e região — da fundação ao acabamento.</p>
+        <a href="https://wa.me/5566999366313?text=Estou%20precisando%20de%20um%20or%C3%A7amento%2C%20pode%20me%20ajudar%3F"
+           target="_blank" rel="noopener noreferrer" class="btn btn-green">Solicite um Orçamento</a>
       </div>
     </section>
 
+    <!-- Construção Residencial -->
     <section class="section fade">
       <div class="container">
         <h2>Construção Residencial em Rondonópolis</h2>
         <div class="sobre-grid">
           <div class="sobre-texto">
             <h3>Casas e Sobrados Personalizados</h3>
-            <p>Construímos a casa dos seus sonhos em Rondonópolis com projeto personalizado, 
-              materiais de primeira qualidade e acabamento impecável. Nossa equipe especializada 
-              acompanha cada etapa da construção, desde a fundação até a entrega das chaves.</p>
-            <p>Oferecemos projetos arquitetônicos modernos, plantas funcionais e soluções 
-              inteligentes para otimizar espaços. Trabalhamos com diferentes padrões 
-              construtivos, sempre respeitando seu orçamento e prazo.</p>
+            <p>Projetos arquitetônicos modernos, plantas funcionais e execução com materiais de primeira — do alicerce à entrega das chaves.</p>
             <ul>
-              <li>✅ Projeto arquitetônico personalizado</li>
-              <li>✅ Acompanhamento técnico especializado</li>
-              <li>✅ Materiais de primeira qualidade</li>
-              <li>✅ Cumprimento rigoroso de prazos</li>
-              <li>✅ Garantia de 5 anos na estrutura</li>
+              <li>✅ Projeto personalizado e acompanhamento técnico</li>
+              <li>✅ Materiais de qualidade e prazos cumpridos</li>
+              <li>✅ Garantia estrutural</li>
             </ul>
           </div>
           <div>
-            <a href="/construcao"><img src="/img_site/casasesobrados.png" alt="Casa residencial construída pela Construtora Vieira em Rondonópolis" loading="lazy" decoding="async" /></a>
+            <a href="/construcao-residencial">
+              <img src="/img_site/casasesobrados.png" alt="Casa residencial construída pela Construtora Vieira em Rondonópolis"
+                   width="1280" height="720" loading="lazy" decoding="async" style="aspect-ratio:16/9" />
+            </a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Construção Comercial e Industrial -->
     <section class="section bg-dark fade">
       <div class="container">
         <h2>Construção Comercial e Industrial</h2>
         <div class="sobre-grid">
           <div>
-            <a href="/galpoes"><img src="/img_site/galpoes.png" alt="Galpão comercial construído em Rondonópolis" loading="lazy" decoding="async" /></a>
+            <a href="/construcao-comercial">
+              <img src="/img_site/galpoes.png" alt="Galpão comercial construído em Rondonópolis"
+                   width="1280" height="720" loading="lazy" decoding="async" style="aspect-ratio:16/9" />
+            </a>
           </div>
           <div class="sobre-texto">
             <h3>Galpões, Lojas e Escritórios</h3>
-            <p>Especializados em construção comercial e industrial em Rondonópolis, oferecemos 
-              soluções completas para seu negócio. Galpões industriais, centros comerciais, lojas, 
-              escritórios e complexos empresariais.</p>
-            <p>Nossos projetos comerciais são desenvolvidos pensando na funcionalidade, produtividade 
-              e retorno do investimento. Utilizamos técnicas construtivas modernas para garantir rapidez 
-              na execução e durabilidade da estrutura.</p>
+            <p>Projetos com foco em produtividade e ROI: galpões industriais, centros comerciais, lojas e escritórios com execução ágil e durável.</p>
             <ul>
-              <li>✅ Galpões industriais de grande porte</li>
-              <li>✅ Centros comerciais e shopping centers</li>
-              <li>✅ Escritórios e edifícios corporativos</li>
-              <li>✅ Lojas e estabelecimentos comerciais</li>
-              <li>✅ Projetos com foco em produtividade</li>
+              <li>✅ Galpões industriais e centros comerciais</li>
+              <li>✅ Escritórios e lojas</li>
+              <li>✅ Planejamento para operações eficientes</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Estruturas Metálicas -->
     <section class="section fade">
       <div class="container">
         <h2>Estruturas Metálicas Especializadas</h2>
         <div class="sobre-grid">
           <div class="sobre-texto">
             <h3>Projetos em Aço de Alta Qualidade</h3>
-            <p>A Construtora Vieira é especialista em estruturas metálicas em Rondonópolis. 
-              Oferecemos projeto, fabricação e montagem de estruturas em aço para diversos fins: 
-              galpões industriais, coberturas, mezaninos, passarelas e estruturas especiais.</p>
-            <p>Trabalhamos com aço certificado e soldadores qualificados, garantindo estruturas 
-              seguras e duradouras. Nossos projetos seguem todas as normas técnicas brasileiras (NBR) e internacionais.</p>
+            <p>Projeto, fabricação e montagem de estruturas em aço: galpões, coberturas, mezaninos, passarelas e especiais — com NBR e solda qualificada.</p>
             <ul>
-              <li>✅ Galpões industriais em estrutura metálica</li>
-              <li>✅ Coberturas e telhados metálicos</li>
-              <li>✅ Mezaninos e estruturas de apoio</li>
-              <li>✅ Passarelas e pontes metálicas</li>
-              <li>✅ Estruturas especiais sob medida</li>
+              <li>✅ Galpões, coberturas e mezaninos</li>
+              <li>✅ Passarelas e estruturas sob medida</li>
+              <li>✅ Materiais certificados e inspeção</li>
             </ul>
           </div>
           <div>
-            <a href="/estruturas"><img src="/img_site/estruturametalica.png" alt="Estrutura metálica construída pela Construtora Vieira" loading="lazy" decoding="async" /></a>
+            <a href="/estruturas-metalicas">
+              <img src="/img_site/estruturametalica.png" alt="Estrutura metálica construída pela Construtora Vieira"
+                   width="1280" height="720" loading="lazy" decoding="async" style="aspect-ratio:16/9" />
+            </a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Reformas -->
     <section class="section bg-dark fade">
       <div class="container">
         <h2>Reformas e Ampliações</h2>
         <div class="sobre-grid">
           <div>
-            <a href="/modernize"><img src="/img_site/modernizacao.png" alt="Reforma residencial em Rondonópolis" loading="lazy" decoding="async" /></a>
+            <a href="/reformas">
+              <img src="/img_site/modernizacao.png" alt="Reforma residencial em Rondonópolis"
+                   width="1280" height="720" loading="lazy" decoding="async" style="aspect-ratio:16/9" />
+            </a>
           </div>
           <div class="sobre-texto">
             <h3>Modernize e Amplie seus Espaços</h3>
-            <p>Reformas completas e ampliações em Rondonópolis com qualidade e agilidade. 
-              Modernizamos residências, escritórios, lojas e indústrias, sempre respeitando 
-              as características originais e agregando valor ao imóvel.</p>
-            <p>Nossa equipe especializada em reformas trabalha com mínimo de transtorno 
-              para os moradores ou usuários do espaço. Oferecemos soluções criativas para 
-              otimizar ambientes e criar novos espaços funcionais.</p>
+            <p>Residencial, comercial e corporativo — soluções para otimizar ambientes e criar novos espaços funcionais com mínimo transtorno.</p>
             <ul>
-              <li>✅ Reformas residenciais completas</li>
+              <li>✅ Reformas completas</li>
               <li>✅ Ampliações e novos cômodos</li>
-              <li>✅ Modernização de fachadas</li>
-              <li>✅ Reformas comerciais e corporativas</li>
-              <li>✅ Adaptações para acessibilidade</li>
+              <li>✅ Modernização de fachadas e acessibilidade</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Obras Públicas -->
     <section class="section fade">
       <div class="container">
         <h2>Obras Públicas em Rondonópolis</h2>
         <div class="sobre-grid">
           <div class="sobre-texto">
-            <h3>Compromisso com o Desenvolvimento da Cidade</h3>
-            <p>A Construtora Vieira tem orgulho de contribuir para o desenvolvimento 
-              de Rondonópolis através de obras públicas de qualidade. Construímos escolas, 
-              postos de saúde, prédios administrativos e infraestrutura urbana.</p>
-            <p>Nosso compromisso com as obras públicas vai além da execução técnica. 
-              Trabalhamos com responsabilidade social, cumprindo rigorosamente prazos e 
-              orçamentos, sempre pensando no benefício da comunidade.</p>
+            <h3>Compromisso com o Desenvolvimento</h3>
+            <p>Escolas, unidades de saúde, prédios administrativos e infraestrutura urbana com responsabilidade social, prazos e orçamento em dia.</p>
             <ul>
-              <li>✅ Escolas e creches municipais</li>
-              <li>✅ Postos de saúde e UBSs</li>
-              <li>✅ Prédios administrativos públicos</li>
-              <li>✅ Infraestrutura urbana</li>
-              <li>✅ Obras de saneamento básico</li>
+              <li>✅ Educação e saúde</li>
+              <li>✅ Administração pública</li>
+              <li>✅ Infraestrutura e saneamento</li>
             </ul>
           </div>
           <div>
-            <a href="/obrapublica"><img src="/img_site/obrapublica.png" alt="Obra pública construída pela Construtora Vieira em Rondonópolis" loading="lazy" decoding="async" /></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section bg-dark fade">
-      <div class="container">
-        <h2>Legalizações e Documentação</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>📋 Habite-se em Rondonópolis</h3>
-            <p>Cuidamos de todo o processo de obtenção do habite-se junto à Prefeitura de Rondonópolis. Documentação completa e aprovação garantida.</p>
-          </div>
-          <div class="card">
-            <h3>🔥 AVCB - Auto de Vistoria do Corpo de Bombeiros</h3>
-            <p>Projeto e execução de sistemas de prevenção contra incêndio. Obtenção do AVCB junto ao Corpo de Bombeiros de MT.</p>
-          </div>
-          <div class="card">
-            <h3>🏗️ Projetos Aprovados</h3>
-            <p>Elaboração e aprovação de projetos arquitetônicos, estruturais e complementares junto aos órgãos competentes.</p>
-          </div>
-          <div class="card">
-            <h3>🌿 Licenças Ambientais</h3>
-            <p>Obtenção de licenças ambientais necessárias para construção, junto aos órgãos estaduais e municipais.</p>
-          </div>
-          <div class="card">
-            <h3>⚡ Projetos Elétricos e Hidráulicos</h3>
-            <p>Projetos complementares de instalações elétricas, hidráulicas, sanitárias e de gás, com aprovação nas concessionárias.</p>
-          </div>
-          <div class="card">
-            <h3>📊 Regularização de Imóveis</h3>
-            <p>Regularização completa de imóveis existentes, adequação às normas vigentes e obtenção de toda documentação necessária.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section fade">
-      <div class="container">
-        <h2>Por Que Escolher Nossos Serviços?</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>🏆 30+ Anos de Experiência</h3>
-            <p>Três décadas de experiência em construção civil, com centenas de obras entregues em Rondonópolis e região.</p>
-          </div>
-          <div class="card">
-            <h3>👷 Equipe Especializada</h3>
-            <p>Profissionais qualificados e certificados, com experiência comprovada em cada área de atuação.</p>
-          </div>
-          <div class="card">
-            <h3>🔧 Tecnologia Moderna</h3>
-            <p>Utilizamos equipamentos modernos e técnicas construtivas avançadas para garantir qualidade e agilidade.</p>
-          </div>
-          <div class="card">
-            <h3>📋 Documentação Completa</h3>
-            <p>Cuidamos de toda a parte legal e documental, desde projetos até licenças e habite-se.</p>
-          </div>
-          <div class="card">
-            <h3>💰 Orçamento Transparente</h3>
-            <p>Orçamentos detalhados e transparentes, sem custos ocultos ou surpresas durante a execução.</p>
-          </div>
-          <div class="card">
-            <h3>⏰ Prazo Garantido</h3>
-            <p>Cumprimento rigoroso de cronogramas, com acompanhamento constante do progresso da obra.</p>
+            <a href="/obras-publicas">
+              <img src="/img_site/obrapublica.png" alt="Obra pública construída pela Construtora Vieira em Rondonópolis"
+                   width="1280" height="720" loading="lazy" decoding="async" style="aspect-ratio:16/9" />
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- RODAPÉ igual ao da home -->
+  <!-- RODAPÉ -->
   <footer class="footer fade">
     <div class="container">
       <p>&copy; 2025 Construtora Vieira. Todos os direitos reservados.</p>
