@@ -10,7 +10,13 @@
     "preview:netlify": "netlify dev -d . --port 8888",
     "build": "echo \"Static site — nothing to build\""
   },
-  "keywords": ["construcao", "rondonopolis", "construtora", "mpa", "seo"],
+  "keywords": [
+    "construcao",
+    "rondonopolis",
+    "construtora",
+    "mpa",
+    "seo"
+  ],
   "author": "Construtora Vieira - M V de Souza",
   "license": "ISC"
 }
