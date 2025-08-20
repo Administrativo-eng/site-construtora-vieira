@@ -82,7 +82,8 @@ ul{padding-left:1rem}
   padding:var(--space-3);text-align:center;transition:transform .2s ease,box-shadow .2s ease
 }
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
-.card h3{margin:.5rem 0}
+.card h3{margin:.5rem 0; color:#111;}
+.card p{color:#111;}
 
 /* Variante com container .media (agora por aspect-ratio) */
 .card .media{aspect-ratio:4/3;overflow:hidden;border-radius:calc(var(--radius) - 4px);margin-bottom:var(--space-2)}
@@ -306,3 +307,10 @@ footer.fade,.footer.fade{opacity:1;transform:none}
 /* Itens de obra/galeria genéricos (repondo) */
 .media-200 img{width:100%;height:200px;object-fit:cover;border-radius:var(--radius)}
 .media-250 img{width:100%;height:250px;object-fit:cover;border-radius:var(--radius)}
+
+
+/* HERO com imagem de fundo via <picture> */
+.hero { position: relative; overflow: hidden; }
+.hero .container { position: relative; z-index: 2; }
+.hero-media { position: absolute; inset: 0; display:block; }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); }
