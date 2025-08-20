@@ -1,36 +1,112 @@
 [build]
   publish = "."
 
-# ===== 1) Domínio canônico =====
-[[redirects]] from="https://www.construtoravieira.com.br/*" to="https://construtoravieira.com.br/:splat" status=301 force=true
-[[redirects]] from="http://www.construtoravieira.com.br/*"  to="https://construtoravieira.com.br/:splat" status=301 force=true
-[[redirects]] from="http://construtoravieira.com.br/*"       to="https://construtoravieira.com.br/:splat" status=301 force=true
+# Canonical dominio
+[[redirects]]
+  from = "https://www.construtoravieira.com.br/*"
+  to = "https://construtoravieira.com.br/:splat"
+  status = 301
+  force = true
 
-# ===== 2) Home =====
-[[redirects]] from="/home"           to="/" status=301 force=true
-[[redirects]] from="/index.html"     to="/" status=301 force=true
-[[redirects]] from="/paginas/index.html" to="/" status=301 force=true
+[[redirects]]
+  from = "http://www.construtoravieira.com.br/*"
+  to = "https://construtoravieira.com.br/:splat"
+  status = 301
+  force = true
 
-# ===== 3) URLs limpas -> arquivos (tudo 200) =====
+[[redirects]]
+  from = "http://construtoravieira.com.br/*"
+  to = "https://construtoravieira.com.br/:splat"
+  status = 301
+  force = true
+
+# Canonical home
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
 # Institucionais
-[[redirects]] from="/sobrenos"          to="/paginas/sobrenos.html"          status=200
-[[redirects]] from="/servicos"          to="/paginas/servicos.html"          status=200
-[[redirects]] from="/obras"             to="/paginas/obras.html"             status=200
-[[redirects]] from="/empreendimentos"   to="/paginas/empreendimentos.html"   status=200
-[[redirects]] from="/sustentabilidade"  to="/paginas/sustentabilidade.html"  status=200
-[[redirects]] from="/noticias"          to="/paginas/noticias.html"          status=200
-[[redirects]] from="/simulacao"         to="/paginas/simulacao.html"         status=200
-[[redirects]] from="/trabalheconosco"   to="/paginas/trabalheconosco.html"   status=200
-[[redirects]] from="/contato"           to="/paginas/contato.html"           status=200
+[[redirects]]
+  from = "/sobrenos"
+  to = "/paginas/sobrenos.html"
+  status = 200
 
-# Serviços
-[[redirects]] from="/construcao-residencial" to="/paginas/construcaoresidencial.html" status=200
-[[redirects]] from="/construcao-comercial"   to="/paginas/galpoes.html"              status=200
-[[redirects]] from="/estruturas-metalicas"   to="/paginas/estrutura.html"            status=200
-[[redirects]] from="/obras-publicas"         to="/paginas/obrapublica.html"          status=200
-[[redirects]] from="/reformas"               to="/paginas/reformas.html"             status=200
+[[redirects]]
+  from = "/servicos"
+  to = "/paginas/servicos.html"
+  status = 200
 
-# ===== 4) 404 =====
-[[redirects]] from="/*" to="/404.html" status=404
+[[redirects]]
+  from = "/obras"
+  to = "/paginas/obras.html"
+  status = 200
 
-# (Headers/Cache/Contextos — mantenha como estavam; não interferem no loop)
+[[redirects]]
+  from = "/empreendimentos"
+  to = "/paginas/empreendimentos.html"
+  status = 200
+
+[[redirects]]
+  from = "/sustentabilidade"
+  to = "/paginas/sustentabilidade.html"
+  status = 200
+
+[[redirects]]
+  from = "/noticias"
+  to = "/paginas/noticias.html"
+  status = 200
+
+[[redirects]]
+  from = "/simulacao"
+  to = "/paginas/simulacao.html"
+  status = 200
+
+[[redirects]]
+  from = "/trabalheconosco"
+  to = "/paginas/trabalheconosco.html"
+  status = 200
+
+[[redirects]]
+  from = "/contato"
+  to = "/paginas/contato.html"
+  status = 200
+
+# Servicos
+[[redirects]]
+  from = "/construcao-residencial"
+  to = "/paginas/construcaoresidencial.html"
+  status = 200
+
+[[redirects]]
+  from = "/construcao-comercial"
+  to = "/paginas/galpoes.html"
+  status = 200
+
+[[redirects]]
+  from = "/estruturas-metalicas"
+  to = "/paginas/estrutura.html"
+  status = 200
+
+[[redirects]]
+  from = "/obras-publicas"
+  to = "/paginas/obrapublica.html"
+  status = 200
+
+[[redirects]]
+  from = "/reformas"
+  to = "/paginas/reformas.html"
+  status = 200
+
+# 404
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
