@@ -29,7 +29,7 @@ Disallow: /*.map$
 Disallow: /*.MAP$
 Disallow: /*~RFb*
 
-# Parâmetros de campanha/ads (o conteúdo é o mesmo da URL limpa)
+# Parâmetros de campanha/ads (conteúdo idêntico à URL limpa)
 Disallow: /*?*utm_source=*
 Disallow: /*?*utm_medium=*
 Disallow: /*?*utm_campaign=*

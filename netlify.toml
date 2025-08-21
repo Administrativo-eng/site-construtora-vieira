@@ -1,7 +1,9 @@
 [build]
   publish = "."
 
-# Canonical dominio
+# =========================
+# Canonical domain (HTTPS + sem www)
+# =========================
 [[redirects]]
   from = "https://www.construtoravieira.com.br/*"
   to = "https://construtoravieira.com.br/:splat"
@@ -20,7 +22,9 @@
   status = 301
   force = true
 
+# =========================
 # Canonical home
+# =========================
 [[redirects]]
   from = "/home"
   to = "/"
@@ -33,6 +37,36 @@
   status = 301
   force = true
 
+# =========================
+# Aliases -> canônicos (301)
+# =========================
+[[redirects]]
+  from = "/construcaoresidencial"
+  to = "/construcao-residencial"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/estrutura"
+  to = "/estruturas-metalicas"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/obrapublica"
+  to = "/obras-publicas"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/modernize"
+  to = "/reformas"
+  status = 301
+  force = true
+
+# =========================
+# Rewrites 200 (URLs limpas -> arquivos em /paginas)
+# =========================
 # Institucionais
 [[redirects]]
   from = "/sobrenos"
@@ -79,25 +113,25 @@
   to = "/paginas/contato.html"
   status = 200
 
-# Servicos
+# Serviços (canônicos COM hífen)
 [[redirects]]
   from = "/construcao-residencial"
-  to = "/paginas/construcaoresidencial.html"
+  to = "/paginas/construcao-residencial.html"
   status = 200
 
 [[redirects]]
   from = "/construcao-comercial"
-  to = "/paginas/galpoes.html"
+  to = "/paginas/construcao-comercial.html"
   status = 200
 
 [[redirects]]
   from = "/estruturas-metalicas"
-  to = "/paginas/estrutura.html"
+  to = "/paginas/estruturas-metalicas.html"
   status = 200
 
 [[redirects]]
   from = "/obras-publicas"
-  to = "/paginas/obrapublica.html"
+  to = "/paginas/obras-publicas.html"
   status = 200
 
 [[redirects]]
@@ -105,8 +139,102 @@
   to = "/paginas/reformas.html"
   status = 200
 
-# 404
+# =========================
+# 404 (catch-all)
+# =========================
 [[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404
+
+# =========================
+# Security + Perf + SEO Headers
+# =========================
+
+# Segurança e políticas globais
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Resource-Policy = "same-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    # CSP liberando GTM/GA e rss2json (ajuste se usar mais fontes)
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com;
+      connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://api.rss2json.com;
+      img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com;
+      style-src 'self' 'unsafe-inline';
+      font-src 'self' data:;
+      frame-src https://www.googletagmanager.com;
+      base-uri 'self';
+      form-action 'self'
+    """
+
+# HTML sem cache (permite revalidação e bfcache)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-store, max-age=0, must-revalidate"
+
+# Home também sem cache
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "no-store, max-age=0, must-revalidate"
+
+# Service Worker sempre fresh
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-store, max-age=0, must-revalidate"
+    Service-Worker-Allowed = "/"
+
+# Manifest com cache curto (1h)
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# Robots/Sitemap com cache moderado (1 dia)
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Assets estáticos com cache longo (1 ano + immutable)
+[[headers]]
+  for = "/includes/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/icones/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/img_site/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/clientes/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# 404: noindex e sem cache
+[[headers]]
+  for = "/404.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    Cache-Control = "no-store, max-age=0, must-revalidate"

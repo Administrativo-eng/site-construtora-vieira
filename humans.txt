@@ -1,5 +1,5 @@
 /* TEAM */
-Construtora: Construtora Vieira - M V de Souza
+Construtora: Construtora Vieira
 Site: https://construtoravieira.com.br
 Localização: Rondonópolis, Mato Grosso, Brasil
 Endereço: R. Fatime Ali Dib, 211 — 78731-212 — Rondonópolis/MT
@@ -27,7 +27,7 @@ Acessibilidade: Diretrizes WCAG 2.1 (foco, contraste, semântica)
 Performance: Core Web Vitals, cache longo p/ assets, compressão, imagens otimizadas (formatos modernos + width/height), 1 LCP com fetchpriority
 Segurança: CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, COOP/CORP
 Tecnologias: HTML5, CSS3, JavaScript ES6+ (Vanilla)
-PWA: Manifest presente; sem Service Worker (sem offline)
+PWA: Manifest + Service Worker (cache offline, rotas mapeadas)
 Build/Deploy: Git + CI/CD (Netlify)
 
 /* EMPRESA */

@@ -6,20 +6,20 @@
   <!-- Raiz -->
   <url>
     <loc>https://construtoravieira.com.br/</loc>
-    <lastmod>2025-08-10</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://construtoravieira.com.br/img_site/previsual.png</image:loc>
-      <image:title>Construtora Vieira - M V de Souza</image:title>
+      <image:title>Construtora Vieira</image:title>
       <image:caption>Construção Civil em Rondonópolis-MT</image:caption>
     </image:image>
   </url>
 
-  <!-- Institucionais (URLs limpas) -->
+  <!-- Institucionais -->
   <url>
     <loc>https://construtoravieira.com.br/servicos</loc>
-    <lastmod>2025-08-10</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -30,7 +30,7 @@
 
   <url>
     <loc>https://construtoravieira.com.br/obras</loc>
-    <lastmod>2025-08-10</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -41,7 +41,7 @@
 
   <url>
     <loc>https://construtoravieira.com.br/empreendimentos</loc>
-    <lastmod>2025-08-10</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -52,7 +52,7 @@
 
   <url>
     <loc>https://construtoravieira.com.br/contato</loc>
-    <lastmod>2025-08-10</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -63,7 +63,7 @@
 
   <url>
     <loc>https://construtoravieira.com.br/sobrenos</loc>
-    <lastmod>2025-08-10</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -74,7 +74,7 @@
 
   <url>
     <loc>https://construtoravieira.com.br/sustentabilidade</loc>
-    <lastmod>2025-08-10</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -85,7 +85,7 @@
 
   <url>
     <loc>https://construtoravieira.com.br/noticias</loc>
-    <lastmod>2025-08-10</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -96,7 +96,7 @@
 
   <url>
     <loc>https://construtoravieira.com.br/simulacao</loc>
-    <lastmod>2025-08-10</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -107,7 +107,7 @@
 
   <url>
     <loc>https://construtoravieira.com.br/trabalheconosco</loc>
-    <lastmod>2025-08-10</lastmod>
+    <lastmod>2025-08-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -116,7 +116,7 @@
     </image:image>
   </url>
 
-  <!-- Serviços (canônicos com hífen) -->
+  <!-- Serviços -->
   <url>
     <loc>https://construtoravieira.com.br/construcao-residencial</loc>
     <lastmod>2025-08-17</lastmod>
