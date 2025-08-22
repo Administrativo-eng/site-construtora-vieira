@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR" prefix="og: https://ogp.me/ns#">
 <head>
-  <!-- ESSENCIAIS + SEO + PWA (mantenha como estava no seu arquivo) -->
+  <!-- =================== ESSENCIAIS =================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
   <meta name="color-scheme" content="light dark" />
-  <title>Trabalhe Conosco — Construtora Vieira</title>
 
-  <!-- GTM -->
+  <!-- ============== GOOGLE TAG MANAGER (HEAD) ============== -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -17,10 +16,136 @@
     })(window,document,'script','dataLayer','GTM-5H8DS3LX');
   </script>
 
+  <!-- ================= PRECONNECT / RESOURCE HINTS ================= -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="preconnect" href="https://wa.me" crossorigin>
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="//wa.me" />
+  <link rel="prefetch" href="/servicos" />
+
+  <!-- ===================== PWA / MANIFEST ====================== -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Trabalhe Conosco — Construtora Vieira" />
+  <meta name="application-name" content="Construtora Vieira — Trabalhe Conosco" />
+  <link rel="apple-touch-icon" href="/icones/icon-192.webp" />
+
+  <!-- ======================= SEO PRINCIPAL ===================== -->
+  <title>Trabalhe Conosco — Construtora Vieira</title>
+  <meta name="description" content="Envie seus dados e fale pelo WhatsApp. Vagas em obras, reformas e estruturas metálicas em Rondonópolis-MT." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://construtoravieira.com.br/trabalheconosco" />
+
+  <!-- Verificações (usar em todas as páginas) -->
+  <meta name="google-site-verification" content="COLE_SEU_CODIGO_GOOGLE_AQUI" />
+  <meta name="msvalidate.01" content="COLE_SEU_CODIGO_BING_AQUI" />
+  <meta name="yandex-verification" content="COLE_SEU_CODIGO_YANDEX_AQUI" />
+  <meta name="facebook-domain-verification" content="COLE_SEU_CODIGO_FACEBOOK_AQUI" />
+
+  <!-- ============== FAVICON / ÍCONES =========================== -->
+  <link rel="icon" href="/icones/favicon.ico" sizes="any" />
+
+  <!-- ==================== TEMA / CORES ======================== -->
+  <meta name="theme-color" content="#111111" />
+
+  <!-- ===================== OPEN GRAPH ========================= -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Construtora Vieira" />
+  <meta property="og:title" content="Trabalhe Conosco — Construtora Vieira" />
+  <meta property="og:description" content="Envie seus dados e fale pelo WhatsApp. Vagas em obras e reformas em Rondonópolis-MT." />
+  <meta property="og:url" content="https://construtoravieira.com.br/trabalheconosco" />
+  <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Trabalhe Conosco — Construtora Vieira em Rondonópolis-MT" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- ==================== TWITTER CARDS ======================= -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Trabalhe Conosco — Construtora Vieira" />
+  <meta name="twitter:description" content="Envie seus dados e fale no WhatsApp." />
+  <meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+
+  <!-- =================== HREFLANG ============================= -->
+  <link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/trabalheconosco" />
+  <link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/trabalheconosco" />
+
+  <!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://construtoravieira.com.br/#organization",
+        "name": "Construtora Vieira",
+        "url": "https://construtoravieira.com.br/",
+        "logo": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/logocerta.png", "width": 300, "height": 100 },
+        "image": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/previsual.png", "width": 1200, "height": 630 },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
+          "https://www.instagram.com/construtoravieira1992/"
+        ],
+        "contactPoint": { "@type": "ContactPoint", "telephone": "+55-66-99936-6313", "contactType": "Atendimento", "availableLanguage": "pt-BR" },
+        "address": { "@type": "PostalAddress", "streetAddress": "R. Fatime Ali Dib, 211", "addressLocality": "Rondonópolis", "addressRegion": "MT", "postalCode": "78731-212", "addressCountry": "BR" }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://construtoravieira.com.br/#localbusiness",
+        "name": "Construtora Vieira",
+        "image": "https://construtoravieira.com.br/img_site/previsual.png",
+        "telephone": "+55-66-99936-6313",
+        "email": "contato@construtoravieira.com.br",
+        "address": { "@type": "PostalAddress", "streetAddress": "R. Fatime Ali Dib, 211", "addressLocality": "Rondonópolis", "addressRegion": "MT", "postalCode": "78731-212", "addressCountry": "BR" },
+        "geo": { "@type": "GeoCoordinates", "latitude": -16.461250855506005, "longitude": -54.59783853891883 },
+        "url": "https://construtoravieira.com.br/",
+        "openingHours": "Mo-Fr 08:00-18:00",
+        "priceRange": "$$"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://construtoravieira.com.br/#website",
+        "url": "https://construtoravieira.com.br/",
+        "name": "Construtora Vieira",
+        "publisher": { "@id": "https://construtoravieira.com.br/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://construtoravieira.com.br/busca?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://construtoravieira.com.br/trabalheconosco#webpage",
+        "url": "https://construtoravieira.com.br/trabalheconosco",
+        "name": "Trabalhe Conosco — Construtora Vieira",
+        "description": "Envie seus dados e fale pelo WhatsApp. Vagas em obras e reformas.",
+        "isPartOf": { "@id": "https://construtoravieira.com.br/#website" },
+        "about": { "@id": "https://construtoravieira.com.br/#organization" },
+        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/previsual.png" },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://construtoravieira.com.br/" },
+            { "@type": "ListItem", "position": 2, "name": "Trabalhe Conosco", "item": "https://construtoravieira.com.br/trabalheconosco" }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===================== CSS =============================== -->
   <link rel="preload" href="/includes/style.css" as="style" />
   <link rel="stylesheet" href="/includes/style.css" />
 </head>
+
 <body class="pagina-interna">
+  <!-- ============== GTM (NOSCRIPT) ============== -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5H8DS3LX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <header class="header fade">
@@ -51,18 +176,11 @@
 
         <div class="sobre-grid">
           <div class="sobre-texto">
-            <p>Preencha o formulário ao lado e, ao enviar, abriremos o WhatsApp com sua mensagem pronta para você completar com o currículo.</p>
+            <p>Preencha o formulário e, ao enviar, abriremos o WhatsApp com a mensagem pronta para você anexar o currículo.</p>
           </div>
 
           <div>
-            <!-- Usa o endpoint oficial da API - abriremos em nova aba -->
-            <form class="formulario-trabalho"
-                  action="https://api.whatsapp.com/send"
-                  method="get"
-                  accept-charset="UTF-8">
-              <input type="hidden" name="phone" value="5566999366313" />
-              <input type="hidden" name="text" value="" />
-
+            <form id="form-trabalho" class="formulario-contato" novalidate>
               <div class="campo-form">
                 <label for="nome">Nome completo</label>
                 <input type="text" id="nome" placeholder="Seu nome" autocomplete="name" required />
@@ -74,20 +192,21 @@
               </div>
 
               <div class="campo-form">
-                <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" placeholder="(66) 99999-9999" autocomplete="tel" inputmode="tel" required />
+                <label for="telefone">Telefone / WhatsApp</label>
+                <input type="tel" id="telefone" placeholder="(66) 99999-9999" inputmode="tel" autocomplete="tel" required />
               </div>
 
               <div class="campo-form">
                 <label for="mensagem">Mensagem (opcional)</label>
-                <textarea id="mensagem" rows="4" placeholder="Digite sua mensagem"></textarea>
+                <textarea id="mensagem" rows="5" placeholder="Conte brevemente sua experiência"></textarea>
               </div>
 
-              <button type="submit" id="btn-wpp-trabalho" class="btn btn-black" data-cta="whatsapp">Enviar via WhatsApp</button>
+              <button type="submit" id="btn-enviar-wpp" class="btn btn-black">Enviar via WhatsApp</button>
               <p class="muted" style="margin-top:.5rem;">Abriremos o WhatsApp em nova aba para você anexar o currículo (PDF).</p>
             </form>
           </div>
         </div>
+
       </div>
     </section>
   </main>
@@ -98,38 +217,46 @@
     </div>
   </footer>
 
-  <!-- JS EXTERNO (menu, carrossel, simulador, feed) -->
+  <!-- JS EXTERNO -->
   <script src="/includes/script.js" defer></script>
 
-  <!-- ===== JS INLINE SOMENTE DESTE FORMULÁRIO ===== -->
+  <!-- ===== JS INLINE (página específica) ===== -->
   <script>
     (function(){
-      var form = document.querySelector('form.formulario-trabalho');
-      var btn  = document.getElementById('btn-wpp-trabalho');
+      var form = document.getElementById('form-trabalho');
+      var btn  = document.getElementById('btn-enviar-wpp');
       if (!form) return;
 
       function g(sel){ var el = form.querySelector(sel); return el && el.value ? el.value.trim() : ''; }
+
       function enviar(){
-        if (form.checkValidity && !form.checkValidity()){ form.reportValidity && form.reportValidity(); return; }
+        if (form.checkValidity && !form.checkValidity()){
+          form.reportValidity && form.reportValidity();
+          return;
+        }
 
         var linhas = [
-          '📄 Candidato — Trabalhe Conosco',
+          '*📄 Candidato — Trabalhe Conosco*',
           '',
-          'Nome: ' + g('#nome'),
-          'Email: ' + g('#email'),
-          'Telefone: ' + g('#telefone'),
-          g('#mensagem') ? 'Mensagem: ' + g('#mensagem') : '',
+          '*Nome:* ' + g('#nome'),
+          '*Email:* ' + g('#email'),
+          '*Telefone:* ' + g('#telefone'),
+          g('#mensagem') ? '*Mensagem:* ' + g('#mensagem') : '',
           '',
           'Enviei pelo site. Posso anexar meu currículo (PDF) por aqui?'
         ];
 
-        var hidden = form.querySelector('input[name="text"]');
-        if (hidden) hidden.value = linhas.join('\n'); // o browser vai codificar
+        // URL oficial da API do WhatsApp
+        var url = "https://api.whatsapp.com/send?phone=5566999366313&text=" + encodeURIComponent(linhas.join("\n"));
 
-        form.target = '_blank';    // abre em nova aba
-        alert('Você será redirecionado para o WhatsApp. Anexe seu currículo (PDF).');
-        form.submit();
-        setTimeout(function(){ location.href = '/'; }, 200); // volta para a home
+        // abre em nova aba (não é possível fechá-la automaticamente por ser outro domínio)
+        var wppWin = window.open(url, "_blank");
+
+        // retorna o usuário para a home do site
+        setTimeout(function(){
+          if (wppWin && !wppWin.closed) { try { wppWin.close(); } catch(e){} }
+          location.href = "/";
+        }, 800);
       }
 
       if (btn)  btn.addEventListener('click', function(e){ e.preventDefault(); enviar(); });

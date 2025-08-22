@@ -180,12 +180,12 @@
         }
 
         var linhas = [
-          '📞 Contato — Construtora Vieira',
+          '📞 *Contato — Construtora Vieira*',
           '',
-          'Nome: ' + g('#nome'),
-          'Email: ' + g('#email'),
-          'Telefone: ' + g('#telefone'),
-          g('#mensagem') ? 'Mensagem: ' + g('#mensagem') : ''
+          '*Nome:* ' + g('#nome'),
+          '*Email:* ' + g('#email'),
+          '*Telefone:* ' + g('#telefone'),
+          g('#mensagem') ? '*Mensagem:* ' + g('#mensagem') : ''
         ];
 
         var url = "https://api.whatsapp.com/send?phone=5566999366313&text=" + encodeURIComponent(linhas.join("\n"));
