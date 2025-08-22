@@ -6,8 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
 
+  <!-- ============== GOOGLE TAG MANAGER (HEAD) ============== -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5H8DS3LX');
+  </script>
+
   <!-- ================= PRELOAD / RESOURCE HINTS ================= -->
-  <!-- Sem preloads agressivos; priorizar fetchpriority no LCP -->
   <link rel="dns-prefetch" href="//www.google-analytics.com" />
   <link rel="dns-prefetch" href="//www.googletagmanager.com" />
   <link rel="prefetch" href="/servicos" />
@@ -20,17 +28,16 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Obras Públicas — Construtora Vieira" />
   <meta name="application-name" content="Construtora Vieira — Obras Públicas" />
+  <link rel="apple-touch-icon" href="/icones/icon-192.webp" />
 
   <!-- ======================= SEO PRINCIPAL ===================== -->
   <title>Obras Públicas em Rondonópolis-MT | Construtora Vieira</title>
   <meta name="description" content="Construção de escolas, postos de saúde, prédios administrativos e infraestrutura urbana em Rondonópolis-MT. 30+ anos de experiência em licitações públicas." />
-  <meta name="keywords" content="obras públicas Rondonópolis, escolas, postos de saúde, infraestrutura urbana, saneamento, Mato Grosso" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://construtoravieira.com.br/obras-publicas" />
 
   <!-- ============== FAVICON / CSS ============================= -->
-  <link rel="icon" href="/img_site/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="/img_site/apple-touch-icon.png" sizes="180x180" />
+  <link rel="icon" href="/icones/favicon.ico" sizes="any" />
   <link rel="stylesheet" href="/includes/style.css" />
 
   <!-- ==================== TEMA / CORES ======================== -->
@@ -38,7 +45,7 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#111111" />
 
-  <!-- ===================== OPEN GRAPH (pré-visual padrão) ===== -->
+  <!-- ===================== OPEN GRAPH ========================= -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Construtora Vieira" />
   <meta property="og:title" content="Obras Públicas em Rondonópolis-MT | Construtora Vieira" />
@@ -47,7 +54,7 @@
   <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Pré-visualização — Construtora Vieira" />
+  <meta property="og:image:alt" content="Obras Públicas em Rondonópolis — Construtora Vieira" />
   <meta property="og:locale" content="pt_BR" />
 
   <!-- ==================== TWITTER CARDS ======================= -->
@@ -85,7 +92,7 @@
         "image":"https://construtoravieira.com.br/img_site/previsual.png",
         "telephone":"+55-66-99936-6313",
         "address":{"@type":"PostalAddress","streetAddress":"R. Fatime Ali Dib, 211","addressLocality":"Rondonópolis","addressRegion":"MT","postalCode":"78731-212","addressCountry":"BR"},
-        "geo":{"@type":"GeoCoordinates","latitude":-16.4673,"longitude":-54.6370},
+        "geo":{"@type":"GeoCoordinates","latitude":-16.461250855506005,"longitude":-54.59783853891883},
         "url":"https://construtoravieira.com.br/","openingHours":"Mo-Fr 08:00-18:00","priceRange":"$$","paymentAccepted":"Cash, Credit Card, Bank Transfer","currenciesAccepted":"BRL"
       },
       {
@@ -109,6 +116,16 @@
         "serviceType":"Construção Pública",
         "provider":{"@id":"https://construtoravieira.com.br/#organization"},
         "areaServed":"Rondonópolis-MT"
+      },
+      {
+        "@type":"FAQPage",
+        "@id":"https://construtoravieira.com.br/obras-publicas#faq",
+        "mainEntity":[
+          {"@type":"Question","name":"Quais tipos de obras públicas vocês executam?","acceptedAnswer":{"@type":"Answer","text":"Escolas, creches, postos de saúde, UBSs, prédios administrativos, infraestrutura urbana e obras de saneamento básico."}},
+          {"@type":"Question","name":"Vocês participam de licitações públicas?","acceptedAnswer":{"@type":"Answer","text":"Sim. Atuamos em licitações municipais, estaduais e federais, sempre em conformidade com a legislação vigente."}},
+          {"@type":"Question","name":"Qual a experiência da Construtora Vieira em obras públicas?","acceptedAnswer":{"@type":"Answer","text":"Mais de 30 anos de experiência em obras públicas em Rondonópolis-MT e região, com foco em qualidade e prazos."}},
+          {"@type":"Question","name":"Como posso solicitar um orçamento para obra pública?","acceptedAnswer":{"@type":"Answer","text":"Clique no botão 'Solicite um Orçamento' nesta página ou fale conosco pelo WhatsApp."}}
+        ]
       }
     ]
   }
@@ -125,6 +142,10 @@
 </head>
 
 <body class="pagina-interna">
+  <!-- ============== GTM (NOSCRIPT) ============== -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5H8DS3LX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- TOPO -->
   <header class="header fade">
     <div class="container">
       <a href="/" aria-label="Página inicial - Construtora Vieira">
@@ -148,7 +169,7 @@
     <picture class="hero-media" aria-hidden="true">
       <source type="image/avif" srcset="/img_site/avif/obrapublica.avif" width="1280" height="720" />
       <source type="image/webp" srcset="/img_site/webp/obrapublica.webp" width="1280" height="720" />
-      <img src="/img_site/obrapublica.png" alt="" width="1280" height="720"
+      <img src="/img_site/obrapublica.png" alt="Obra pública executada em Rondonópolis pela Construtora Vieira" width="1280" height="720"
            fetchpriority="high" loading="eager" decoding="async" style="aspect-ratio:1280/720" />
     </picture>
     <div class="container">
@@ -176,10 +197,33 @@
         </div>
         <div class="sobre-img">
           <img src="/img_site/obrapublica.png"
-               alt="Obra pública executada pela Construtora Vieira em Rondonópolis"
+               alt="Execução de obra pública pela Construtora Vieira em Rondonópolis"
                width="1280" height="720"
                loading="lazy" decoding="async" style="aspect-ratio:16/9" />
         </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section fade">
+      <div class="container">
+        <h2>Perguntas Frequentes (FAQ)</h2>
+        <details>
+          <summary>Quais tipos de obras públicas vocês executam?</summary>
+          <p>Escolas, creches, postos de saúde, UBSs, prédios administrativos, infraestrutura urbana e saneamento básico.</p>
+        </details>
+        <details>
+          <summary>Vocês participam de licitações públicas?</summary>
+          <p>Sim. Atuamos em licitações municipais, estaduais e federais, em conformidade com a legislação vigente.</p>
+        </details>
+        <details>
+          <summary>Qual a experiência da Construtora Vieira em obras públicas?</summary>
+          <p>Mais de 30 anos de experiência em obras públicas em Rondonópolis-MT e região, com foco em qualidade e prazos.</p>
+        </details>
+        <details>
+          <summary>Como posso solicitar um orçamento para obra pública?</summary>
+          <p><a href="https://wa.me/5566999366313?text=Olá!%20Quero%20um%20orçamento%20para%20obra%20pública." class="btn btn-green">Solicite um Orçamento</a></p>
+        </details>
       </div>
     </section>
   </main>

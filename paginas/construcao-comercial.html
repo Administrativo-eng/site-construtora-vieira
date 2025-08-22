@@ -6,6 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
 
+  <!-- ============== GOOGLE TAG MANAGER (HEAD) ============== -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5H8DS3LX');
+  </script>
+
   <!-- ================= PRELOAD / RESOURCE HINTS ================= -->
   <link rel="dns-prefetch" href="//www.google-analytics.com" />
   <link rel="dns-prefetch" href="//www.googletagmanager.com" />
@@ -18,11 +27,11 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Construção Comercial — Construtora Vieira" />
   <meta name="application-name" content="Construtora Vieira — Construção Comercial" />
+  <link rel="apple-touch-icon" href="/icones/icon-192.webp" />
 
   <!-- ======================= SEO PRINCIPAL ===================== -->
   <title>Construção Comercial e Industrial em Rondonópolis-MT | Construtora Vieira</title>
   <meta name="description" content="Construção comercial e industrial em Rondonópolis-MT: galpões, centros comerciais, escritórios e lojas. 30+ anos de experiência. Orçamento gratuito." />
-  <meta name="keywords" content="construção comercial, galpões industriais, centros comerciais, escritórios corporativos, Rondonópolis MT, construção industrial" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://construtoravieira.com.br/construcao-comercial" />
 
@@ -35,7 +44,7 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#111111" />
 
-  <!-- ===================== OPEN GRAPH (usa apenas previsual) === -->
+  <!-- ===================== OPEN GRAPH ========================= -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Construtora Vieira" />
   <meta property="og:title" content="Construção Comercial e Industrial em Rondonópolis-MT | Construtora Vieira" />
@@ -83,12 +92,24 @@
         "image": "https://construtoravieira.com.br/img_site/previsual.png",
         "telephone": "+55-66-99936-6313",
         "address": { "@type": "PostalAddress", "streetAddress": "R. Fatime Ali Dib, 211", "addressLocality": "Rondonópolis", "addressRegion": "MT", "postalCode": "78731-212", "addressCountry": "BR" },
-        "geo": { "@type": "GeoCoordinates", "latitude": -16.4673, "longitude": -54.6370 },
+        "geo": { "@type": "GeoCoordinates", "latitude": -16.461250855506005, "longitude": -54.59783853891883 },
         "url": "https://construtoravieira.com.br/",
         "openingHours": "Mo-Fr 08:00-18:00",
         "priceRange": "$$",
         "paymentAccepted": "Cash, Credit Card, Bank Transfer",
         "currenciesAccepted": "BRL"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://construtoravieira.com.br/#website",
+        "url": "https://construtoravieira.com.br/",
+        "name": "Construtora Vieira",
+        "publisher": { "@id": "https://construtoravieira.com.br/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://construtoravieira.com.br/busca?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       },
       {
         "@type": "WebPage",
@@ -99,6 +120,7 @@
         "isPartOf": { "@id": "https://construtoravieira.com.br/#website" },
         "about": { "@id": "https://construtoravieira.com.br/#organization" },
         "primaryImageOfPage": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/galpoes.png", "width": 1280, "height": 720 },
+        "dateModified": "2025-08-22T00:00:00-04:00",
         "breadcrumb": {
           "@type": "BreadcrumbList",
           "itemListElement": [
@@ -113,13 +135,48 @@
         "name": "Construção Comercial e Industrial",
         "serviceType": "Construção Comercial",
         "provider": { "@id": "https://construtoravieira.com.br/#organization" },
-        "areaServed": "Rondonópolis-MT"
+        "areaServed": "Rondonópolis-MT",
+        "url": "https://construtoravieira.com.br/construcao-comercial"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://construtoravieira.com.br/construcao-comercial#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quais tipos de obras comerciais vocês executam?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Executamos galpões industriais, centros comerciais, escritórios, lojas e edifícios corporativos, do projeto à entrega final." }
+          },
+          {
+            "@type": "Question",
+            "name": "Qual o prazo médio para um galpão de 600 m²?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Em média 90–120 dias corridos após fundações, variando conforme complexidade, disponibilidade de materiais e aprovações." }
+          },
+          {
+            "@type": "Question",
+            "name": "Vocês trabalham com estrutura metálica?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Sim. Projetamos, fabricamos e montamos estrutura metálica com controle de qualidade e ART, conforme normas." }
+          },
+          {
+            "@type": "Question",
+            "name": "Atendem somente Rondonópolis?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Rondonópolis e região. Projetos maiores podem ser avaliados caso a caso." }
+          },
+          {
+            "@type": "Question",
+            "name": "Como solicito orçamento?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Pelo WhatsApp no botão da página ou pelo formulário de contato. Envie área aproximada, padrão desejado e prazos." }
+          }
+        ]
       }
     ]
   }
   </script>
 </head>
 <body class="pagina-interna">
+  <!-- ============== GTM (NOSCRIPT) ============== -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5H8DS3LX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
   <header class="header fade">
     <div class="container">
       <a href="/" aria-label="Página inicial - Construtora Vieira">
@@ -155,6 +212,7 @@
   </section>
 
   <main id="conteudo">
+    <!-- CONTEÚDO PRINCIPAL -->
     <section class="section bg-dark fade">
       <div class="container sobre-grid">
         <div class="sobre-texto">
@@ -177,6 +235,36 @@
         </div>
       </div>
     </section>
+
+    <!-- FAQ -->
+    <section class="section fade">
+      <div class="container">
+        <h2>Perguntas Frequentes (FAQ)</h2>
+        <details>
+          <summary>Quais tipos de obras comerciais vocês executam?</summary>
+          <p>Galpões industriais, centros comerciais, escritórios, lojas e edifícios corporativos, do projeto à entrega final.</p>
+        </details>
+        <details>
+          <summary>Qual o prazo médio para um galpão de 600 m²?</summary>
+          <p>Em média 90–120 dias após fundações, variando conforme complexidade, suprimentos e aprovações.</p>
+        </details>
+        <details>
+          <summary>Vocês trabalham com estrutura metálica?</summary>
+          <p>Sim, com fabricação e montagem sob ART e controle de qualidade conforme normas.</p>
+        </details>
+        <details>
+          <summary>Atendem somente Rondonópolis?</summary>
+          <p>Rondonópolis e região. Projetos maiores podem ser avaliados caso a caso.</p>
+        </details>
+        <details>
+          <summary>Como solicito orçamento?</summary>
+          <p>
+            <a href="https://wa.me/5566999366313?text=Estou%20precisando%20de%20um%20or%C3%A7amento%20para%20constru%C3%A7%C3%A3o%20comercial."
+            target="_blank" rel="noopener noreferrer" class="btn btn-green">Solicite um Orçamento</a>
+          </p>
+        </details>
+      </div>
+    </section>
   </main>
 
   <footer class="footer fade">
@@ -185,6 +273,7 @@
     </div>
   </footer>
 
+  <!-- JS -->
   <script src="/includes/script.js" defer></script>
 </body>
 </html>

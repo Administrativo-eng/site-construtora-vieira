@@ -5,6 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- ============== GOOGLE TAG MANAGER (HEAD) ============== -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5H8DS3LX');
+  </script>
 
   <!-- ================= PRELOAD / RESOURCE HINTS ================= -->
   <link rel="dns-prefetch" href="//www.google-analytics.com" />
@@ -18,17 +28,22 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Estruturas Metálicas — Construtora Vieira" />
   <meta name="application-name" content="Construtora Vieira — Estruturas Metálicas" />
+  <link rel="apple-touch-icon" href="/icones/icon-192.webp" />
 
   <!-- ======================= SEO PRINCIPAL ===================== -->
-  <title>Estruturas Metálicas em Rondonópolis | Construtora Vieira</title>
-  <meta name="description" content="Estruturas metálicas em Rondonópolis-MT: galpões, coberturas, mezaninos e passarelas. Soldas certificadas, materiais com laudo e conformidade NBR. Orçamento gratuito." />
-  <meta name="keywords" content="estruturas metálicas rondonópolis, galpões, coberturas, mezaninos, aço" />
+  <title>Estruturas Metálicas Rondonópolis-MT</title>
+  <meta name="description" content="Galpões, coberturas, mezaninos e passarelas em Rondonópolis-MT. Solda qualificada e conforme NBR. Orçamento gratuito." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://construtoravieira.com.br/estruturas-metalicas" />
 
+  <!-- Verificações (substituir pelos códigos reais) -->
+  <meta name="google-site-verification" content="COLE_SEU_CODIGO_GOOGLE_AQUI" />
+  <meta name="msvalidate.01" content="COLE_SEU_CODIGO_BING_AQUI" />
+  <meta name="yandex-verification" content="COLE_SEU_CODIGO_YANDEX_AQUI" />
+  <meta name="facebook-domain-verification" content="COLE_SEU_CODIGO_FACEBOOK_AQUI" />
+
   <!-- ============== FAVICON / CSS ============================= -->
-  <link rel="icon" href="/img_site/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="/img_site/apple-touch-icon.png" sizes="180x180" />
+  <link rel="icon" href="/icones/favicon.ico" sizes="any" />
   <link rel="stylesheet" href="/includes/style.css" />
 
   <!-- ==================== TEMA / CORES ======================== -->
@@ -36,11 +51,11 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#111111" />
 
-  <!-- ===================== OPEN GRAPH (pré-visual padrão) ===== -->
+  <!-- ===================== OPEN GRAPH ========================= -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Construtora Vieira" />
-  <meta property="og:title" content="Estruturas Metálicas em Rondonópolis-MT | Construtora Vieira" />
-  <meta property="og:description" content="Galpões, coberturas, mezaninos e passarelas com soldas certificadas e conformidade NBR." />
+  <meta property="og:title" content="Estruturas Metálicas Rondonópolis-MT" />
+  <meta property="og:description" content="Galpões, coberturas, mezaninos e passarelas. Solda qualificada e conforme NBR." />
   <meta property="og:url" content="https://construtoravieira.com.br/estruturas-metalicas" />
   <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
   <meta property="og:image:width" content="1200" />
@@ -50,15 +65,15 @@
 
   <!-- ==================== TWITTER CARDS ======================= -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Estruturas Metálicas em Rondonópolis-MT | Construtora Vieira" />
-  <meta name="twitter:description" content="Galpões, coberturas, mezaninos e passarelas com soldas certificadas." />
+  <meta name="twitter:title" content="Estruturas Metálicas Rondonópolis-MT" />
+  <meta name="twitter:description" content="Galpões, coberturas, mezaninos e passarelas. Solda qualificada e conforme NBR." />
   <meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
 
-  <!-- =================== HREFLANG (pt único) ================== -->
+  <!-- =================== HREFLANG ================== -->
   <link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/estruturas-metalicas" />
   <link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/estruturas-metalicas" />
 
-  <!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
+  <!-- =================== SCHEMA.ORG (LD+JSON) — CONSOLIDADO ================= -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -74,7 +89,8 @@
           "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
           "https://www.instagram.com/construtoravieira1992/"
         ],
-        "contactPoint":{"@type":"ContactPoint","telephone":"+55-66-99936-6313","contactType":"Atendimento","availableLanguage":"pt-BR"}
+        "contactPoint":{"@type":"ContactPoint","telephone":"+55-66-99936-6313","contactType":"Atendimento","availableLanguage":"pt-BR"},
+        "address":{"@type":"PostalAddress","streetAddress":"R. Fatime Ali Dib, 211","addressLocality":"Rondonópolis","addressRegion":"MT","postalCode":"78731-212","addressCountry":"BR"}
       },
       {
         "@type":"LocalBusiness",
@@ -83,18 +99,31 @@
         "image":"https://construtoravieira.com.br/img_site/previsual.png",
         "telephone":"+55-66-99936-6313",
         "address":{"@type":"PostalAddress","streetAddress":"R. Fatime Ali Dib, 211","addressLocality":"Rondonópolis","addressRegion":"MT","postalCode":"78731-212","addressCountry":"BR"},
-        "geo":{"@type":"GeoCoordinates","latitude":-16.4673,"longitude":-54.6370},
+        "geo":{"@type":"GeoCoordinates","latitude":-16.461250855506005,"longitude":-54.59783853891883},
         "url":"https://construtoravieira.com.br/","openingHours":"Mo-Fr 08:00-18:00","priceRange":"$$","paymentAccepted":"Cash, Credit Card, Bank Transfer","currenciesAccepted":"BRL"
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://construtoravieira.com.br/#website",
+        "url":"https://construtoravieira.com.br/",
+        "name":"Construtora Vieira",
+        "publisher":{"@id":"https://construtoravieira.com.br/#organization"},
+        "potentialAction":{
+          "@type":"SearchAction",
+          "target":"https://construtoravieira.com.br/busca?q={search_term_string}",
+          "query-input":"required name=search_term_string"
+        }
       },
       {
         "@type":"WebPage",
         "@id":"https://construtoravieira.com.br/estruturas-metalicas#webpage",
         "url":"https://construtoravieira.com.br/estruturas-metalicas",
-        "name":"Estruturas Metálicas em Rondonópolis-MT | Construtora Vieira",
-        "description":"Galpões, coberturas, mezaninos e passarelas com soldas certificadas e conformidade NBR.",
+        "name":"Estruturas Metálicas Rondonópolis-MT",
+        "description":"Galpões, coberturas, mezaninos e passarelas com solda qualificada e conformidade NBR.",
         "isPartOf":{"@id":"https://construtoravieira.com.br/#website"},
         "about":{"@id":"https://construtoravieira.com.br/#organization"},
         "primaryImageOfPage":{"@type":"ImageObject","url":"https://construtoravieira.com.br/img_site/estruturametalica.png","width":1280,"height":720},
+        "dateModified":"2025-08-22T11:00:00-04:00",
         "breadcrumb":{"@type":"BreadcrumbList","itemListElement":[
           {"@type":"ListItem","position":1,"name":"Home","item":"https://construtoravieira.com.br/"},
           {"@type":"ListItem","position":2,"name":"Estruturas Metálicas","item":"https://construtoravieira.com.br/estruturas-metalicas"}
@@ -107,12 +136,26 @@
         "serviceType":"Estruturas Metálicas",
         "provider":{"@id":"https://construtoravieira.com.br/#organization"},
         "areaServed":"Rondonópolis-MT"
+      },
+      {
+        "@type":"FAQPage",
+        "@id":"https://construtoravieira.com.br/estruturas-metalicas#faq",
+        "mainEntity":[
+          {"@type":"Question","name":"Quais tipos de estruturas vocês executam?","acceptedAnswer":{"@type":"Answer","text":"Galpões, coberturas, mezaninos, passarelas e estruturas especiais sob medida, com ART e inspeções de qualidade."}},
+          {"@type":"Question","name":"As soldas têm certificação?","acceptedAnswer":{"@type":"Answer","text":"Sim. Soldadores qualificados e laudos técnicos conforme normas vigentes."}},
+          {"@type":"Question","name":"Vocês fornecem projeto, fabricação e montagem?","acceptedAnswer":{"@type":"Answer","text":"Sim. Atuação ponta a ponta: projeto executivo, fabricação na medida e montagem em campo."}},
+          {"@type":"Question","name":"Qual o prazo típico para um galpão de 500–800 m²?","acceptedAnswer":{"@type":"Answer","text":"Em geral 60–120 dias após fundações, variando com complexidade, suprimentos e aprovações."}},
+          {"@type":"Question","name":"Como solicito orçamento?","acceptedAnswer":{"@type":"Answer","text":"Use o botão “Solicite um Orçamento” desta página para falar no WhatsApp."}}
+        ]
       }
     ]
   }
   </script>
 </head>
 <body class="pagina-interna">
+  <!-- ============== GTM (NOSCRIPT) ============== -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5H8DS3LX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
   <!-- TOPO -->
   <header class="header fade">
     <div class="container">
@@ -124,7 +167,7 @@
           <li><a href="/">Home</a></li>
           <li><a href="/servicos">Serviços</a></li>
           <li><a href="/sustentabilidade">Sustentabilidade</a></li>
-          <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
+        <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
           <li><a href="/contato">Contato</a></li>
         </ul>
       </nav>
@@ -132,7 +175,7 @@
     </div>
   </header>
 
-  <!-- HERO COM CTA + LCP NO FUNDO -->
+  <!-- HERO (LCP ao fundo, 1 único fetchpriority) -->
   <section class="hero fade">
     <picture class="hero-media" aria-hidden="true">
       <source type="image/avif" srcset="/img_site/avif/estruturametalica.avif" width="1280" height="720" />
@@ -143,25 +186,36 @@
     <div class="container">
       <h1>Estruturas Metálicas Especializadas</h1>
       <p class="muted">Galpões, coberturas, mezaninos e passarelas com laudo e conformidade NBR.</p>
-      <a href="https://wa.me/5566999366313?text=Olá!%20Quero%20um%20orçamento%20para%20estrutura%20metálica."
+      <a href="https://wa.me/5566999366313?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20para%20estrutura%20met%C3%A1lica."
          target="_blank" rel="noopener noreferrer" class="btn btn-green">Solicite um Orçamento</a>
     </div>
   </section>
 
   <main id="conteudo">
+    <!-- BLOCO PRINCIPAL (600–900 palavras com etapas e diferenciais) -->
     <section class="section bg-dark fade">
       <div class="container sobre-grid">
         <div class="sobre-texto">
           <h2>Projetos em aço de alta qualidade</h2>
-          <p>A Construtora Vieira projeta, fabrica e monta estruturas em aço para diversos fins: galpões industriais, coberturas, mezaninos, passarelas e estruturas especiais.</p>
-          <p>Trabalhamos com aço certificado e soldadores qualificados, garantindo estruturas seguras e duradouras. Seguimos normas técnicas brasileiras (NBR) e internacionais.</p>
+          <p>A Construtora Vieira projeta, fabrica e monta estruturas em aço para galpões industriais, coberturas, mezaninos, passarelas e soluções especiais. Trabalhamos com materiais certificados e controle rigoroso de qualidade para garantir desempenho, segurança e durabilidade.</p>
+          <p>Seguimos normas técnicas brasileiras (NBR) e práticas internacionais de soldagem e inspeção, com ART, memorial descritivo e rastreabilidade de materiais quando requerido. Nossa equipe atua desde a concepção até a montagem final, assegurando cronograma realista e comunicação clara.</p>
+          <h3>Etapas do trabalho</h3>
           <ul>
-            <li>✅ Galpões industriais em estrutura metálica</li>
-            <li>✅ Coberturas e telhados metálicos</li>
-            <li>✅ Mezaninos e estruturas de apoio</li>
-            <li>✅ Passarelas e pontes metálicas</li>
-            <li>✅ Estruturas especiais sob medida</li>
+            <li>✅ <strong>Projeto executivo:</strong> detalhamento estrutural, memoriais e listas de materiais.</li>
+            <li>✅ <strong>Fabricação:</strong> cortes e soldas em ambiente controlado, com qualificação de procedimento.</li>
+            <li>✅ <strong>Proteção e pintura:</strong> preparação de superfície e esquemas anticorrosivos adequados ao ambiente.</li>
+            <li>✅ <strong>Montagem em campo:</strong> içamento seguro, ajustes, travamentos e inspeções.</li>
+            <li>✅ <strong>Entrega técnica:</strong> checagem final, orientação de manutenção e documentação.</li>
           </ul>
+          <h3>Diferenciais</h3>
+          <ul>
+            <li>✅ Materiais com laudo e fornecedores homologados</li>
+            <li>✅ Soldadores qualificados e acompanhamento técnico</li>
+            <li>✅ Planejamento logístico para reduzir prazos e interferências</li>
+            <li>✅ Opções de cobertura (telha metálica, termoacústica, translúcida) e sistema de drenagem</li>
+            <li>✅ Adequação a normas de segurança e boas práticas de canteiro</li>
+          </ul>
+          <p>Atendemos Rondonópolis-MT e região, avaliando demandas sob medida para pequenas, médias e grandes estruturas. Fale conosco para um estudo rápido de viabilidade.</p>
         </div>
         <div class="sobre-img">
           <img src="/img_site/estruturametalica.png"
@@ -171,14 +225,51 @@
         </div>
       </div>
     </section>
+
+    <!-- FAQ (com botão no item 'Como solicito orçamento?') -->
+    <section class="section fade">
+      <div class="container">
+        <h2>Perguntas Frequentes (FAQ)</h2>
+
+        <details>
+          <summary>Quais tipos de estruturas vocês executam?</summary>
+          <p>Galpões, coberturas, mezaninos, passarelas e estruturas especiais sob medida, com ART e inspeções de qualidade.</p>
+        </details>
+
+        <details>
+          <summary>As soldas possuem certificação?</summary>
+          <p>Sim. Executadas por profissionais qualificados com procedimentos de soldagem comprovados e laudos.</p>
+        </details>
+
+        <details>
+          <summary>Vocês cuidam de projeto, fabricação e montagem?</summary>
+          <p>Sim. Atuamos ponta a ponta: projeto executivo, fabricação em aço e montagem em campo com segurança.</p>
+        </details>
+
+        <details>
+          <summary>Qual o prazo típico para um galpão de 500–800 m²?</summary>
+          <p>Em geral entre 60–120 dias após fundações, conforme complexidade, suprimentos e aprovações locais.</p>
+        </details>
+
+        <details>
+          <summary>Como solicito orçamento?</summary>
+          <p>
+            <a href="https://wa.me/5566999366313?text=Estou%20precisando%20de%20um%20or%C3%A7amento%20para%20estrutura%20met%C3%A1lica."
+               target="_blank" rel="noopener noreferrer" class="btn btn-green">Solicite um Orçamento</a>
+          </p>
+        </details>
+      </div>
+    </section>
   </main>
 
+  <!-- RODAPÉ -->
   <footer class="footer fade">
     <div class="container">
       <p>&copy; 2025 Construtora Vieira. Todos os direitos reservados.</p>
     </div>
   </footer>
 
+  <!-- JS -->
   <script src="/includes/script.js" defer></script>
 </body>
 </html>
