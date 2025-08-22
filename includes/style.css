@@ -314,3 +314,66 @@ footer.fade,.footer.fade{opacity:1;transform:none}
 .hero .container { position: relative; z-index: 2; }
 .hero-media { position: absolute; inset: 0; display:block; }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); }
+
+
+/* FAQ interativo */
+details summary {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+details summary:hover {
+  color: #2ecc71; /* verde de destaque */
+  text-decoration: underline;
+}
+
+/* =========================
+   HOVER PADRÃO EM IMAGENS
+   (exclui imagem do HERO)
+   ========================= */
+
+/* Base para todas as imagens */
+img {
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-origin: center center;
+}
+
+/* Efeito “flutuar” */
+img:hover {
+  transform: translate3d(0, -6px, 0) scale(1.02);
+  box-shadow: 0 16px 30px -12px rgba(0,0,0,.45);
+  filter: saturate(1.05) contrast(1.03);
+}
+
+/* Acessibilidade: teclado em imagens dentro de links */
+a:focus-visible img {
+  transform: translate3d(0, -6px, 0) scale(1.02);
+  box-shadow: 0 16px 30px -12px rgba(0,0,0,.45);
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Não aplicar no HERO (mantém LCP estável) */
+.hero-media img,
+.hero-media img:hover,
+.hero-media picture img,
+.hero picture img,
+.hero img {
+  transition: none !important;
+  transform: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* Respeita usuários com redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  img { transition: none !important; }
+  img:hover,
+  a:focus-visible img {
+    transform: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+  }
+}
