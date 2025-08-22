@@ -5,24 +5,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
+  <meta name="color-scheme" content="light dark" />
 
   <!-- ============== GOOGLE TAG MANAGER (HEAD) ============== -->
-  <!-- GTM: carrega o container para gerenciar GA4, Clarity, Pixels etc. -->
   <script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5H8DS3LX');
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5H8DS3LX');
   </script>
-  <!-- ============ FIM GTM (HEAD) ============ -->
 
   <!-- ================= PRELOAD / RESOURCE HINTS ================= -->
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+  <link rel="preconnect" href="https://wa.me" crossorigin />
   <link rel="dns-prefetch" href="//www.google-analytics.com" />
   <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="//wa.me" />
+
+  <!-- CSS -->
+  <link rel="preload" href="/includes/style.css" as="style" />
+  <link rel="stylesheet" href="/includes/style.css" />
+
+  <!-- Prefetch de rota provável -->
   <link rel="prefetch" href="/servicos" />
+
   <!-- Preload do LCP do hero -->
   <link rel="preload" as="image"
         href="/img_site/avif/sobre.avif"
@@ -36,6 +44,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Construtora Vieira" />
   <meta name="application-name" content="Construtora Vieira" />
+  <!-- apple-touch-icon padronizado (webp) -->
+  <link rel="apple-touch-icon" href="/icones/icon-192.webp" />
 
   <!-- ======================= SEO PRINCIPAL ===================== -->
   <title>Construtora Vieira | Obras e Reformas em Rondonópolis-MT</title>
@@ -43,7 +53,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://construtoravieira.com.br/" />
 
-  <!-- ============== FAVICON / ÍCONES ESSENCIAIS =============== -->
+  <!-- ============== FAVICON / ÍCONES =========================== -->
   <link rel="icon" href="/icones/favicon.ico" sizes="any" />
 
   <!-- ==================== TEMA / CORES ======================== -->
@@ -111,7 +121,12 @@
         "@id": "https://construtoravieira.com.br/#website",
         "url": "https://construtoravieira.com.br/",
         "name": "Construtora Vieira",
-        "publisher": { "@id": "https://construtoravieira.com.br/#org" }
+        "publisher": { "@id": "https://construtoravieira.com.br/#org" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://construtoravieira.com.br/busca?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
       },
       {
         "@type": "WebPage",
@@ -122,7 +137,7 @@
         "isPartOf": { "@id": "https://construtoravieira.com.br/#website" },
         "about": { "@id": "https://construtoravieira.com.br/#org" },
         "primaryImageOfPage": { "@type": "ImageObject", "url": "https://construtoravieira.com.br/img_site/sobre.png", "width": 1280, "height": 720 },
-        "dateModified": "2025-08-19T00:00:00-04:00",
+        "dateModified": "2025-08-21T00:00:00-04:00",
         "breadcrumb": {
           "@type": "BreadcrumbList",
           "itemListElement": [
@@ -152,22 +167,16 @@
     ]
   }
   </script>
-
-  <!-- ===================== CSS =============================== -->
-  <link rel="stylesheet" href="/includes/style.css" />
 </head>
 
 <body>
-  <!-- ============== GOOGLE TAG MANAGER (NOSCRIPT) ============== -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5H8DS3LX"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- ============ FIM GTM (NOSCRIPT) ============ -->
+  <!-- ============== GTM (NOSCRIPT) ============== -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5H8DS3LX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <header class="header fade" role="banner">
     <div class="container">
       <a href="/" aria-label="Página inicial - Construtora Vieira">
-        <img src="/img_site/logocerta.png" width="300" height="100"
-             alt="Logotipo da Construtora Vieira" decoding="async" fetchpriority="low" />
+        <img src="/img_site/logocerta.png" width="300" height="100" alt="Logotipo da Construtora Vieira" decoding="async" fetchpriority="low" />
       </a>
       <nav class="nav" id="nav-menu" aria-label="Navegação principal">
         <ul>
@@ -178,30 +187,24 @@
           <li><a href="/contato">Contato</a></li>
         </ul>
       </nav>
-      <button class="menu-toggle" id="menu-toggle" type="button"
-              aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
-  <main id="conteudo" role="main">
-    <!-- HERO (LCP de fundo com imagem da própria página) -->
+  <main id="conteudo" role="main" data-route="home">
+    <!-- HERO -->
     <section class="hero fade">
       <picture class="hero-media" aria-hidden="true">
         <source type="image/avif" srcset="/img_site/avif/sobre.avif" width="1280" height="720" />
         <source type="image/webp" srcset="/img_site/webp/sobre.webp" width="1280" height="720" />
-        <img src="/img_site/sobre.png" alt="" width="1280" height="720"
-             fetchpriority="high" loading="eager" decoding="async" style="aspect-ratio:1280/720" />
+        <img src="/img_site/sobre.png" alt="" width="1280" height="720" fetchpriority="high" loading="eager" decoding="async" style="aspect-ratio:1280/720" />
       </picture>
       <div class="container">
         <h1>Construindo o futuro hoje</h1>
         <p class="muted">Obras públicas e privadas, estruturas metálicas e serviços de engenharia.</p>
         <div class="btn-group">
-          <a href="https://wa.me/5566999366313?text=Estou%20precisando%20de%20um%20or%C3%A7amento%2C%20pode%20me%20ajudar%3F"
-             target="_blank" rel="noopener noreferrer"
-             class="btn btn-green btn-whatsapp"
-             data-cta="whatsapp"
-             aria-label="Solicitar orçamento via WhatsApp">
-             Solicite um Orçamento
+          <a href="https://wa.me/5566999366313?text=Estou%20precisando%20de%20um%20or%C3%A7amento%2C%20pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn btn-green btn-whatsapp" data-cta="whatsapp" aria-label="Solicitar orçamento via WhatsApp">
+            Contato
           </a>
         </div>
       </div>
@@ -213,24 +216,21 @@
         <h2>Empreendimentos em Destaque</h2>
         <div class="cards">
           <article class="card">
-            <img src="/img_site/casa1.png" alt="Casa modelo no bairro Vila Mineira"
-                 width="640" height="360" loading="lazy" decoding="async" style="aspect-ratio:16/9" />
+            <img src="/img_site/casa1.png" alt="Casa modelo no bairro Vila Mineira" width="640" height="360" loading="lazy" decoding="async" style="aspect-ratio:16/9" />
             <h3>Vila Mineira</h3>
             <p>Imagem ilustrativa, casa com 55m² (R$ 350 mil).</p>
             <a href="/" class="btn btn-black">Ver mais</a>
           </article>
 
           <article class="card">
-            <img src="/img_site/casa2.png" alt="Casa modelo no Parque dos Lírios"
-                 width="640" height="360" loading="lazy" decoding="async" style="aspect-ratio:16/9" />
+            <img src="/img_site/casa2.png" alt="Casa modelo no Parque dos Lírios" width="640" height="360" loading="lazy" decoding="async" style="aspect-ratio:16/9" />
             <h3>Parque dos Lírios</h3>
             <p>Imagem ilustrativa, casa com 55m² (R$ 250 mil).</p>
             <a href="/" class="btn btn-black">Ver mais</a>
           </article>
 
           <article class="card">
-            <img src="/img_site/casa3.png" alt="Casa modelo no bairro Cidade Alta"
-                 width="640" height="360" loading="lazy" decoding="async" style="aspect-ratio:16/9" />
+            <img src="/img_site/casa3.png" alt="Casa modelo no bairro Cidade Alta" width="640" height="360" loading="lazy" decoding="async" style="aspect-ratio:16/9" />
             <h3>Cidade Alta</h3>
             <p>Imagem ilustrativa, casa com 55m² (R$ 280 mil).</p>
             <a href="/empreendimentos" class="btn btn-black">Ver mais</a>
@@ -252,8 +252,7 @@
         </div>
         <div>
           <a href="/sobrenos">
-            <img src="/img_site/sobre.png" alt="Equipe da Construtora Vieira"
-                 width="1280" height="720" loading="lazy" decoding="async" style="aspect-ratio:16/9" />
+            <img src="/img_site/sobre.png" alt="Equipe da Construtora Vieira" width="1280" height="720" loading="lazy" decoding="async" style="aspect-ratio:16/9" />
           </a>
         </div>
       </div>
@@ -265,29 +264,25 @@
         <h2>Nossos Diferenciais</h2>
         <div class="cards">
           <article class="card">
-            <img src="/img_site/altaqualidade.png" alt="Ícone de alta qualidade"
-                 width="128" height="128" loading="lazy" decoding="async" style="aspect-ratio:1/1" />
+            <img src="/img_site/altaqualidade.png" alt="Ícone de alta qualidade" width="128" height="128" loading="lazy" decoding="async" style="aspect-ratio:1/1" />
             <h3>Alta Qualidade</h3>
             <p>Materiais de ponta e mão de obra qualificada.</p>
           </article>
 
           <article class="card">
-            <img src="/img_site/prazo.png" alt="Ícone de entrega no prazo"
-                 width="128" height="128" loading="lazy" decoding="async" style="aspect-ratio:1/1" />
+            <img src="/img_site/prazo.png" alt="Ícone de entrega no prazo" width="128" height="128" loading="lazy" decoding="async" style="aspect-ratio:1/1" />
             <h3>Entrega no Prazo</h3>
             <p>Cronograma bem planejado e execução eficiente.</p>
           </article>
 
           <article class="card">
-            <img src="/img_site/sustentabilidade.png" alt="Ícone de sustentabilidade"
-                 width="128" height="128" loading="lazy" decoding="async" style="aspect-ratio:1/1" />
+            <img src="/img_site/sustentabilidade.png" alt="Ícone de sustentabilidade" width="128" height="128" loading="lazy" decoding="async" style="aspect-ratio:1/1" />
             <h3>Sustentabilidade</h3>
             <p>Construções que reduzem impactos ao meio ambiente.</p>
           </article>
 
           <article class="card">
-            <img src="/img_site/tecnologia.png" alt="Ícone de tecnologia"
-                 width="128" height="128" loading="lazy" decoding="async" style="aspect-ratio:1/1" />
+            <img src="/img_site/tecnologia.png" alt="Ícone de tecnologia" width="128" height="128" loading="lazy" decoding="async" style="aspect-ratio:1/1" />
             <h3>Tecnologia Avançada</h3>
             <p>Ferramentas modernas para obras mais inteligentes.</p>
           </article>
@@ -302,7 +297,14 @@
     </div>
   </footer>
 
-  <!-- JS externo -->
+  <!-- ===================== JS =============================== -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js').catch(function(){/* noop */});
+      });
+    }
+  </script>
   <script src="/includes/script.js" defer></script>
 </body>
 </html>
