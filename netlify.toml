@@ -162,17 +162,17 @@
     Cross-Origin-Opener-Policy = "same-origin"
     Cross-Origin-Resource-Policy = "same-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
-    # CSP liberando GTM/GA e rss2json (ajuste se usar mais fontes)
+    # CSP liberando GTM/GA e WhatsApp (api.whatsapp.com / wa.me)
     Content-Security-Policy = """
       default-src 'self';
       script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com;
       connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://api.rss2json.com;
-      img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com;
+      img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://api.whatsapp.com https://wa.me;
       style-src 'self' 'unsafe-inline';
       font-src 'self' data:;
       frame-src https://www.googletagmanager.com;
       base-uri 'self';
-      form-action 'self'
+      form-action 'self' https://api.whatsapp.com https://wa.me
     """
 
 # HTML sem cache (permite revalidação e bfcache)
