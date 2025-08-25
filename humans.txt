@@ -8,6 +8,7 @@ E-mail (geral): contato@construtoravieira.com.br
 E-mail (administrativo): administrativo@construtoravieira.com.br
 Contato rápido (WhatsApp): https://wa.me/5566999366313
 Redes sociais: Facebook (/profile.php?id=61578818874863), Instagram (@construtoravieira1992)
+Geo: -16.461250855506005, -54.59783853891883
 
 /* THANKS */
 Clientes que confiam em nosso trabalho
@@ -16,19 +17,20 @@ Equipe técnica especializada
 Comunidade de Rondonópolis
 
 /* SITE */
-Última atualização: 2025/08/17
+Última atualização: 2025/08/25
 Linguagem: Português Brasileiro (pt-BR)
 Doctype: HTML5
 Arquitetura: MPA (multi-página), URLs limpas com rewrites 200
 Rotas canônicas (serviços): /construcao-residencial, /construcao-comercial, /estruturas-metalicas, /obras-publicas, /reformas
-Hospedagem/CDN: Netlify (HSTS, HTTPS forçado, canonical sem www)
+Hospedagem/CDN: Netlify (HSTS, HTTPS forçado, canônico sem www)
 Dev local: Node (server.js sem dependências)
 Acessibilidade: Diretrizes WCAG 2.1 (foco, contraste, semântica)
-Performance: Core Web Vitals, cache longo p/ assets, compressão, imagens otimizadas (formatos modernos + width/height), 1 LCP com fetchpriority
+Performance: Core Web Vitals; HTML sem cache (bfcache/revalidação); assets com cache longo; compressão; imagens otimizadas (AVIF/WebP + width/height); 1 LCP com fetchpriority
 Segurança: CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, COOP/CORP
 Tecnologias: HTML5, CSS3, JavaScript ES6+ (Vanilla)
-PWA: Manifest + Service Worker (cache offline, rotas mapeadas)
+PWA: Manifest + Service Worker (no-store; Service-Worker-Allowed:/; offline básico)
 Build/Deploy: Git + CI/CD (Netlify)
+GTM/GA4: GTM-5H8DS3LX (page_view, cta_whatsapp_click, lead_form_submit, outbound_click, file_download, site_search, video_engagement)
 
 /* EMPRESA */
 Fundada: 1992
