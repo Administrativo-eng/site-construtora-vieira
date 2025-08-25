@@ -146,7 +146,7 @@
   status = 200
 
 [[redirects]]
-  from = "/empreendimentos/casa-parque-dos-lirios"
+  from = "/empreendimentos/casa-parque-lirios"
   to = "/paginas/empreendimentos/casa-parque-lirios.html"
   status = 200
 
