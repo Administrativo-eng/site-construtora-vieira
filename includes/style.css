@@ -23,21 +23,21 @@ body{
 a{color:inherit;text-decoration:none}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
 img{max-width:100%;height:auto;display:block}
-figure{margin:0} /* para usar .thumb sem espaçamento extra */
+figure{margin:0}
 
 /* Utilitários */
 .img-16x9{aspect-ratio:16/9;object-fit:cover}
 .img-4x3{aspect-ratio:4/3;object-fit:cover}
 .img-1x1{aspect-ratio:1/1;object-fit:cover}
+.img-link{display:block}
 
-/* Wrapper para thumbs (evita “destorcer” e reflow) */
+/* Wrapper para thumbs */
 .thumb{aspect-ratio:4/3;overflow:hidden;border-radius:12px;background:#f2f2f2}
 .thumb img{width:100%;height:100%;object-fit:cover}
 
 .container{width:92%;max-width:var(--container);margin:0 auto}
 .section{padding:var(--space-8) var(--space-2)}
 .section-sm{padding:var(--space-4) var(--space-2)}
-/* Melhor contraste no dark */
 .bg-dark{background:var(--dark); --text:#f2f2f2; --muted:#b5b5b5; color:var(--text)}
 .bg-light{background:#f8f9fa;color:var(--text)}
 .grid-2{display:grid;gap:var(--space-4);grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -61,17 +61,21 @@ ul{padding-left:1rem}
    ========================= */
 .header{background:var(--dark);color:#fff;padding:var(--space-2) 0;position:sticky;top:0;z-index:1000}
 .header .container{display:flex;justify-content:space-between;align-items:center;gap:var(--space-2);flex-wrap:wrap}
-.header a>img{height:100px;width:auto;display:block} /* evita CLS */
+.header a>img{max-height:110px;width:auto;display:block}
 .nav ul{display:flex;flex-wrap:wrap;gap:var(--space-2);list-style:none}
 .nav a{color:#fff;font-weight:500;transition:color .2s ease}
 .nav a:hover{color:var(--brand)}
+.nav a[aria-current="page"]{text-decoration:underline 0.12em}
 .menu-toggle{display:none;font-size:1.5rem;background:none;border:0;color:#fff;cursor:pointer}
 
 /* =========================
    HERO
    ========================= */
-.hero{background:linear-gradient(135deg,#0c0c0c,#1a1a1a);color:#fff;padding:var(--space-8) var(--space-2);text-align:center}
+.hero{background:linear-gradient(135deg,#0c0c0c,#1a1a1a);color:#fff;padding:var(--space-8) var(--space-2);text-align:center;position:relative;overflow:hidden}
 .hero .muted{display:block;margin-top:.75rem}
+.hero .container{position:relative;z-index:2}
+.hero-media{position:absolute;inset:0;display:block}
+.hero-media img{width:100%;height:100%;object-fit:cover;filter:brightness(.4)}
 
 /* =========================
    CARDS
@@ -82,25 +86,12 @@ ul{padding-left:1rem}
   padding:var(--space-3);text-align:center;transition:transform .2s ease,box-shadow .2s ease
 }
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
-.card h3{margin:.5rem 0; color:#111;}
-.card p{color:#111;}
-
-/* Variante com container .media (agora por aspect-ratio) */
+.card h3{margin:.5rem 0;color:#111}
+.card p{color:#111}
 .card .media{aspect-ratio:4/3;overflow:hidden;border-radius:calc(var(--radius) - 4px);margin-bottom:var(--space-2)}
 .card .media img{width:100%;height:100%;object-fit:cover}
-
-/* Cards com <img> direto (sem .media): evita esticar e reserva espaço */
-.card>img{
-  width:100%;
-  height:auto;
-  aspect-ratio:4/3;           /* reserva espaço e evita “destorcer” */
-  object-fit:cover;           /* recorte elegante quando necessário */
-  border-radius:calc(var(--radius) - 4px);
-  display:block
-}
-@media (max-width:520px){.card>img{aspect-ratio:4/3}} /* mantém proporção no mobile */
-
-/* Tema escuro nas internas */
+.card>img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:calc(var(--radius) - 4px);display:block}
+@media (max-width:520px){.card>img{aspect-ratio:4/3}}
 .pagina-interna .card{background:#1a1a1a;color:var(--text)}
 .pagina-interna .card p{color:var(--muted)}
 
@@ -149,7 +140,7 @@ input[type="file"]{background:#fff;color:#000;border:0}
 .bloco-descricao{font-size:1.05rem;margin-bottom:var(--space-3);text-align:justify}
 
 /* =========================
-   SIMULADOR
+   SIMULADOR (escopo local)
    ========================= */
 .hero-simulacao{background:linear-gradient(135deg,#2c5aa0 0%,#1e3a5f 100%);color:#fff;text-align:center;padding:4rem 0}
 .hero-simulacao h1{font-size:2.5rem;margin-bottom:1rem}
@@ -173,7 +164,7 @@ input[type="file"]{background:#fff;color:#000;border:0}
 .campo-grupo input:focus,.campo-grupo select:focus{outline:0;border-color:#2c5aa0;box-shadow:0 0 0 3px rgba(44,90,160,.1)}
 .campo-grupo small{display:block;color:#6c757d;font-size:.875rem;margin-top:.25rem}
 .botoes-navegacao{display:flex;gap:1rem;margin-top:2rem}
-/* Escopo local da variante outline do simulador (evita conflito global) */
+/* Outline do simulador (sem interferir no global) */
 .simulador-container .btn-outline{background:transparent;border:2px solid #2c5aa0;color:#2c5aa0}
 .simulador-container .btn-outline:hover{background:#2c5aa0;color:#fff}
 .resultado-container{background:#f8f9fa;border-radius:10px;padding:2rem;margin:1rem 0}
@@ -222,11 +213,10 @@ input[type="file"]{background:#fff;color:#000;border:0}
 .noticia-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem}
 .noticia-texto{flex:1;min-width:280px}
 .rss-placeholder{flex:1;min-width:280px;background:#111;padding:1rem;border-radius:10px}
-/* Mantém a cor global da .muted e só padroniza o espaçamento aqui */
 .noticia-grid .muted{margin:0}
 
 /* =========================
-   EMPREENDIMENTOS
+   EMPREENDIMENTOS (cards)
    ========================= */
 .empreendimentos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
 .empreendimento-card{background:#111;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.18);transition:transform .2s ease,box-shadow .2s ease}
@@ -263,12 +253,12 @@ input[type="file"]{background:#fff;color:#000;border:0}
 .erro404-links a:hover{text-decoration:underline}
 
 /* =========================
-   RODAPÉ (padronizado e à prova de conflito)
+   RODAPÉ
    ========================= */
 main{flex:1 0 auto}
 footer,.footer{
   display:block;background:var(--dark);
-  --text:#fff; color:#fff; /* resolve p { color: var(--text) } */
+  --text:#fff; color:#fff;
   text-align:center;padding:var(--space-4) var(--space-2);font-size:.95rem
 }
 footer :where(p,li,small,span){color:inherit}
@@ -277,12 +267,41 @@ footer a:hover,.footer a:hover{text-decoration:underline}
 footer.fade,.footer.fade{opacity:1;transform:none}
 
 /* =========================
-   ANIMAÇÃO (opcional)
+   ANIMAÇÕES
    ========================= */
 .fade{opacity:1;transform:none}
 .fade-in{opacity:0;transform:translateY(12px);animation:fadeIn .6s ease-out forwards}
 @keyframes fadeIn{to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.fade-in{animation:none;opacity:1;transform:none}}
+
+/* =========================
+   HOVER PADRÃO EM IMAGENS
+   (exclui HERO e desativa por página quando necessário)
+   ========================= */
+img{
+  transition:transform .25s ease,box-shadow .25s ease,filter .25s ease;
+  will-change:transform;backface-visibility:hidden;transform-origin:center center;
+}
+img:hover{
+  transform:translate3d(0,-6px,0) scale(1.02);
+  box-shadow:0 16px 30px -12px rgba(0,0,0,.45);
+  filter:saturate(1.05) contrast(1.03);
+}
+a:focus-visible img{
+  transform:translate3d(0,-6px,0) scale(1.02);
+  box-shadow:0 16px 30px -12px rgba(0,0,0,.45);
+  outline:2px solid currentColor;outline-offset:2px;
+}
+/* Não aplicar no HERO (mantém LCP estável) */
+.hero-media img,
+.hero-media img:hover,
+.hero picture img,
+.hero img{transition:none !important;transform:none !important;box-shadow:none !important;filter:none !important}
+/* Respeita redução de movimento */
+@media (prefers-reduced-motion:reduce){
+  img{transition:none !important}
+  img:hover,a:focus-visible img{transform:none !important;box-shadow:none !important;filter:none !important}
+}
 
 /* =========================
    BREAKPOINTS
@@ -304,76 +323,181 @@ footer.fade,.footer.fade{opacity:1;transform:none}
   .sobre-grid{grid-template-columns:1fr;text-align:center}
 }
 
-/* Itens de obra/galeria genéricos (repondo) */
-.media-200 img{width:100%;height:200px;object-fit:cover;border-radius:var(--radius)}
-.media-250 img{width:100%;height:250px;object-fit:cover;border-radius:var(--radius)}
+/* =========================
+   EMPREENDIMENTO — genérico
+   (página interna de um empreendimento)
+   ========================= */
 
-
-/* HERO com imagem de fundo via <picture> */
-.hero { position: relative; overflow: hidden; }
-.hero .container { position: relative; z-index: 2; }
-.hero-media { position: absolute; inset: 0; display:block; }
-.hero-media img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); }
-
-
-/* FAQ interativo */
-details summary {
-  cursor: pointer;
-  transition: color 0.2s ease;
+/* Títulos genéricos da página de empreendimento */
+.pagina-interna.empreendimento .titulo-empreendimento{
+  font-size:clamp(2rem,4vw,3rem);
+  font-weight:700;
+  line-height:1.15;
+  margin:0;
+}
+.pagina-interna.empreendimento .subtitulo-empreendimento{
+  color:var(--muted);
+  margin-top:.5rem;
+}
+.pagina-interna.empreendimento .bloco-titulo{
+  font-size:clamp(1.5rem,3vw,2rem);
+  font-weight:700;
+  line-height:1.2;
+  margin-bottom:var(--space-2);
 }
 
-details summary:hover {
-  color: #2ecc71; /* verde de destaque */
-  text-decoration: underline;
+/* Slider/Galeria (base CSS; JS faz enhancement)
+   — compatível com radios (cvmsN/sN) e com JS que move o trilho */
+.pagina-interna.empreendimento .slider{
+  position:relative;
+  max-width:1280px;
+  margin:0 auto;
+  overflow:hidden;
+  border-radius:12px;
+}
+.pagina-interna.empreendimento .slider input{display:none}
+
+/* trilho flex (1 slide = 100% da largura do slider) */
+.pagina-interna.empreendimento .slides{
+  display:flex;
+  width:100%;
+  will-change:transform;
+  transition:transform .5s ease;
+}
+.pagina-interna.empreendimento .slide{
+  flex:0 0 100%;
+  box-sizing:border-box;
+}
+
+/* imagens da galeria — sem distorcer, com corte lateral permitido */
+.pagina-interna.empreendimento .slide picture,
+.pagina-interna.empreendimento .slide img{
+  width:100%;
+  height:clamp(200px, 50vh, 700px);
+  object-fit:cover;
+  border-radius:var(--radius);
+  background:#0e0e0e;
+}
+
+/* Regras de radios (compatibilidade) */
+#cvms1:checked ~ .slides, #s1:checked ~ .slides{transform:translateX(0%)}
+#cvms2:checked ~ .slides, #s2:checked ~ .slides{transform:translateX(-100%)}
+#cvms3:checked ~ .slides, #s3:checked ~ .slides{transform:translateX(-200%)}
+#cvms4:checked ~ .slides, #s4:checked ~ .slides{transform:translateX(-300%)}
+
+/* Setas — estrutura antiga (.nav-arrows > .arrow-set.sN) */
+.pagina-interna.empreendimento .nav-arrows{pointer-events:none}
+.pagina-interna.empreendimento .arrow-set{
+  position:absolute;inset:0;display:none;align-items:center;justify-content:space-between;padding:0 8px;
+}
+#cvms1:checked ~ .nav-arrows .s1,
+#cvms2:checked ~ .nav-arrows .s2,
+#cvms3:checked ~ .nav-arrows .s3,
+#cvms4:checked ~ .nav-arrows .s4{display:flex}
+.pagina-interna.empreendimento .arrow-set .prev,
+.pagina-interna.empreendimento .arrow-set .next{
+  pointer-events:all;cursor:pointer;font-size:2rem;line-height:1;width:42px;height:42px;display:grid;place-items:center;
+  color:#fff;background:rgba(0,0,0,.45);border-radius:50%;user-select:none;transition:opacity .2s ease;
+}
+.pagina-interna.empreendimento .arrow-set .prev:hover,
+.pagina-interna.empreendimento .arrow-set .next:hover{opacity:.85}
+
+/* Setas — estrutura atual (.navegacao > .seta) */
+.pagina-interna.empreendimento .navegacao{
+  pointer-events:none;position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 8px;
+}
+.pagina-interna.empreendimento .navegacao .seta{
+  pointer-events:all;cursor:pointer;font-size:2rem;line-height:1;width:42px;height:42px;display:grid;place-items:center;
+  color:#fff;background:rgba(0,0,0,.45);border-radius:50%;user-select:none;transition:opacity .2s ease;
+}
+.pagina-interna.empreendimento .navegacao .seta:hover{opacity:.85}
+
+/* Dots — compat para <label> e suporte a <button.dot> com .ativo (JS) */
+.pagina-interna.empreendimento .nav-dots{
+  position:absolute;bottom:10px;left:0;right:0;display:flex;gap:8px;justify-content:center;align-items:center;
+}
+.pagina-interna.empreendimento .nav-dots label,
+.pagina-interna.empreendimento .nav-dots .dot{
+  width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.55);
+  cursor:pointer;border:0;display:inline-block;transition:transform .2s ease,background .2s ease;
+}
+.pagina-interna.empreendimento .nav-dots label:hover,
+.pagina-interna.empreendimento .nav-dots .dot:hover{transform:scale(1.1)}
+.pagina-interna.empreendimento .nav-dots .dot.ativo{background:#fff}
+#cvms1:checked ~ .nav-dots label[for="cvms1"],
+#cvms2:checked ~ .nav-dots label[for="cvms2"],
+#cvms3:checked ~ .nav-dots label[for="cvms3"],
+#cvms4:checked ~ .nav-dots label[for="cvms4"],
+#s1:checked   ~ .nav-dots label[for="s1"],
+#s2:checked   ~ .nav-dots label[for="s2"],
+#s3:checked   ~ .nav-dots label[for="s3"],
+#s4:checked   ~ .nav-dots label[for="s4"]{background:#fff}
+
+/* Remover hover/flutuar nas imagens SOMENTE nesta página (evita instabilidade do LCP) */
+.pagina-interna.empreendimento picture img,
+.pagina-interna.empreendimento .slide img,
+.pagina-interna.empreendimento .hero img{
+  transform:none !important;transition:none !important;box-shadow:none !important;filter:none !important;
+}
+
+/* Helpers de mídia opcionais */
+.pagina-interna.empreendimento .media-200 img{
+  width:100%;
+  height:clamp(160px, 32vh, 200px);
+  object-fit:cover;
+  border-radius:var(--radius);
+  background:#0e0e0e;
+}
+.pagina-interna.empreendimento .media-250 img{
+  width:100%;
+  height:clamp(200px, 40vh, 250px);
+  object-fit:cover;
+  border-radius:var(--radius);
+  background:#0e0e0e;
 }
 
 /* =========================
-   HOVER PADRÃO EM IMAGENS
-   (exclui imagem do HERO)
+   GALERIA DE DETALHES — 590×420 máx (responsivo)
    ========================= */
-
-/* Base para todas as imagens */
-img {
-  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
-  will-change: transform;
-  backface-visibility: hidden;
-  transform-origin: center center;
+.pagina-interna.empreendimento .galeria-detalhes{
+  width:100%;
+  max-width:590px;            /* largura máxima no desktop */
+  margin:0 auto;
+  border-radius:12px;
+  overflow:hidden;
+}
+.pagina-interna.empreendimento .galeria-detalhes .slides{
+  height:auto;                /* altura controlada pelo slide */
+}
+.pagina-interna.empreendimento .galeria-detalhes .slide{
+  aspect-ratio:1/1;           /* torna o slide quadrado */
+  min-height:200px;           /* mínimo solicitado */
+  max-height:420px;           /* máximo solicitado */
+}
+.pagina-interna.empreendimento .galeria-detalhes .slide picture,
+.pagina-interna.empreendimento .galeria-detalhes .slide img{
+  width:100%;
+  height:100%;
+  max-width:590px;
+  max-height:420px;
+  object-fit:cover;           /* pode cortar bordas, sem distorcer */
+  display:block;
+  border-radius:12px;
 }
 
-/* Efeito “flutuar” */
-img:hover {
-  transform: translate3d(0, -6px, 0) scale(1.02);
-  box-shadow: 0 16px 30px -12px rgba(0,0,0,.45);
-  filter: saturate(1.05) contrast(1.03);
-}
-
-/* Acessibilidade: teclado em imagens dentro de links */
-a:focus-visible img {
-  transform: translate3d(0, -6px, 0) scale(1.02);
-  box-shadow: 0 16px 30px -12px rgba(0,0,0,.45);
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
-}
-
-/* Não aplicar no HERO (mantém LCP estável) */
-.hero-media img,
-.hero-media img:hover,
-.hero-media picture img,
-.hero picture img,
-.hero img {
-  transition: none !important;
-  transform: none !important;
-  box-shadow: none !important;
-  filter: none !important;
-}
-
-/* Respeita usuários com redução de movimento */
-@media (prefers-reduced-motion: reduce) {
-  img { transition: none !important; }
-  img:hover,
-  a:focus-visible img {
-    transform: none !important;
-    box-shadow: none !important;
-    filter: none !important;
+/* Em telas menores o bloco encolhe naturalmente (mantém 1:1) */
+@media (max-width:999px){
+  .pagina-interna.empreendimento .galeria-detalhes{
+    max-width:92vw;
   }
+  .pagina-interna.empreendimento .galeria-detalhes .slide{
+    max-height:min(92vw,420px);
+  }
+}
+
+/* Responsivo (setas) */
+@media (max-width:768px){
+  .pagina-interna.empreendimento .navegacao .seta,
+  .pagina-interna.empreendimento .arrow-set .prev,
+  .pagina-interna.empreendimento .arrow-set .next{width:38px;height:38px;font-size:1.6rem}
 }
