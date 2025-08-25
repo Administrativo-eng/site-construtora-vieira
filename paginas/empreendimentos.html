@@ -1,187 +1,189 @@
 <!DOCTYPE html>
-<html lang="pt-BR" dir="ltr">
+<html lang="pt-BR" dir="ltr" prefix="og: https://ogp.me/ns#">
 <head>
-<!-- =================== ESSENCIAIS =================== -->
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<!-- iOS: evitar auto-link automático -->
-<meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
+  <!-- =================== ESSENCIAIS =================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
+  <meta name="color-scheme" content="light dark" />
 
-<!-- ================= PRELOAD / RESOURCE HINTS ================= -->
-<link rel="dns-prefetch" href="//www.google-analytics.com" />
-<link rel="dns-prefetch" href="//www.googletagmanager.com" />
-<!-- próxima ação mais provável -->
-<link rel="prefetch" href="/contato" />
+  <!-- ============== GOOGLE TAG MANAGER (HEAD) ============== -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5H8DS3LX');
+  </script>
 
-<!-- ===================== PWA / MANIFEST ====================== -->
-<link rel="manifest" href="/manifest.json" />
-<meta name="mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="Empreendimentos — Construtora Vieira" />
-<meta name="application-name" content="Construtora Vieira — Empreendimentos" />
+  <!-- ================= PRELOAD / RESOURCE HINTS ================= -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+  <link rel="preconnect" href="https://wa.me" crossorigin />
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="//wa.me" />
+  <link rel="prefetch" href="/contato" />
 
-<!-- ======================= SEO PRINCIPAL ===================== -->
-<title>Empreendimentos em Destaque | Construtora Vieira em Rondonópolis-MT</title>
-<meta name="description" content="Imóveis para venda e aluguel em Rondonópolis e região. Empreendimentos com padrão de qualidade Construtora Vieira." />
-<meta name="keywords" content="empreendimentos em rondonópolis, imóveis à venda, imóveis para aluguel, construtora vieira" />
-<meta name="robots" content="index, follow, max-image-preview:large" />
-<link rel="canonical" href="https://construtoravieira.com.br/empreendimentos" />
+  <!-- ===================== PWA / MANIFEST ====================== -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Construtora Vieira" />
+  <meta name="application-name" content="Construtora Vieira" />
+  <link rel="apple-touch-icon" href="/icones/icon-192.webp" />
 
-<!-- ============== FAVICON / CSS ============================= -->
-<link rel="icon" href="/img_site/favicon.ico" type="image/x-icon" sizes="any" />
-<link rel="icon" href="/img_site/favicon-32x32.png" type="image/png" sizes="32x32" />
-<link rel="apple-touch-icon" href="/img_site/apple-touch-icon.png" sizes="180x180" />
-<link rel="stylesheet" href="/includes/style.css" />
+  <!-- ===================== SEO PRINCIPAL ===================== -->
+  <title>Empreendimentos — Construtora Vieira</title>
+  <meta name="description" content="Imóveis para venda e aluguel em Rondonópolis-MT com padrão de qualidade Construtora Vieira." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://construtoravieira.com.br/empreendimentos" />
 
-<!-- ==================== TEMA / CORES ======================== -->
-<meta name="theme-color" content="#111111" />
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#111111" />
+  <!-- ==================== TEMA / CORES ======================= -->
+  <meta name="theme-color" content="#111111" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#111111" />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#111111" />
 
-<!-- ===================== OPEN GRAPH ========================= -->
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Construtora Vieira" />
-<meta property="og:title" content="Empreendimentos em Destaque | Construtora Vieira" />
-<meta property="og:description" content="Descubra opções de venda e aluguel em Rondonópolis e região." />
-<meta property="og:url" content="https://construtoravieira.com.br/empreendimentos" />
-<meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Empreendimentos — Construtora Vieira em Rondonópolis-MT" />
-<meta property="og:locale" content="pt_BR" />
+  <!-- ========================= ÍCONES ========================== -->
+  <link rel="icon" href="/icones/favicon.ico" type="image/x-icon" sizes="any" />
 
-<!-- ==================== TWITTER CARDS ======================= -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Empreendimentos em Destaque | Construtora Vieira" />
-<meta name="twitter:description" content="Imóveis com padrão de qualidade Construtora Vieira." />
-<meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
-<!-- Se o @ existir, ative:
-<meta name="twitter:site" content="@construtoravieira" />
-<meta name="twitter:creator" content="@construtoravieira" />
--->
+  <!-- ====================== OPEN GRAPH ========================= -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Construtora Vieira" />
+  <meta property="og:title" content="Empreendimentos — Construtora Vieira" />
+  <meta property="og:description" content="Descubra opções de venda e aluguel em Rondonópolis-MT." />
+  <meta property="og:url" content="https://construtoravieira.com.br/empreendimentos" />
+  <meta property="og:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Empreendimentos — Construtora Vieira em Rondonópolis-MT" />
+  <meta property="og:locale" content="pt_BR" />
 
-<!-- =================== HREFLANG (pt único) ================== -->
-<link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/empreendimentos" />
-<link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/empreendimentos" />
+  <!-- ==================== TWITTER CARDS ======================= -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Empreendimentos — Construtora Vieira" />
+  <meta name="twitter:description" content="Imóveis com padrão de qualidade Construtora Vieira." />
+  <meta name="twitter:image" content="https://construtoravieira.com.br/img_site/previsual.png" />
 
-<!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {
-      "@type":"Organization",
-      "@id":"https://construtoravieira.com.br/#organization",
-      "name":"Construtora Vieira",
-      "url":"https://construtoravieira.com.br/",
-      "logo":{"@type":"ImageObject","url":"https://construtoravieira.com.br/img_site/logocerta.png","width":300,"height":100},
-      "image":{"@type":"ImageObject","url":"https://construtoravieira.com.br/img_site/previsual.png","width":1200,"height":630},
-      "sameAs":[
-        "https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR",
-        "https://www.instagram.com/construtoravieira1992/"
-      ],
-      "contactPoint":{"@type":"ContactPoint","telephone":"+55-66-99936-6313","contactType":"customer service","availableLanguage":"Portuguese"}
-    },
-    {
-      "@type":"LocalBusiness",
-      "@id":"https://construtoravieira.com.br/#localbusiness",
-      "name":"Construtora Vieira",
-      "image":"https://construtoravieira.com.br/img_site/previsual.png",
-      "telephone":"+55-66-99936-6313",
-      "address":{"@type":"PostalAddress","streetAddress":"R. Fatime Ali Dib, 211","addressLocality":"Rondonópolis","addressRegion":"MT","postalCode":"78731-212","addressCountry":"BR"},
-      "geo":{"@type":"GeoCoordinates","latitude":-16.4673,"longitude":-54.6370},
-      "url":"https://construtoravieira.com.br/",
-      "openingHours":"Mo-Fr 08:00-18:00",
-      "priceRange":"$$",
-      "paymentAccepted":"Cash, Credit Card, Bank Transfer",
-      "currenciesAccepted":"BRL"
-    },
-    {
-      "@type":"CollectionPage",
-      "@id":"https://construtoravieira.com.br/empreendimentos#webpage",
-      "url":"https://construtoravieira.com.br/empreendimentos",
-      "name":"Empreendimentos em Destaque | Construtora Vieira",
-      "description":"Imóveis para venda e aluguel em Rondonópolis e região.",
-      "isPartOf":{"@id":"https://construtoravieira.com.br/#website"},
-      "about":{"@id":"https://construtoravieira.com.br/#organization"},
-      "primaryImageOfPage":{"@type":"ImageObject","url":"https://construtoravieira.com.br/img_site/previsual.png"}
-    },
-    {
-      "@type":"ItemList",
-      "itemListOrder":"https://schema.org/ItemListOrderAscending",
-      "numberOfItems":3,
-      "itemListElement":[
-        {
-          "@type":"ListItem","position":1,
-          "item":{
-            "@type":"RealEstateListing",
-            "name":"Edifício Meridian",
-            "url":"https://construtoravieira.com.br/empreendimentos#meridian",
-            "image":"https://construtoravieira.com.br/clientes/uniaofamiliar.png",
-            "offers":{"@type":"Offer","price":650000,"priceCurrency":"BRL","availability":"https://schema.org/InStock","businessFunction":"http://purl.org/goodrelations/v1#Sell"}
-          }
-        },
-        {
-          "@type":"ListItem","position":2,
-          "item":{
-            "@type":"RealEstateListing",
-            "name":"Vista Parque",
-            "url":"https://construtoravieira.com.br/empreendimentos#vistaparque",
-            "image":"https://construtoravieira.com.br/clientes/uniaofamiliar.png",
-            "offers":{"@type":"Offer","price":420000,"priceCurrency":"BRL","availability":"https://schema.org/InStock","businessFunction":"http://purl.org/goodrelations/v1#Sell"}
-          }
-        },
-        {
-          "@type":"ListItem","position":3,
-          "item":{
-            "@type":"RealEstateListing",
-            "name":"Plaza Central",
-            "url":"https://construtoravieira.com.br/empreendimentos#plazacentral",
-            "image":"https://construtoravieira.com.br/clientes/uniaofamiliar.png",
-            "offers":{"@type":"Offer","availability":"https://schema.org/InStock","businessFunction":"http://purl.org/goodrelations/v1#LeaseOut"}
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
+  <!-- =================== HREFLANG (pt único) ================== -->
+  <link rel="alternate" hreflang="pt-BR" href="https://construtoravieira.com.br/empreendimentos" />
+  <link rel="alternate" hreflang="x-default" href="https://construtoravieira.com.br/empreendimentos" />
+
+  <!-- =================== CSS ÚNICO =================== -->
+  <link rel="preload" href="/includes/style.css" as="style" />
+  <link rel="stylesheet" href="/includes/style.css" />
+
+  <!-- =================== VERIFICAÇÕES =================== -->
+  <meta name="google-site-verification" content="COLE_SEU_CODIGO_GOOGLE_AQUI" />
+  <meta name="msvalidate.01" content="COLE_SEU_CODIGO_BING_AQUI" />
+  <meta name="yandex-verification" content="COLE_SEU_CODIGO_YANDEX_AQUI" />
+  <meta name="facebook-domain-verification" content="COLE_SEU_CODIGO_FACEBOOK_AQUI" />
+
+  <!-- =================== SCHEMA.ORG (LD+JSON) ================= -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "@id":"https://construtoravieira.com.br/#organization",
+        "name":"Construtora Vieira",
+        "url":"https://construtoravieira.com.br/",
+        "logo":{"@type":"ImageObject","url":"https://construtoravieira.com.br/img_site/logocerta.png","width":300,"height":100},
+        "image":{"@type":"ImageObject","url":"https://construtoravieira.com.br/img_site/previsual.png","width":1200,"height":630},
+        "sameAs":["https://www.facebook.com/profile.php?id=61578818874863&locale=pt_BR","https://www.instagram.com/construtoravieira1992/"],
+        "contactPoint":{"@type":"ContactPoint","telephone":"+55-66-99936-6313","contactType":"customer service","areaServed":"Rondonópolis-MT","availableLanguage":["Portuguese","Spanish"]}
+      },
+      {
+        "@type":"LocalBusiness",
+        "@id":"https://construtoravieira.com.br/#localbusiness",
+        "name":"Construtora Vieira",
+        "image":"https://construtoravieira.com.br/img_site/previsual.png",
+        "telephone":"+55-66-99936-6313",
+        "address":{"@type":"PostalAddress","streetAddress":"R. Fatime Ali Dib, 211","addressLocality":"Rondonópolis","addressRegion":"MT","postalCode":"78731-212","addressCountry":"BR"},
+        "geo":{"@type":"GeoCoordinates","latitude":-16.461250855506005,"longitude":-54.59783853891883},
+        "url":"https://construtoravieira.com.br/",
+        "openingHours":"Mo-Fr 08:00-18:00",
+        "priceRange":"$$",
+        "paymentAccepted":"Cash, Credit Card, Bank Transfer",
+        "currenciesAccepted":"BRL"
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://construtoravieira.com.br/#website",
+        "url":"https://construtoravieira.com.br/",
+        "name":"Construtora Vieira",
+        "publisher":{"@id":"https://construtoravieira.com.br/#organization"},
+        "inLanguage":"pt-BR",
+        "potentialAction":{"@type":"SearchAction","target":"https://construtoravieira.com.br/busca?q={termo}","query-input":"required name=termo"}
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://construtoravieira.com.br/empreendimentos#webpage",
+        "url":"https://construtoravieira.com.br/empreendimentos",
+        "name":"Empreendimentos — Construtora Vieira",
+        "description":"Imóveis para venda e aluguel em Rondonópolis-MT.",
+        "isPartOf":{"@id":"https://construtoravieira.com.br/#website"},
+        "about":{"@id":"https://construtoravieira.com.br/#organization"},
+        "primaryImageOfPage":{"@type":"ImageObject","url":"https://construtoravieira.com.br/img_site/previsual.png","width":1200,"height":630},
+        "inLanguage":"pt-BR"
+      },
+      {
+        "@type":"Service",
+        "@id":"https://construtoravieira.com.br/#service-empreendimentos",
+        "serviceType":"Gestão e comercialização de empreendimentos imobiliários",
+        "provider":{"@id":"https://construtoravieira.com.br/#organization"},
+        "areaServed":"Rondonópolis-MT",
+        "availableChannel":{"@type":"ServiceChannel","serviceUrl":"https://wa.me/5566999366313"}
+      }
+    ]
+  }
+  </script>
 </head>
-<body>
-  <header class="header fade">
+<body class="pagina-interna">
+  <!-- ============ GTM (noscript) ============ -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5H8DS3LX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- =================== TOPO PADRÃO (igual à index) =================== -->
+  <header class="header fade" role="banner">
     <div class="container">
       <a href="/" aria-label="Página inicial - Construtora Vieira">
-        <img src="/img_site/logocerta.png" height="80" alt="Logotipo da Construtora Vieira - M V de Souza" decoding="async" fetchpriority="high" />
+        <img src="/img_site/logocerta.png" width="110" height="110" alt="Logotipo da Construtora Vieira" decoding="async" />
       </a>
-      <nav class="nav" id="nav-menu">
+      <nav class="nav" id="nav-menu" aria-label="Navegação principal">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/sobrenos">Sobre Nós</a></li>
           <li><a href="/servicos">Serviços</a></li>
-          <li><a href="/obras">Obras & Clientes</a></li>
-          <li><a href="/empreendimentos" aria-current="page">Empreendimentos</a></li>
           <li><a href="/sustentabilidade">Sustentabilidade</a></li>
-          <li><a href="/noticias">Notícias e Dicas</a></li>
-          <li><a href="/simulacao">Simulação</a></li>
           <li><a href="/trabalheconosco">Trabalhe Conosco</a></li>
           <li><a href="/contato">Contato</a></li>
         </ul>
       </nav>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
     </div>
   </header>
 
-  <main id="conteudo">
-    <!-- HERO -->
-    <section class="hero fade">
-      <div class="container">
+  <main id="conteudo" role="main" data-route="empreendimentos">
+    <!-- =================== HERO (LCP) =================== -->
+    <section class="hero hero-empreendimentos fade" aria-label="Empreendimentos em Destaque">
+      <div class="hero-media" aria-hidden="true">
+        <picture>
+          <source srcset="/img_site/avif/estruturametalica.avif" type="image/avif" />
+          <source srcset="/img_site/webp/estruturametalica.webp" type="image/webp" />
+          <img src="/img_site/estruturametalica.png"
+               alt=""
+               width="1200" height="630" decoding="async" fetchpriority="high" />
+        </picture>
+      </div>
+      <div class="container hero-content">
         <h1>Empreendimentos em Destaque</h1>
         <p>Descubra os melhores imóveis para venda e aluguel em Rondonópolis e região.</p>
+        <a class="btn btn-green" href="https://wa.me/5566999366313?text=Tenho%20interesse%20em%20empreendimentos%20da%20Construtora%20Vieira" target="_blank" rel="noopener">Falar no WhatsApp</a>
       </div>
     </section>
 
-    <!-- LISTA DE EMPREENDIMENTOS -->
+    <!-- =================== LISTA =================== -->
     <section class="section fade">
       <div class="container">
         <div class="titulo-area">
@@ -192,49 +194,82 @@
         <div class="empreendimentos-grid">
           <!-- Card 1 -->
           <article id="meridian" class="empreendimento-card">
-            <img src="/clientes/uniaofamiliar.png" alt="Edifício Meridian - fachada moderna" loading="lazy" decoding="async" />
+            <a href="/empreendimentos/casa-vila-mineira" class="img-link" aria-label="Ver detalhes: Casa Vila Mineira">
+              <picture>
+                <source srcset="/empreendimentos/empreendimento1/avif/casa1.avif" type="image/avif" />
+                <source srcset="/empreendimentos/empreendimento1/webp/casa1.webp" type="image/webp" />
+                <img src="/empreendimentos/empreendimento1/casa1.png"
+                     alt="Casa Vila Mineira - 2 quartos (1 suíte), sol da manhã, fundos para o IFMT"
+                     width="1200" height="800" loading="lazy" decoding="async" />
+              </picture>
+            </a>
             <div class="empreendimento-info">
-              <h3>Edifício Meridian</h3>
-              <p>Residencial com design contemporâneo, área de lazer completa e excelente localização.</p>
+              <h3><a href="/empreendimentos/casa-vila-mineira">Casa Vila Mineira</a></h3>
+              <p>Casa com 2 quartos sendo 1 suíte, sol da manhã e fundos para o IFMT.</p>
               <div class="empreendimento-detalhes">
                 <span class="badge tipo venda">Venda</span>
-                <span class="badge medidas">85–120 m²</span>
-                <span class="badge valor">a partir de R$ 650.000</span>
+                <span class="badge medidas">85–105 m²</span>
+                <span class="badge valor">a partir de R$ 350.000</span>
               </div>
-              <p class="endereco">Centro – Rondonópolis/MT</p>
-              <a href="https://wa.me/5566999366313?text=Tenho%20interesse%20no%20Edif%C3%ADcio%20Meridian" target="_blank" rel="noopener" class="btn btn-black">Falar no WhatsApp</a>
+              <p class="endereco">Vila Mineira – Rondonópolis/MT</p>
+              <!-- WhatsApp com título do h3 -->
+              <a href="https://wa.me/5566999366313?text=Tenho%20interesse%20no%20empreendimento%20Casa%20Vila%20Mineira"
+                 target="_blank" rel="noopener" class="btn btn-black"
+                 aria-label="Falar no WhatsApp sobre Casa Vila Mineira">Falar no WhatsApp</a>
             </div>
           </article>
 
           <!-- Card 2 -->
           <article id="vistaparque" class="empreendimento-card">
-            <img src="/clientes/uniaofamiliar.png" alt="Vista Parque - torres residenciais próximas a área verde" loading="lazy" decoding="async" />
+            <a href="/empreendimentos/casa-parque-lirios" class="img-link" aria-label="Ver detalhes: Casa Parque dos Lírios">
+              <picture>
+                <source srcset="/empreendimentos/empreendimento2/avif/casa2.avif" type="image/avif" />
+                <source srcset="/empreendimentos/empreendimento2/webp/casa2.webp" type="image/webp" />
+                <img src="/empreendimentos/empreendimento2/casa2.png"
+                     alt="Casa Parque dos Lírios - conforto, natureza e plantas funcionais"
+                     width="1200" height="800" loading="lazy" decoding="async" />
+              </picture>
+            </a>
             <div class="empreendimento-info">
-              <h3>Vista Parque</h3>
-              <p>Conforto e natureza: plantas funcionais, segurança 24h e proximidade de parques.</p>
+              <h3><a href="/empreendimentos/casa-parque-lirios">Casa Parque dos Lírios</a></h3>
+              <p>Conforto e natureza, plantas funcionais, segurança e proximidade de parques.</p>
               <div class="empreendimento-detalhes">
                 <span class="badge tipo venda">Venda</span>
-                <span class="badge medidas">70–95 m²</span>
-                <span class="badge valor">a partir de R$ 420.000</span>
+                <span class="badge medidas">55–75 m²</span>
+                <span class="badge valor">a partir de R$ 300.000</span>
               </div>
-              <p class="endereco">Vila Goulart – Rondonópolis/MT</p>
-              <a href="https://wa.me/5566999366313?text=Tenho%20interesse%20no%20Vista%20Parque" target="_blank" rel="noopener" class="btn btn-black">Falar no WhatsApp</a>
+              <p class="endereco">Parque dos Lírios – Rondonópolis/MT</p>
+              <!-- WhatsApp com título do h3 -->
+              <a href="https://wa.me/5566999366313?text=Tenho%20interesse%20no%20empreendimento%20Casa%20Parque%20dos%20L%C3%ADrios"
+                 target="_blank" rel="noopener" class="btn btn-black"
+                 aria-label="Falar no WhatsApp sobre Casa Parque dos Lírios">Falar no WhatsApp</a>
             </div>
           </article>
 
           <!-- Card 3 -->
           <article id="plazacentral" class="empreendimento-card">
-            <img src="/clientes/uniaofamiliar.png" alt="Plaza Central - centro comercial com salas moduláveis" loading="lazy" decoding="async" />
+            <a href="/empreendimentos/casa-cidade-alta" class="img-link" aria-label="Ver detalhes: Casa Cidade Alta">
+              <picture>
+                <source srcset="/empreendimentos/empreendimento3/avif/casa3.avif" type="image/avif" />
+                <source srcset="/empreendimentos/empreendimento3/webp/casa3.webp" type="image/webp" />
+                <img src="/empreendimentos/empreendimento3/casa3.png"
+                     alt="Casa Cidade Alta - infraestrutura completa e comodidade"
+                     width="1200" height="800" loading="lazy" decoding="async" />
+              </picture>
+            </a>
             <div class="empreendimento-info">
-              <h3>Plaza Central</h3>
-              <p>Empreendimento comercial com infraestrutura completa e salas moduláveis.</p>
+              <h3><a href="/empreendimentos/casa-cidade-alta">Casa Cidade Alta</a></h3>
+              <p>Empreendimento residencial com infraestrutura completa e comodidade.</p>
               <div class="empreendimento-detalhes">
                 <span class="badge tipo aluguel">Aluguel</span>
-                <span class="badge medidas">40–300 m²</span>
-                <span class="badge valor">valores sob consulta</span>
+                <span class="badge medidas">55–75 m²</span>
+                <span class="badge valor">a partir de R$ 300.000</span>
               </div>
-              <p class="endereco">Distrito Comercial – Rondonópolis/MT</p>
-              <a href="https://wa.me/5566999366313?text=Tenho%20interesse%20no%20Plaza%20Central" target="_blank" rel="noopener" class="btn btn-black">Falar no WhatsApp</a>
+              <p class="endereco">Cidade Alta – Rondonópolis/MT</p>
+              <!-- WhatsApp com título do h3 -->
+              <a href="https://wa.me/5566999366313?text=Tenho%20interesse%20no%20empreendimento%20Casa%20Cidade%20Alta"
+                 target="_blank" rel="noopener" class="btn btn-black"
+                 aria-label="Falar no WhatsApp sobre Casa Cidade Alta">Falar no WhatsApp</a>
             </div>
           </article>
         </div>
@@ -245,7 +280,7 @@
       </div>
     </section>
 
-    <!-- CTA -->
+    <!-- =================== CTA =================== -->
     <section class="section bg-dark fade">
       <div class="container" style="text-align:center">
         <h2>Não encontrou o que procura?</h2>
@@ -255,13 +290,24 @@
     </section>
   </main>
 
-  <footer class="footer fade">
+  <!-- =================== RODAPÉ PADRÃO =================== -->
+  <footer class="footer fade" role="contentinfo">
     <div class="container">
+      <p><strong>Construtora Vieira</strong> — R. Fatime Ali Dib, 211 — Rondonópolis/MT — <a href="tel:+5566999366313">(66) 99936-6313</a></p>
       <p>&copy; 2025 Construtora Vieira. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <!-- JS externo -->
+  <!-- ===================== PWA: Registrar SW (opcional, igual à home) ===================== -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js').catch(function(){/* noop */});
+      });
+    }
+  </script>
+
+  <!-- =================== JS ÚNICO =================== -->
   <script src="/includes/script.js" defer></script>
 </body>
 </html>
